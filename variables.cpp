@@ -1,12 +1,21 @@
+
+
+
 #include <iostream>
 
-using std::cout;
+using std::cout; // Standard Libaries
+using std::cin;
 
 int main()
 {
-    int slices = 5;
 
-    cout << slices << std::endl;
+    for (int i = 0; i++){
+        cout << 
+    }
+    cout << "You have " << slices << " slices of Pizza."<< std::endl;
 
 }
+
+
+
 
