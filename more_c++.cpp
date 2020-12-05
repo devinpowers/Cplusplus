@@ -1,16 +1,17 @@
 
 
 #include <iostream>
+#include <string>
+
 using namespace std;
- 
-// Global variable declaration:
-int g = 20;
- 
+
 int main () {
-   // Local variable declaration:
-   int g = 10;
- 
-   cout << g << endl;
+
+   string greeting = "Hello ";
+   string greeting_two = "My name is ";
+   string name = "Devin";
+
+   cout << greeting + greeting_two + name << endl;
 
 }
 
