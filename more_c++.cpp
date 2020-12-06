@@ -7,11 +7,12 @@ using namespace std;
 
 int main () {
 
-   string greeting = "Hello ";
-   string greeting_two = "My name is ";
-   string name = "Devin";
+   string greeting;
 
-   cout << greeting + greeting_two + name << endl;
+   getline(cin, greeting);
+
+   cout << greeting << endl;
+
 
 }
 
