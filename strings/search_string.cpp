@@ -1,13 +1,18 @@
 
 
 #include <iostream>
-#include <string>
 
 using namespace std;
 
 int main () 
+
 {
-    auto x = 5U;
-    
+    double x;
+    double y;
+
+    x = 10;
+    (y = x) = 100; // y = x; then y = 100
+
+    cout << x << "\t" << y << endl;
 }
 
