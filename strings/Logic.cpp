@@ -30,8 +30,8 @@ int main ()
         cout << "You entered both the age and name incorrectly\n! ";
     }
 
-
     return 0;
 
 }
+
 
