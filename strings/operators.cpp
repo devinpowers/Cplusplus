@@ -1,5 +1,6 @@
 
 
+
 #include <iostream>
 #include <string>
 
@@ -16,7 +17,7 @@ int main ()
     cin >> guess;
 
 
-    if ( !(guess == answer) )  
+    if ( (guess != answer) )  
     {
 
         cout << "You got the Wrong Name Sir!\n";

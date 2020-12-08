@@ -12,8 +12,7 @@ int main () {
    getline(cin, greeting);
 
    cout << greeting << endl;
-
-
+   
 }
 
 
