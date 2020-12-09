@@ -1,18 +1,24 @@
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main () 
 {
-    int fact = 5; // keep a reference of the factorial
-    int factorial = fact;
+   string sentence = "Hello my name is Devin";
 
-    for(int i = factorial - 1; i > 0; i-- )
-    {
-        factorial = factorial *i;
-    }
-    cout << "Factorial of " << fact << " is: " << factorial << endl;
-    return 0;
+   for (int i = 0; i < sentence.size(); i++ )
+   {
+       if (sentence[i] == 'o')
+       {
+           continue;
+       }
+       cout << sentence[i] << endl;
+       
+   }
+   cout << "Done!\n";
 }
+
+
 
