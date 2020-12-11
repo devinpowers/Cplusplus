@@ -14,7 +14,6 @@ void print_array(int array[], int size )
     }
     cout << endl;
 
-
 }
 
 int main()
