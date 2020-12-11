@@ -6,16 +6,35 @@
 
 using namespace std;
 
+void print_array(int array[], int count )
+{
+    cout << "Here were your Guesses: ";
+    for (int i = 0; i < count; i++)
+
+    {
+        cout << array[i] << "\t";
+    }
+    cout << endl;
+
+    cout << "It took you: " << count << " trys" << endl;
+
+}
 void play_game()
 {
+    int guesses[251];
+    int guess_count = 0;
+
     int random = rand() % 251; // function call function number between ( 0 and 250 )
     cout << random << endl;
-
     cout << "Guess a number: ";
+
     while(true)
     {
         int guess;
         cin >> guess;
+        guesses[guess_count++] = guess;  // increment 
+
+
         if (guess == random)
         {
             cout << "You win!!\n";
@@ -32,6 +51,7 @@ void play_game()
         }
             
     }
+    print_array(guesses, guess_count);
 }
 
 int main () 
