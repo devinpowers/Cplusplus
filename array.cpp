@@ -2,6 +2,11 @@
 
 #include <iostream>
 
+#include<limits>
+
+
+
+
 
 using namespace std;
 
@@ -22,10 +27,13 @@ int main()
 
     int guesses[SIZE];
 
+    int count = 0;
+
     for (int i = 0; i < SIZE; i++ )
     {
        if (cin >> guesses[i])
        {
+           count++;
            //Input Worked
        }
        else
@@ -33,10 +41,17 @@ int main()
            cout << "Invalid Input" << endl;
            break;
        }
-       
     }
+    print_array(guesses, count);
 
-   // print_array(guesses, SIZE);
+    cin.clear();
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    string test;
+    cin >> test;
+    cout << test << endl;
+
     
 }
 
