@@ -3,6 +3,8 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
+#include <fstream>
 
 using namespace std;
 
