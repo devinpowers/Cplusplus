@@ -1,19 +1,27 @@
 
- #include <iostream>
+#include <iostream>
+using namespace std;
 
-// if practice
 int main() {
+    int number;
+    int sum = 0;
 
-    int x = 12;
+    // nested for loops
 
-    if (x < 10){
-
-        std::cout << "X is greater than 10" << std::endl;
-    }
-    else{
-
-        std::cout << " x is greater than 10" << std::endl;
+    // first loop
+    for (int i = 1; i <= 3; i++) {
+        // second loop
+        for (int j = 1; j <= 3; j++) {
+            if (i == 2) {
+                break;
+            }
+            cout << "i = " << i << ", j = " << j << endl;
+        }
     }
 
     return 0;
 }
+
+
+
+

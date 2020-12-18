@@ -1,7 +1,7 @@
 
+ 
  #include <iostream>
 
- 
 int main() {
 
     std::string cars[4] = {"Volvo", "BMW", "Ford", "Mazda"};
