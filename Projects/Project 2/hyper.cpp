@@ -8,11 +8,12 @@ using namespace std;
 
 
 
-void hyper_perfect_number ( int input_number, int k_factor )
+void hyper_perfect_number ( int input_number )
 
 {
-   
     long int sum = 0;
+
+    int k_factor = 500;
 
     if (input_number < 6)
 
@@ -36,7 +37,7 @@ void hyper_perfect_number ( int input_number, int k_factor )
     {
         if (((sum*b) + 1 ) == input_number )
         {
-            cout << "The K factor for " << input_number << " is " << b << endl;
+            cout << "The K factor of " << input_number << " is " << b << endl;
             break; // Break out of the Loop since we have our K Kactor 
 
         }
@@ -52,18 +53,12 @@ int main()
 
 {
     long int input_number;
-    long int k_factor;
-    hyper_perfect_number ( 301, 10);
-    hyper_perfect_number ( 808861, 400);
-    hyper_perfect_number ( 542413, 400);
-    hyper_perfect_number ( 306181, 400);
-    hyper_perfect_number ( 5, 400);
-    hyper_perfect_number ( 389593, 400);
-    hyper_perfect_number ( 176661, 10);
-    hyper_perfect_number ( -306181, 400);
-    hyper_perfect_number ( 130153, 300);
-    hyper_perfect_number ( 96361, 300);
-    hyper_perfect_number ( 963261, 300);
+    hyper_perfect_number ( 301);
+    hyper_perfect_number ( 808861);
+    hyper_perfect_number ( 542413);
+    hyper_perfect_number ( 306181);
+    hyper_perfect_number ( 389593);
+;
 
 
     
