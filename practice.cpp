@@ -3,19 +3,47 @@
 
 #include <iostream>
 
-int main() {
+using namespace std;
 
-  std::string name;
 
-  std::cout << "Enter your name: ";
+int main()
 
-  std::cin >> name; //takes the input and stores it into our string we declared above
+{
 
-  std::cout <<"Your name is "<< name << std::endl;
-  
-  return 0;
+    int input_number;
+    int sum = 0;
+
+    int k_factor; // another input value
+
+    cout <<  "Enter a number: ";
+
+    cin >> input_number;
+
+    if (input_number < 6)
+    {
+      cout << "the Factor K is 0" << endl;
+    }
+
+    // otherwise we proceed
+
+    for (int i = 2; i < input_number; i++ )
+    {
+      if (input_number % i== 0)
+      {
+        cout << "the Number " << i << " is Divisible in " << input_number  << endl;
+        sum += i;
+      };
+      sum += 1
+    }
+
+    cout << "The Sum of Values divisble by " << input_number << " is: " << sum << endl;
+
+
+
+
+
+
 }
-
 
 
 
