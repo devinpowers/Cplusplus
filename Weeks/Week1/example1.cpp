@@ -11,7 +11,7 @@ using std::cin;
 int main (){
 
   
-  // Points for Fantasy Basketball
+  // Points for Fantasy Basketball Constants
   const int points = 1;
   const int rebounds = 2;
   const int assists = 1;
