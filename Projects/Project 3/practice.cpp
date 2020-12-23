@@ -24,19 +24,15 @@ long hyper_perfect_number ( long input_number )
 
 {
     long int sum = 0;
-
     int k_factor = 500;
 
     if (input_number < 6)
-
     {
         return 0;
       //cout << "the Factor K is 0" << endl;
     }
 
-
     // otherwise we proceed
-
     for (int i = 2; i < input_number; i++ )
     {
       if (input_number % i== 0)
@@ -46,7 +42,6 @@ long hyper_perfect_number ( long input_number )
       }
        
     }
-
     for ( int b = 0; b <= k_factor; b++ )
     {
         if (((sum*b) + 1 ) == input_number )
@@ -54,11 +49,15 @@ long hyper_perfect_number ( long input_number )
             return b;
             // cout << "The K factor of " << input_number << " is " << b << endl;
             // break; // Break out of the Loop since we have our K Kactor 
-
         }
     }
-
 }
+long gcd(long first_num, long second_num)
+
+    {
+        return 0;
+    }
+    
 
 int main(){
 
