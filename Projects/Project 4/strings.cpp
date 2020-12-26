@@ -14,14 +14,12 @@ int main () {
 
     getline(cin, s);
 
-
-
-
-
-
-
     for ( decltype(s.size()) i = 0; i < s.size(); i++ )
     {
+        if (s[i] == 'e'){
+
+            cout << "E was here" << endl;
+        }
         cout << i << " : " << s[i] << endl; // print index and character at that index
 
 

@@ -12,7 +12,7 @@ int main()
     //here some of our input values
     long int input_number;
 
-    int k_factor; 
+    int k_factor = 10000;
 
     long int sum = 0;
 
@@ -20,9 +20,9 @@ int main()
 
     cin >> input_number;
 
-    cout << "Please enter a k value to check: ";
+    // cout << "Please enter a k value to check: ";
 
-    cin >> k_factor;
+    // cin >> k_factor;
 
 
     if (input_number < 6)
@@ -36,12 +36,12 @@ int main()
     {
       if (input_number % i== 0)
       {
-        //cout << "the Number " << i << " is Divisible in " << input_number  << endl;
+        cout << "the Number " << i << " is Divisible in " << input_number  << endl;
         sum += i;
       }
        
     }
-
+    cout << "The sum of the divisors of value " << input_number << " is: " << sum << endl;
     for ( int b = 0; b <= k_factor; b++ )
     {
         if (((sum*b) + 1 ) == input_number )
