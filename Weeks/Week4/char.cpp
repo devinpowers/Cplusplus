@@ -47,7 +47,7 @@ int main (){
   
   // erase
   temp = "abcdefg";
-  temp.erase(2,3); // start at 2, length 3, "abfg"
+  temp.erase(2,3); // start at 2, length 3, "abfg"cl
   temp.erase(2) ;  // default length is to the end, "ab";
   cout << temp << endl;
 

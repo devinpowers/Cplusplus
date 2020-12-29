@@ -12,8 +12,6 @@ int main()
 {
 	string name = "Devin Powers" ;
 
-
-
 	cout << name[0] << endl;
 
 	cout << "PLease Print: " << endl;
