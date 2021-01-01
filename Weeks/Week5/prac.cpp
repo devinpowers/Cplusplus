@@ -1,25 +1,23 @@
 
 
-#include <string>
 #include <iostream>
+
 using namespace std;
- 
-int main () {
-   // Local variable declaration:
 
-   
-   string names = "devin Powers";
 
-   // while loop execution
+int main() {
 
-   int i = 0;
+    int AnArray[20];
+    int* plocation6;
+    int* plocation0;
+    plocation6 = &AnArray[6];
+    plocation0 = &AnArray[0];
 
-   while( i < names.length()) {
+    cout << (int)plocation6 << endl; 
 
-      cout << "index: " << i <<  names[i] << endl;
-   }
+    cout << (int)plocation0<<endl;
 
-   cout << names[3] << endl;
- 
-   return 0;
+    cout << "Difference   " << plocation6 - plocation0 << endl;
+    
+
 }
