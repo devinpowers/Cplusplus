@@ -8,6 +8,33 @@ using std::vector;
 int main (){
   vector<long> v_long{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
   vector<long> zeros(5, 0);
+
+  cout << "Zeros Vector Capacity: " << zeros.capacity() << endl;
+  cout << "Vector Long Capacity: " << v_long.capacity() << endl;
+ 
+  //print vectors
+
+
+
+  for(auto element : v_long)
+   {
+        cout << element << ":";
+   }
+
+   cout << endl; // end line
+  
+  // assiignment stuff
+
+  zeros = v_long;
+  //v_long.front() = -1;
+  
+
+  for(auto element : v_long)
+   {
+        cout << element << ":";
+   }
+
+   cout << endl; // end line
   
   // assignment is copy
   zeros = v_long;
@@ -17,6 +44,12 @@ int main (){
   // list init is also copy
   zeros = {0,0,0,0,0};
   
+  for(auto element : zeros)
+   {
+        cout << element << ":";
+   }
+
+   cout << endl; // end line
   // compare
   cout << boolalpha;
   cout << "Are they:" << endl;
@@ -31,4 +64,11 @@ int main (){
   v_long.clear();
   cout << "empty:"<<v_long.empty()<<endl;
   v_long.assign(10,1);
+
+  for(auto element : v_long)
+   {
+        cout << element << ":";
+   }
 }
+
+

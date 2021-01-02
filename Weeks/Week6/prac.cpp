@@ -7,51 +7,26 @@ using std::vector;
 
 int main(){
 
-   vector<char> v_char{'a', 'b', 'c', 'd'};
-   cout << "Size of Char Vector is: " <<  v_char.size() << endl;
-   cout << "Capacity of Char Vector is: " << v_char.capacity() << endl;
-   v_char.clear();
+    vector<int> my_ints {1,2,3};
 
-   cout << "Char Vector Size after Empty: " << v_char.size() << endl;
-   cout << "Char Vector Capacity after Empty: " << v_char.capacity() << endl;
-
-
-   for (int i=0; i<10; ++i)
+    // print out before Changing my_int 
+    for(auto element : my_ints)
    {
-       v_char.push_back( static_cast<char>('a' + i) );
-       cout << static_cast<char>('a' + i) << endl;
-   } 
-   // print after we added elements
-    for(auto element : v_char)
+        cout << element << ":";
+   }
+   cout << endl;
+
+    for (auto & x : my_ints){
+        x += 2;
+    }
+
+    for(auto element : my_ints)
    {
         cout << element << ":";
    }
 
-   cout << endl; // end line
-
-
-   cout << "Char Vector Size: " << v_char.size() << endl;
-   cout << "Char Vector Capacity: " << v_char.capacity() << endl;
+   cout << endl;
   
-
-   // access
-   cout << "Char at 9th: " <<  v_char.at(9) << endl;
-   cout << "Char at 10th: " << v_char[10] << endl;
-
-   // Change element
-   v_char.at(9) = 'z';
-
-   cout << "Char at 9th is now: " << v_char.at(9) << endl;
-
-
-    // print, range-based for
-   for(auto element : v_char)
-   {
-        cout << element << ":";
-   }
-
-  cout << endl; // end line
-
 }
 
 
