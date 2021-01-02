@@ -5,9 +5,6 @@ using std::cout; using std::endl; using std::endl;
 #include<vector>
 using std::vector;
 
-#include<string>
-using std::string;
-
 int main(){
 
    vector<char> v_char{'a', 'b', 'c', 'd'};
@@ -22,6 +19,7 @@ int main(){
    for (int i=0; i<10; ++i)
    {
        v_char.push_back( static_cast<char>('a' + i) );
+       cout << static_cast<char>('a' + i) << endl;
    } 
    // print after we added elements
     for(auto element : v_char)
@@ -29,7 +27,7 @@ int main(){
         cout << element << ":";
    }
 
-  cout << endl; // end line
+   cout << endl; // end line
 
 
    cout << "Char Vector Size: " << v_char.size() << endl;
