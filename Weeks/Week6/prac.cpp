@@ -1,33 +1,25 @@
 
-#include<iostream>
-using std::cout; using std::endl; using std::endl;
-
-#include<vector>
-using std::vector;
-
-int main(){
-
-    vector<int> my_ints {1,2,3};
-
-    // print out before Changing my_int 
-    for(auto element : my_ints)
-   {
-        cout << element << ":";
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+   int x = -2;
+ 
+   // Some code
+   cout << "Before try \n";
+   try {
+      cout << "Inside try \n";
+      if (x < 0)
+      {
+         throw x;
+         cout << "After throw (Never executed) \n";
+      }
    }
-   cout << endl;
-
-    for (auto & x : my_ints){
-        x += 2;
-    }
-
-    for(auto element : my_ints)
-   {
-        cout << element << ":";
+   catch (int x ) {
+      cout << "Exception Caught \n";
    }
-
-   cout << endl;
-  
+ 
+   cout << "After catch (Will be executed) \n";
+   return 0;
 }
-
-
-
