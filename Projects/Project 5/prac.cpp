@@ -18,11 +18,11 @@ string create_encoding(string key){
         }
     }
 
-//    for(auto ch: alphabet){
-  //      if(keyword.find(ch)==-1 && key.find(ch) == -1){ //if its not in there add it in
-    //        keyword+=ch;
-      //  }
-    //}
+    for(auto ch: alphabet){
+        if(keyword.find(ch)== -1 && key.find(ch) == -1){ //if its not in there add it in
+           keyword+=ch;
+        }
+    }
 
 
     return keyword;
