@@ -35,7 +35,7 @@ string create_encoding(string key){
 
 int main()
 {
-    string keyword = "keyword";
+    string keyword = "example";
 
     cout << "Created Encoding: " << create_encoding(keyword) << endl;
   

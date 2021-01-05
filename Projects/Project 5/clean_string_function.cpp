@@ -1,5 +1,3 @@
-
-
 #include<iostream>
 using std::cout; using std::cin; using std::endl;
 #include<string>
@@ -24,17 +22,12 @@ string clean_string (string s)
 }
 
 
-
 int main() {
 
     string s = "Hello World My Name iS DevIn";
-
-
-
     cout << "Our Original String here: " << s << endl;
     // call function clean string to clean out string
 
     cout << "Our OG String cleaned: " << clean_string(s) << endl;
-
 
 }
