@@ -35,7 +35,7 @@ string create_encoding(string key){
 
 int main()
 {
-    string keyword = "sit";
+    string keyword = "keyword";
 
     cout << "Created Encoding: " << create_encoding(keyword) << endl;
   
