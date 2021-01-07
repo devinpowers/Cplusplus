@@ -45,5 +45,3 @@ int main(){
     
     cout << "After the try/catch block, moving on" << endl;
 } // of main
-
-
