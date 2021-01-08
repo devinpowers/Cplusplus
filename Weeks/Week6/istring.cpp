@@ -1,5 +1,4 @@
 
-
 #include<iostream>
 using std::cout; using std::cin; using std::endl; using std::ostream;
 #include<string>
@@ -53,4 +52,21 @@ int main (){
 
   if (infile) {
     while ( getline(infile, line) )
-    
+      get_useable_longs(line, v);
+  } else {
+    cout << " bad file name " << f_name << endl;;
+  }
+
+  // print the vector
+  ostringstream oss;
+  print_vector(v, oss);
+  cout << oss.str() << endl;
+
+  // better output, fix that ugly trailing comma
+  string out_str = oss.str();
+  out_str = out_str.substr(0, out_str.size()-3);
+  cout << out_str << endl;
+}
+  
+
+  

@@ -1,7 +1,9 @@
+
 #include<iostream>
 using std::cout; using std::endl;
 #include<string>
 using std::string;
+
 #include<sstream>
 using std::istringstream; using std::ostringstream;
 
@@ -18,6 +20,11 @@ int main (){
   iss >> age;
   iss >> year;
   
+  cout << "Last: " << last << endl;
+  cout << "First: " << first << endl;
+  cout << "Age: " << age << endl;
+  cout << "Year: " << year << endl;
+
   ostringstream oss;
   long actual_age = 2017 - year + age;
   oss << first << " " << last << " was " << age
@@ -27,3 +34,7 @@ int main (){
   cout << oss.str() << endl;
   oss.str("");
 }
+
+
+
+
