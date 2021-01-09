@@ -1,3 +1,4 @@
+
 #include<iostream>
 using std::cout; using std::endl;
 #include<vector>
@@ -9,10 +10,10 @@ using std::multiplies; using std::minus; using std::plus;
 #include<numeric>
 using std::accumulate;
 
-template <typename T> 
-T sum_of_squares(const T& total, const T& element){
-    return total + element * element;
-} 
+//template <typename T> 
+//T sum_of_squares(const T& total, const T& element){
+//    return total + element * element;
+//} 
 
 int main(){
     long l_result;
@@ -31,15 +32,15 @@ int main(){
 
     // predefined function objects
     cout << "Sum is:"
-	     << accumulate( v_l.begin(),v_l.end(), 1l, plus<long>() )<<endl;  
+	     << accumulate( v_l.begin(),v_l.end(), 2l, plus<long>() )<<endl;  
     cout << "Product is:"
 	     << accumulate( v_l.begin(),v_l.end(), 1l, multiplies<long>() )<<endl;
     cout << "Difference is:"
-	     << accumulate( v_l.begin(),v_l.end(), 0l, minus<long>() )<<endl;
+	     << accumulate( v_l.begin(),v_l.end(), 1l, minus<long>() )<<endl;
 
     // your own function
-    cout << "sum of squares is:"
-	     << accumulate( v_l.begin(),v_l.end(), 0l, sum_of_squares<long> )<<endl;
+    //cout << "sum of squares is:"
+	 //    << accumulate( v_l.begin(),v_l.end(), 0l, sum_of_squares<long> )<<endl;
 
     // a lambda
     cout <<"sum of x+2 is:"
@@ -52,3 +53,7 @@ int main(){
             })
 	     << endl;
 }
+
+
+
+
