@@ -21,6 +21,7 @@ int main()
   oss << name << word << " his dog " << dog << endl;
 
   cout << oss.str(); // output one big string
+  
 } 
 
 
