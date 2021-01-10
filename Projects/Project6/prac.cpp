@@ -10,44 +10,36 @@ using std::string;
 using std::ostringstream;
 
 
-// 
-
-string vec_2_str ( const vector<long>& v)
+void print_vector (vector<long> vector)
 {
-    string string_returned;
-    ostringstream oss;
-
-    for(auto iter = v.cbegin(); iter != v.cend(); ++iter){
-
-        oss << *iter << ", ";
+    for (int i = 0; i < vector.size(); i++)
+    {
+        cout << vector[i] << "\t";
     }
-    string_returned = oss.str();
-    return string_returned.substr(0, string_returned.size() - 2);
-    
-
-    // loop thru the vector and turn it into one big string for all the happy kids
-    //"Each element in the string is "
-}
-
-vector<long> gen_nstep_vector(long limit, long nstep)
-{
-    vector<long> v{1,1}; //start of seed numbers
-    
-    // add seed numbers here
-    
-    // pass in a nstep
-
 }
 
 
 int main(){
 
-    cout << "Prac" << endl;
-    // pass vector of long to vec_2_str
+    vector<long> vec{1,1};  // initial seed values in our vector
 
-    vector<long> v{1,1,2,3,5,8,13,21,34,55,89,144,233,377,610};
+    int n_step = 10;
 
-    cout << vec_2_str(v) << endl;
+    int adjust_nstep = n_step - 2; 
+
+    for ( int x = 1; x <= adjust_nstep; x++ ) //loop thru adjusted n_step
+    {
+        vec.push_back(vec.back()*2) ;
+        //cout << "testing " << endl;   // add to vector by accessing last element in vector and multiplying it by 2
+    }
+
+    // call to print vector
+
+    cout << "Printed Vector 'seeds' : " << endl;
+     
+    print_vector(vec);
+
+
 
 
 }
