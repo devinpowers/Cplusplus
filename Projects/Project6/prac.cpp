@@ -21,25 +21,28 @@ void print_vector (vector<long> vector)
 
 int main(){
 
-    vector<long> vec{1,1};  // initial seed values in our vector
+    vector <long> vec{1,2,3,4,5};
 
-    int n_step = 10;
+    // add iterator
+    vector<long>::iterator i;
 
-    int adjust_nstep = n_step - 2; 
+    long limit = 4;
 
-    for ( int x = 1; x <= adjust_nstep; x++ ) //loop thru adjusted n_step
+    for ( i = vec.begin(); i != vec.end(); ++i)
     {
-        vec.push_back(vec.back()*2) ;
-        //cout << "testing " << endl;   // add to vector by accessing last element in vector and multiplying it by 2
+        cout << *i << " ";
     }
 
-    // call to print vector
+    //  continue to loop through Vector untill we've reached the limit that was passed in
+    //while ( find(vec.begin(), vec.end(), limit) != vec.end())
+    //{
+        // add to vector untill limit is found
 
-    cout << "Printed Vector 'seeds' : " << endl;
-     
-    print_vector(vec);
+    //}
 
-
+    cout << "finishing up " << endl;
+    
+    
 
 
 }
