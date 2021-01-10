@@ -1,20 +1,11 @@
 #include<iostream>
 using std::cout; using std::cin; using std::endl;
 #include<vector>
-using std::vector;
+using std::vector; using std::
 #include<string>
 using std::string;
 
 
-void print_vector (vector<long> vector)
-{
-    for (int i = 0; i < vector.size(); i++)
-    {
-        cout << vector[i] << "\t";
-    }
-}
-
-// Function 2:
 vector <long> gen_nstep_vector (long limit, long nstep)
 {
     vector <long> vec{1,1}; // initial vector with 2 seed values 
@@ -48,18 +39,41 @@ vector <long> gen_nstep_vector (long limit, long nstep)
 }
 
 
-
-int main(){
-
-    vector <long> vector2; 
+string num_to_nstep_coding ( long num, long nstep )
+{
     
+    string b_string = "00000000000";  // hardcoded??
+    vector <long> vec;
 
-    vector2 = gen_nstep_vector(200, 3);
-
-    //can we print our return vector?
-
-    print_vector(vector2);
-
-
+    vec = gen_nstep_vector (10, nstep)
     
+    for ( int x = vec.size(); x > 0; x-- ){
+
+        if (vec[x] <= num)
+        {
+            num -= vec[x];
+            cout << "Number: " << num << endl;
+            b_string.insert(x,"1");
+
+        }
+       
+    }
+
+
+
+    return b_string;
+}
+
+
+
+int main() {
+
+    //call function
+
+
+    cout << "Code: " << num_to_nstep_coding(100,2) << endl;
+
+
+
+    return 0;
 }

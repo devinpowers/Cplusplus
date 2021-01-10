@@ -2,47 +2,37 @@
 #include<iostream>
 using std::cout; using std::cin; using std::endl;
 #include<vector>
-using std::vector;
+using std::vector; using std::iterator;
 #include<string>
 using std::string;
 
-#include<sstream>
-using std::ostringstream;
 
-
-void print_vector (vector<long> vector)
-{
-    for (int i = 0; i < vector.size(); i++)
-    {
-        cout << vector[i] << "\t";
-    }
-}
 
 
 int main(){
 
-    vector <long> vec{1,2,3,4,5};
+    string b_string = "00000000000";
 
-    // add iterator
-    vector<long>::iterator i;
+    long num = 100; // value to incode
 
-    long limit = 4;
+    vector <long> vec{1,2,3,5,8,13,21,34,55,89,144}; // really will call for the function
+    
 
-    for ( i = vec.begin(); i != vec.end(); ++i)
-    {
-        cout << *i << " ";
+    for ( int x = vec.size(); x > 0; x-- ){
+
+
+        if (vec[x] <= num)
+        {
+            num -= vec[x];
+            cout << "Number: " << num << endl;
+            b_string.insert(x,"1");
+
+        }
+       
     }
-
-    //  continue to loop through Vector untill we've reached the limit that was passed in
-    //while ( find(vec.begin(), vec.end(), limit) != vec.end())
-    //{
-        // add to vector untill limit is found
-
-    //}
-
-    cout << "finishing up " << endl;
-    
-    
+     cout << "String encoded: " << b_string << endl;
 
 
 }
+
+   
