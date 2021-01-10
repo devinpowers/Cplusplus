@@ -27,9 +27,19 @@ string vec_2_str ( const vector<long>& v)
 
     // loop thru the vector and turn it into one big string for all the happy kids
     //"Each element in the string is "
+}
 
+vector<long> gen_nstep_vector(long limit, long nstep)
+{
+    vector<long> v{1,1}; //start of seed numbers
+    
+    // add seed numbers here
+    
+    // pass in a nstep
 
 }
+
+
 int main(){
 
     cout << "Prac" << endl;
