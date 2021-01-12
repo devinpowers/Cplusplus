@@ -35,9 +35,9 @@ int main (){
 
   // increase by one, pre-increment
   cout << "Increase one by one. Pre-increment " << endl;
-  ++v_start;
+  //++v_start;
   cout << "V_Start: " << *v_start << endl;
-  ++s_start;
+ // ++s_start;
   cout << "S_Start " << *s_start << endl;
 
   cout << endl;
