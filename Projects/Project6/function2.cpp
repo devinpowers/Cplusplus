@@ -54,7 +54,7 @@ int main(){
     vector <long> vector2; 
     
 
-    vector2 = gen_nstep_vector(200, 3);
+    vector2 = gen_nstep_vector(200, 2);
 
     //can we print our return vector?
 

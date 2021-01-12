@@ -25,12 +25,15 @@ int main(){
         {
             num -= vec[x];
             cout << "Number: " << num << endl;
-            b_string.insert(x,"1");
+            b_string[x] = '1';                   // replace 0 with 1 
 
         }
        
     }
-     cout << "String encoded: " << b_string << endl;
+     cout << "String encoded: " << b_string.substr(0,10) << endl;
+
+    
+  
 
 
 }

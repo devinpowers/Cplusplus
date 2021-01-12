@@ -1,10 +1,18 @@
 #include<iostream>
 using std::cout; using std::cin; using std::endl;
 #include<vector>
-using std::vector; using std::
+using std::vector;
 #include<string>
 using std::string;
 
+
+void print_vector (vector<long> vector)
+{
+    for (int i = 0; i < vector.size(); i++)
+    {
+        cout << vector[i] << "\t";
+    }
+}
 
 vector <long> gen_nstep_vector (long limit, long nstep)
 {
@@ -39,29 +47,32 @@ vector <long> gen_nstep_vector (long limit, long nstep)
 }
 
 
-string num_to_nstep_coding ( long num, long nstep )
+ string num_to_nstep_coding ( long num, long nstep )
 {
     
     string b_string = "00000000000";  // hardcoded??
     vector <long> vec;
 
-    vec = gen_nstep_vector (10, nstep)
+
+    vec = gen_nstep_vector (150, nstep);  // Unsure How I decide what the limit will be?
+
+    // print vec
+    print_vector(vec);
     
     for ( int x = vec.size(); x > 0; x-- ){
 
         if (vec[x] <= num)
         {
             num -= vec[x];
-            cout << "Number: " << num << endl;
-            b_string.insert(x,"1");
+            //cout << "Number: " << num << endl;
+            b_string[x] = '1'; 
 
         }
+      
        
     }
-
-
-
-    return b_string;
+    // drop trailing 0 (for index 0) from string we just converted into binary code
+    return b_string.substr(1,10);
 }
 
 
@@ -69,11 +80,6 @@ string num_to_nstep_coding ( long num, long nstep )
 int main() {
 
     //call function
-
-
     cout << "Code: " << num_to_nstep_coding(100,2) << endl;
 
-
-
-    return 0;
 }
