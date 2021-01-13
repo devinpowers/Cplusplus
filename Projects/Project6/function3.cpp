@@ -49,15 +49,19 @@ vector <long> gen_nstep_vector (long limit, long nstep)
 
  string num_to_nstep_coding ( long num, long nstep )
 {
-    
-    string b_string = "00000000000";  // hardcoded??
+    int limit = 50 + num; //get high enough values back in vector for the limit?
+    string b_string = ""; 
+   // int vec_length;
     vector <long> vec;
 
+    vec = gen_nstep_vector (limit, nstep);  // Unsure How I decide what the limit will be?
 
-    vec = gen_nstep_vector (150, nstep);  // Unsure How I decide what the limit will be?
+
+    b_string.append(vec.size(), '0');
 
     // print vec
     print_vector(vec);
+    cout << "Vector Size: " << vec.size() << endl;
     
     for ( int x = vec.size(); x > 0; x-- ){
 
@@ -72,7 +76,7 @@ vector <long> gen_nstep_vector (long limit, long nstep)
        
     }
     // drop trailing 0 (for index 0) from string we just converted into binary code
-    return b_string.substr(1,10);
+    return b_string.substr(1,vec.size()-2);
 }
 
 

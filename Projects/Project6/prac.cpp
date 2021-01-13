@@ -11,12 +11,17 @@ using std::string;
 
 int main(){
 
-    string b_string = "00000000000";
+    string b_string = "";
 
     long num = 100; // value to incode
 
     vector <long> vec{1,2,3,5,8,13,21,34,55,89,144}; // really will call for the function
-    
+
+    // number of values in
+
+    int vec_length = vec.size();
+
+    b_string.append(vec_length, '0');
 
     for ( int x = vec.size(); x > 0; x-- ){
 
@@ -33,7 +38,6 @@ int main(){
      cout << "String encoded: " << b_string.substr(0,10) << endl;
 
     
-  
 
 
 }
