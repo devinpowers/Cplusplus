@@ -24,8 +24,6 @@ string vec_2_str ( const vector<long>& v)
     return string_returned.substr(0, string_returned.size() - 2);
     
 
-    // loop thru the vector and turn it into one big string for all the happy kids
-    //"Each element in the string is "
 }
 
 

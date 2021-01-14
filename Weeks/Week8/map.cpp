@@ -30,20 +30,23 @@ void print_map(const map<K,V>& m){
 
 int main(){
   cout << boolalpha;
-  map<string, string> phone_book{ {"jill", "555-2323"},
-                                  {"bill", "555-1212"} };
+  map<string, string> phone_book{ {"jill", "555-2323"}, {"bill", "555-1212"} };
   map<string, string>::iterator iter;
 
+   
   // iter points to the pair
+  cout << "Iter Points to the pair:" << endl;
   for (iter = phone_book.begin(); iter != phone_book.end(); ++iter)
     cout << pair_to_string( *iter ) << ", ";
-  cout << endl;
+  cout << "\n" << endl;
 
   // element *is* the pair
+  cout << "Element is the pair: " << endl;
   for(pair<string,string> element : phone_book)
     cout << pair_to_string( element ) << ", ";
-  cout << endl;
+  cout << "\n" << endl;
 
+  cout << "Print Map: " << endl;
   print_map(phone_book);
   cout << endl;
   
@@ -88,3 +91,4 @@ int main(){
   }
   print_map(phone_book); 
 }
+
