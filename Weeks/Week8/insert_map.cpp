@@ -24,6 +24,8 @@ int main()
     // another way to insert is using array index notation
 
     nba[2] = "Kevin Durant";
+    nba[3] = "Nick Young";   // this would replace Steph Curry Above
+    nba[10] = "Trae Young";
 
 
     //print out our map 

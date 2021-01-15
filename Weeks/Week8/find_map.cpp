@@ -5,10 +5,6 @@ using std::cout; using std::endl;
 using std::map;
 #include<string>
 using std::string;
-
-
-
-using namespace std;
  
 int main()
 {
@@ -28,10 +24,13 @@ int main()
  
     // find() function finds the position
     // at which 3 is present
-    for (auto itr = mp.find(3); itr != mp.end(); itr++) {      // function from where it finds 3
+    for (auto itr = mp.find(3); itr != mp.end(); itr++) {  // function from where it finds 3
        
         cout << itr->first << '\t' << itr->second << '\n';
     }
  
     return 0;
 }
+
+
+

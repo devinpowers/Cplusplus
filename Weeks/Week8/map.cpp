@@ -22,18 +22,14 @@ string pair_to_string(pair<K,V> p){
 
 template<typename K, typename V>
 void print_map(const map<K,V>& m){
-  transform(m.cbegin(), m.cend(),
-	    ostream_iterator<string>(cout, ", "),
-	    pair_to_string<K,V>
-	    );
+  transform(m.cbegin(), m.cend(), ostream_iterator<string>(cout, ", "),pair_to_string<K,V>);
 }
 
 int main(){
-  cout << boolalpha;
+  cout << boolalpha; 
   map<string, string> phone_book{ {"jill", "555-2323"}, {"bill", "555-1212"} };
   map<string, string>::iterator iter;
 
-   
   // iter points to the pair
   cout << "Iter Points to the pair:" << endl;
   for (iter = phone_book.begin(); iter != phone_book.end(); ++iter)
@@ -46,14 +42,18 @@ int main(){
     cout << pair_to_string( element ) << ", ";
   cout << "\n" << endl;
 
+  // Send  to print_map function 
   cout << "Print Map: " << endl;
   print_map(phone_book);
-  cout << endl;
-  
+  cout << "\n" << endl;
+
+
   pair< map<string,string>::iterator, bool> result;
   result = phone_book.insert({"eric", "555-3434"});
-  cout << result.second << endl;
+  cout << "Result: " << result.second << endl;
   cout << pair_to_string( *(result.first) ) << endl;
+  cout << "\n" << endl;
+
   
   result = phone_book.insert(make_pair("eric", "555-4545") );
   cout << result.second << endl;
@@ -61,6 +61,8 @@ int main(){
 
   print_map(phone_book);
   cout << endl;
+  cout << "\n" << endl;
+
   
   iter = phone_book.find("eric");
   if (iter != phone_book.end() ){
@@ -69,14 +71,14 @@ int main(){
     // iter->first = "irving";
   }
   print_map(phone_book);
-  cout << endl;
+  cout << "\n" << endl;
 
   cout << phone_book["eric"] << endl;
   phone_book["eric"] = "555-5656";
   cout << phone_book["john"] << endl;
   phone_book["john"]= "555-3434";
   print_map(phone_book);
-  cout << endl;
+  cout << "\n" << endl;
 
   string number = phone_book["eric"];
   phone_book.erase("eric");
@@ -90,5 +92,7 @@ int main(){
       ++iter;
   }
   print_map(phone_book); 
+  cout << "\n" << endl;
+
 }
 
