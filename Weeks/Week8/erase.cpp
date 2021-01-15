@@ -5,8 +5,7 @@ using std::cout; using std::endl;
 using std::map;
 #include<string>
 using std::string;
-#include<utility>
-using std::pair; 
+
 
 int main()
 {
