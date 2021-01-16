@@ -47,23 +47,31 @@ int main(){
   print_map(phone_book);
   cout << "\n" << endl;
 
-
   pair< map<string,string>::iterator, bool> result;
-  result = phone_book.insert({"eric", "555-3434"});
-  cout << "Result: " << result.second << endl;
-  cout << pair_to_string( *(result.first) ) << endl;
+
+
+  result = phone_book.insert({"eric", "555-3434"}); 
+
+  cout << "Result: " << result.second << endl;   // we can use pair.second or pair.first
+  cout << "Pair to String: " << pair_to_string( *(result.first) ) << endl;
   cout << "\n" << endl;
 
   
   result = phone_book.insert(make_pair("eric", "555-4545") );
-  cout << result.second << endl;
-  cout << pair_to_string( *(result.first) ) << endl;
+  cout << "Result.second: " << result.second << endl;          // false as in failed to add
+  cout << "\n" << endl;
 
+  cout << "Pair to String: " <<  pair_to_string( *(result.first) ) << endl;
+
+  cout << "\n" << endl;
+
+  cout << "Print Map Again:  ";
   print_map(phone_book);
+
   cout << endl;
   cout << "\n" << endl;
 
-  
+    // change phone number once we find eric 
   iter = phone_book.find("eric");
   if (iter != phone_book.end() ){
     // *(iter).second = "555-4545";
@@ -73,24 +81,28 @@ int main(){
   print_map(phone_book);
   cout << "\n" << endl;
 
-  cout << phone_book["eric"] << endl;
-  phone_book["eric"] = "555-5656";
-  cout << phone_book["john"] << endl;
-  phone_book["john"]= "555-3434";
+  cout << "Phone_book[eric]: ";
+  cout << phone_book["eric"] << endl;   //print value of string
+  phone_book["eric"] = "555-5656";   
+  cout << "Change erics number to: ";     
+  cout << phone_book["eric"] << endl; 
+  cout << phone_book["john"] << endl;   // searching for a John, but there isnt one, so it will add it and use a default Value 
+  phone_book["john"]= "555-3434";     // change John number to
   print_map(phone_book);
   cout << "\n" << endl;
 
-  string number = phone_book["eric"];
-  phone_book.erase("eric");
-  phone_book["erik"] = number;
+  string number = phone_book["eric"];      // store erics number 
+  phone_book.erase("eric");               //erase key
+  phone_book["erik"] = number;            // add back eric and his number
 
   // no increment, done in the body
   for(iter = phone_book.begin(); iter != phone_book.end(); ){
     if (iter->first[0] == 'j')
-      iter = phone_book.erase(iter); // returns next element
+      iter = phone_book.erase(iter); // returns next element           // if first letter in key is 'j' erase the key and valuye
     else
       ++iter;
   }
+  cout << "Print Map: ";
   print_map(phone_book); 
   cout << "\n" << endl;
 
