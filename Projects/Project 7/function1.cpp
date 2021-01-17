@@ -17,6 +17,17 @@ using ServerData = map<string, set<string>>;  // ServerData is a "Type"
 ServerData server; // heres our "actual server that we will work with"
 
 
+void print_server2 ( ServerData &server_in ) {
+
+
+    for(auto it=server_in.begin();it!=server_in.end();++it)  //Loop to iterate over map elements
+    {
+        cout<<it->first<<": ";    
+        for(auto it1=it->second.begin(); it1 !=it->second.end(); it1++)
+            cout<<*it1<<", ";
+        cout<<"\n";   
+}
+}
 
 void print_server ( ServerData &server_passed){
     //print server
@@ -57,8 +68,6 @@ bool AddConnection(ServerData &sd, string sn, string un)
         sd.insert(make_pair(sn, temp));
         return true;
     }
-
-    
 }
 
 int main()
@@ -75,10 +84,20 @@ int main()
     AddConnection (server, "Server1", "Arod");
     AddConnection (server, "Server1", "bob");
     AddConnection (server, "Server1", "Carrie");
+    AddConnection (server, "Server1", "mike");
+    AddConnection (server, "Server1", "bida");
+    AddConnection (server, "Server9", "Jesus");
+    AddConnection (server, "Server9", "Devil");
+    AddConnection (server, "Server3", "Rose");
+
 
     // Call to print server
 
-    cout << "Servers and users:" << endl;
-    print_server(server);
+    cout << "Servers and users, using iterators and fun stuff: " << endl;
+    //print_server(server);
+    cout << "other print function" << endl;
+
+    print_server2(server);
 
 }
+

@@ -13,34 +13,28 @@ using std::map;
 using std::transform;
 using std::find;
 #include<iterator>
+#include <fstream>
+using std::ifstream;
 
-void insertValue(map<string, set<string> >& myMap, string const& key, string const& value)
-{
-   // Check whether there is already a set given the key.
-   // If so, insert to the existing set.
-   // Otherwise, create a set and add it to the map.
-   map<string, set<string> >::iterator found = myMap.find(key);
-   if ( found != myMap.end() )
-   {
-      cout << "Adding '" << value << "' to an existing set of " << key << "s.\n";
-      found->second.insert(value);
-   }
-   else
-   {
-      cout << "Adding '" << value << "' to a new set of " << key << "s.\n";
-      set<string> temp;
-      temp.insert(value);
-      myMap.insert(make_pair(key, temp));
-   }
+void print_strings (string a, string b, string c)
+{  
+   cout << a << ": " << b << ": " << c << endl;
+
+
 }
 
-int main()
-{
-   map<string, set<string> > mymap;
-   insertValue(mymap, "car", "orange");
-   insertValue(mymap, "car", "blue");
-   insertValue(mymap, "car", "red");
-   insertValue(mymap, "truck", "orange");
-   insertValue(mymap, "truck", "blue");
-   return 0;
+int main(){
+   std::string line;
+   std::ifstream infile("prac.txt");
+
+   while (std::getline(infile, line))
+   {
+      std::istringstream iss(line);
+      string a, b, c;
+      if (!(iss >> a >> b >> c)) { break; } // error
+
+      print_strings (a,b,c);
+}
+
+
 }
