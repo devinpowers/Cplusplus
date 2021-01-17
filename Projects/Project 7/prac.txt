@@ -1,0 +1,5 @@
+devin join server1
+kobe join server 2
+lebron join server 1
+kobe join server 2
+paul join server 3
