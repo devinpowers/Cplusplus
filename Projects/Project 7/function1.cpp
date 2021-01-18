@@ -18,7 +18,7 @@ ServerData server; // heres our "actual server that we will work with"
 
 
 void print_server2 ( ServerData &server_in ) {
-
+// using iterators to print
 
     for(auto it=server_in.begin();it!=server_in.end();++it)  //Loop to iterate over map elements
     {
@@ -51,10 +51,15 @@ bool AddConnection(ServerData &sd, string sn, string un)
     //Check if ther server_name sn is already in, if so
     // add user to server
     //otherwise we create a new set and add it to the map
+    //.find will return the highest index which is index of .end()
+    // if it doesnt find our server, that why it will evaluate to !=,
+    // because if it's not equal, it means the server doesnt exist
+    // if find, actually finds the server, that will evaluate to true
+    // which means it exists and the name will be
 
-    ServerData:: iterator found = sd.find(sn);
+    ServerData:: iterator found = sd.find(sn);     
     if (found != sd.end() )
-    {
+    {   
         // then we have to insert
         found -> second.insert(un);
         return true;
@@ -69,6 +74,7 @@ bool AddConnection(ServerData &sd, string sn, string un)
         return true;
     }
 }
+
 
 int main()
 {   
@@ -97,7 +103,7 @@ int main()
     //print_server(server);
     cout << "other print function" << endl;
 
-    print_server2(server);
+    print_server(server);
 
 }
 
