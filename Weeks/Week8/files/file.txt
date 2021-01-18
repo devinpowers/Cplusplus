@@ -5,3 +5,5 @@ kobe join server2
 paul leaving server3
 ryan leaving server3
 tommas join server1
+
+

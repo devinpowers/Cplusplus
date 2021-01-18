@@ -11,13 +11,17 @@ using std::pair; using std::make_pair;
 using std::map;
 #include<set>
 using std::set;
+#include<fstream>
+using std::ifstream;
+using std::invalid_argument;
+using std::domain_error;
 
 using ServerData = map<string, set<string>>;  // ServerData is a "Type"
+using UserName = const string &;
+using ServerName = const string &;
+//ServerData server; 
 
-ServerData server; // heres our "actual server that we will work with"
-
-
-void print_server2 ( ServerData &server_in ) {
+void print_server ( ServerData &server_in ) {
 // using iterators to print
 
     for(auto it=server_in.begin();it!=server_in.end();++it)  //Loop to iterate over map elements
@@ -28,24 +32,6 @@ void print_server2 ( ServerData &server_in ) {
         cout<<"\n";   
     }
 }
-
-void print_server ( ServerData &server_passed){
-    //print server
-
-    for(auto const& pair : server_passed) {
-
-        cout << pair.first << " : ";
-        for(auto const& elem : pair.second) {
-            cout << elem << ", ";
-        }
-        cout << "\n";
-    }
-   
-
-}
-
-
-
 
 bool AddConnection(ServerData &sd, string sn, string un)
 {
@@ -78,34 +64,67 @@ bool AddConnection(ServerData &sd, string sn, string un)
 }
 
 
-int main()
-{   
-    // send user_name  and server to  addconections
 
-    // add conections 
-    AddConnection (server, "Server1", "Devin");
-    AddConnection (server, "Server3", "Paul");
-    AddConnection (server, "Server3", "Chris");
-    AddConnection (server, "Server2", "Ben");
-    AddConnection (server, "Server1", "Austin");
-    AddConnection (server, "Server1", "Tony");
-    AddConnection (server, "Server1", "Arod");
-    AddConnection (server, "Server1", "bob");
-    AddConnection (server, "Server1", "Carrie");
-    AddConnection (server, "Server1", "mike");
-    AddConnection (server, "Server1", "bida");
-    AddConnection (server, "Server9", "Jesus");
-    AddConnection (server, "Server9", "Devil");
-    AddConnection (server, "Server3", "Rose");
+ServerData ParseServerData (const std::string &fname){
 
 
-    // Call to print server
 
-    cout << "Servers and users, using iterators and fun stuff: " << endl;
-    //print_server(server);
-    cout << "other print function" << endl;
+    ServerData sd; // heres are server data structure that we will add to!
 
-    print_server2(server);
+    ifstream inFile(fname);
+
+
+    bool result; // if we were sucessful
+
+    // throw an error if no file is found!!
+    if (!inFile){
+        throw std::invalid_argument("invalid argument");
+    }
+    if (inFile.is_open()){
+
+        string username, command, server_name;
+
+        while (inFile >> username >> command >> server_name ){
+
+
+            if ( command != "join" && command != "leaving"){
+                cout << "ERRORRRRR!!!" << endl;
+            }
+
+            if ( command == "join")
+            {
+                // connect to server
+
+                result = AddConnection(sd, server_name, username );
+                cout << "Connected " << username << " to server named: " << server_name << endl;
+            }
+
+            else if (command == "leaving"){
+
+                cout << "Disconnected " << username << " from server named: " << server_name << endl;
+                /// disconnect from the server code 
+            }
+           
+        
+        }
+    }
+
+    inFile.close();
+
+    cout << "Server so Far: ";
+    print_server(sd);
+
+    return sd; //return our server
+
 
 }
 
+
+int main(){
+
+    // open file and send 
+
+    auto server_data = ParseServerData("prac.txt");
+
+
+}
