@@ -63,7 +63,28 @@ bool AddConnection(ServerData &sd, string sn, string un)
     }
 }
 
+bool DeleteConnection (ServerData &sd, string sn, string un){
 
+    bool result;
+
+    ServerData:: iterator found = sd.find(sn);
+
+    if (found != sd.end() )
+    {
+        cout << un << " is Leaving : " << sn << endl;
+        //found the sever, lets remove the user
+        found -> second.erase(un);
+        result = true;
+    }
+    else
+    {
+        result = false;
+    }
+    
+    
+    return result;
+
+}
 
 ServerData ParseServerData (const std::string &fname){
 
@@ -96,22 +117,22 @@ ServerData ParseServerData (const std::string &fname){
                 // connect to server
 
                 result = AddConnection(sd, server_name, username );
-                cout << "Connected " << username << " to server named: " << server_name << endl;
+                //cout << "Connected " << username << " to server named: " << server_name << endl;
             }
 
             else if (command == "leaving"){
 
-                cout << "Disconnected " << username << " from server named: " << server_name << endl;
-                /// disconnect from the server code 
+                //out << "Disconnected " << username << " from server named: " << server_name << endl;
+                result = DeleteConnection (sd, server_name, username );
             }
            
         
         }
     }
 
-    inFile.close();
+    inFile.close();  //close the file
 
-    cout << "Server so Far: ";
+    cout << "Server so Far: " << "\n";
     print_server(sd);
 
     return sd; //return our server
