@@ -269,7 +269,7 @@ int main(){
     //auto practice_set = HasConnections(server_data, user);
 
     //cout << "Our User: " << user << " is connected to the following servers: " << endl;
-    ServerName server_ =  "server10";
+    ServerName server_ =  "server1";
 
     auto practice_set = HasUsers(server_data, server_);
 
