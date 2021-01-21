@@ -10,6 +10,8 @@ using std::pair; using std::make_pair;
 #include<map>   
 using std::map;
 #include<set>
+#include<vector>
+using std::vector;
 using std::set;
 #include<fstream>
 using std::ifstream;
@@ -18,6 +20,10 @@ using std::domain_error;
 using std::set_intersection;
 using std::set_symmetric_difference;
 using std::copy_n;
+using std::inserter;
+#include <algorithm>
+using std::sort;
+
 
 using ServerData = map<string, set<string>>;
 
@@ -38,17 +44,24 @@ void print_server ( ServerData &server_in ) {
 int main(){
 
     //string server1, server2;
-    set<string> set1, set2, set_comp;
+    set<string> set1, set2;
 
     // add to two sets
 
     set1.insert("Devin");
     set1.insert("Bob");
     set1.insert("Nick");
+    set1.insert("Abe");
+    set1.insert("Zoe");
+    set1.insert("Alex");
 
     set2.insert("Robert");
     set2.insert("Chris");
     set2.insert("Noah");
+    set2.insert("Devin");
+    set2.insert("Abe");
+
+
 
     // lets create our custom data structure for map
 
@@ -57,20 +70,81 @@ int main(){
     map_["Server1"] = set1;
     map_["Server2"] = set2;
 
-    // test to see if our stategy works!
 
-    cout << "Print: " << endl;
+    set<string> new_set1, new_set2;
 
-    print_server(map_);
-    // now I need to Copy to compare the two sets
+    set_intersection (set1.begin(), set1.end(), set2.begin(), set2.end(), inserter( new_set1, new_set1.begin()));
+
+    new_set2 = new_set1;
+    
+    // Lets try and Print our two new_set1 and new_set2
+
+    cout << "Set 1: " << endl;
+    for (auto element : new_set1){
+        cout << element << "\n";
+    }
+
+    cout << "Set 2: " << endl;
+    for (auto element : new_set2){
+        cout << element << "\n";
+    }
+
+    // can we create a set or a list with the o
+    
+    vector <string> new_vec;
+
+    set_symmetric_difference (set1.begin(), set1.end(), set2.begin(), set2.end(), inserter( new_vec, new_vec.begin()));
+
+    // now we can try and print our new_vec to see if it worked
+
+    sort(new_vec.begin(), new_vec.end());
+
+    cout << "New Vector sorted: " << endl;
+    for (auto element : new_vec ) {
+        cout << element << ", ";
+    }
+
+    // everything in the vector is now sorted so we just gotta add them to our "new_set1" and "new_set2"
+
+    cout << "vector Size? " << new_vec.size() << endl;
+
+    // for loop to insert vector elements into sets?
+
+    for ( int x = new_vec; x < new_vec.size()/2 : x++ )
+    {
+        // insert
+    
+    }
 
 
 
-    // Lets compare the two sets
-    set<string>:: iterator it, st;
-    it = set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(), set_comp.begin());
+    // now that we have two set with the same names, we can sort our vector and send one
+    // half to one vector and the other half to the other vector
 
-    cout << "Intersecting Set Elements are : " << (it - set_comp.begin() ) << "elements:";
+
+
+
+    cout << " " << endl;
+
+
+
+
+   cout << "Printing Map before Changing Shit around " << endl;
+
+   print_server(map_);
+
+   // lets see if I can update the Map Via here
+
+
+   // YESSSSSSS IT DOESS
+
+   map_["Server1"] = new_set1;
+   map_["Server2"] = new_set2;
+
+   cout << " Lets see if this updates the MAP!!!" << endl;
+    
+   
+   print_server(map_);
 
 
 
