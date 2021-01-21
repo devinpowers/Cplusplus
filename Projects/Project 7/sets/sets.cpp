@@ -103,33 +103,58 @@ int main(){
     for (auto element : new_vec ) {
         cout << element << ", ";
     }
+    cout << endl;
 
     // everything in the vector is now sorted so we just gotta add them to our "new_set1" and "new_set2"
 
     cout << "vector Size? " << new_vec.size() << endl;
 
     // for loop to insert vector elements into sets?
-
-    for ( int x = new_vec; x < new_vec.size()/2 : x++ )
-    {
-        // insert
-    
-    }
-
-
-
     // now that we have two set with the same names, we can sort our vector and send one
     // half to one vector and the other half to the other vector
+
+    // adjust the vector size by seeing if its divide
+    int vec_size_half = new_vec.size()/2;
+
+    cout << "VECTOR SIZE HALF:  "<< vec_size_half << endl; 
+    if (new_vec.size() % 2 != 0)
+    {
+        vec_size_half += 1;
+    }
+    // now we can loop over the the new_vec and add elements to sets 1 and 2
+
+    cout << "TESTING???" << endl;
+
+
+    vector <string>:: iterator it;
+
+    for (it = new_vec.begin(); it != new_vec.end(); it++ )
+
+    { 
+        // insert into sets
+        new_set1.insert(*it);
+    }
+
+    
+
+    
+
+
 
 
 
 
     cout << " " << endl;
 
+    cout << "Set 1: " << endl;
+    for (auto element : new_set1){
+        cout << element << "\n";
+    }
 
 
 
-   cout << "Printing Map before Changing Shit around " << endl;
+
+   //cout << "Printing Map before Changing Shit around " << endl;
 
    print_server(map_);
 
