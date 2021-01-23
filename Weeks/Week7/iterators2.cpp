@@ -34,10 +34,11 @@ int main (){
   vector<long> v{1,2,3,4,5,6,7,8,9,10};
   string s = "abcd1234";  
 
-  cout << "initial:\n" << vec_to_string(v) << endl;
+  cout << "initial!!!!!:\n" << vec_to_string(v) << endl;
   
   //rev = rev_vector(v);
 
+  cout << "Reverse Vector: ";
   auto rev = rev_vector(v);
   cout << "reversed vector\n" <<  vec_to_string(rev) << endl;
 
@@ -52,16 +53,20 @@ int main (){
   cout << endl;
 
   /* range-for and iter loop equivalents */
-  
+  cout << "Copy THing: " << endl;
+
   // copy, change not reflected
   for (auto element : v)
+  {
     element += 1;
-  
+  }
+
   for (auto pos=v.begin(), end=v.end(); pos != end; ++pos){
     auto element = *pos;
     element += 1;
   }
   cout <<"first version\n" << vec_to_string(v)<<endl;
+
 
   // reference, change is reflected
   for (auto &element : v)
@@ -71,6 +76,13 @@ int main (){
     auto &element = *pos;
     element += 1;
   }
+  // print vector:
+  vector<long>::iterator itr;
+  for (itr = v.begin(); itr != v.end(); itr++ )
+  {
+    cout << *itr << endl;
+  }
+  
   cout <<"second version (done twice)\n" << vec_to_string(v)<<endl;  
 
   // const reference, can't modify
