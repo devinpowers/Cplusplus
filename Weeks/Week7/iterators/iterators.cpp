@@ -1,25 +1,30 @@
 
 #include<iostream>
-using std::cout; using std::endl;
-#include<vector>
-using std::vector;
+using std::cout; using std::endl; using std::boolalpha;
 #include<string>
 using std::string;
-#include<utility>
-using std::pair; using std::make_pair;
+#include<map>
+using std::map;
 
 int main()
 {
-    
-    vector<int> v = {1,2,3,4,5};
+    cout << boolalpha;
+    map < int, string > map_name;
 
-    for ( auto itr : v )
-    {
-        cout << itr << endl;
-    }
+    map_name.insert({3, "Chris Paul"});
+    map_name.insert({23, "Michael Jordan"});
+
+    cout << "The Size of the Map is: " << map_name.size() << endl;
+
+    cout << "Is the Map Empty? : " << map_name.empty() << endl;
+
+    //Lets Clear the Map!
+
+    map_name.clear();
+
+    cout << "Is the Map Empty now? " << map_name.empty() << endl;
+
 }
-
-
 
 
 
