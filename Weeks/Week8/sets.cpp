@@ -42,7 +42,7 @@ int main (){
     cout << "Couldn't insert mommy"<<endl;
 
   for(const string& element : family)
-    cout << element << ",";
+    cout << element << ","; 
   cout << endl;
 
   cout << set_to_string(family) << endl;

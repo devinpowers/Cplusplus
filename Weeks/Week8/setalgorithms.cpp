@@ -28,25 +28,21 @@ int main (){
   iter = s1.find(5);
 
   cout << "Union:" << endl;
-  set_union(s1.begin(), s1.end(),
-	    s2.begin(), s2.end(),
-	    os_itr);
+  set_union(s1.begin(), s1.end(), s2.begin(), s2.end(), os_itr);
 
   cout << '\n' << "Intersection:" << endl;
-  set_intersection(s1.begin(), s1.end(),
-		   s2.begin(), s2.end(),
-		   os_itr);
+  set_intersection(s1.begin(), s1.end(), s2.begin(), s2.end(), os_itr);
 
   cout << "\n" << "Difference:" << endl;
-  set_difference(s1.begin(), s1.end(),
-		 s2.begin(), s2.end(),
-		 os_itr);
+  set_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), os_itr);
 
   cout << '\n' << "Symmetric Difference:" << endl;
-  set_symmetric_difference(s1.begin(), s1.end(),
-			   s2.begin(), s2.end(),
-			   os_itr);
+  set_symmetric_difference(s1.begin(), s1.end(), s2.begin(), s2.end(), os_itr);
   cout << endl;
+
+
+
+
   
   // works with other STL containers as well
   // repeated elements are interesting
@@ -59,24 +55,17 @@ int main (){
   
   cout << "\nVectors with repeats"<<endl;
   cout << "Union:" << endl;
-  set_union(v1.begin(), v1.end(),
-	    v2.begin(), v2.end(),
-	    os_itr);
+  set_union(v1.begin(), v1.end(),v2.begin(), v2.end(), os_itr);
 
   cout << '\n' << "Intersection:" << endl;
-  set_intersection(v1.begin(), v1.end(),
-		   v2.begin(), v2.end(),
-		   os_itr);
+  set_intersection(v1.begin(), v1.end(),v2.begin(), v2.end(), os_itr);
 
   cout << "\n" << "Difference:" << endl;
-  set_difference(v1.begin(), v1.end(),
-		 v2.begin(), v2.end(),
-		 os_itr);
+  set_difference(v1.begin(), v1.end(),v2.begin(), v2.end(),nos_itr);
 
   cout << '\n' << "Symmetric Difference:" << endl;
-  set_symmetric_difference(v1.begin(), v1.end(),
-			   v2.begin(), v2.end(),
-			   os_itr);
+  set_symmetric_difference(v1.begin(), v1.end(),v2.begin(), v2.end(), os_itr);
   cout << endl;
+  
 }
 
