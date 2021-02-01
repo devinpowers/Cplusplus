@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 
-#include "15.1-clock.h"
+#include "clock.h"
 
 using std::cout; using std::endl;
 using std::string;
