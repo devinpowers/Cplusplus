@@ -1,25 +1,31 @@
+
 #include <iostream>
 using std::cout; using std::endl;
 #include<string>
 using std::string;
 
 
+//getter and setters
 
-// represents Blueprint
+
+
 struct Employee{
-    // inside the class we need to put attributes and behaviors
-public:
+
+private:
     string Name;
     string Company;
     int Age;
 
+public:
+
     void Introduceyourself(){
+
+        // method to introduce the Employee
 
         cout << "Hello my name is " << Name << endl;
         cout << "I am "  << Age << " years old." << endl;
         cout << "I work for " << Company << endl;
     }
-
     Employee(string name, string company, int age){
 
         Name = name;
@@ -42,5 +48,3 @@ int main()
  
 
 }
-
-// constructor doesnt have a return type
