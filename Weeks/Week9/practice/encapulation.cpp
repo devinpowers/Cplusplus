@@ -6,20 +6,24 @@ using std::string;
 
 
 struct AbstractEmployee {
-    virtual void AskForPromotion() = 0;
+    // serve as a contract
+    virtual void AskForPromotion() = 0;       
+
 };
 
 
 struct Employee: AbstractEmployee{
 
 private:
-    string Name;
+
     string Company;
     string Email;
     int Age;
+protected:
+    string Name;
 
 public:
-    //setter
+    
     void setName(string name) { //setter
         Name = name;
     }
@@ -71,28 +75,88 @@ public:
         }
     
     void AskForPromotion(){
+
+        // provide logic
         
+        if (Age > 30){
+            cout << Name << " got promoted!! " << endl;
+        }
+        else
+        {
+            cout << Name << " sorry NO promotion for you!" << endl;
+        }
+        
+    }
+    
+    virtual void Work(){
+
+        cout << Name << " is checking email, task backlog, performing tasks....." << endl;
+
     }
 };
 
+struct Developer:public Employee {
+
+public: 
+    string  FavProgrammingLanguage;
+
+    Developer(string name, string company, string email ,int age, string favProgrammingLanguage)
+
+        :Employee(name, company, email, age)
+    {
+        FavProgrammingLanguage = favProgrammingLanguage;
+    }
+    void FixBug(){
+
+        cout << Name << " Fixed bug using " << FavProgrammingLanguage << endl;
+
+    }
+
+    void Work() {
+        cout << Name << " is writing " << FavProgrammingLanguage <<  "code " << endl;
+    }
+
+};
+
+
+struct Teacher: public Employee {
+
+    string Subject;
+
+    void PrepareLesson(){
+        cout << Name << " is preparing " << Subject << " lesson" << endl;
+    }
+    Teacher(string name, string company, string email ,int age, string subject)
+
+        :Employee(name, company, email, age)
+    
+    {
+        Subject = subject;
+
+    }
+
+    void Work() {
+        cout << Name << " is teaching " << Subject << endl;
+    }
+
+};
+
 int main()
-{
-    Employee employee1 = Employee("Devin", "ADAC", "powers88@msu.edu", 25);
-    //employee1.IntroduceYourself();
+{      
 
-    //Employee employee2 = Employee("Bob", "Apple", "bob23@amazon.com", 67);
-    //employee2.IntroduceYourself();
+    Developer d = Developer ("Kobe", "Lakers", "braynt@lakers", 15, "C++");
 
-    employee1.setAge(12);
-    employee1.setCompany("Bobs Construction Company");
+    Teacher t = Teacher("Jacob", "Cool School", "jack@school.com", 34, "Math");
 
-    cout << employee1.getName() << " is " << employee1.getAge() << " years old! "<< endl;
+    Employee *e1 = &d; //hold reference to derived class
 
-    cout << employee1.getName() << " works at: " << employee1.getCompany() << endl;
+    Employee *e2 = &t;
 
-    employee1.setCompany("ADAC");
-    // after changing the Companies name:
-    cout << employee1.getName() << " works at: " << employee1.getCompany() << endl;
+    e1->Work();
+    e2->Work();
 
-
+    e1->AskForPromotion();
+    e2->AskForPromotion();
 }
+
+
