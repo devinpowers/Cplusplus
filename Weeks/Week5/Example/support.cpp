@@ -3,7 +3,7 @@ using std::cout; using std::endl; using std::cin;
 #include <cmath>
 using std::sqrt;
 
-#include "09.1-support.h"
+#include "support.h"
 
 /*
   Purpose:  Accept the three coefficients of 

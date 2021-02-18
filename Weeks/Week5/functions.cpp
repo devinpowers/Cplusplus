@@ -1,14 +1,15 @@
 
 #include<iostream>
-using std::cout; using std::endl; using std::cin; using std::fixed;
+using std::cout; using std::endl;
+using std::cin; using std::fixed;
 #include<iomanip>
 using std::setprecision;
 
 
-template <typename tmplt_type>
-void swap (tmplt_type &first, tmplt_type &second) {
+template <typename template_type>
+void swap (template_type &first, template_type &second) {
   cout << "This is a template same type swap" << endl;
-  tmplt_type temp;
+  template_type temp;
   temp = first;
   first = second;
   second = temp;

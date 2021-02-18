@@ -38,8 +38,6 @@ int main(){
      cout << "String encoded: " << b_string.substr(0,10) << endl;
 
     
-
-
 }
 
    

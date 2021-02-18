@@ -17,3 +17,5 @@ string encode(string msg, string key1, string key2);
 string decode(string msg, string key1, string key2);
 
 #endif
+
+
