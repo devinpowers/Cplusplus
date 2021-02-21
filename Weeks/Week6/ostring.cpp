@@ -11,12 +11,11 @@ using std::vector;
 using std::ostringstream;
 
 template<typename T>
-string vector_to_string(const vector<T>& v){
+string vector_to_string(const vector<T>& v) // can pass any types of vectors like ints, longs, and strings
+{
+
   T max_val = T();
   ostringstream oss;  
-
-  // std::max would be better
-  // find the max
   for (auto val : v)
     if (val > max_val)
       max_val = val;
@@ -53,7 +52,9 @@ int main () {
   // vector of string example
   vector<string> s;
   for(int i = 1; i< 15; i++)
+
     s.push_back( string(i, static_cast<char>('a'+i) ) );
+  
 
   cout << vector_to_string(s) << endl;
 }

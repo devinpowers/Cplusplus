@@ -33,6 +33,7 @@ void print_vector (vector<long> vector)
 }
 
 // Function 2:
+
 vector <long> gen_nstep_vector (long limit, long nstep)
 {
     vector <long> vec{1,1}; // initial vector with 2 seed values 
@@ -44,7 +45,7 @@ vector <long> gen_nstep_vector (long limit, long nstep)
        vec.push_back(vec.back()*2);               // back*2 again so 2*2, vec{1,1,2,4}.... etc
     }                                            // Seed numbers required to Start the Sequence
 
-    // lets add the 
+    // lets add the next values
     while (next_element <= limit )
     {
         for (int n = vec.size() - nstep; n < vec.size(); n++ )
@@ -63,18 +64,20 @@ vector <long> gen_nstep_vector (long limit, long nstep)
 
 
 
+
+
 int main(){
 
     vector <long> vector2; 
     
-    long steps = 4;
-    long limit = 1000;
+    long steps = 6;
+    long limit = 5000;
 
     vector2 = gen_nstep_vector(limit, steps);   // put in limit and n steps into funtion
 
     //can we print our return vector? lets pass it to our function 1 where we turned a vector into a string!!
     cout <<"\n";
-    cout << "Our new string for " << steps << " steps is: " << vec_2_str(vector2) << endl;
+    cout << "Our new string for " << steps << " steps is: " << vec_2_str(vector2) << endl;   // convert vector to a string to print
     cout << "\n";
 
 
