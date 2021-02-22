@@ -1,3 +1,5 @@
+
+
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -5,15 +7,25 @@ using std::endl;
 using std::vector;
 
 int main()
-
 {
-    vector<int> data = {1, 2, 3};
+    vector<int> my_ints { 1, 2, 3, 4, 5};
 
-    data.push_back(4);
+    for (auto element : my_ints){
 
-    cout << "First Index: " << data[0] << endl;
-    cout << "Second Index: " << data[1] << endl;
-    cout << "Third Index: " << data[2] << endl;
-    cout << "Fourth index: " << data[3] << endl;
+        cout << element << " : ";
+    }
+    cout << endl;
+
+    for (auto & x : my_ints){
+
+        x += 2;
+    }
+
+    for (auto element : my_ints)
+    {
+        cout << element << " : ";
+    }
+    cout << endl;
+   
 
 }
