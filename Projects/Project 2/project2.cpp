@@ -3,7 +3,14 @@
 
 #include <iostream>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+
+
+//* example of hyper perfect numbers
+
+// 1950625 ( k = 4), 159841 (k= 10), 1570153 (k  12)
 
 
 int main()
@@ -19,10 +26,6 @@ int main()
     cout <<  "Enter a number: ";
 
     cin >> input_number;
-
-    // cout << "Please enter a k value to check: ";
-
-    // cin >> k_factor;
 
 
     if (input_number < 6)
