@@ -22,6 +22,7 @@ using std::ostream_iterator;
 
 int main()
 {
+    // Map and Key
     map < string, set <string> > mymap;
     set <string> s;
 
@@ -37,5 +38,7 @@ int main()
         s_ref.insert("blue")
     }
     
+    return 0;
 
 }
+
