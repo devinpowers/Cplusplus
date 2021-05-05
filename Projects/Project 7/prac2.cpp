@@ -1,6 +1,5 @@
 
 
-
 #include<iostream>
 using std::cout; using std::endl; using std::boolalpha;
 #include<string>
@@ -35,10 +34,12 @@ int main()
     if (mymap.find("car") != mymap.end())
     {
         set<string>& s_ref = mymap["car"];
-        s_ref.insert("blue")
+        s_ref.insert("blue");
     }
     
     return 0;
+
+    cout << "Biden Crime Family is Stealing the election! " << endl;
 
 }
 

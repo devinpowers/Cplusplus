@@ -1,8 +1,12 @@
 
 #include <iostream>
+using std::cout;
+using std::endl;
+
+
 #include <string>
 
-using namespace std;
+//Function that take in two paramters (two integar values) and then returns a int!
 
 int multiply(int a, int b)
  {
@@ -13,11 +17,12 @@ int main()
 {
   int sum;
 
+  // Call function and pass parameters into it. set equal to Integar value named sum!
   sum = multiply(100, 5);
 
-  cout << "100 * 5 = " << sum << endl;
+  cout << "Pass Integers into Function and here is the output: " << endl;
 
-  return 0;
+  cout << "100 * 5 = " << sum << endl;
 
 }
 
