@@ -1,9 +1,11 @@
+
+
 #include<iostream>
 using std::cout; using std::endl;
 #include<string>
 using std::string;
 
-#include "16.1-clock.h"
+#include "clock.h"
 
 int main(){
   Clock my_clk;         // default ctor
@@ -17,3 +19,4 @@ int main(){
   my_clk.add_minutes(10);
   cout << clk_to_string(my_clk) << endl;
 }
+

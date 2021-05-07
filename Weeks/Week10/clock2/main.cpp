@@ -3,7 +3,7 @@ using std::cout; using std::endl;
 #include<string>
 using std::string;
 
-#include "16.2-clock.h"
+#include "clock.h"
 
 int main(){
     Clock my_clk;               // default ctor
@@ -29,3 +29,5 @@ int main(){
     // cout << clk_to_string("11:11:PM")); 
     cout << endl;
 }
+
+

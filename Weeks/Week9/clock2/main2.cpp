@@ -3,7 +3,7 @@ using std::cout;using std::endl;
 #include<string>
 using std::string;
 
-#include "15.2-clock.h"
+#include "clock2.h"
 
 int main(){
   Clock my_clk;
@@ -15,3 +15,5 @@ int main(){
   cout << clk_to_string(my_clk)
        << endl;
 }
+
+

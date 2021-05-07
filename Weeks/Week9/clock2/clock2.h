@@ -1,3 +1,5 @@
+
+
 #ifndef CLOCK_H
 #define CLOCK_H
 
@@ -15,3 +17,4 @@ struct Clock{
 string clk_to_string(const Clock &);
 
 #endif
+

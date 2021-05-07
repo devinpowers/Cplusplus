@@ -1,3 +1,5 @@
+
+
 #include<string>
 using std::string;
 #include<sstream>
@@ -20,9 +22,10 @@ void Clock::add_minutes(int min){
 
 // convert clock to string
 string clk_to_string(const Clock &c){
+
   ostringstream oss;
-  oss << "Hours:"<<c.hours
-      <<", Minutes:"<<c.minutes
-      <<", Period:"<<c.period;
+  oss << "Hours:"<< c.hours <<", Minutes:"<<c.minutes <<", Period:"<<c.period;
   return oss.str();
+
 }
+

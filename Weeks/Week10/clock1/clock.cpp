@@ -3,7 +3,7 @@ using std::string;
 #include<sstream>
 using std::ostringstream;
 
-#include "16.1-clock.h"
+#include "clock.h"
 
 // default constructor
 Clock::Clock(){
@@ -37,3 +37,5 @@ string clk_to_string(const Clock &c){
       <<c.minutes<<", Period:"<<c.period;
   return oss.str();
 }
+
+

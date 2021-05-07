@@ -37,7 +37,7 @@ int main(){
 				cout << "\n is not quadratic." << endl;
 				break;
 		}
-		input_status = get_coefficients( A, B, C );
+		 input_status = get_coefficients( A, B, C );
     }
 }
 

@@ -20,7 +20,6 @@ int main (){
   ref_c.minutes = 10;
   ptr_c->period = "PM";
   
-  cout << "clk1:"
-       << print_clk(clk1)
-       << endl;
+  // Call function to print our clock structure !!
+  cout << "clk1:" << print_clk(clk1) << endl;
 }

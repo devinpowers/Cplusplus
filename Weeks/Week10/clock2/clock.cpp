@@ -3,7 +3,7 @@ using std::string;
 #include<sstream>
 using std::ostringstream; using std::istringstream;
 
-#include "16.2-clock.h"
+#include "clock.h"
 
 // string constructor
 Clock::Clock(string s){
