@@ -1,62 +1,40 @@
-
-#include <iostream>
-#include <string>
-#include <utility>
-#include <fstream>
-#include <algorithm>
-using std::string; 
-using std::ifstream; using std::cout; using std::endl; using std::to_string;
-using std::invalid_argument;
-
-// create custom data struture here
+#include<iostream>
+using std::endl;
+#include<fstream>
+using std::ifstream;
+#include<vector>
+using std::vector;
+#include<string>
+using std::string;
+using std::cout;
 
 
-
-void ParseFileData(const string &fname){
-
-
-    ifstream inFile(fname);   //ifstream is the txt file object?
-
-    bool result;
-
-    //error handling for no file found
-    if(!inFile){
-        throw std::invalid_argument("invalid argument DUDE!!");
+void print_vector ( vector<string> & v){
+    // print vector passed it
+    for (auto name : v){
+        cout << name << endl;
     }
-
-    if (inFile.is_open()){
-
-        string username, command, server_name;
-
-        while (inFile >> username >> command >> server_name ){ //each name/command one at a time
-
-            if ( command != "join" && command != "leaving")
-            {
-                cout << "ERRORRRRR!!!" << endl;
-            }
-            // else tho
-            if ( command == "join")
-            {
-                cout << "Joining:  " << username << " : " << server_name << endl;
-                //result = //send to add connection
-            }
-            else if (command == "leaving"){
-
-                cout << "Leaving " << username << " : " << server_name << endl;
-            }
-
-        }
-        
-    }
-    inFile.close(); // close file
-
+    cout << "Finished" << endl;
 }
+
 
 int main(){
 
-    // send file to our function
-    ParseFileData("file.txt");
+    ifstream file; // Create a File Object
+
+    file.open("file.txt");
+
+    vector<string> names; // vector to store the names
+    string input; // where the names will be tempoary stored
+
+    while( file >> input) // will evaluate as True if the read is sucessful
+    {
+        names.push_back(input);
+    }
+
+    cout << "Done" << endl;
+    // Lets pass our vector to the print_vector function to print
+
+    print_vector(names);
 }
-
-
 
