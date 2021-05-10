@@ -10,6 +10,8 @@ using std::ostringstream;
 /* add to minutes member,
 correct hours if overflow
 */
+// You can see the scope (::) it tells use that this method is apart of the clock struct!!
+
 void Clock::add_minutes(int min){
   auto temp = minutes + min;
   if (temp >= 60) {

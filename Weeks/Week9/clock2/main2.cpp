@@ -10,10 +10,13 @@ int main(){
   my_clk.hours = 1;
   my_clk.minutes = 55;
   my_clk.period = "AM";
-  
-  my_clk.add_minutes(10);
-  cout << clk_to_string(my_clk)
-       << endl;
+  cout << "Before method: " << endl;
+  cout << clk_to_string(my_clk) << endl;
+
+  my_clk.add_minutes(10);  // method to add minutes onto the clock
+  cout << "After method: " << endl;
+
+  cout << clk_to_string(my_clk) << endl;
 }
 
 

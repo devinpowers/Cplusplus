@@ -10,6 +10,7 @@ struct Clock {
   string period;
 };
 
+// includes any function declearation
 string print_clk(const Clock &c);
 
 #endif

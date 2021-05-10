@@ -9,3 +9,7 @@ using std::string;
 #include <sstream>
 using std::stringstream;
 
+int main(){
+
+    cout << "Testing" << endl;
+}

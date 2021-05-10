@@ -11,7 +11,7 @@ struct Clock{
   int hours;
   string period;
 
-  void add_minutes(int);
+  void add_minutes(int); // method for clock struct
 };
 
 string clk_to_string(const Clock &);
