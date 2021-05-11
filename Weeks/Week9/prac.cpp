@@ -9,7 +9,21 @@ using std::string;
 #include <sstream>
 using std::stringstream;
 
+
+struct name(){
+
+    int = deivn
+
+};
+
 int main(){
 
     cout << "Testing" << endl;
+
+    for ( int i = 0; i < 100; i++){
+        //do something
+        cout << i << endl;
+    }
+
+ 
 }
