@@ -7,6 +7,14 @@ int main() {
 
     const int y = 10;
     // cant change y
-    y = 12;
     cout << "y: " << y << endl;
+    const int x = 23;
+
+    cout << "x: " << x << endl;
+
+    // lets change x
+
+    x = 34;
+    cout << "x: " << x << endl;
+
 }

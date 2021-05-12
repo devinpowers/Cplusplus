@@ -118,5 +118,8 @@ Node Network::closest(Node & n){
     Node closest;
 
     // We have to loop thru each pair
-    for (pair<string, Node > pair : nodes)
+    for (pair<string, Node > pair : nodes){
+
+
+    }
 }
