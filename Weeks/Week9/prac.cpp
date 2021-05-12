@@ -10,12 +10,6 @@ using std::string;
 using std::stringstream;
 
 
-struct name(){
-
-    int = deivn
-
-};
-
 int main(){
 
     cout << "Testing" << endl;
