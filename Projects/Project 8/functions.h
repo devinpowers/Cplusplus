@@ -39,6 +39,7 @@ struct Network{
   Node get_node(string); 
 
   void node_to_network(Node);      // Adds Node to Network
+  
   bool in_route(const Node&);
   Node closest(Node &);
   string calculate_route(const Node&, const Node&);
