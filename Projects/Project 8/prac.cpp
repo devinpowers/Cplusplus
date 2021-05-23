@@ -4,10 +4,11 @@ using std::endl;
 using std::cin;
 #include<fstream>
 using std::ifstream;
+#include<sstream>
+using std::ostringstream;
 
 #include<map>
 using std::map;
-
 #include<utility>
 using std::pair;
 using std::make_pair;
@@ -16,20 +17,30 @@ using std::make_pair;
 using std::string;
 
 
+struct Node{
+    int x;
+    int y;
+    string label;
 
+    Node() = default;
+    Node(int i, int j, string l) : x(i), y(j), label(l) {} ;
+    // any methods
+    string to_string();
+};
+
+string Node::to_string()  {
+    ostringstream oss;
+    oss << label << ":(" << x << "," << y << ")";
+    return oss.str();
+}
 
 int main() {
     
-    pair <int, string > a;
-    pair <int, string > b;
+    Node node_1(3,4, "A");
 
-    a = make_pair( 3, "Chris Paul");
-    b = make_pair( 23, "Michael Jordan");
-
-
-    // printing out 
-
-    cout << "a: " << a.first << " , " << a.second << endl;
-    cout << "b: " << b.first << " , " << b.second << endl;
+    // print node_1
+    cout << "Output: " << endl;
+    node_1.to_string();
+   /// map<string, Node> nodes;
 
 }
