@@ -14,7 +14,7 @@ int main() {
 
     // lets change x
 
-    x = 34;
+   // x = 34;
     cout << "x: " << x << endl;
 
 }
