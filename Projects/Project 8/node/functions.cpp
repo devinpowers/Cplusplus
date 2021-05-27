@@ -25,8 +25,11 @@ using std::cout;
 string Node::to_string () const {
     // returns one big string that has the " label: (x:y) " of the node
     ostringstream oss;
+    // Puts everything into the oss keyword below 
     //Label:(X,Y)
+
     oss << label << ":(" << x << "," << y << ")";
+    // Returns oss string
     return oss.str();
 }
 
@@ -67,15 +70,18 @@ Network::Network(ifstream &file){
 string Network::to_string() const {
 
     // Reads the Entire Network and prints it out via one big string using ostringstream
+    // Uses the to_string method for the individual nodes 
     ostringstream oss;
     string s;
 
 
     for (pair<string, Node> p : nodes){
         // iterates  our "nodes" map in the Network 
+        // calls for the to_string() method, which returns --> label:(x,y)
 
         oss << p.second.to_string() << ",";
     }
+    // oss is now one long string of label:(x,y), label:(x,y), label:(x,y), etc
     s = oss.str();
     // Remove last comma and space
     s = s.substr(0, s.size()- 2);
