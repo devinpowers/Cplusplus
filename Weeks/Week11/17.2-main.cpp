@@ -26,6 +26,7 @@ int main(){
     test_clk.add_minutes(40);
 
     cout << "Add test:"<<clk_to_string(test_clk) << endl;
+    cout << " Shit" << endl;
 }
 
 
