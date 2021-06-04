@@ -96,7 +96,7 @@ anything yet */
     Note that only the head is sufficient to represent  
     the whole list. We can traverse the complete  
     list by following the next pointers. */
-  
+    cout << "testing" << endl;
     return 0; 
 } 
   

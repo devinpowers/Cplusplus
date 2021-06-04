@@ -52,7 +52,7 @@ Network::Network(ifstream &file){
     string label;
 
     // Lets get the values from each line
-    while(file >> first << second >> second >> label){
+    while(file >> first >> second >> second >> label){
         // reads file and now we need to create a node and put the node into our Network
         // The constructor of the Node will work
         node_to_network(Node(first, second, label));
@@ -120,6 +120,6 @@ Node Network::closest(Node & n){
     // We have to loop thru each pair
     for (pair<string, Node > pair : nodes){
 
-
+        return pair;
     }
 }

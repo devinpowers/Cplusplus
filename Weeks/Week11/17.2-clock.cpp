@@ -2,11 +2,14 @@
 using std::string;
 #include<sstream>
 using std::ostringstream; using std::istringstream;
+#include <iostream>
+using std::endl; using std::cout;
 
 #include "17.2-clock.h"
 
 // adjust clock values to be "reasonable"
 void Clock::adjust_clock(int mins, int hrs, string prd){
+  cout << "Running This function " << endl;
   int hrs_remainder;
   minutes_ = minutes_ + mins;
   hrs_remainder = minutes_ / 60;

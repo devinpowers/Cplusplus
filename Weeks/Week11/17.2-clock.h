@@ -7,10 +7,11 @@ using std::string;
 using std::vector;
 
 class Clock{
- private:
+ private: 
   int minutes_ = 0;
   int hours_ = 0;
   string period_;
+  // function member adjusts the clock for us
   void adjust_clock(int, int, string);
 
  public:
@@ -20,10 +21,11 @@ class Clock{
   explicit Clock(string s);
 
 
-  // getters
+  // getters (grab our attributes)
   int hours() const {return hours_;}
   int minutes() const {return minutes_;}
-  string period() const {return period_;} 
+  string period() const {return period_;}
+  
   // setters
   void hours(int);
   void minutes(int);
@@ -31,6 +33,8 @@ class Clock{
   
   // members
   void add_minutes(int);
+
+  // friend function
   friend string clk_to_string(const Clock &);
 };
 

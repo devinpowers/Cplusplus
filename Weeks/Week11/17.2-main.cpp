@@ -27,6 +27,15 @@ int main(){
 
     cout << "Add test:"<<clk_to_string(test_clk) << endl;
     cout << " Shit" << endl;
+
+    // More Testing
+
+    Clock another_one;
+    another_one.hours(23);
+    another_one.minutes(34);
+    another_one.period("PM");
+    cout << "Testing: Another One::: " << clk_to_string(another_one) << endl;
+    cout << "Lets see if the Getters work: " << another_one.hours() << endl;
 }
 
 
