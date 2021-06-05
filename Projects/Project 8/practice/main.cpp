@@ -92,10 +92,10 @@ int main(){
 
   case 7:{
     Network net;
-    net.node_to_network( Node(10,10,"tens") );
-    net.node_to_network( Node(20, 20, "twentys") );
+    net.put_node( Node(10,10,"tens") );
+    net.put_node( Node(20, 20, "twentys") );
     cout << net.to_string() << endl;
-    net.node_to_network( Node(100, 100, "tens") );
+    net.put_node( Node(100, 100, "tens") );
     cout << net.to_string() << endl;    
     break;
   }
@@ -111,11 +111,10 @@ int main(){
   }
     
   case 9:{
-    // Closet Node Stuff
     string fname;
     cin >> fname;
     ifstream fin(fname);
-    Network net(fin); // Create Network from our input txt file
+    Network net(fin);
     auto n = net.get_node("A");
     auto close = net.closest(n);
     cout << close.to_string() << endl;
