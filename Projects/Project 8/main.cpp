@@ -34,7 +34,7 @@ int main(){
   switch(test_no){
 
   case 1:{
-    Node n(10,10,"temp");
+    Node n(10,10,"BITCH");
     cout << n.to_string() << endl;
     break;
   }
@@ -42,15 +42,15 @@ int main(){
   case 2:{
     Node n1(10,10, "tens");
     Node n2(20, 20, "twentys");
-    cout << n1.equal_nodes(n2) << endl;
-    cout << n1.equal_nodes(n1) << endl;
+    cout << n1.equal_nodes(n2) << endl; // CHeck to see if the nodes are equal (FALSE)
+    cout << n1.equal_nodes(n1) << endl; // check to see if the nodes are equal (TRUE)
     break;
   }
 
   case 3:{
     Node n1(10,10, "tens");
     Node n2(20, 20, "twentys");
-    cout << n1.distance(n2) << endl;
+    cout << n1.distance(n2) << endl; // calculate the distance from node n1 to n2
     break;
   }
 
@@ -65,6 +65,7 @@ int main(){
   }
 
   case 5:{
+    // Print entire Network out!!!
     string fname;
     cin >> fname;
     ifstream fin(fname);
@@ -74,6 +75,7 @@ int main(){
   }
 
   case 6:{
+    // find different nodes in our network
     string fname;
     cin >> fname;
     ifstream fin(fname);
@@ -101,23 +103,27 @@ int main(){
   }
 
   case 8:{
+    // Checks if Nodes are in route
     Network net;
     Node n1(10,10,"tens");
     Node n2(100, 100, "hundreds");
-    net.route={"tens", "twentys"};
-    cout << net.in_route(n1) << endl;
-    cout << net.in_route(n2) << endl;
+    net.route={"tens", "twentys"}; // route is given? vector , checks if this 2 Nodes are in the route
+    // print route
+    cout << net.in_route(n1) << endl;  // should Return TRUE
+    cout << net.in_route(n2) << endl; // Should return FALSE
     break;
   }
     
   case 9:{
-    // Closet Node Stuff
+    // Closet Node Stuff 
+    // Creates a Network from our .txt file, then finds closet node to node "A"
     string fname;
     cin >> fname;
     ifstream fin(fname);
     Network net(fin); // Create Network from our input txt file
-    auto n = net.get_node("A");
-    auto close = net.closest(n);
+
+    auto n = net.get_node("A");   // gets Node
+    auto close = net.closest(n);  // finds closest node to node "A" using the .closest() function
     cout << close.to_string() << endl;
     cout << close.distance(n) << endl;
     break;

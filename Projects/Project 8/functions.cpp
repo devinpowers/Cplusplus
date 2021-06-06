@@ -53,8 +53,8 @@ Network::Network(ifstream &file){
     // Constructor
     // Takes in input/reads from file (.txt) into our varaibles
     
-    long first, second;
-    string label;
+    long first, second;  // long variable that will represent our X and Y
+    string label;        // string variable that will represent our Label for our node
 
     // Lets get the values from each line
     while(file >> first >> second >> second >> label){
@@ -117,7 +117,8 @@ Node Network::get_node(string s){
 bool Network::in_route(const Node& node){
     // Const Node, don't change our original node
     // Method checks to see if the node is not in the route
-    // Look up the find() algorithm  
+    // Look up the find() algorithm the node.label is the value were looking for and the find() algorithm will return 
+    // the position of what were looking for, and if thats the position is last (.end()) then the value isnt in our route
     if (find(route.begin(), route.end(), node.label)  == route.end()){
 
         return false;
@@ -136,7 +137,8 @@ Node Network::closest(Node & node){
     // We have to loop thru each pair
     for (pair<string, Node > pair : nodes){
 
-        // find the node in the route using an iterator
+        // find the node in the route using an iterator (note the iterator stores the position)
+        // (pair.second.label) will return like label A
         auto it = find(route.begin(),route.end(), pair.second.label);
         // if the nodes are not equal, and the at the end
         if ( ! pair.second.equal_nodes(node) && (it == route.end())) {

@@ -30,7 +30,7 @@ struct Network{
   // Attributes
   string label;              
   map<string, Node> nodes;      // Map of our Network of Labels and Nodes
-  vector<string> route;         // Route of our Nodes
+  vector<string> route;         // Route of our Nodes {node1,node2,node3}
 
   Network()=default; // Default constructor
   Network(ifstream &);   // Constructor that is defined outside in the function.cpp file
@@ -43,9 +43,11 @@ struct Network{
 
   void node_to_network(Node);      // Adds Node to Network
   
-  bool in_route(const Node&);
-  Node closest(Node &);
-  string calculate_route(const Node&, const Node&);
+  bool in_route(const Node&); // Returns True or False if our Node is in Route or not
+
+  Node closest(Node &); // Returns the Node closest to the Node we pass in
+
+  string calculate_route(const Node&, const Node&);  // Caculates the shortest route from one Node to another Node
 };
 
 #endif
