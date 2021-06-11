@@ -24,6 +24,8 @@ void Clock::adjust_clock(int mins, int hrs, string prd){
 }
 
 Clock::Clock(int mins, int hrs, string prd){
+  // this is the construtor for the clock class
+  // at the end it calls the adjust_clock function 
   minutes_= 0;
   hours_= 0;
   period_= "";
@@ -33,6 +35,8 @@ Clock::Clock(int mins, int hrs, string prd){
 }
 
 Clock::Clock(string s){
+  // If explicit constructor is passed in
+  // which means one big long string is passed
   // format is hr:min:period_
   minutes_=0;
   hours_=0;

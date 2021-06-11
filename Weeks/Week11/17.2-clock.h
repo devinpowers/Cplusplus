@@ -16,9 +16,9 @@ class Clock{
 
  public:
   // constructors
-  Clock()=default;
+  Clock()=default; // Default constructor
   Clock(int, int, string);
-  explicit Clock(string s);
+  explicit Clock(string s);       // if we pass in one big long string
 
 
   // getters (grab our attributes)
