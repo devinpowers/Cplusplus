@@ -1,9 +1,9 @@
-#include<iostream>
+#include <iostream>
 using std::cout;
 using std::endl;
 using std::cin;
 
-#inlcude <string>
+#include <string>
 using std::string;
 
 struct Vector2{
