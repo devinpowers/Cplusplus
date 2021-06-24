@@ -30,12 +30,12 @@ struct Network{
 
   Network()=default;
   Network(ifstream &);
-  string to_string () const;
+  string to_string () const; // print method
   Node get_node(string);
   void put_node(Node);
   bool in_route(const Node&);
   Node closest(Node &);
-  string calculate_route(const Node&, const Node&);
+  string calculate_route(const Node&, const Node&); 
 };
 
 #endif

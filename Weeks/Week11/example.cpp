@@ -1,26 +1,48 @@
+
+
 #include<iostream>
-#include <string>?
+#include <string>
+
+using std::cout;
+using std::endl;
 
 class Entity
 {
+    private:
+        int m_X, m_Y;
+        mutable int var;
     public:
-        int x, y;
-
-        Entity(int x, int y) // constructor
+        int GetX() const // promises not to touch anything in the function
         {
-            Entity* e = this;
-
-            this->x = x;
-            this->y = y;
-
+            var = 2;
+            return m_X;
         }
-        int GetX() const { return {
-            
-        }}
+        int GetX()
+        {
+            return m_X;
+        }
 
+
+        void SetX(int x)
+        {
+            m_X = x;
+        }
 };
 
-int main()
+void PrintEntity(const Entity& e)
 {
-    std::cin.get();
+    cout << e.GetX() << endl;
 }
+
+int main(){
+    
+    Entity e;
+
+    e.SetX(23);
+
+    PrintEntity(e);
+
+}
+
+// Make sure to add const to method if it's not suppose to modify the class
+
