@@ -11,7 +11,7 @@ int main(){
   cout << "Index 0 of ary2:"<<ary2[0]<<endl;  
   cout << "Index 4 of ary3:"<<ary3[4]<<endl;
   cout << "Index 0 of ary4:"<<ary4[0]<<endl;     // ?? not initialized
-  cout << "Index 10 of ary1:"<<ary1[10] << endl; // ?? past end
+  // cout << "Index 10 of ary1:"<<ary1[10] << endl; // ?? past end
 
   for(size_t i=0; i<size; ++i)
     cout << "Index"<<i<<", value:"<<ary1[i] << endl;;
@@ -33,3 +33,6 @@ int main(){
   for (size_t j=0; j<size; j++)
     cout << "Index"<<j<<", value:"<<ary3[j] << endl;
 }
+
+
+
