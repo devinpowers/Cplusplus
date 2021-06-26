@@ -18,7 +18,7 @@ class Clock{
   // constructors
   Clock()=default; // Default constructor
   Clock(int, int, string);
-  explicit Clock(string s);       // if we pass in one big long string
+  explicit Clock(string s);       // if we pass in one big long string -> "min:hours:period"
 
 
   // getters (grab our attributes)

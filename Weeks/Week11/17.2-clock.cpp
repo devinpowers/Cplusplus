@@ -75,7 +75,7 @@ void Clock::add_minutes(int min){
 
 // convert clock to string
 // declared a friend in header
-string clk_to_string(const Clock &c){
+string clk_to_string( const Clock &c){
   ostringstream oss;
   oss << "Hours:"<<c.hours_<<", Minutes:"
       <<c.minutes_<<", Period:"<<c.period_;

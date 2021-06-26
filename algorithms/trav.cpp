@@ -5,22 +5,26 @@ using namespace std;
 struct node
 {
     int data;
-    node *next;
+    node *next;  // address to the next nod in the linked list
 };
 
 class linked_list
 {
 private:
-    node *head,*tail;
+    node *head;
+    node *tail;
+
 public:
     linked_list()
     {
-        head = NULL;
-        tail = NULL;
+        head = NULL; // Empty at first
+        tail = NULL; // Empty at first
     }
 
     void add_node(int n)
     {
+        // add node to the linked list
+
         node *tmp = new node;
         tmp->data = n;
         tmp->next = NULL;
@@ -39,6 +43,8 @@ public:
 
     void display()
     {
+        // print the linked list
+
         node *tmp;
         tmp = head;
         while (tmp != NULL)
@@ -57,9 +63,10 @@ int main()
     a.add_node(4);
     a.add_node(5);
     a.add_node(6);
-        a.add_node(3);
+    a.add_node(3);
 
     a.add_node(72);
+    a.add_node(69);
     a.display();
     return 0;
 }
