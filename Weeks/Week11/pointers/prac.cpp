@@ -9,7 +9,7 @@ using std::endl;
 // Functions
 void passByVal(int val);   // passing in a copy of an integer
 void passByRef(int & ref); // Pass in the actual variable
-void passByPtr(int *ptr);  //
+void passByPtr(int *ptr);  // pass by pointer
 
 
 int main() {
@@ -18,26 +18,30 @@ int main() {
     int x = 5;
     cout << "x = " << x << endl;
     passByVal(x);
+    cout << "x = " << x << endl;
 
     // Pass by Reference
 
     int y = 10;
     passByRef(y);
-    cout << "y = " << x << endl;
+    cout << "y = " << y << endl;
 
     // Pass by Pointer
     
     int c = 10;
 
-    int* cptr = &c;
+    int* cptr = &c; // pointer, reference to c
     cout << "c = " << c << endl;
     cout << "*cptr = " << *cptr << endl;
+    cout << "cptr (address) = " << cptr << endl;
+
     passByPtr(cptr);
 
     cout << "c = " << c << endl;
     cout << "*cptr = " << *cptr << endl;
+    cout << "cptr (address) = " << cptr << endl;
+
     
-    cout << "YES DEVIN OK BOOMER SOONER FOR THE TIME YOUR'E on t he" << endl;
 }
 
 void passByVal(int val)
@@ -55,10 +59,11 @@ void passByRef(int & ref)
 
 void passByPtr(int * ptr)
 {   
-    // reference the pointer we passed in d
+    // reference the pointer we passed in
     *ptr = 30;
 
-    cout << "ptr = " << *ptr << endl;
+    cout << "*ptr = " << *ptr << endl;
+    cout << "ptr (address) = " << ptr << endl;
 }
 
 
