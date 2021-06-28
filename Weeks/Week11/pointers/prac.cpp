@@ -37,6 +37,7 @@ int main() {
     cout << "c = " << c << endl;
     cout << "*cptr = " << *cptr << endl;
     
+    cout << "YES DEVIN OK BOOMER SOONER FOR THE TIME YOUR'E on t he" << endl;
 }
 
 void passByVal(int val)
