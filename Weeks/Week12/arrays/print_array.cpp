@@ -4,10 +4,10 @@ using std::cout;
 
 int main(){
    int arr[] = {20, 30, 40, 50};
-
-   cout << arr[0] << endl;
-   cout << arr[1] << endl;
-   cout << arr[2] << endl;
-   cout << arr[3] << endl; 
+   int n=0;
+  
+   while(n<=3){
+      cout<<arr[n]<<endl;
+      n++;
+   }
 }
-//  Iterators could not be used on primitive type arrays, only on collections.

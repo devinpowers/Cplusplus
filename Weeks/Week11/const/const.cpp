@@ -5,6 +5,8 @@
 #include<iostream>
 using std::cout;
 using std::endl;
+
+
 class Demo
 {   private:
     int value;
