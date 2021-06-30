@@ -14,6 +14,8 @@ int main (){
   int ary1[size]{8,5,6,7,4};
   long ary2[size];  // not initialized.
 
+  cout << "________________________________" << endl;
+
   cout << "ary1 value:"<< ary1 << endl; // an address
   cout << "first element:"<<*ary1<<endl;
   cout << "next address:" << ary1+1 << endl;
@@ -23,13 +25,14 @@ int main (){
   cout << "first element:"<< *ary2 << endl; // not initialized!!
   cout << "next address:"<< ary2 + 1 << endl;
   cout << "second element:"<< *(ary2+1) << endl;
-  cout << endl;
+  
+  cout << "________________________________" << endl;
   
   for(int *i = ary1; i<(ary1+size); ++i)
     cout << "Element:"<< *i << ", ";
   cout << endl << endl;
 
-
+  cout << "________________________________" << endl;
 
   int *ptr_ary1_front = ary1;
   int *ptr_ary1_back = ary1+size;			
@@ -40,7 +43,7 @@ int main (){
   sort(ptr_ary1_front, ptr_ary1_back);
   copy(ptr_ary1_front, ptr_ary1_back, ostream_iterator<int>(cout, ", ") );
   cout << endl;
-
+[]
   // begin() and end() functions  (not methods) do work
   // IF compiler knows size
   transform(begin(ary1), end(ary1), ostream_iterator<int>(cout, ", "),
@@ -56,6 +59,7 @@ int main (){
   long *ptr_ary2_front = ary2;
   long *ptr_ary2_back = ary2+size;  
   copy(ptr_ary1_front, ptr_ary1_back, ptr_ary2_front);
+
 
   ostringstream oss;
   copy(ptr_ary2_front, ptr_ary2_back, ostream_iterator<long>(oss, ", "));

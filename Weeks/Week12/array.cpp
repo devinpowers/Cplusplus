@@ -18,12 +18,10 @@ int main(){
 
   // range based for, OK, const value of size
   for (auto element : ary1)
-    cout << "int element:"<<element<<", ";
-  cout << endl;
+    cout << "int element:"<<element<<", " <<endl;
 
   for(auto element : ary2)
-    cout << "char element:"<<element<<", ";
-  cout << endl;
+    cout << "char element:"<<element<<", " << endl;
 
   // subscript assignment OK
   ary3[0]=1234;

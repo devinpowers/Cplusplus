@@ -2,20 +2,20 @@
 #include <algorithm>
 #include <iterator>
 
+// Dynamic Memory
+
+
 void print_array(int * array, size_t size) {
-    std::copy(
-        array, 
-        array + size, 
-        std::ostream_iterator<int>(std::cout, " "));
+    std::copy(array, array + size, std::ostream_iterator<int>(std::cout, " "));
     std::cout << std::endl;
 }
 
 void double_size(int * (&array), size_t & size) {
     size_t new_size = size * 2;
-    int * array2 = new int[new_size]{};
+    int * array2 = new int[new_size]{};         // new Keyword
     std::copy(array, array + size, array2);
     size = new_size;
-    delete [] array;
+    delete [] array;  // delete Keyword
     array = array2;
 }
 

@@ -16,6 +16,8 @@ public:
   friend ostream& operator<<(ostream&, const MyClass&);
 };
 
+
+
 ostream& operator<<(ostream &out, const MyClass &c){
   out << "l:"<< c.long_ << ", i:" << c.int_ << ", s:" << c.str_;
   return out;
