@@ -12,15 +12,20 @@ using std::string;
 
 class FSA{
 private:
+
+  // Attributes
   map<string, map<string, string>> table_;
-  string state_;
-  string start_;
-  string finish_;
+  string state_;                             // Current State
+  string start_;                             // Starting State
+  string finish_;                             // Ending State
 
 public:
+  // Constructor
   FSA()=default;
   FSA(string strt, string stp);
   FSA(ifstream&);
+  
+  // Member functions for FSA
   bool exists_state(string);
   void add_state(string);
   void add_transition(string, string, string);
@@ -28,7 +33,6 @@ public:
   string next(string,string);
   bool run(string);
   friend ostream& operator<<(ostream&, FSA&);
-  // string unreachable();  // something to try, not required
 };
 
 #endif
