@@ -41,3 +41,4 @@ FSA::FSA(ifstream& fs){
     }
 }
 
+// Member Functions to Work with 

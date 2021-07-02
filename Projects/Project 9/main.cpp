@@ -65,8 +65,8 @@ int main () {
         }
             
         case 3:{
-            FSA fsa;
-            string from_s, input, to_s;
+            FSA fsa;                         // Create a FSA Object
+            string from_s, input, to_s;        // 
             cin >> from_s >> input >> to_s;
             try{
                 fsa.add_state(from_s);
