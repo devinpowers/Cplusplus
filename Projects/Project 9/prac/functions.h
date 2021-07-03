@@ -32,7 +32,7 @@ public:
   string transitions_to_string(string);
   string next(string,string);
   bool run(string);
-  friend ostream& operator<<(ostream&, FSA&);
+  friend ostream& operator<<(ostream&, FSA&); //friend function to print (access private members)
 };
 
 #endif

@@ -26,7 +26,9 @@ FSA::FSA(string start, string stop)
 }
 
 FSA::FSA(ifstream& fs){
-    string start, stop, input;
+
+    cout << "Using the ifstream method " << endl;
+    string start, stop, input;  // 
 
     fs >> start >> stop;
     // set
@@ -35,10 +37,13 @@ FSA::FSA(ifstream& fs){
     state_ = start;
 
     // now we need to get all the transitions in the file
+    int count = 0;
     while (fs >> start >> input >> stop)
     {
-        table_[start][input] = stop;
+        table_[start][input] = stop;   // Input into the table_
+        count += 1;
     }
+    cout << "count: " << count << endl;
 }
 
 // Member Functions to Work with 
@@ -165,13 +170,16 @@ bool FSA::run(string s)
 
 }
 
+
+
 // Friend Function heres
 
 ostream& operator<<(ostream& out, FSA& fsa)
 {
-    // this function prints a representation of the FSA including the start, finish, and current state
+    // This function prints a representation of the FSA including the start, finish, and current state
     // including all the transitions
 
+    cout << "Using Operator Friend Function!!!!" << endl;
     out << "Start: " << fsa.start_ << ", Finish: " << fsa.finish_ << ", Present: " << fsa.state_ << endl;
 
     //print the table

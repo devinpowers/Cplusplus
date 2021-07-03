@@ -137,7 +137,8 @@ int main () {
             
             try{
                 cout << fsa.next(state, "0") << endl;
-                
+                cout << fsa << endl;
+
                 // should throw
                 cout << fsa.next(state, "X") << endl;
             }
