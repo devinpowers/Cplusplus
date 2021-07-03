@@ -44,7 +44,7 @@ FSA::FSA(ifstream& fs){
 // Member Functions to Work with 
 
 
-bool FSA::exist_state(string s)
+bool FSA::exists_state(string s)
 {
     // finds if the key is in the table
 
@@ -58,10 +58,10 @@ bool FSA::exist_state(string s)
 
 void FSA::add_state(string s){
 
-    if (!exist_state(s)) {
+    if (!exists_state(s)) {
         // if True, which exist_state function returns a false hence with the !
         // We add the string s as a key in our table
-        table_s[s];
+        table_[s];
     }
     // Else the key already exists and we throw a domain error
     else
@@ -125,6 +125,62 @@ string FSA::transitions_to_string(string s)
 
 string FSA::next (string s, string input)
 {
-    //
+    // Starting from state s and given an input, return the next state
+    if (table_.find(s) != table_.end())
+    {
+        // if the key is in the table
+        if (table_[s].find(input) != table_[s].end())
+        {
+            // then return the next order
+            return table_[s][input];
+        }
+        else
+        {
+            // throw a domain error
+            string error_string = s + " has no transition on the input " + input;
+            throw std::domain_error(error_string);
+        }
+    }
+    // throw the domain error
+    else
+    {
+        string error_string = s + " Key doesn't exist";
+        throw std::domain_error(error_string);
+    }
+}
+
+bool FSA::run(string s)
+{
+    // starting from the start state, run the FSA and having consumed the input, return
+    // if the final state is finish_state or not
+    // Use the method next to help
+
+    for (char c : s)
+    {
+        state_ = next(state_, string(1,c)); // get the next state
+        cout << "Got to: " << state_ << " on a  " << c << endl; // outputs the path it took
+    }
+    return (state_ == finish_); 
+
 
 }
+
+// Friend Function heres
+
+ostream& operator<<(ostream& out, FSA& fsa)
+{
+    // this function prints a representation of the FSA including the start, finish, and current state
+    // including all the transitions
+
+    out << "Start: " << fsa.start_ << ", Finish: " << fsa.finish_ << ", Present: " << fsa.state_ << endl;
+
+    //print the table
+    for (pair<string,map<string, string>> p : fsa.table_)
+    {
+        out << fsa.transitions_to_string(p.first) << endl;
+    }
+
+    return out;
+}
+
+
