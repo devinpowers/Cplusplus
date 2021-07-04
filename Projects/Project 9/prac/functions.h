@@ -21,9 +21,9 @@ private:
 
 public:
   // Constructor
-  FSA()=default;
-  FSA(string strt, string stp);
-  FSA(ifstream&);
+  FSA()=default; // Default contructor 
+  FSA(string start, string stop);  
+  FSA(ifstream&);   // If opening via a file
   
   // Member functions for FSA
   bool exists_state(string);

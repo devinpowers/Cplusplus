@@ -44,6 +44,7 @@ FSA::FSA(ifstream& fs){
         count += 1;
     }
     cout << "count: " << count << endl;
+    // Print out
 }
 
 // Member Functions to Work with 
@@ -106,17 +107,21 @@ string FSA::transitions_to_string(string s)
 
     // if the key is in the table, lets add it to our string return_string;
 
+    cout << "s: " << s << endl;
+    
     if (table_.find(s) != table_.end())
     {
         os << s << ":";
         for (pair<string, string> p: table_[s] )
         {
+            cout << "s: " << s << endl;
             os << " on " << p.first << " --> " << p.second << ",";
         }
         return_string = os.str(); // convert os to a string
         return_string = return_string.substr(0, return_string.size() -1 );
         return return_string;
     }
+    
     else
     { 
       // Throw a domain error because the key does not exist!!!
@@ -128,28 +133,29 @@ string FSA::transitions_to_string(string s)
 
 
 
-string FSA::next (string s, string input)
+string FSA::next (string state, string input)
 {
+    // Pass in a State (s) and an input (1 or 0) and it will return the next State!
     // Starting from state s and given an input, return the next state
-    if (table_.find(s) != table_.end())
+    if (table_.find(state) != table_.end())
     {
         // if the key is in the table
-        if (table_[s].find(input) != table_[s].end())
+        if (table_[state].find(input) != table_[state].end())
         {
             // then return the next order
-            return table_[s][input];
+            return table_[state][input];
         }
         else
         {
             // throw a domain error
-            string error_string = s + " has no transition on the input " + input;
+            string error_string = state + " has no transition on the input " + input;
             throw std::domain_error(error_string);
         }
     }
     // throw the domain error
     else
     {
-        string error_string = s + " Key doesn't exist";
+        string error_string = state + " Key doesn't exist";
         throw std::domain_error(error_string);
     }
 }
@@ -159,6 +165,8 @@ bool FSA::run(string s)
     // starting from the start state, run the FSA and having consumed the input, return
     // if the final state is finish_state or not
     // Use the method next to help
+
+    cout << "Using Run Function" << endl;
 
     for (char c : s)
     {
@@ -178,13 +186,16 @@ ostream& operator<<(ostream& out, FSA& fsa)
 {
     // This function prints a representation of the FSA including the start, finish, and current state
     // including all the transitions
+    // Friend Function
 
     cout << "Using Operator Friend Function!!!!" << endl;
+    // Accessing private attribute values ( start_, finish_, and state_)  
     out << "Start: " << fsa.start_ << ", Finish: " << fsa.finish_ << ", Present: " << fsa.state_ << endl;
 
-    //print the table
+    // Print the table from the private attributes
     for (pair<string,map<string, string>> p : fsa.table_)
     {
+        // Use transitions_to_string method to print map
         out << fsa.transitions_to_string(p.first) << endl;
     }
 

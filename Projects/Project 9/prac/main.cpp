@@ -173,8 +173,13 @@ int main () {
             cout << fsa << endl;
             bool accept;
             accept = fsa.run(input);
+
             cout << endl<< "accepted?: "<<accept << endl;
+
+
             cout << fsa << endl;
+
+            
             break;
         }
             
