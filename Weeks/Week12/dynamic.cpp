@@ -12,8 +12,8 @@ private:
   int int_;
   string str_;
 public:
-  MyClass(): long_(0), int_(0), str_("default ctor") {};
-  MyClass(long l, int i, string s): long_(l), int_(i), str_(s) {}; 
+  MyClass(): long_(0), int_(0), str_("default ctor") {};  // Default Constructor
+  MyClass(long l, int i, string s): long_(l), int_(i), str_(s) {};  
   friend ostream& operator<<(ostream&, const MyClass&);
 };
 
