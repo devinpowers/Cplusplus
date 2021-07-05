@@ -6,6 +6,7 @@ using std::setw;
 using std::string;
 
 class MyClass{
+
 private:
   long long_;
   int int_;
@@ -17,13 +18,14 @@ public:
 };
 
 
-
 ostream& operator<<(ostream &out, const MyClass &c){
+  // Overloading operator to print via cout << MyClass;
   out << "l:"<< c.long_ << ", i:" << c.int_ << ", s:" << c.str_;
   return out;
 }
 
 void fill(int *ary, size_t sz, int val){
+  // Fill Array with 0's
   for (size_t i=0; i<sz; ++i)
     ary[i] = val+i;
 }
