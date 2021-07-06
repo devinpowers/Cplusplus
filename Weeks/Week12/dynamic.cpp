@@ -1,3 +1,4 @@
+
 #include<iostream>
 using std::cout; using std::endl; using std::cin; using std::ostream;
 #include<iomanip>
@@ -14,24 +15,30 @@ private:
 public:
   MyClass(): long_(0), int_(0), str_("default ctor") {};  // Default Constructor
   MyClass(long l, int i, string s): long_(l), int_(i), str_(s) {};  
-  friend ostream& operator<<(ostream&, const MyClass&);
+  friend ostream& operator<<(ostream&, const MyClass&);      // Friend Functions
 };
 
 
-ostream& operator<<(ostream &out, const MyClass &c){
-  // Overloading operator to print via cout << MyClass;
+ostream& operator<<(ostream &out, const MyClass &c)
+{
+  // Overloading operator to print via cout << MyClass
+  // Friend Function can access "private" attributes
   out << "l:"<< c.long_ << ", i:" << c.int_ << ", s:" << c.str_;
   return out;
 }
 
-void fill(int *ary, size_t sz, int val){
-  // Fill Array with 0's
+void fill(int *ary, size_t sz, int val)
+{  // Fill Array with 0's
   for (size_t i=0; i<sz; ++i)
+  {
     ary[i] = val+i;
+  }
+    
 }
 
-// print array as a block
+
 ostream& dump (ostream& out, int ary[], size_t sz, size_t width=5){
+  //print array as a block
   for(size_t i=0; i < sz; ++i){
     out << setw(width) << *(ary + i);
     if (i%10 != 9 && i != sz-1)
@@ -47,6 +54,7 @@ int main (){
   size_t sz=5;
   int ary1[sz];
   fill(ary1, sz, 10);
+  cout << "DUMP: " << endl;
   dump(cout, ary1, sz);  
 
   // basic new
@@ -69,6 +77,8 @@ int main (){
   delete mcptr;
   delete mcptr2;
 
+  cout << "________________________________" << endl;
+  cout << endl;
   // dynamic array
   size_t size;
   cout << "How big to make the array:";
@@ -77,7 +87,8 @@ int main (){
   // long *ary = new long[size];   // not initialized
   int *ary = new int[size]{}; // initialize all!
   fill(ary, size, 10);
-  dump(cout, ary, size);
+  cout << "DUMP: " << endl;
+  dump(cout, ary, size); // prints the array
 
   cout << "1:"<<ary[0]<<endl;
   cout << "n-1:"<<ary[size-1]<<endl;
@@ -86,3 +97,5 @@ int main (){
   // if you make it, you must delete it. Note []
   delete [] ary;
 }
+
+
