@@ -1,3 +1,4 @@
+
 #include<iostream>
 using std::cout; using std::endl; 
 #include<string>
@@ -9,31 +10,28 @@ using std::copy;
 
 
 // Constructor
-
 GCharacter::GCharacter(string n, int cap)
 {
     name = n;
     capacity = cap;
-    used = 0;
-    toolHolder = new string[cap];
+    used = 0;  // Default which is the number of spaces used in the array of weapons
+    toolHolder = new string[cap]; // New Array of size of the capacity (default to 5)
 }
 
 // Copy Constructor
-
 GCharacter::GCharacter(const GCharacter& source)
 {
     cout << "Copy Constructor Called. " << endl;
 
     this->name  = source.name;
     this->capacity = source.capacity;
-    used = source.used;
-    toolHolder = new string[source.capacity]; // Deep Copy - need to create a brand new string array
+    this->used = source.used;
+    this->toolHolder = new string[source.capacity]; // In order to do a  Deep Copy!!!, we need to create a brand new string array (IMPORTANT)
 
     copy(source.toolHolder, source.toolHolder + used, this->toolHolder );
 }
 
 // Overloaded Assignment Operator
-
 GCharacter& GCharacter::operator=(const GCharacter& source)
 {
     // Testing for self-assignment
@@ -47,7 +45,7 @@ GCharacter& GCharacter::operator=(const GCharacter& source)
     }
     this->name  = source.name;
     this->capacity = source.capacity;
-    used = source.used;
+    this->used = source.used;
 
     copy(source.toolHolder, source.toolHolder + used, this->toolHolder );
 
@@ -71,6 +69,7 @@ void GCharacter::insert(const string& toolName)
 {
     if (used == capacity) 
     {
+        // if all the spaces are filled up in the Array
         cout << "Tool Holder is full. Cannot add any additional tools " << endl;
     }
     else
@@ -83,9 +82,11 @@ void GCharacter::insert(const string& toolName)
 
 std::ostream& operator<<(std::ostream& os, const GCharacter& gc)
 {
+    // Prints out our Object! We overloaded the << 
+    // Friend function so it can access the "private" data types
     os << "Game Character " << gc.name << " has the following tools: " << std::endl; 
     
-    // iterate over our tool array
+    // iterate over our tool array and print
 
     for(int i = 0; i < gc.used; i++)
     {
@@ -94,3 +95,5 @@ std::ostream& operator<<(std::ostream& os, const GCharacter& gc)
 
     return os << std::endl;
 }
+
+
