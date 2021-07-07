@@ -36,3 +36,4 @@ public:
 void swap (Stack&, Stack&);
 ostream& operator<< (ostream&, const Stack&);
 #endif
+

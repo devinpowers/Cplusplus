@@ -35,7 +35,7 @@ int main (){
   while (! stk.empty() )
     stk.pop();
   
-  try{
+  try{ 
     stk.pop();
   }
   catch (const underflow_error &e){

@@ -14,20 +14,17 @@ class GCharacter
         // Data Members (attributes)
         string name; // Name of Character
         int capacity;
-        int used;
-        string* toolHolder;
+        int used; // This will represent number of spaces taken by the array (keep track)
+        string* toolHolder; // this will be our array
 
     public:
-
-         static const int DEFAULT_CAPACITY = 5;
-
         // Constructor
-        GCharacter(string name = "John", int capacity = DEFAULT_CAPACITY );
+        GCharacter(string name = "John", int capacity = 5 );
 
         // Copy Constructor
         GCharacter(const GCharacter& source);
 
-        // Overloaded Assignment 
+        // Overloaded Assignment with source being the Object were copying
         GCharacter& operator = (const GCharacter& source);
 
         // Destructor (easy to write)
@@ -35,7 +32,6 @@ class GCharacter
 
         // Insert (member function) a new tool into the tool array (holder)
         void insert(const string& toolName);
-    
     
 
     // Overloading the << operator (syntax) Can Access the Priate memebers

@@ -29,6 +29,7 @@ public:
   
     void displayHash();
 };
+
   
 Hash::Hash(int b)
 {

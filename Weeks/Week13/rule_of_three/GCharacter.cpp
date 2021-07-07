@@ -25,8 +25,8 @@ GCharacter::GCharacter(const GCharacter& source)
 
     this->name  = source.name;
     this->capacity = source.capacity;
-    this->used = source.used;
-    this->toolHolder = new string[source.capacity]; // In order to do a  Deep Copy!!!, we need to create a brand new string array (IMPORTANT)
+    used = source.used;
+    toolHolder = new string[source.capacity]; // In order to do a  Deep Copy!!!, we need to create a brand new string array (IMPORTANT)
 
     copy(source.toolHolder, source.toolHolder + used, this->toolHolder );
 }
@@ -36,6 +36,7 @@ GCharacter& GCharacter::operator=(const GCharacter& source)
 {
     // Testing for self-assignment
     cout << "Overloaded Assignment Called. " << endl;
+
     
     // Check for self assignment
     // gc1 = gc1;
@@ -67,6 +68,7 @@ GCharacter::~GCharacter()
 
 void GCharacter::insert(const string& toolName)
 {
+    // WHich means capacity is full 
     if (used == capacity) 
     {
         // if all the spaces are filled up in the Array
@@ -74,26 +76,23 @@ void GCharacter::insert(const string& toolName)
     }
     else
     {
-        toolHolder[used] = toolName;
-        used++; //increment
+        toolHolder[used] = toolName; // Add tool to toolHolder Array
+        used++; //increment the used int
     }
-
 }
 
 std::ostream& operator<<(std::ostream& os, const GCharacter& gc)
-{
-    // Prints out our Object! We overloaded the << 
+{    // Prints out our Object! We overloaded the << 
     // Friend function so it can access the "private" data types
-    os << "Game Character " << gc.name << " has the following tools: " << std::endl; 
-    
-    // iterate over our tool array and print
+    os << "adress of Object ToolHolder: " << gc.toolHolder << endl;
+    os << "Game Character " << gc.name << " has the following tools: " <<   endl; 
 
+    // iterate over our tool array and print
     for(int i = 0; i < gc.used; i++)
     {
-        os << gc.toolHolder[i] + " | ";
+        os << " | " << gc.toolHolder[i] + " | ";
     }
-
-    return os << std::endl;
+    return os << endl;
 }
 
 
