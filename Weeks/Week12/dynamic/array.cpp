@@ -52,43 +52,23 @@ ostream& dump (ostream& out, int ary[], size_t sz, size_t width=5){
 
 int main (){
 
-  // Try out our functions fill and dump
-  size_t sz=5; // std::size_t is commonly used for array indexing and loop counting.
-  int ary1[sz]; // Array of Size 5
-  fill(ary1, sz, 10);  // Fill the array with Values
-  cout << "DUMP: " << endl;
-  dump(cout, ary1, sz);  
 
-  // basic new 
-  long *lptr1, *lptr2;    // Long Data Type
+   // dynamic array
+  int size;
+  cout << "How big to make the array:";
+  cin >> size;
+  // not an array type, only a pointer
+  // long *ary = new long[size];   // not initialized
+  int *ary = new int[size]{}; // initialize all!
+  fill(ary, size, 10);
+  dump(cout, ary, size);
 
-  MyClass *mcptr, *mcptr2; // Class Data Type
+  cout << "1:"<<ary[0]<<endl;
+  cout << "n-1:"<<ary[size-1]<<endl;
+  cout << "Size:"<<sizeof(ary)<<endl; //pointer,not array type!
 
-  lptr1 = new long;   // uninitialized
-  lptr2 = new long{1234567}; // initialized
-
-  *lptr1 = 23;
-
-  mcptr = new MyClass; // default constructor
-  mcptr2 = new MyClass(123456, 123, "3param ctor");  
-
-  cout << "Long Data Type Values: " << endl;
-  cout << "lptr1:"<< *lptr1 << endl;  
-  cout << "lptr1 Address: " << lptr1 << endl;
-  cout << "lptr2:"<< *lptr2 << endl;
-
-  cout << endl;
-
-  cout << "MyClass Data Types: " << endl;
-  cout << "MyClass default:"<< *mcptr << endl; // prints ostrram& operator
-  cout << "Random" << mcptr << endl; // Address 
-  cout << "MyClass 3 param:"<< *mcptr2 << endl;    // prints ostream& operator
-
-  // delete them when done
-  delete lptr1;
-  delete lptr2;  
-  delete mcptr;
-  delete mcptr2;
+  // if you make it, you must delete it. Note []
+  delete [] ary;
 }
 
 
