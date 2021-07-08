@@ -1,6 +1,5 @@
 
 #ifndef GCHARACTER_H_
-
 #define GCHARACTER_H_
 
 #include <iostream>
@@ -19,12 +18,12 @@ class GCharacter
 
     public:
         // Constructor
-        GCharacter(string name = "John", int capacity = 5 );
+        GCharacter(string name = "John", int capacity = 10 );
 
         // Copy Constructor
-        GCharacter(const GCharacter& source);
+       // GCharacter(const GCharacter& source);
 
-        // Overloaded Assignment with source being the Object were copying
+        // Overloaded Assignment with source being the Object were copying ( = )
         GCharacter& operator = (const GCharacter& source);
 
         // Destructor (easy to write)
@@ -32,10 +31,9 @@ class GCharacter
 
         // Insert (member function) a new tool into the tool array (holder)
         void insert(const string& toolName);
-    
 
-    // Overloading the << operator (syntax) Can Access the Priate memebers
-    friend std::ostream& operator <<(std::ostream& os, const GCharacter& gc);
+        // Overloading the << operator (syntax) Can Access the Priate memebers
+        friend std::ostream& operator <<(std::ostream& os, const GCharacter& gc);
 };
 
 #endif

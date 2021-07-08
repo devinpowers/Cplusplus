@@ -7,29 +7,30 @@ using std::string;
 using std::copy;
 
 #include "GCharacter.h"
-
-
+ 
 // Constructor
-GCharacter::GCharacter(string n, int cap)
+GCharacter::GCharacter(string name, int capacity)
 {
-    name = n;
-    capacity = cap;
+    this->name = name;
+    this->capacity = capacity;
     used = 0;  // Default which is the number of spaces used in the array of weapons
-    toolHolder = new string[cap]; // New Array of size of the capacity (default to 5)
+    toolHolder = new string[capacity]; // New Array of size of the capacity (default to 5)
 }
 
 // Copy Constructor
-GCharacter::GCharacter(const GCharacter& source)
-{
-    cout << "Copy Constructor Called. " << endl;
+//GCharacter::GCharacter(const GCharacter& source)
+//{
+  //  cout << "Copy Constructor Called. " << endl;
 
-    this->name  = source.name;
-    this->capacity = source.capacity;
-    used = source.used;
-    toolHolder = new string[source.capacity]; // In order to do a  Deep Copy!!!, we need to create a brand new string array (IMPORTANT)
+    //this->name  = source.name;
+    //this->capacity = source.capacity;
+    //used = source.used;
+    //toolHolder = new string[source.capacity]; // In order to do a  Deep Copy!!!, we need to create a brand new string array (IMPORTANT)
 
-    copy(source.toolHolder, source.toolHolder + used, this->toolHolder );
-}
+    // Copying the tools from our toolHolder over to our new array were declaring
+
+    //copy(source.toolHolder, source.toolHolder + used, this->toolHolder );
+//}
 
 // Overloaded Assignment Operator
 GCharacter& GCharacter::operator=(const GCharacter& source)
@@ -37,13 +38,13 @@ GCharacter& GCharacter::operator=(const GCharacter& source)
     // Testing for self-assignment
     cout << "Overloaded Assignment Called. " << endl;
 
-    
-    // Check for self assignment
-    // gc1 = gc1;
+    // Check for self assignment gc1 = gc1;
+
     if (this == &source)
     {
         return *this; // return GCharacter Object
     }
+    // Else
     this->name  = source.name;
     this->capacity = source.capacity;
     this->used = source.used;
@@ -55,11 +56,10 @@ GCharacter& GCharacter::operator=(const GCharacter& source)
 
 
 // Destructor
-
 GCharacter::~GCharacter()
 {
     // only handling the dynamic memory
-    cout << "Destructor called for " << this->name << " at this memory location " << this << endl;
+    cout << "Destructor called for " << this->name << endl;
 
     delete[] toolHolder; 
 }
@@ -84,7 +84,7 @@ void GCharacter::insert(const string& toolName)
 std::ostream& operator<<(std::ostream& os, const GCharacter& gc)
 {    // Prints out our Object! We overloaded the << 
     // Friend function so it can access the "private" data types
-    os << "adress of Object ToolHolder: " << gc.toolHolder << endl;
+    os << "Address of Object ToolHolder: " << gc.toolHolder << endl;
     os << "Game Character " << gc.name << " has the following tools: " <<   endl; 
 
     // iterate over our tool array and print
@@ -94,5 +94,7 @@ std::ostream& operator<<(std::ostream& os, const GCharacter& gc)
     }
     return os << endl;
 }
+
+
 
 

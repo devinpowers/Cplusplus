@@ -40,7 +40,9 @@ ostream & operator<<(ostream &out, const Clock &c){
 }
 
 // copy constructor
-Clock::Clock(const Clock &c){
+Clock::Clock(const Clock &c)
+{
+    cout << "Copy Constructor Called " << endl;
     // this->minutes_ = c.minutes_;
     minutes_ = c.minutes_;
     hours_ = c.hours_;

@@ -18,9 +18,9 @@ public:
     Stack(size_t sz);
     Stack(initializer_list<char>);
     
-    Stack(const Stack &);   // copy
-    ~Stack();               // destructor
-    Stack& operator=(const Stack &);
+    Stack(const Stack &);   // copy 
+    ~Stack();               // destructor (easy)
+    Stack& operator=(const Stack &); // Overloaded
     
     char top();
     void pop();

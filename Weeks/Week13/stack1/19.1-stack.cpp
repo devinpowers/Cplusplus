@@ -32,9 +32,12 @@ void Stack::clear(){
 }
 
 ostream& operator<<(ostream &out, const Stack &s){
+    // Print the stack
     out << "(bottom) ";
-    copy(s.vec_.begin(), s.vec_.end(),
-	       ostream_iterator<char>(out, ","));
+    copy(s.vec_.begin(), s.vec_.end(), ostream_iterator<char>(out, ","));
     out << " (top)";
     return out;
 }
+
+
+
