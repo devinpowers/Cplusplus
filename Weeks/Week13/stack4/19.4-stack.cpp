@@ -11,6 +11,7 @@ using std::overflow_error; using std::underflow_error;
 
 #include "19.4-stack.h"
 
+// NEW
 void swap(Stack &s1, Stack &s2){
     // have to indicate that in here we are using the stl swap
     std::swap (s1.top_, s2.top_);
@@ -26,6 +27,16 @@ Stack& Stack::operator=(Stack s){
     return *this;
 }
 
+
+
+
+
+
+
+
+
+
+// Same as last time
 Stack::Stack(const Stack &s){
     sz_ = s.sz_;
     top_ = s.top_;
@@ -34,6 +45,7 @@ Stack::Stack(const Stack &s){
     copy(s.ary_, s.ary_+s.sz_, ary_);
 }
 
+// Delete Memory
 Stack::~Stack(){
     delete [] ary_;
 }

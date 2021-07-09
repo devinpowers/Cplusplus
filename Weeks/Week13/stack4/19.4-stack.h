@@ -28,9 +28,9 @@ public:
     bool full();
     void clear();
     friend ostream& operator<< (ostream&, const Stack &);
-    friend void swap (Stack&, Stack&);
+    friend void swap (Stack&, Stack&); // NEW Compared to stack3 example
 };
 
-void swap (Stack&, Stack&);
+void swap (Stack&, Stack&); // NEW Compared to stack3 example
 ostream& operator<< (ostream&, const Stack&);
 #endif
