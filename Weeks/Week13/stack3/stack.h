@@ -16,7 +16,7 @@ private:
 
 public:
     // General Constructors to Initialize the Stack
-    Stack()=default; // Default constructor, when you create an object without initizing it 
+    Stack()=default; // Default constructor, when you create an object!
     
     Stack(size_t sz); // Takes in the "Size" of the String which will be converted into an Array -> string.size()
     Stack(initializer_list<char>); // Takes in {'A','B','C'} and Creates/Initializes the stack

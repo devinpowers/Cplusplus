@@ -12,11 +12,10 @@ using std::overflow_error; using std::underflow_error;
 using std::cout; using std::endl;
 
 
-#include "19.3-stack.h"
+#include "stack.h"
 
 // Copy Constructor
 Stack::Stack(const Stack &s){
-  //
     cout << "Using the Copy Constructor  " << endl;
     sz_ = s.sz_;
     top_ = s.top_;
@@ -58,7 +57,7 @@ Stack::Stack(size_t sz){
 // Pass Stack as a list of char
 Stack::Stack(initializer_list<char> c){
   // I think this badboy just takes a list into the constructor and automatically adds them to the array
-  cout << "Using the initializer_list constructor " << endl;
+  cout << "Using the initializer_list Constructor " << endl;
   sz_ = c.size();
   ary_ = new char[sz_];
   size_t indx = 0;

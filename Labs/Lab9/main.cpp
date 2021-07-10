@@ -1,4 +1,6 @@
 #include<iostream>
+using std::endl;
+using std::cout;
 #include<string>
 
 #include "math_vector.h"
@@ -9,10 +11,7 @@ int main (){
   MathVector v2(3,2);
   MathVector v3(10,12);
 
-  std::cout << "V1:" << vec_to_str(v1) 
-       	    << ", V2:" << vec_to_str(v2) 
-            << ", V3:" << vec_to_str(v3) 
-            << "\n";
+  std::cout << "V1:" << vec_to_str(v1) << ", V2:" << vec_to_str(v2) << ", V3:" << vec_to_str(v3) << endl;;
 
 
   MathVector add_result = v1.add(v2);

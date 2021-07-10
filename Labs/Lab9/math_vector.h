@@ -1,4 +1,8 @@
-#pragma once
+// #pragma once
+
+#ifndef MATH_H
+#define MATH_H
+
 
 #include<string>
 
@@ -24,3 +28,4 @@ struct MathVector{
 std::string vec_to_str(const MathVector&);
 
 
+#endif

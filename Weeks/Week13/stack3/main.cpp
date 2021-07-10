@@ -1,3 +1,4 @@
+
 #include<iostream>
 using std::cout; using std::endl; using std::cin;
 #include<string>
@@ -5,9 +6,7 @@ using std::string;
 #include<stdexcept>
 using std::overflow_error; using std::underflow_error;
 
-#include "19.3-stack.h"
-
-
+#include "stack.h"
 
 // Calls Copy Constructor to pass the Stack, then exercise the copy
 
@@ -30,7 +29,7 @@ void fn1(Stack s){
 
 int main()
 {
-
+    // Using initializer_list<char> 
     Stack stk1 = {'a','b','c','d'}; 
 
     cout << stk1 << endl;
@@ -57,8 +56,8 @@ int main()
 
     getline(cin, user_string);
 
-    // This is the size_t datatype constructor thing
-    Stack rev_stk(user_string.size()); // Pass in the size of the String 
+    // This is the size_t datatype constructor
+    Stack rev_stk(user_string.size()); 
 
     cout << "User_String Size: " << user_string.size() << endl;
 
@@ -72,16 +71,23 @@ int main()
 
     cout << rev_stk << endl;
 
-    Stack stack69(20); // Using the size_t datatype constructor
+
+    Stack stack69(5); // Using the size_t datatype constructor
 
     stack69.push('A');
+    stack69.push('B');
+    stack69.push('C');
+    stack69.push('D');
+    stack69.push('E');
+
 
     cout << stack69 << endl;
 
-    //
+    // Lets Create a New Object
+
     Stack stk2 = rev_stk;
 
-    cout << "STACK TWO: " << endl;
+    cout << "Stack Two: (Using the Copy Constructor) " << endl;
     cout << stk2 << endl;
 
     // stk1 is already in existence
@@ -103,3 +109,4 @@ int main()
     cout << stk1 << endl;
 
 }
+
