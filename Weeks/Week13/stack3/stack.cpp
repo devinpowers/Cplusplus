@@ -101,8 +101,9 @@ void Stack::push(char element){
   {
     throw overflow_error("push, full stack");
   }
-    
   ary_[++top_] = element; // Else move forward in our stack and add element
+
+
 }
 
 
@@ -125,6 +126,8 @@ void Stack::clear(){
 
 ostream& operator<<(ostream &out, const Stack &s){
     out << "(bottom) ";
+    // Extra
+    cout << "HELOO WORLD" << s.top_ << endl;
     copy(s.ary_, s.ary_ + s.top_+1,ostream_iterator<char>(out, ","));
     out << " (top)";
     return out;
