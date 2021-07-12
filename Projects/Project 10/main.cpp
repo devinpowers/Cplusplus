@@ -5,7 +5,7 @@ using std::boolalpha;
 using std::overflow_error; using std::underflow_error;
 
 
-#include "class-10.h"
+#include "bistack.h"
 
 int main (){
   int test_no;
