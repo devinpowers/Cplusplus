@@ -72,6 +72,7 @@ int main()
     cout << rev_stk << endl;
 
 
+
     Stack stack69(5); // Using the size_t datatype constructor
 
     stack69.push('A');

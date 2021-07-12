@@ -59,44 +59,65 @@ Stack::Stack(initializer_list<char> c){
   // I think this badboy just takes a list into the constructor and automatically adds them to the array
   cout << "Using the initializer_list Constructor " << endl;
   sz_ = c.size();
+
   ary_ = new char[sz_];
   size_t indx = 0;
-  top_ = sz_ - 1;
+  top_ = sz_ - 1; // It counts index 0 so we have to minus 1
+
+  cout << "Size of top_ = " << top_ << endl;
       
   for (auto e : c)
+  {
+    // ary_[0] = 'a';
+    // ary_[1] = 'e';
+    // ary_[2] = 's'; example of how this loop works with the array
     ary_[indx++] = e;
+
+  }
+
+    
 }
 
 // Methods to Perform on the Stack Object
+// Working with the Stack
 
 char Stack::top(){
   if (top_ < 0)
     throw underflow_error("top, empty stack");
+  // Else it will return the 
   return ary_[top_];
 }
 
 void Stack::pop(){
   if (top_ < 0)
     throw underflow_error("pop, empty stack");
-  --top_;
+  cout << "Removed Value" << endl;
+  --top_; // Kinda Confused how this value goes away in our Array
 }
 
 void Stack::push(char element){
   // cout << "sz:"<<sz_<<" top:"<<top_<<" e:"<<element<<" sub:"<< top_ + (sz_ - 1) << endl;
   if (top_ >= (sz_ - 1) )
+  {
     throw overflow_error("push, full stack");
-  ary_[++top_] = element;
+  }
+    
+  ary_[++top_] = element; // Else move forward in our stack and add element
 }
 
+
 bool Stack::empty(){
+  // Return True or False
   return top_ < 0;
 }
   
 bool Stack::full(){
+  // Return True or False
   return top_ >= ( sz_ - 1);
 }
 
 void Stack::clear(){
+  // Clears the Stack
   top_ = -1;
 }
 
@@ -104,8 +125,7 @@ void Stack::clear(){
 
 ostream& operator<<(ostream &out, const Stack &s){
     out << "(bottom) ";
-    copy(s.ary_, s.ary_ + s.top_+1,
-	 ostream_iterator<char>(out, ","));
+    copy(s.ary_, s.ary_ + s.top_+1,ostream_iterator<char>(out, ","));
     out << " (top)";
     return out;
 }
