@@ -6,6 +6,7 @@ using std::string;
 #define MAX 1000
  
 class Stack {
+private:
     int top;
  
 public:
@@ -66,7 +67,9 @@ int main()
     s.push(10);
     s.push(20);
     s.push(30);
-    cout << s.pop() << " Popped from stack\n";
+    s.push(50);
+    s.push(90);
+    cout << s.pop() << " Popped from stack\n" << endl;
     //print all elements in stack :
     cout<<"Elements present in stack : ";
     while(!s.isEmpty())
@@ -76,6 +79,7 @@ int main()
         // remove top element in stack
         s.pop();
     }
+    cout << endl;
  
     return 0;
 }
