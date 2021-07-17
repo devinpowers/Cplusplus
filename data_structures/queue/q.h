@@ -1,4 +1,6 @@
 
+#ifndef QUEUE_H
+#define QUEUE_H
 #include<iostream>
 using std::cout;
 using std::endl;
@@ -9,6 +11,8 @@ using std::endl;
 // A class to store a queue
 class queue
 {
+private:
+
     int *arr;       // array to store queue elements
     int capacity;   // maximum capacity of the queue
     int front;      // front points to the front element in the queue (if any)
@@ -26,4 +30,7 @@ public:
     bool isEmpty();
     bool isFull();
 };
+
+
+#endif
 
