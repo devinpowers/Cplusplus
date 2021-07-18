@@ -17,6 +17,7 @@ using std::swap;
 using std::initializer_list;
 
 // Declarations
+
 template<typename ElementType>
 class BiStack;
 
@@ -25,6 +26,7 @@ ostream& operator<<(ostream& out, const BiStack<ElementType> &s);
 
 
 // Definitions
+
 template<typename ElementType>
 class BiStack{
     // Attributes
@@ -40,8 +42,8 @@ class BiStack{
 
     // Constructors
     BiStack() = default; // Default
-    BiStack( size_t initial_size, size_t max_size = 16);   // size_t will be a int like -> BiStack(4) 
-    BiStack(initializer_list<ElementType>, size_t max_size = 16); // initializer_list will be a literal list like -> BiStack stack1 = {2,5,4,3,2,4,9}
+    BiStack( size_t initial_size, size_t max_size = 16);   
+    BiStack(initializer_list<ElementType>, size_t max_size = 16); 
 
     // Copy Constructor
     BiStack(const BiStack &s);
@@ -70,6 +72,9 @@ class BiStack{
 
     friend ostream& operator<< <ElementType>(ostream&, const BiStack&); // Returns stream aka prints out!!
 };
+
+
+
 
 template<typename ElementType>
 BiStack<ElementType>::BiStack(size_t initial_size, size_t max_size)
@@ -147,6 +152,7 @@ BiStack<ElementType>::~BiStack(){
 }
 
 // Copy and Grow
+
 template <typename ElementType>
 void BiStack<ElementType>::grow_and_copy()
 {
@@ -158,7 +164,6 @@ void BiStack<ElementType>::grow_and_copy()
         size_ =1;
         ary_ = new_array;
     }
-
     else
     {
         // We double the array in size without growing it past the max size
@@ -173,8 +178,7 @@ void BiStack<ElementType>::grow_and_copy()
 
             int number_of_elements = size_ - top2_;
             for (int i = i; i <= number_of_elements; i++)
-            {
-                // insert elements in back of the array
+            { // insert elements in back of the array
                 new_array[new_array_size - i] = ary_[size_ -i];
             }
             // Now we have to update Size and Tops in our New Array
@@ -349,9 +353,9 @@ ostream& operator<<(ostream &out, const BiStack<ElementType> &stack)
         out << "Top2 is Empty" << endl;
     }
 
-    // Let's print out the Size and Capacity of the BiStack
+    // Let's print out the Size and Capacity of the BiStack (Size = top1_ + top2_)
     out << "Size: " << stack.top1_+1 + (stack.size_ - stack.top2_) << endl;
-    // Print out Capacity of the BiStack
+    // Print out Capacity of the BiStack 
     out << "Capacity of BiStack: " << stack.size_ << endl;
 
     // Let's now print the Array
@@ -365,9 +369,6 @@ ostream& operator<<(ostream &out, const BiStack<ElementType> &stack)
     return out;
 
 }
-
-
-
 
 
 
