@@ -1,151 +1,128 @@
-/**
- * Observer Design Pattern
- *
- * Intent: Lets you define a subscription mechanism to notify multiple objects
- * about any events that happen to the object they're observing.
- *
- * Note that there's a lot of different terms with similar meaning associated
- * with this pattern. Just remember that the Subject is also called the
- * Publisher and the Observer is often called the Subscriber and vice versa.
- * Also the verbs "observe", "listen" or "track" usually mean the same thing.
- */
+/#include <iostream.h>
+#include <fstream.h>
+#include <string.h>
 
-#include <iostream>
-#include <list>
-#include <string>
+class Strategy;
 
-class IObserver {
- public:
-  virtual ~IObserver(){};
-  virtual void Update(const std::string &message_from_subject) = 0;
-};
-
-class ISubject {
- public:
-  virtual ~ISubject(){};
-  virtual void Attach(IObserver *observer) = 0;
-  virtual void Detach(IObserver *observer) = 0;
-  virtual void Notify() = 0;
-};
-
-/**
- * The Subject owns some important state and notifies observers when the state
- * changes.
- */
-
-class Subject : public ISubject {
- public:
-  virtual ~Subject() {
-    std::cout << "Goodbye, I was the Subject.\n";
-  }
-
-  /**
-   * The subscription management methods.
-   */
-  void Attach(IObserver *observer) override {
-    list_observer_.push_back(observer);
-  }
-  void Detach(IObserver *observer) override {
-    list_observer_.remove(observer);
-  }
-  void Notify() override {
-    std::list<IObserver *>::iterator iterator = list_observer_.begin();
-    HowManyObserver();
-    while (iterator != list_observer_.end()) {
-      (*iterator)->Update(message_);
-      ++iterator;
+class TestBed
+{
+  public:
+    enum StrategyType
+    {
+        Dummy, Left, Right, Center
+    };
+    TestBed()
+    {
+        strategy_ = NULL;
     }
-  }
-
-  void CreateMessage(std::string message = "Empty") {
-    this->message_ = message;
-    Notify();
-  }
-  void HowManyObserver() {
-    std::cout << "There are " << list_observer_.size() << " observers in the list.\n";
-  }
-
-  /**
-   * Usually, the subscription logic is only a fraction of what a Subject can
-   * really do. Subjects commonly hold some important business logic, that
-   * triggers a notification method whenever something important is about to
-   * happen (or after it).
-   */
-  void SomeBusinessLogic() {
-    this->message_ = "change message message";
-    Notify();
-    std::cout << "I'm about to do some thing important\n";
-  }
-
- private:
-  std::list<IObserver *> list_observer_;
-  std::string message_;
+    void setStrategy(int type, int width);
+    void doIt();
+  private:
+    Strategy *strategy_;
 };
 
-class Observer : public IObserver {
- public:
-  Observer(Subject &subject) : subject_(subject) {
-    this->subject_.Attach(this);
-    std::cout << "Hi, I'm the Observer \"" << ++Observer::static_number_ << "\".\n";
-    this->number_ = Observer::static_number_;
-  }
-  virtual ~Observer() {
-    std::cout << "Goodbye, I was the Observer \"" << this->number_ << "\".\n";
-  }
+class Strategy
+{
+  public:
+    Strategy(int width): width_(width){}
+    void format()
+    {
+        char line[80], word[30];
+        ifstream inFile("quote.txt", ios::in);
+        line[0] = '\0';
 
-  void Update(const std::string &message_from_subject) override {
-    message_from_subject_ = message_from_subject;
-    PrintInfo();
-  }
-  void RemoveMeFromTheList() {
-    subject_.Detach(this);
-    std::cout << "Observer \"" << number_ << "\" removed from the list.\n";
-  }
-  void PrintInfo() {
-    std::cout << "Observer \"" << this->number_ << "\": a new message is available --> " << this->message_from_subject_ << "\n";
-  }
-
- private:
-  std::string message_from_subject_;
-  Subject &subject_;
-  static int static_number_;
-  int number_;
+        inFile >> word;
+        strcat(line, word);
+        while (inFile >> word)
+        {
+            if (strlen(line) + strlen(word) + 1 > width_)
+              justify(line);
+            else
+              strcat(line, " ");
+            strcat(line, word);
+        }
+        justify(line);
+    }
+  protected:
+    int width_;
+  private:
+    virtual void justify(char *line) = 0;
 };
 
-int Observer::static_number_ = 0;
+class LeftStrategy: public Strategy
+{
+  public:
+    LeftStrategy(int width): Strategy(width){}
+  private:
+     /* virtual */void justify(char *line)
+    {
+        cout << line << endl;
+        line[0] = '\0';
+    }
+};
 
-void ClientCode() {
-  Subject *subject = new Subject;
-  Observer *observer1 = new Observer(*subject);
-  Observer *observer2 = new Observer(*subject);
-  Observer *observer3 = new Observer(*subject);
-  Observer *observer4;
-  Observer *observer5;
+class RightStrategy: public Strategy
+{
+  public:
+    RightStrategy(int width): Strategy(width){}
+  private:
+     /* virtual */void justify(char *line)
+    {
+        char buf[80];
+        int offset = width_ - strlen(line);
+        memset(buf, ' ', 80);
+        strcpy(&(buf[offset]), line);
+        cout << buf << endl;
+        line[0] = '\0';
+    }
+};
 
-  subject->CreateMessage("Hello World! :D");
-  observer3->RemoveMeFromTheList();
+class CenterStrategy: public Strategy
+{
+  public:
+    CenterStrategy(int width): Strategy(width){}
+  private:
+     /* virtual */void justify(char *line)
+    {
+        char buf[80];
+        int offset = (width_ - strlen(line)) / 2;
+        memset(buf, ' ', 80);
+        strcpy(&(buf[offset]), line);
+        cout << buf << endl;
+        line[0] = '\0';
+    }
+};
 
-  subject->CreateMessage("The weather is hot today! :p");
-  observer4 = new Observer(*subject);
-
-  observer2->RemoveMeFromTheList();
-  observer5 = new Observer(*subject);
-
-  subject->CreateMessage("My new car is great! ;)");
-  observer5->RemoveMeFromTheList();
-
-  observer4->RemoveMeFromTheList();
-  observer1->RemoveMeFromTheList();
-
-  delete observer5;
-  delete observer4;
-  delete observer3;
-  delete observer2;
-  delete observer1;
-  delete subject;
+void TestBed::setStrategy(int type, int width)
+{
+  delete strategy_;
+  if (type == Left)
+    strategy_ = new LeftStrategy(width);
+  else if (type == Right)
+    strategy_ = new RightStrategy(width);
+  else if (type == Center)
+    strategy_ = new CenterStrategy(width);
 }
 
-int main() {
-  ClientCode();
+void TestBed::doIt()
+{
+  strategy_->format();
+}
+
+int main()
+{
+  TestBed test;
+  int answer, width;
+  cout << "Exit(0) Left(1) Right(2) Center(3): ";
+  cin >> answer;
+  while (answer)
+  {
+    cout << "Width: ";
+    cin >> width;
+    test.setStrategy(answer, width);
+    test.doIt();
+    cout << "Exit(0) Left(1) Right(2) Center(3): ";
+    cin >> answer;
+  }
   return 0;
 }

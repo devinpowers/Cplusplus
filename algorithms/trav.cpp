@@ -57,7 +57,7 @@ public:
 
 int main()
 {
-    linked_list a;
+    linked_list a; // New Linked List Objects
     a.add_node(1);
     a.add_node(2);
     a.add_node(4);
