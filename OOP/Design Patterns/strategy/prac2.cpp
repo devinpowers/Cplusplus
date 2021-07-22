@@ -8,6 +8,7 @@
 #include<iostream>
 
 using std::cout;
+using std::endl;
 
 #include<string>
 using std::string;
@@ -17,7 +18,7 @@ using std::vector;
 class Strategy
 {
 public:
-    virtual ~Strategy() {}
+    virtual ~Strategy() {} // Deconstructor
     virtual string DoAlgorithm(const vector<string> &data) const = 0; // Pure virtual function
 };
 
@@ -50,7 +51,7 @@ public:
      * Usually, the Context allows replacing a Strategy object at runtime.
      */
     void set_strategy(Strategy *strategy)
-    {
+    {   // Setter
         delete this->strategy_;
         this->strategy_ = strategy;
     }
@@ -61,9 +62,9 @@ public:
     void DoSomeBusinessLogic() const
     {
         // ...
-        cout << "Context: Sorting data using the strategy (not sure how it'll do it)\n";
+        cout << "Context: Sorting data using the strategy (not sure how it'll do it)" << endl;
         string result = this->strategy_->DoAlgorithm(vector<string>{"a", "e", "c", "b", "d"});
-        cout << result << "\n";
+        cout << result << endl;
         // ...
     }
 };
@@ -112,10 +113,10 @@ class ConcreteStrategyB : public Strategy
 void ClientCode()
 {
     Context *context = new Context(new ConcreteStrategyA);
-    std::cout << "Client: Strategy is set to normal sorting.\n";
+    std::cout << "Client: Strategy is set to normal sorting" << endl;
     context->DoSomeBusinessLogic();
-    std::cout << "\n";
-    std::cout << "Client: Strategy is set to reverse sorting.\n";
+    std::cout << endl;
+    std::cout << "Client: Strategy is set to reverse sorting. " << endl;
     context->set_strategy(new ConcreteStrategyB);
     context->DoSomeBusinessLogic();
     delete context;
@@ -124,5 +125,5 @@ void ClientCode()
 int main()
 {
     ClientCode(); // Run Client Code
-    return 0;
+    cout << "Testing" << endl;
 }

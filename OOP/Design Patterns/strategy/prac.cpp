@@ -1,5 +1,6 @@
 
 #include <iostream>
+
 /*
  * Strategy
  * declares an interface common to all supported algorithms
@@ -38,6 +39,8 @@ class ConcreteStrategyB : public Strategy
         }
     // ...
 };
+
+
 
 class ConcreteStrategyC : public Strategy
 {
@@ -87,6 +90,9 @@ int main()
   Context context_B( new ConcreteStrategyB() );
   context_B.contextInterface();
 
+  Context context_C( new ConcreteStrategyC() );
+  context_C.contextInterface();
   
-  return 0;
-   }
+ }
+
+ 
