@@ -1,4 +1,4 @@
-/#include <iostream.h>
+#include <iostream.h>
 #include <fstream.h>
 #include <string.h>
 
@@ -126,3 +126,4 @@ int main()
   }
   return 0;
 }
+

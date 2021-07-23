@@ -18,7 +18,7 @@ int main() {
 
     weatherStation.setState(temp,humidity,pressure);
 
-    weatherStation.removeObserver(&two);
+    weatherStation.removeObserver(&two); // Remove from 
 
     std::cout << "\n\nEnter Temperature, Humidity, Pressure (seperated by spaces) << ";
     std::cin >> temp >> humidity >> pressure;
