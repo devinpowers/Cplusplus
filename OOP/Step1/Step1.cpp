@@ -7,13 +7,15 @@
 #include "Duck.h"
 // #include "leak.h"
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::endl;
+
 
 /**
  * Main entry point.
  *
  * This is where the program starts.
- * \return 0
  */
 int main()
 {

@@ -1,8 +1,12 @@
 
-#pragma once
+#ifndef ANIMAL_H
+#define ANIMAL_H
+
 
 class CAnimal
 {
+private:
+    int mAnimalType = 0;
 public:
 	virtual ~CAnimal();
 
@@ -15,10 +19,10 @@ public:
     /**Setter and getter for type of animal for the purpose of witch weight. */
     void setDuckType(int duckType) { mAnimalType = duckType; }
     int getDuckType() { return mAnimalType; }
-
-private:
-    int mAnimalType = 0;
 };
+
+#endif
+
 
 
 

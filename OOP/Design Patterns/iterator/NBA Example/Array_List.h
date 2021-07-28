@@ -5,12 +5,12 @@
  *      Author: DeVin Powers
  */
 
-#ifndef ARRAYLIST_H_
-#define ARRAYLIST_H_
+#ifndef ARRAY_LIST_H_
+#define ARRAY_LIST_H_
 
 #include "List.h"
 
-#include "ArrayListIterator.h"
+#include "Array_List_Iterator.h"
 
 const unsigned int MAXSIZEARRAY = 200;
 
@@ -22,26 +22,27 @@ class ArrayList : public List<Item> {
 
 private:
 	Item m_array[MAXSIZEARRAY];
-	unsigned int m_currentSize;
+	unsigned int current_Size;
 
 public:
-	ArrayList(): m_currentSize(0){}
-	virtual ~ArrayList()
-	{
+	ArrayList(): current_Size(0){} // Constructor (set size of the Array)
+	virtual ~ArrayList(){} // Deconstructor
 
-	}
 	virtual Iterator<Item> * CreateIterator() const {
 		return new ArrayListIterator<Item>(this);
 	}
+
 	virtual unsigned int Count() const {
-       return m_currentSize;
+		// Count number of elements in the Array
+       return current_Size;
 	}
 
 	virtual void Append(Item item) {
-       if(m_currentSize < MAXSIZEARRAY)
+       if(current_Size < MAXSIZEARRAY)
        {
-    	   m_array[m_currentSize] = item;
-           m_currentSize++;
+		   // Add Element to the array
+    	   m_array[current_Size] = item;
+           current_Size++;
        }
     }
 
@@ -52,4 +53,4 @@ public:
 
 };
 
-#endif /* STDVECTORLIST_H_ */
+#endif

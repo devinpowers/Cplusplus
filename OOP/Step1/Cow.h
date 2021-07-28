@@ -6,7 +6,9 @@
  */
 
 
-#pragma once
+#ifndef COW_H
+#define COW_H
+
 #include <string>
 #include "Animal.h"
 
@@ -17,13 +19,6 @@
  */
 class CCow : public CAnimal
 {
-public:
-	/// The types of cow we can have on our farm
-	enum class Type { Bull, BeefCow, MilkCow };
-
-    void ObtainCowInformation();
-    void DisplayAnimal();
-
 private:
     /// The cow's name
     std::string mName;
@@ -33,5 +28,14 @@ private:
 
     /// The milk production for a cow in gallons per day
     double mMilkProduction = 0;
+public:
+	/// The types of cow we can have on our farm
+	enum class Type { Bull, BeefCow, MilkCow };
+
+    void ObtainCowInformation();
+    void DisplayAnimal();
 };
+
+#endif
+
 

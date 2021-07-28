@@ -5,9 +5,6 @@
 /**
  * Destructor
  */
-CAnimal::~CAnimal()
-{
-    
-}
+CAnimal::~CAnimal(){}
 
 

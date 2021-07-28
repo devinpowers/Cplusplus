@@ -3,8 +3,9 @@
  * up the duck inventory of the farm.
  */
 
+#ifndef DUCK_H
+#define DUCK_H
 
-#pragma once
 #include <string>
 #include "Animal.h"
 #include "Farm.h"
@@ -18,6 +19,12 @@ using std::string;
 */
 class CDuck : public CAnimal
 {
+private:
+	/// Duck's name
+	string mName;
+
+	/// The type of duck, with default being the Disney duck
+	Type mType = Type::Disney;
 public:
 	/// The types of duck we can have on our farm
 	enum class Type { Mallard, Wood, Disney, WarnerBrothers };
@@ -28,11 +35,8 @@ public:
 	/** Sets type of animal to check for witch weight. */
 	void setType() { CAnimal::setDuckType(int(mType)); }
 
-private:
-	/// Duck's name
-	string mName;
 
-	/// The type of duck, with default being the Disney duck
-	Type mType = Type::Disney;
 };
+
+#endif
 

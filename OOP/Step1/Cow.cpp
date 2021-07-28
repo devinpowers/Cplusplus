@@ -3,8 +3,9 @@
 #include "Cow.h"
 // #include "leak.h"
 
-using namespace std;
-
+using std::cout;
+using std::end;
+using std::cin;
  /**
   * Obtain information from the user about this cow.
   *

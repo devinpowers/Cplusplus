@@ -2,26 +2,25 @@
 #include <iostream>
 #include "Chicken.h"
 
-using namespace std;
-
 
 /** Obtain a chicken description from the user.
 */
 void CChicken::ObtainChickenInformation()
 {
-    cout << endl;
-    cout << "Input information about the chicken" << endl;
+    std::cout << endl;
+    std::cout << "Input information about the chicken" << std::endl;
 
     // Obtain the ID. This is easy, since it's just a
     // string.
-    cout << "Id: ";
-    cin >> mId;
+    std::cout << "Id: ";
+    std::cin >> mId;
 }
 
 /** Display the chicken.
 */
 void CChicken::DisplayAnimal()
 {
-    cout << "Chicken: " << mId << endl;
+    std::cout << "Chicken: " << mId << std::endl;
 }
+
 

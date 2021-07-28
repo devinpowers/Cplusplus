@@ -5,7 +5,8 @@
  */
 
 
-#pragma once
+#ifndef FARM_H
+#define FARM_H
 #include <vector>
 #include <string>
 #include "Cow.h"
@@ -40,5 +41,5 @@ private:
     /// Counter for witch weight animals in the farm
     int mWitchWeight = 0;
 };
-
+#endif
 

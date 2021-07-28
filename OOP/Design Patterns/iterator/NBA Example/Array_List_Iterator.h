@@ -5,8 +5,8 @@
  *      Author: Devin Powers
  */
 
-#ifndef ARRAYLISTITERATOR_H_
-#define ARRAYLISTITERATOR_H_
+#ifndef ARRAY_LIST_ITERATOR_H_
+#define ARRAY_LIST_ITERATOR_H_
 
 #include "Iterator.h"
 
@@ -15,24 +15,30 @@ class ArrayList;
 
 template <class Item>
 class ArrayListIterator : public Iterator<Item> {
+
+private:
+	const ArrayList<Item> * Array_List;
+
+	unsigned int Array_index;
+
 public:
-    ArrayListIterator(const ArrayList<Item> * list) : m_pList(list), m_index(0){}
+    ArrayListIterator(const ArrayList<Item> * list) : Array_List(list), Array_index(0){}
 
 	virtual ~ArrayListIterator(){}
 
 	virtual void First()
 	{
-        m_index = 0;
+        Array_index = 0;
 	}
 
 	virtual void Next()
 	{
-        m_index++;
+        Array_index++;
 	}
 
 	virtual bool IsDone() const
 	{
-        return (m_pList->Count() <= m_index);
+        return (Array_List->Count() <= Array_index);
 	}
 
 	virtual Item CurrentItem() const
@@ -42,15 +48,11 @@ public:
         	return Item();
         }
 
-        return m_pList->Get(m_index);
+        return Array_List->Get(Array_index);
    }
 
-private:
-	const ArrayList<Item> * m_pList;
-
-	unsigned int m_index;
 };
 
-#endif /* ARRAYLISTITERATOR_H_ */
+#endif
 
 
