@@ -9,6 +9,8 @@
 
 #include "CheesePizza.h"
 #include "MeatLoversPizza.h"
+#include "VeggiePizza.h"
+#include "MushroomsPizza.h"
 
 
 int main()
@@ -21,7 +23,17 @@ int main()
 
 	meatLoversPizza.Prepare();
 
+	MushroomsPizza shroomsPizza;
+
+	shroomsPizza.Prepare();
+
+	VeggiePizza veggiePizza;
+
+	veggiePizza.Prepare();
+
 	return 0;
 }
+
+
 
 
