@@ -1,0 +1,14 @@
+Group : Book Collection
+    Book  : Merriam-Webster's Collegiate Dictionary by Merriam-Webster
+    Group : Fiction
+        Group : Kids
+            Book  : Green Eggs and Ham by Dr. Suess
+            Group : Kids (Ages 3-5)
+                Book  : Goodnight Moon by Margaret Wise Brown
+        Group : Porno
+            Book  : Kaligh Brown by Whitney Hawkes
+        Group : Porno
+            Book  : Mia Khalifa by Jenny Adams
+    Group : Nonfiction
+        Group : Biography
+            Book  : Steve Jobs by Walter Isaacson
