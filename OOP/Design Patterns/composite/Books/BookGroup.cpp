@@ -1,24 +1,20 @@
 /*
- * BookGroup.cpp
- *
- *  Created on: Apr 25, 2017
- *      Author: Robert Larson
+ * 		BookGroup.cpp
+ *      Author: Devin Powers
  */
 
-#include "BookGroup.h"
 
+#include "BookGroup.h"
 #include <iostream>
 
-BookGroup::BookGroup(std::string groupName)
-: m_groupName(groupName){
-}
+BookGroup::BookGroup(std::string groupName) : m_groupName(groupName){}   // Constructor  
 
 BookGroup::~BookGroup() {
+
 	std::vector<BookComponent *>::iterator pos;
 
-	for(pos = m_bookComponents.begin();
-		pos != m_bookComponents.end(); ++pos)
-	{
+	for(pos = m_bookComponents.begin(); pos != m_bookComponents.end(); ++pos) 
+	{	
 		BookComponent * bookComponent = *pos;
 
 		delete bookComponent;
@@ -35,8 +31,7 @@ void BookGroup::Remove(BookComponent * componentToRemove)
 {
 	std::vector<BookComponent *>::iterator pos;
 
-	for(pos = m_bookComponents.begin();
-		pos != m_bookComponents.end(); ++pos)
+	for(pos = m_bookComponents.begin(); pos != m_bookComponents.end(); ++pos)
 	{
 		if(*pos == componentToRemove)
 		{

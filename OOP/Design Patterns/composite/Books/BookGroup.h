@@ -1,8 +1,6 @@
 /*
- * BookGroup.h
- *
- *  Created on: Apr 25, 2017
- *      Author: Robert Larson
+ *		BookGroup.h
+ *      Author: Devin Powers
  */
 
 #ifndef BOOKGROUP_H_
@@ -16,18 +14,16 @@
 class BookGroup : public BookComponent {
 
 private:
-	std::string m_groupName;
-	std::vector<BookComponent*> m_bookComponents;
+	std::string m_groupName;						// Name of Group
+	std::vector<BookComponent*> m_bookComponents;	// Vector of Possible Components
 public:
-	BookGroup(std::string groupName);
-	virtual ~BookGroup();
+	BookGroup(std::string groupName);    // Constructor
+	virtual ~BookGroup();				 // Deconstructor
 
 	virtual void Add(BookComponent * newComponent);
 	virtual void Remove(BookComponent * componentToRemove);
 	virtual void DisplayInfo();
-
 };
 
-#endif /* BOOKGROUP_H_ */
-
+#endif
 
