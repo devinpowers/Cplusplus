@@ -1,8 +1,9 @@
 
-#ifndef OBSERVER_PATTERN_CLIENT_1_H
-#define OBSERVER_PATTERN_CLIENT_1_H
+#ifndef OBSERVER_PATTERN_CLIENT_H
+#define OBSERVER_PATTERN_CLIENT_H
 
 #include <iostream>
+#include <string>
 
 #include "Observer.h"
 
@@ -11,15 +12,13 @@
  */
 class Client : public Observer {
 
-private:
-
     int id; // Label the Identification number of the Client
 
 public:
 
     Client(int id);
 
-    virtual void update(float temp, float humidity, float pressure, float wind) override;
+    virtual void update(std::string team_name, int score, float win_percent) override;
 
 };
 

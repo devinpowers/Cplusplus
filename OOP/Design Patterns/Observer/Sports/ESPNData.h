@@ -1,10 +1,12 @@
 
-#ifndef OBSERVER_PATTERN_WEATHERDATA_H
-#define OBSERVER_PATTERN_WEATHERDATA_H
+#ifndef OBSERVER_PATTERN_ESPNDATA_H
+#define OBSERVER_PATTERN_ESPNDATA_H
 
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <string>
+
 
 #include "Subject.h"
 #include "Observer.h"
@@ -12,15 +14,13 @@
 /**
  * A concrete implementation of the Subject interface
  */
-class WeatherData : public Subject {
-
-private:
+class ESPNData : public Subject {
+    
     std::vector<Observer *> observers; // observers need a list of them so we can update
 
-    float temp = 0.0f;
-    float humidity = 0.0f;
-    float pressure = 0.0f;
-    float wind = 0.0f;
+    std::string team_name = "";
+    int score = 0;
+    float win_percent = 0.0f;
 
 public:
 
@@ -30,12 +30,13 @@ public:
 
     void notifyObservers() override;
 
-    void setState(float temp, float humidity, float pressure, float wind);
+    /**
+     * Set the new state of the ESPN App station
+     */
+    void setState(std::string team_name, int score, float win_percent);
 
 };
 
-#endif
-
-
+#endif 
 
 

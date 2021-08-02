@@ -7,6 +7,7 @@
 
 /**
  * Interface for the Subject
+ * The Keeper of information, of data or of business logic.
  */
 class Subject {
 
@@ -20,5 +21,8 @@ public:
 
 };
 
-#endif 
+#endif
+
+
+
 

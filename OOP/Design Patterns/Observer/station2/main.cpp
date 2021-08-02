@@ -8,7 +8,7 @@ int main() {
     WeatherData weatherStation;
     Client one(1), two(2), three(3), four(4), five(5);
 
-    float temp, humidity, pressure;
+    float temp, humidity, pressure, wind;
 
     weatherStation.registerObserver(&one);
     weatherStation.registerObserver(&two);
@@ -17,17 +17,17 @@ int main() {
     weatherStation.registerObserver(&five);
 
 
-    std::cout << "Enter Temperature, Humidity, Pressure (seperated by spaces) << ";
-    std::cin >> temp >> humidity >> pressure;
+    std::cout << "Enter Temperature, Humidity, Pressure, Wind (seperated by spaces) << ";
+    std::cin >> temp >> humidity >> pressure >> wind;
 
-    weatherStation.setState(temp,humidity,pressure);
+    weatherStation.setState(temp,humidity,pressure, wind);
 
     weatherStation.removeObserver(&two); // Remove from 
 
-    std::cout << "\n\nEnter Temperature, Humidity, Pressure (seperated by spaces) << ";
-    std::cin >> temp >> humidity >> pressure;
+    std::cout << "\n\nEnter Temperature, Humidity, Pressure, Wind (seperated by spaces) << ";
+    std::cin >> temp >> humidity >> pressure >> wind;
 
-    weatherStation.setState(temp,humidity,pressure);
+    weatherStation.setState(temp,humidity,pressure,wind);
 
 }
 

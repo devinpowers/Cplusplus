@@ -18,14 +18,15 @@ void WeatherData::removeObserver(Observer *observer) {
 
 void WeatherData::notifyObservers() {
     for (Observer *observer : observers) { // notify all observers
-        observer->update(temp, humidity, pressure);
+        observer->update(temp, humidity, pressure, wind);
     }
 }
 
-void WeatherData::setState(float temp, float humidity, float pressure) {
+void WeatherData::setState(float temp, float humidity, float pressure, float wind) {
     this->temp = temp;
     this->humidity = humidity;
     this->pressure = pressure;
+    this->wind = wind;
     std::cout << std::endl;
     notifyObservers();
 }
