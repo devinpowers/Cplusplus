@@ -1,6 +1,6 @@
 
-#ifndef OBSERVER_PATTERN_CLIENT_1_HPP
-#define OBSERVER_PATTERN_CLIENT_1_HPP
+#ifndef OBSERVER_PATTERN_CLIENT_1_H
+#define OBSERVER_PATTERN_CLIENT_1_H
 
 #include <iostream>
 
@@ -21,6 +21,6 @@ public:
 
 };
 
-#endif //OBSERVER_PATTERN_CLIENT_1_HPP
+#endif
 
 

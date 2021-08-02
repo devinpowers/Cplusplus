@@ -5,7 +5,6 @@
 int main()
 {
     Librarian librarian;
-
     librarian.DisplayBookCollection();
 }
 

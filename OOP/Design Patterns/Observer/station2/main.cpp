@@ -29,6 +29,5 @@ int main() {
 
     weatherStation.setState(temp,humidity,pressure);
 
-    return 0;
 }
 

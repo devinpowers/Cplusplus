@@ -1,21 +1,17 @@
 /*
- * Librarian.cpp
- *
- *  Created on: Apr 25, 2017
- *      Author: Robert Larson
+ * 		Librarian.cpp 
+ *      Author: Devin Powers
+ * 		Client
  */
 
 #include "Librarian.h"
-
 #include "BookComponent.h"
-
 #include "BookGroup.h"
 #include "Book.h"
 
-Librarian::Librarian()
-: m_pBookCollection(new BookGroup(std::string("Book Collection")))
+Librarian::Librarian(): m_pBookCollection(new BookGroup(std::string("Book Collection")))
 {
-	BuildBookCollection();
+	BuildBookCollection(); // Build Collection
 }
 
 Librarian::~Librarian() {
@@ -24,22 +20,19 @@ Librarian::~Librarian() {
 
 void Librarian::BuildBookCollection()
 {
-	AddBookToGroup(m_pBookCollection,
-				   std::string("Merriam-Webster's Collegiate Dictionary"),
-			       std::string("Merriam-Webster"));
+	AddBookToGroup(m_pBookCollection, std::string("Merriam-Webster's Collegiate Dictionary"), std::string("Merriam-Webster")); // Leaf!
 
-	m_pBookCollection->Add(BuildFictionGroup());
-	m_pBookCollection->Add(BuildNonfictionGroup());
+	m_pBookCollection->Add(BuildFictionGroup());         // Another Group
+	m_pBookCollection->Add(BuildNonfictionGroup());      // Another Group
 
 }
 
+// Two Main Groups
 BookComponent * Librarian::BuildFictionGroup()
 {
 	BookComponent * fictionGroup = new BookGroup(std::string("Fiction"));
 
-	fictionGroup->Add(BuildKidsGroup()); // Add
-	fictionGroup->Add(BuildAdultGroup()); // Add
-	fictionGroup->Add(BuildPornoGroup()); // Add
+	fictionGroup->Add(BuildKidsGroup()); // Adding another group to this
 
     return fictionGroup;
 }
@@ -48,19 +41,16 @@ BookComponent * Librarian::BuildNonfictionGroup()
 {
 	BookComponent * nonfictionGroup = new BookGroup(std::string("Nonfiction"));
 
-	nonfictionGroup->Add(BuildBiographyGroup());
+	nonfictionGroup->Add(BuildBiographyGroup()); // Adding another Group to this 
 
     return nonfictionGroup;
 }
 
 BookComponent * Librarian::BuildKidsGroup()
 {
-	BookComponent * kidsGroup =
-		new BookGroup(std::string("Kids"));
+	BookComponent * kidsGroup = new BookGroup(std::string("Kids"));
 
-	AddBookToGroup(kidsGroup,
-			       std::string("Green Eggs and Ham"),
-				   std::string("Dr. Suess"));
+	AddBookToGroup(kidsGroup, std::string("Green Eggs and Ham"), std::string("Dr. Suess"));
 
 	kidsGroup->Add(BuildKidsAges3To5Group());
 
@@ -69,12 +59,9 @@ BookComponent * Librarian::BuildKidsGroup()
 
 BookComponent * Librarian::BuildKidsAges3To5Group()
 {
-	BookComponent * kidsAges3To5Group =
-		new BookGroup(std::string("Kids (Ages 3-5)"));
+	BookComponent * kidsAges3To5Group = new BookGroup(std::string("Kids (Ages 3-5)"));
 
-	AddBookToGroup(kidsAges3To5Group,
-			       std::string("Goodnight Moon"),
-				   std::string("Margaret Wise Brown"));
+	AddBookToGroup(kidsAges3To5Group, std::string("Goodnight Moon"), std::string("Margaret Wise Brown"));
 
     return kidsAges3To5Group;
 }
@@ -83,39 +70,13 @@ BookComponent * Librarian::BuildBiographyGroup()
 {
 	BookComponent * biographyGroup = new BookGroup(std::string("Biography"));
 
-	AddBookToGroup(biographyGroup,
-			       std::string("Steve Jobs"),
-			       std::string("Walter Isaacson"));
+	AddBookToGroup(biographyGroup, std::string("Steve Jobs"), std::string("Walter Isaacson"));
 
     return biographyGroup;
 }
 
 
-BookComponent * Librarian::BuildPornoGroup()
-{
-	BookComponent * pornoGroup = new BookGroup(std::string("Porno"));
-
-	AddBookToGroup(pornoGroup,
-			       std::string("Mia Khalifa"),
-			       std::string("Jenny Adams"));
-
-    return pornoGroup;
-}
-
-BookComponent * Librarian::BuildAdultGroup()
-{
-	BookComponent * AdultGroup = new BookGroup(std::string("Porno"));
-
-	AddBookToGroup(AdultGroup,
-			       std::string("Kaligh Brown"),
-			       std::string("Whitney Hawkes"));
-
-    return AdultGroup;
-}
-
-
-void Librarian::AddBookToGroup(BookComponent * group,
-		std::string bookTitle, std::string author)
+void Librarian::AddBookToGroup(BookComponent * group, std::string bookTitle, std::string author)
 {
 	BookComponent * book = new Book(bookTitle, author);
     group->Add(book);
@@ -125,3 +86,6 @@ void Librarian::DisplayBookCollection()
 {
 	m_pBookCollection->DisplayInfo();
 }
+
+
+

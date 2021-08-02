@@ -15,6 +15,5 @@ Item::Item(string name, double price) {
     m_price = price;
 }
 
-Item::~Item() {
-}
+Item::~Item() {}
 
