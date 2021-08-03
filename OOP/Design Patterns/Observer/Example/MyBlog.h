@@ -1,8 +1,7 @@
 /*
  * MyBlog.h
  *
- *  Created on: Feb 6, 2017
- *      Author: Robert Larson
+ * 
  */
 
 #ifndef MYBLOG_H_
@@ -56,3 +55,4 @@ private:
 };
 
 #endif /* MYBLOG_H_ */
+

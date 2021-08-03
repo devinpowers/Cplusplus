@@ -1,8 +1,5 @@
 /*
- * BlogObserver.h
- *
- *  Created on: Feb 6, 2017
- *      Author: Robert Larson
+ * BlogObserver.h 
  */
 
 #ifndef BLOGOBSERVER_H_
@@ -18,3 +15,5 @@ public:
 
 
 #endif /* BLOGOBSERVER_H_ */
+
+

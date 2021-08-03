@@ -1,8 +1,8 @@
 /*
  * Boss.h
  *
- *  Created on: Feb 6, 2017
- *      Author: Robert Larson
+ *  Created on: 
+ *      Author: 
  */
 
 #ifndef BOSS_H_

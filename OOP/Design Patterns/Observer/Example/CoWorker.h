@@ -1,8 +1,6 @@
 /*
  * CoWorker.h
  *
- *  Created on: Feb 7, 2017
- *      Author: Robert Larson
  */
 
 #ifndef COWORKER_H_
@@ -24,3 +22,4 @@ private:
 };
 
 #endif /* COWORKER_H_ */
+

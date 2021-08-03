@@ -1,9 +1,4 @@
-/*
- * MyBlog.cpp
- *
- *  Created on: Feb 6, 2017
- *      Author: Robert Larson
- */
+
 
 #include "MyBlog.h"
 
@@ -63,3 +58,5 @@ void MyBlog::Notify()
 
     pthread_mutex_unlock(&m_mutex);
 }
+
+

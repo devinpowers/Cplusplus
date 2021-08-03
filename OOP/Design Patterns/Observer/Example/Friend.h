@@ -1,8 +1,7 @@
 /*
  * Friend.h
  *
- *  Created on: Feb 7, 2017
- *      Author: Robert Larson
+ *  
  */
 
 #ifndef FRIEND_H_
@@ -25,3 +24,5 @@ private:
 
 
 #endif /* FRIEND_H_ */
+
+

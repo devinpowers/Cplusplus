@@ -1,8 +1,6 @@
 /*
  * CoWorker.cpp
  *
- *  Created on: Feb 7, 2017
- *      Author: Robert Larson
  */
 
 #include "CoWorker.h"
@@ -31,3 +29,5 @@ void CoWorker::BlogUpdate()
 
     std::cout << "CoWorker received \"" << data << "\"\n";
 }
+
+

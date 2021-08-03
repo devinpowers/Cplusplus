@@ -1,8 +1,7 @@
 /*
  * Friend.cpp
  *
- *  Created on: Feb 7, 2017
- *      Author: Robert Larson
+ *  Created on: 
  */
 
 #include "Friend.h"
@@ -32,3 +31,5 @@ void Friend::BlogUpdate()
 
     std::cout << "Friend received \"" << data << "\"\n";
 }
+
+

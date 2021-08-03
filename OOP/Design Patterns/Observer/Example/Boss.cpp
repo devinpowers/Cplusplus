@@ -31,3 +31,4 @@ void Boss::BlogUpdate()
 
     std::cout << "Boss received \"" << data << "\"\n";
 }
+

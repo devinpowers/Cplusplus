@@ -1,8 +1,6 @@
 /*
  * MyBlogTest.cpp
  *
- *  Created on: Feb 6, 2017
- *      Author: Robert Larson
  */
 
 #include "MyBlog.h"
@@ -40,4 +38,6 @@ int main()
 
     return 0;
 }
+
+
 
