@@ -1,6 +1,6 @@
 /*
  * AxeBehavior.cpp
- *
+ * 
  *  
  */
 
@@ -14,7 +14,7 @@ AxeBehavior::~AxeBehavior() {}
 
 void AxeBehavior::useWeapon()
 {
-	std::cout << "I am using my Axe!\n";
+	std::cout << "I am using my Axe! " << std::endl;
 }
 
 

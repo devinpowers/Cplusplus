@@ -14,7 +14,6 @@ class AxeBehavior: public WeaponBehavior {
 public:
 	AxeBehavior();
 	virtual ~AxeBehavior();
-
 	virtual void useWeapon();
 };
 

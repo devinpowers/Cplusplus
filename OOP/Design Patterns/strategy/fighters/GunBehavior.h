@@ -17,6 +17,7 @@ public:
 	virtual void useWeapon();
 };
 
-#endif /* GUNBEHAVIOR_H_ */
+#endif 
+
 
 

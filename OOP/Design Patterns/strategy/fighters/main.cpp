@@ -4,7 +4,6 @@
 #include "AxeBehavior.h"
 #include "GunBehavior.h"
 #include "Knife.h"
-
 #include "Character.h"
 
 int main()
@@ -29,7 +28,7 @@ int main()
 	Austin->Fight();
 	Chris->Fight();
 	
-	// Can Chnage Weapon Behavior Easily
+	// Can Change Weapon Behavior Easily
 
 	Aaron->SetWeaponBehavior(gunBehavior);
 	Austin->SetWeaponBehavior(knifeBehavior);

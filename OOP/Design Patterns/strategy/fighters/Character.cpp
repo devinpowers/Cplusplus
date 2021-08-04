@@ -2,8 +2,8 @@
  * Character.cpp
  */
 
-#include "Character.h"
 
+#include "Character.h"
 #include "WeaponBehavior.h"
 
 #include <string>

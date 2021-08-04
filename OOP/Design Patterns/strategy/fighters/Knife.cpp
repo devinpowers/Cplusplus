@@ -10,5 +10,7 @@ Knife::~Knife() {}
 
 void Knife::useWeapon()
 {
-	std::cout << "I am using my knife!\n";
+	std::cout << "I am using my knife! " << std::endl;
 }
+
+

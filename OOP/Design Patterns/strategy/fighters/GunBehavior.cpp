@@ -13,7 +13,7 @@ GunBehavior::~GunBehavior() {}
 
 void GunBehavior::useWeapon()
 {
-	std::cout << "I am using my blaster!\n";
+	std::cout << "I am using my Gun! " << std::endl;
 }
 
 
