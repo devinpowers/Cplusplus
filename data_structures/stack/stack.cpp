@@ -10,24 +10,23 @@ stack::stack(int size)
 {
     arr = new int[size];
     capacity = size;
-    top = -1;
+    top = -1;            // index
 }
  
 // Destructor to free memory allocated to the stack
 stack::~stack() {
     delete[] arr;
 }
- 
-// Utility function to add an element `x` to the stack
-void stack::push(int x)
+ void stack::push(int x)
 {
     if (isFull())
     {
-        cout << "Overflow\nProgram Terminated\n";
+        cout << "Overflow Program Terminated" << endl;
         exit(EXIT_FAILURE);
     }
  
     cout << "Inserting " << x << endl;
+    // Add value to the Stack
     arr[++top] = x;
 }
  
@@ -37,7 +36,7 @@ int stack::pop()
     // check for stack underflow
     if (isEmpty())
     {
-        cout << "Underflow\nProgram Terminated\n";
+        cout << "Underflow Program Terminated " << endl;
         exit(EXIT_FAILURE);
     }
  
