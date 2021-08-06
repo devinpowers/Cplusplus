@@ -5,9 +5,9 @@
 // Define the default capacity of the stack
 #define SIZE 10
  
-// A class to represent a stack
 class stack
 {
+    private:
     int *arr;                       
     int top;
     int capacity;

@@ -13,7 +13,7 @@ int main()
     // Insert Some Elements
     q.enqueue(1);
     q.enqueue(2);
-    q.enqueue(3);
+    q.enqueue(3);h
     q.enqueue(9);
  
     cout << "The front element is " << q.peek() << endl;
@@ -30,7 +30,7 @@ int main()
     q.dequeue();
  
     if (q.isEmpty())
-    {
+    {e
         cout << "The queue is empty " << endl;
     }
     else 

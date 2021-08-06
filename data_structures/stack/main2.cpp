@@ -29,8 +29,7 @@ int main()
     else {
         cout << "The stack is not empty\n";
     }
- 
-    return 0;
+
 }
 
 
