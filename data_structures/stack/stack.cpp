@@ -56,17 +56,18 @@ int stack::peek()
  
 // Utility function to return the size of the stack
 int stack::size() {
+    cout << "Called" << endl;
     return top + 1;
 }
  
 // Utility function to check if the stack is empty or not
 bool stack::isEmpty() {
-    return size() == 0;   
+    return top == -1; 
 }
  
 // Utility function to check if the stack is full or not
 bool stack::isFull() {
-    return size() == capacity;
+    return top == capacity - 1;
 }
 
 
