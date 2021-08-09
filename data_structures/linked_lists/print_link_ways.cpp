@@ -59,14 +59,8 @@ int main(){
     cout << "Print Linked List Forward (Recusion) " << endl;
     print_forward(head);
 
-
-
     cout << "Print Linked List Reverse (Recusion) " << endl;
     print_reverse(head);
     cout << endl;
-
-
-
-
-    
 }
+
