@@ -4,17 +4,25 @@ using std::cout;
 using std::endl;
 
 
-void Increment(int *p)
+void Double(int*A, int size)
 {
-    *p = *p + 1;
+  
+    for (int i = 0; i < size; i++)
+    {
+        A[i]= 2* A[i];
+    }
 }
 int main()
 {
-   int a;
-   a = 10;
-   Increment(&a);
+    int A[] = {1,2,3,4,5};
+    int size = sizeof(A)/sizeof(A[0]);
+    Double(A, size);
 
-   cout << "a = " << a << endl;
+    for (int i =0; i< size; i++ )
+    {
+        cout << A[i] << endl;
+    }
+
 }
 
 
