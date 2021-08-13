@@ -4,25 +4,24 @@ using std::cout;
 using std::endl;
 
 
-void Double(int*A, int size)
-{
-  
-    for (int i = 0; i < size; i++)
-    {
-        A[i]= 2* A[i];
-    }
-}
+
 int main()
 {
-    int A[] = {1,2,3,4,5};
-    int size = sizeof(A)/sizeof(A[0]);
-    Double(A, size);
+   struct sSomeObject
+   {
+       int x = 0xA3A2A1A0;
+       int y = 0xB3B2B1B0;
+   };
 
-    for (int i =0; i< size; i++ )
-    {
-        cout << A[i] << endl;
-    }
+   // Stack Allocation (Compile Time)
+   sSomeObject pSomeObject[10];
 
+   // Heap (Run Time)
+
+   sSomeObject *pSomeObject = new sSomeObject[10];
+
+   cout << endl;
+   return 0;
 }
 
 
