@@ -1,0 +1,3 @@
+Enter the number of elements: Enter elements:
+Array before Sorting: 10 1010 101 10 101 10 10 101 1 10 
+Array after Sorting: 1 10 10 10 10 10 101 101 101 1010 
