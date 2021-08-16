@@ -43,7 +43,7 @@ void printArray(int arr[], int n)
 /* Driver code */
 int main()
 {
-    int arr[] = { 12, 11, 13, 5, 6 };
+    int arr[] = { 12, 11, 13, 5, 6, 1, 9,0};
     int n = sizeof(arr) / sizeof(arr[0]);
     
     printArray(arr, n);
@@ -53,3 +53,6 @@ int main()
  
     return 0;
 }
+
+// Time Complexity is O(n^2) with n being the size of the array
+// 

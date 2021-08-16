@@ -2,6 +2,8 @@
 
 #include <iostream>
 using std::cout; using std::endl;
+#include <fstream>
+using std::ifstream;
 
 void printArray(int arr[], int size);
 
@@ -77,9 +79,22 @@ int main()
 {
 
   // array to pass
-  int arr[] = {9,7,3,6,2};
+  // int arr[] = {9,7,3,6,2};
 
+  //
+  ifstream data; // data is like cin
+  int num; // variable for input value
+
+  data.open("example.txt");
+
+  data >> num;
+
+  while (!data.eof() )
+  {
+	  data >> num;
+  }
   
+  // Read line-by-line to insert int into array
   int size = sizeof(arr) / sizeof(arr[0]);
   
   int start = 0;
