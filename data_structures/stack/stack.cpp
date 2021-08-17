@@ -18,7 +18,7 @@ stack::~stack() {
     delete[] arr;
 }
 
- void stack::push(int x)
+void stack::push(int x)
 {
     if (isFull())
     {
@@ -36,6 +36,7 @@ int stack::pop()
     if (isEmpty())
     {
         cout << "Underflow Program Terminated " << endl;
+        return 0;
     }
     cout << "Removing " << peek() << endl;
 
@@ -51,6 +52,7 @@ int stack::peek()
     }
     else {
         cout << "Stack is Empty " << endl;
+        return 0;
     }
 }
  
@@ -62,6 +64,8 @@ int stack::size() {
  
 // Utility function to check if the stack is empty or not
 bool stack::isEmpty() {
+    // Returns True if top == -1
+    // Else Returns False
     return top == -1; 
 }
  

@@ -1,7 +1,9 @@
 #include <iostream>
-using namespace std;
+using std::cout; using std::endl;
  
-/* Function to sort an array using insertion sort*/
+ // Well the sorting algorith time complexity is O(n^2)
+ // We can see the nested for loop
+
 void insertionSort(int arr[], int size)   // or int *array
 {
     // Size is the size (length) of the size array
@@ -9,50 +11,41 @@ void insertionSort(int arr[], int size)   // or int *array
 
     for (int i = 1; i < size; i++ )
     {
-        key = arr[i];
+        // i starts on 2nd index
 
-        j = i - 1;
+        key = arr[i];
+        // Key is the value we will compare to the left value 
+
+        j = i - 1; // Value to Compare key with
         
         while (j >= 0 && arr[j] > key)
         {
             arr[j+1] = arr[j];
-            j = j -1;
-        
+            j = j - 1;  
         }
         arr[j+1] = key;
     }
 
-
-
 }
  
-
-
-
-
-
-// A utility function to print an array of size n
-void printArray(int arr[], int n)
+void PrintArray(int arr[], int n)
 {
-    int i;
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
+    {
         cout << arr[i] << " ";
+    }
     cout << endl;
 }
  
-/* Driver code */
 int main()
 {
     int arr[] = { 12, 11, 13, 5, 6, 1, 9,0};
     int n = sizeof(arr) / sizeof(arr[0]);
     
-    printArray(arr, n);
+    PrintArray(arr, n);
     cout << "After insertion \n";
     insertionSort(arr, n);
-    printArray(arr, n);
- 
-    return 0;
+    PrintArray(arr, n);
+
 }
 
-// Time Complexity is O(n^2) with n being the size of the array
-// 
