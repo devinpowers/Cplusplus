@@ -7,14 +7,18 @@
 class RobotDog;
 
 class RobotDogAdapter : public Dog {
+private:
+	RobotDog * m_pRobotDog;
+	
 public:
 	RobotDogAdapter(RobotDog * robotDog);
 	virtual ~RobotDogAdapter();
 
 	virtual void Bark();
 
-private:
-	RobotDog * m_pRobotDog;
 };
 
 #endif 
+
+
+

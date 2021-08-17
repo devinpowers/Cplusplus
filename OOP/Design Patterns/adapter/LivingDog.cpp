@@ -11,3 +11,5 @@ LivingDog::~LivingDog() {}
 void LivingDog::Bark() {
 	std::cout << m_name << " is barking!\n";
 }
+
+

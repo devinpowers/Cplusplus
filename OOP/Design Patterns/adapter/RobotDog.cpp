@@ -12,3 +12,5 @@ void RobotDog::PlayBarkingSound()
 {
 	std::cout << m_name << " is playing barking sound\n";
 }
+
+

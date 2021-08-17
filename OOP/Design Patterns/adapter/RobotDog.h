@@ -7,13 +7,16 @@
 
 class RobotDog {
 
+private:
+	std::string m_name;
+	
 public:
 	RobotDog(std::string name);
 	virtual ~RobotDog();
 
 	void PlayBarkingSound();
-private:
-	std::string m_name;
+
 };
 
 #endif 
+
