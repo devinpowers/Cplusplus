@@ -1,73 +1,67 @@
-#include <iostream>
 
-using std::cout;
-using std::endl;
-
-struct bintree_node{
-    bintree_node *left;
-    bintree_node *right;
-    int data;
-} ;
-class bst{
-    bintree_node *root;
-    public:
-    bst(){
-        root=NULL;
-    }
-    int isempty() {
-        return(root==NULL);
-    }
-    void insert(int item);
-    void displayBinTree();
-    void printBinTree(bintree_node *);
-     
+// Binary Search Tree - Implemenation in C++
+// Simple program to create a BST of integers and search an element in it 
+#include<iostream>
+using namespace std;
+//Definition of Node for Binary search tree
+struct BstNode {
+	int data; 
+	BstNode* left;
+	BstNode* right;
 };
-void bst::insert(int item){
-    bintree_node *p=new bintree_node;
-    bintree_node *parent;
-    p-&gt;data=item;
-    p-&gt;left=NULL;
-    p-&gt;right=NULL;
-    parent=NULL;
-    if(isempty())
-        root=p;
-    else{
-        bintree_node *ptr;
-        ptr=root;
-        while(ptr!=NULL){
-            parent=ptr;
-            if(item&gt;ptr-&gt;data)        
-                ptr=ptr-&gt;right;
-            else
-                ptr=ptr-&gt;left;
-        }   
-        if(item&lt;parent-&gt;data)
-            parent-&gt;left=p;
-        else
-            parent-&gt;right=p;
-    }
-}
-void bst::displayBinTree(){
-    printBinTree(root);
-}
-void bst::printBinTree(bintree_node *ptr){
-    if(ptr!=NULL){
-        printBinTree(ptr-&gt;left);
-        cout&lt;&lt;"  "&lt;&lt;ptr-&gt;data&lt;&lt;"     ";
-        printBinTree(ptr-&gt;right);
-    }
-}
-int main(){
-    bst b;
-    b.insert(20);
-    b.insert(10);
-    b.insert(5);
-    b.insert(15);
-    b.insert(40);
-    b.insert(45);
-    b.insert(30); 
-     
-    cout&lt;&lt;"Binary tree created: "&lt;&lt;endl;
-    b.displayBinTree(); 
+
+// Function to create a new Node in heap
+BstNode* GetNewNode(int data) {
+	BstNode* newNode = new BstNode();
+	newNode->data = data;
+	newNode->left = newNode->right = NULL;
+	return newNode;
 }
 
+// To insert data in BST, returns address of root node 
+BstNode* Insert(BstNode* root,int data) {
+	if(root == NULL) { // empty tree
+		root = GetNewNode(data);
+	}
+	// if data to be inserted is lesser, insert in left subtree. 
+	else if(data <= root->data) {
+		root->left = Insert(root->left,data);
+	}
+	// else, insert in right subtree. 
+	else {
+		root->right = Insert(root->right,data);
+	}
+	return root;
+}
+//To search an element in BST, returns true if element is found
+bool Search(BstNode* root,int data) {
+	if(root == NULL) {
+		return false;
+	}
+	else if(root->data == data) {
+		return true;
+	}
+	else if(data <= root->data) {
+		return Search(root->left,data);
+	}
+	else {
+		return Search(root->right,data);
+	}
+}
+int main() {
+	BstNode* root = NULL;  // Creating an empty tree
+	/*Code to test the logic*/
+	root = Insert(root,15);	
+	root = Insert(root,10);	
+	root = Insert(root,20);
+	root = Insert(root,25);
+	root = Insert(root,8);
+	root = Insert(root,12);
+	// Ask user to enter a number.  
+	int number;
+	cout<<"Enter number be searched\n";
+	cin>>number;
+	//If number is found, print "FOUND"
+	if(Search(root,number) == true) cout<<"Found\n";
+	else cout<<"Not Found\n";
+}
