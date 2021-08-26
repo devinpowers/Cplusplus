@@ -20,8 +20,6 @@ int main()
     std::cin >> n;
 
     int result = Fib(n);
-    std::cout << "Fib(" << n << ") = " << result << std::endl;
+    std::cout << result << std::endl;
 
 }
-
-

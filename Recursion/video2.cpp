@@ -2,13 +2,19 @@
 #include<iostream>
 // Recursion
 
-int Fib(int n){
-    if (n <= 1)
+int Factorial(int n){
+    std::cout << "I am Calculating F(" << n << ")\n";
+    if (n == 0)
     {
-        return n;
+        return 1;
+    }
+    else {
+    
+        int F = n*Factorial(n-1);
+        std::cout << "Done ! F(" << n << ") = " << F << "\n";
+        return F;
     }
     
-    return Fib(n-1) + Fib(n-2);
 }
 
 int main()
@@ -17,7 +23,7 @@ int main()
     std::cout << "Give me an n: " ;
     std::cin >> n;
 
-    int result = Fib(n);
+    int result = Factorial(n);
     std::cout << result << std::endl;
 
 }
