@@ -17,6 +17,7 @@ queue::queue(int size)
  
 // Destructor to free memory allocated to the queue
 queue::~queue() {
+    cout << "DELETING ARRAY MEMORY FROM HEAP" << endl;
     delete[] arr;
 }
  

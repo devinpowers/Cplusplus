@@ -24,4 +24,4 @@ int main()
 
 }
 
-
+// We need the overloaded operator to perform a "Deep Copy" for like the list since each

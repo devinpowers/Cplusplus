@@ -17,25 +17,27 @@ int main() {
     
     OJOrders.push_back(new OrangeJuice("Tommy", 3, false));
     OJOrders.push_back(new OrangeJuice("Bob", 2, true));
-    OJOrders.push_back(new OrangeJuice("Pikachu", 2, true));
-    OJOrders.push_back(new OrangeJuice("Pikachu", 1, true));
-    OJOrders.push_back(new OrangeJuice("Charzard", 3, true));
+    OJOrders.push_back(new OrangeJuice("Devin", 2, true));
+    OJOrders.push_back(new OrangeJuice("Aaron", 1, true));
+    OJOrders.push_back(new OrangeJuice("Austin", 3, true));
 
     vector<BubbleTea*> BTOrders;
 
 
     BTOrders.push_back(new BubbleTea("Tommy", 2, true, 3));
-    BTOrders.push_back(new BubbleTea("Cyborg", 3, true, 1));
-    BTOrders.push_back(new BubbleTea("Billy", 3, true, 3));
+    BTOrders.push_back(new BubbleTea("Tony", 3, true, 1));
+    BTOrders.push_back(new BubbleTea("Nick", 3, true, 3));
     BTOrders.push_back(new BubbleTea("Billy", 1, true, 2));
-    BTOrders.push_back(new BubbleTea("Ash", 1, true, 2));
-    BTOrders.push_back(new BubbleTea("Cyborg", 2, true, 3));
-    BTOrders.push_back(new BubbleTea("Anonymous Guy", 2, true, 1));
+    BTOrders.push_back(new BubbleTea("Clay", 1, true, 2));
+    BTOrders.push_back(new BubbleTea("Lindsay", 2, true, 3));
+    BTOrders.push_back(new BubbleTea("Isiah", 2, true, 1));
 
-    OrangeJuiceOrderList OjOrderList=OrangeJuiceOrderList(OJOrders);
-    BubbleTeaList BtOrderList=BubbleTeaList(BTOrders);
+    OrangeJuiceOrderList OjOrderList = OrangeJuiceOrderList(OJOrders);
+    
+    BubbleTeaList BtOrderList = BubbleTeaList(BTOrders);
     
     Barista* AwesomeArnold = new CoolBarista();
+
     Barista* ClumsyCharles = new NewbieBarista();
     
     
@@ -48,7 +50,7 @@ int main() {
     //cleans up memory 
 
 
-    
+
     for (unsigned int i=0; i<OJOrders.size(); i++) {
         delete OJOrders[i];
     }
@@ -58,6 +60,9 @@ int main() {
     
     delete AwesomeArnold;
     delete ClumsyCharles;
+
+
+    cout << "HI_OEPJPFFJSFNSLKJFNELJFBEJFBEWFBWEIFBEWLIFBEWIFLEW" << endl;   
 }
 
 

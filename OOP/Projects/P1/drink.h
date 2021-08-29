@@ -11,36 +11,36 @@ using std::string;
 using std::vector;
 using std::ostream;
 
-
-
 class Drink{
 
 	private:
 		string user;
 		int size;
 	public:
-		Drink(){}
-		Drink(string theName, int theSize);
-		Drink(const Drink & drink); 			// ????????????????????????????????????? refering to this drinks
-
+		Drink(){}								 // Constructor
+		Drink(string theName, int theSize);		 // Constructor
+		Drink(const Drink & drink); 			// Copy Constructor
 		virtual ~Drink();				// Deconstructor
-		virtual void confirmOrder();	// Have to implement  
+
+		// Functions/Methods
+		virtual void confirmOrder();	
 		string sizestr();				
 
 		string  get_user()const;
 		int  get_size()const;
 		
 		
-		Drink& operator=(const Drink &drink)
-		{
-			// Overloaded Operator =
-
+		Drink& operator=(const Drink &drink);
+		
+		  // Overloaded Operator  
+		/*{
 			if(this != &drink){
 				user = drink.get_user();
 				size = drink.get_size();      
 			}
 			return *this;
 		}
+		*/
     
 };
 
@@ -54,16 +54,11 @@ class BubbleTea: public Drink{
 		int opp;
 	public:
 
-	
-		// Constructors
-		BubbleTea();
-		BubbleTea(string theUser, int theSize, bool thetemp, int theopp);   
-		BubbleTea(const BubbleTea& bubTea);
-		BubbleTea& operator = (const BubbleTea & bubTea);
-
-		//Deconstructor
-		virtual ~BubbleTea();
-
+		BubbleTea();														// Constructor
+		BubbleTea(string theUser, int theSize, bool thetemp, int theopp);   // Constructor
+		BubbleTea(const BubbleTea& bubTea);									// Copy Constructor
+		BubbleTea& operator = (const BubbleTea & bubTea);					// Operator Overloaded
+		virtual ~BubbleTea();												// Deconstructor
 
 		void confirmOrder();
 		string sizes();
@@ -74,31 +69,35 @@ class OrangeJuice: public Drink{
 	private:
 		bool pulp; 
 	public:
-		OrangeJuice();
-		OrangeJuice(string theUser, int theSize, bool thepulp);
-		OrangeJuice(const OrangeJuice& oj);
-		~OrangeJuice();
-		OrangeJuice& operator=(const OrangeJuice& oj);
+		OrangeJuice();													// Constructor
+		OrangeJuice(string theUser, int theSize, bool thepulp);		  // Constructor
+		OrangeJuice(const OrangeJuice& oj);								// Copy Constructor
+		~OrangeJuice();													// Deconstructor
+		OrangeJuice& operator=(const OrangeJuice& oj);					//  Operator Overloaded
+
+		// Functions/Methods
+
 		void confirmOrder();
 		string pulpstr();
     
 };
 
+// Lists
+
 
 class OrangeJuiceOrderList{
 
 	private:
-		vector<OrangeJuice*> orangeJuiceDrinks;
-
+		vector<OrangeJuice*> orangeJuiceDrinks;										// Vector of OrangeJuice Drinks
 
 	public:
-		// Constructors
-		OrangeJuiceOrderList(vector<OrangeJuice*>& ojList);
-		OrangeJuiceOrderList(const OrangeJuiceOrderList& ojOrderList);
-		~OrangeJuiceOrderList();
+		OrangeJuiceOrderList(vector<OrangeJuice*>& ojList); 						//  Constructors
 
-		//overloaded
-		OrangeJuiceOrderList & operator=(const OrangeJuiceOrderList& ojOrderList);
+		OrangeJuiceOrderList(const OrangeJuiceOrderList& ojOrderList);      		// Copy Constructors
+		
+		~OrangeJuiceOrderList();													// DeConstructor
+
+		OrangeJuiceOrderList & operator=(const OrangeJuiceOrderList& ojOrderList); // Operator overloaded
 
 		// Function that holds our drinks (regardless if its OJ or BubbleTea)
 		void toDrinkVector(vector<Drink*> &);
@@ -108,14 +107,14 @@ class OrangeJuiceOrderList{
 class BubbleTeaList{
 
 	private:
-		vector<BubbleTea*> bubbleTeaDrinks;
+		vector<BubbleTea*> bubbleTeaDrinks; // Vector of BubbleTea Drinks
 
 	public:
 
 		BubbleTeaList(vector<BubbleTea*> & bubList);
 		BubbleTeaList(const BubbleTeaList& bubTeaList);
 		~BubbleTeaList();
-		BubbleTeaList & operator=(const BubbleTeaList& bubTeaList);
+		 BubbleTeaList & operator=(const BubbleTeaList& bubTeaList); 
 
 		// Function that holds our drinks (regardless if its OJ or BubbleTea)
 		void toDrinkVector(vector<Drink*> & );

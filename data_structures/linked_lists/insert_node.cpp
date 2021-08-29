@@ -4,7 +4,6 @@
 using std::cout; using std::endl;
 using std::cin;
 
-
 struct Node{
 	int data;
 	Node* next;

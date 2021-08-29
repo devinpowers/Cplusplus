@@ -2,19 +2,28 @@
 
 #include "barista.h"
 
-Barista::Barista(){}
-Barista::Barista(const Barista& barista){}
-Barista& Barista::operator=(const Barista& barista){ return *this;}
+Barista::Barista(){
+	std::cout << "USING NORMAL DEFAULT CONSTRUCTOR FOR BARISTA!! " << std::endl;
+}
+Barista::Barista(const Barista& barista){
+	std::cout << "Using Copy Constructor " << std::endl;
+}
+
+Barista& Barista::operator=(const Barista& barista)
+{ 	std::cout << "Using operator Overloader " << std::endl;
+	return *this;}
+
+
 Barista::~Barista(){}
 
 void Barista::print(vector<Drink*>& Drinks){
     vector<Drink*> tempDrinks;
     string sortBy;
 
-
     for(unsigned int i=0;i<Drinks.size();i++)
     {
-        if(tempDrinks.size() ==0)
+		// Loop Vector 
+        if(tempDrinks.size() == 0)
         {
             sortBy = getSortBy(*Drinks[i]);
             tempDrinks.push_back(Drinks[i]);
@@ -46,6 +55,8 @@ void Barista::print(vector<Drink*>& Drinks){
     tempDrinks.clear();
 	
 }
+
+// Cool Barista Functions
 
 CoolBarista::CoolBarista(){}
 CoolBarista::CoolBarista(const CoolBarista& barista){}
@@ -87,6 +98,7 @@ void CoolBarista::printCall(int size,string sortBy){
 	cout << "I have "<<size << " drinks for "<<	sortBy<<endl;
 }
 
+// NewbieBarista
 NewbieBarista::NewbieBarista(){}
 NewbieBarista::NewbieBarista(const NewbieBarista& barista){}
 NewbieBarista& NewbieBarista::operator=(const NewbieBarista& barista){return *this;}
