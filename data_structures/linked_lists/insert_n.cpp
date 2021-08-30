@@ -13,8 +13,8 @@ Node* head; // Global Variable, can be accessed anywhere
 
 void Insert(int data, int n)
 {
-    Node* temp1 = new Node();
-    temp1->data = data;
+    Node* temp1 = new Node(); // Creating a Node Pointer
+    temp1->data = data;         // Accessing attributes in the Node
     temp1->next = NULL;
     if (n == 1){
         temp1->next = head;
@@ -32,7 +32,7 @@ void Insert(int data, int n)
 
 void print()
 {
-	Node* temp= head; // address of the head node
+	Node* temp = head; // address of the head node
 
     cout << "List is: ";
 
@@ -51,6 +51,11 @@ int main()
     Insert(3,2); // List: 2, 3
     Insert(4,1); // List; 4,2,3
     Insert(5,2); // List: 4,5,2,3 
+    Insert(16,4); // List; 4,5,2,3,69
+
+    Insert(69,5); // List; 4,5,2,3,69
+
+    
     print();
 }
 

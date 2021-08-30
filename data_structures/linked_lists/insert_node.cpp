@@ -15,7 +15,6 @@ Node* head; // Global Variable, can be accessed anywhere
 void Insert(int x)
 {
     Node* temp = new Node(); // Create New Node to Insert
-    head->
     temp->data = x;
     temp->next = head;
     head = temp;
@@ -23,7 +22,10 @@ void Insert(int x)
 
 void print()
 {
-	Node* temp= head; // address of the head node
+
+    // Print Linked Lists
+	Node* temp = head; // address of the head node
+    // Were adding on to this head node the addresses of the other nodes 
 
     cout << "List is: ";
 
@@ -38,6 +40,7 @@ void print()
 
 int main()
 {
+
     head = NULL; // Empty Linked List
 
     cout << "How Many numbers? \n";
@@ -48,11 +51,13 @@ int main()
     for (i = 0; i <n; i++ ){
         cout << "Enter the number \n";
         cin >> x;
-        Insert(x);
-        print();
+         Insert(x);
+         print();
     }
 
+    cout << "END" << endl;
 }
+
 
 
 
