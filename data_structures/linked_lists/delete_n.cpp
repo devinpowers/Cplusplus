@@ -66,8 +66,6 @@ void Delete(int n) // Delete node at position n
     temp1->next = temp2->next; // (n+1)th Node
     delete(temp2); // Delete temp2
 
-
-
 }
 
 void print()
