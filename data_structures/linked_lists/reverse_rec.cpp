@@ -19,6 +19,7 @@ void Insert(int x)
 
 void Reverse(Node* p)
 {
+    // Reverse via Recursion 
     if (p->next == NULL)
     {
         //Exit condition

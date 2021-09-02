@@ -40,7 +40,9 @@ void Reverse()
 
     while (current != NULL)
     {
+        cout << "Current Node: " << current->data << endl;
         next = current->next;
+        cout << " next: " << next->data << endl;
         current->next = previous;
         previous = current; 
         current = next;
