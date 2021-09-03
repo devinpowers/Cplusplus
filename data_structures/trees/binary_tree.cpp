@@ -1,42 +1,36 @@
+
+
 /* C++ program to find Inorder successor in a BST */
+
+
 #include<iostream>
-using namespace std;
+using std::cout;
+using std::endl;
+
+
 struct Node {
 	int data;
 	struct Node *left;
 	struct Node *right;
 };
 
-//Function to find some data in the tree
-Node* Find(Node*root, int data) {
-	if(root == NULL) return NULL;
-	else if(root->data == data) return root;
-	else if(root->data < data) return Find(root->right,data);
-	else return Find(root->left,data);
-}
-
-//Function to find Node with minimum value in a BST
-struct Node* FindMin(struct Node* root) {
-	if(root == NULL) return NULL;
-	while(root->left != NULL)
-		root = root->left;
-	return root;
-}
-
-
- 
-//Function to visit nodes in Inorder
+//Function to visit nodes in Inorder and print
 void Inorder(Node *root) {
 	if(root == NULL) return;
  
 	Inorder(root->left);       //Visit left subtree
-	printf("%d ",root->data);  //Print data
+	cout << root->data << endl; //Print data
 	Inorder(root->right);      // Visit right subtree
 }
  
 // Function to Insert Node in a Binary Search Tree
-Node* Insert(Node *root,char data) {
+
+Node* Insert(Node *root,int data) 
+
+	
+	cout << "Current Root: " << root << endl;
 	if(root == NULL) {
+		cout << "Inserting New Node" << endl;
 		root = new Node();
 		root->data = data;
 		root->left = root->right = NULL;
@@ -47,24 +41,43 @@ Node* Insert(Node *root,char data) {
 		root->right = Insert(root->right,data);
 	return root;
 }
- 
+
+/*
+bool Search(Node* root, int data)
+{
+	if (root == NULL )
+	{
+		return false;
+	}
+	else if ( root->data == data)
+	{
+		return true;
+	}
+	else if (data <= root->data)
+	{
+		return Search(root->left, data);
+	}
+	else return Search(root->right, data);
+}
+*/
+
 int main() {
-	/*Code To Test the logic
-	  Creating an example tree
-	                    5
-			   / \
-			  3   10
-			 / \   \
-			1   4   11
-    */
-	Node* root = NULL;
-	root = Insert(root,5); root = Insert(root,10);
-	root = Insert(root,3); root = Insert(root,4); 
-	root = Insert(root,1); root = Insert(root,11);
+
+	Node* root = NULL; // to store address of root Node
+
+	root = Insert(root,15);
+	root = Insert(root, 10); 
+	// root = Insert(root,10);
+	// root = Insert(root,3); 
+	// root = Insert(root,4); 
+	//root = Insert(root,1); 
+	//root = Insert(root,11);
 
 	//Print Nodes in Inorder
-	cout<<"Inorder Traversal: ";
+	cout<<"Inorder Traversal: " << endl;
 	Inorder(root);
-	cout<<"\n";
+	
+	
 
 }
+
