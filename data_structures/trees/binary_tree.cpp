@@ -25,9 +25,9 @@ void Inorder(Node *root) {
  
 // Function to Insert Node in a Binary Search Tree
 
-Node* Insert(Node *root,int data) 
+Node* Insert(Node *root,int data) {
+	// Return pointer which is a memory address
 
-	
 	cout << "Current Root: " << root << endl;
 	if(root == NULL) {
 		cout << "Inserting New Node" << endl;
@@ -76,7 +76,6 @@ int main() {
 	//Print Nodes in Inorder
 	cout<<"Inorder Traversal: " << endl;
 	Inorder(root);
-	
 	
 
 }
