@@ -31,15 +31,14 @@ void Inorder(Node *root) {
 Node* Insert(Node *root,int data) {
 	// Return pointer which is a memory address
 
-	cout << "Current Root: " << root << endl;
 	if(root == NULL) {
-		cout << "Inserting New Node" << endl;
 		root = new Node();
 		root->data = data;
 		root->left = root->right = NULL;
 	}
+	
 	else if(data <= root->data)
-	{		
+	{	
 		root->left = Insert(root->left,data);
 	}
 	else 
@@ -69,26 +68,21 @@ bool Search(Node* root, int data)
 }
 
 
+
 int main() {
 
-	Node* root = NULL; // to store address of root Node
+	Node* root = NULL;
 
-	root = Insert(root,15);
-	cout << "Root: " << root << endl;
-	root = Insert(root,10); 
-	cout << "Root: " << root << endl;
-
+	root = Insert(root,15); 
+	root = Insert(root,10); 	
 	root = Insert(root,20);
-	cout << "Root: " << root << endl;
-
 	root = Insert(root,25); 
 	root = Insert(root,8); 
-	//cout << "Root: " << root << endl;
+	root = Insert(root,12); 
 
-//	root = Insert(root,12); 
-
-	//cout<<"Inorder Traversal: " << endl;
+	cout<<"Inorder Traversal: " << endl;
 	Inorder(root);
+	
 	
 	int number;
 	cout << "Enter a number to be searched?\n";
@@ -100,10 +94,10 @@ int main() {
 	else{
 		cout << "Not Found\n";
 	}
+
 }
 
  
-
 
 
 
