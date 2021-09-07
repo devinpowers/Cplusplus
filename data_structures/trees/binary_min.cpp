@@ -1,8 +1,3 @@
-
-
-/* C++ program to find Inorder successor in a BST */
-
-
 #include<iostream>
 using std::cout;
 using std::endl;
@@ -68,6 +63,51 @@ bool Search(Node* root, int data)
 }
 
 
+int FindMin(Node* root)
+{
+    // Iteratively
+    if (root == NULL)
+    {
+        cout << "Error: Tree is Empty\n";
+        return -1;
+    }
+
+
+   while (root->left != NULL){
+       root = root->left;
+   }
+   return root->data;
+}
+
+
+int FindMax(Node* root)
+{
+        // Iteratively
+    if (root == NULL)
+    {
+        cout << "Error: Tree is Empty\n";
+        return -1;
+    }
+
+
+   while (root->right != NULL){
+       root = root->right;
+   }
+   return root->data;
+}
+
+int FindMinRec(Node* root)
+{    if (root == NULL)
+    {   cout << "Error: Tree is Empty\n";
+        return -1;
+    }
+
+    else if (root->left == NULL){
+        return root->data;
+   }
+   return FindMinRec(root->left);
+}
+
 
 int main() {
 
@@ -93,13 +133,13 @@ int main() {
 	else{
 		cout << "Not Found\n";
 	}
+
+    cout << "Lets find the Min of our Binary Tree: ";
+
+    cout << FindMinRec(root) << endl;
+
+    cout << "Lets find the Max of our Binary Tree: " << endl;
+
+    cout << FindMax(root) << endl;
 }
-
-
-
-
- 
-
-
-
 
