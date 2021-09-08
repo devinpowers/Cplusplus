@@ -7,6 +7,8 @@
 using std::cout;
 using std::endl;
 using std::cin;
+#include <queue>
+using std::queue;
 
 
 struct Node {
@@ -67,7 +69,58 @@ bool Search(Node* root, int data)
 	else return Search(root->right, data);
 }
 
+void printLevelOrder(Node *root)
+{
+    // Base Case
+    if (root == NULL) return;
+ 
+    // Create an empty queue for level order traversal
+    queue<Node*> q;
+ 
+    // Enqueue Root and initialize height
+    q.push(root);
+ 
+    while (q.empty() == false)
+    {
+        // nodeCount (queue size) indicates number
+        // of nodes at current level.
+        int nodeCount = q.size();
+ 
+        // Dequeue all nodes of current level and
+        // Enqueue all nodes of next level
+        while (nodeCount > 0)
+        {
+            Node *Node = q.front();
+            cout << Node->data << " ";
+            q.pop();
+            if (Node->left != NULL)
+                q.push(Node->left);
+            if (Node->right != NULL)
+                q.push(Node->right);
+            nodeCount--;
+        }
+        cout << endl;
+    }
+}
 
+int maxDepth(Node *root)
+{
+    if (root == NULL)
+        return 0; 
+    else
+    {
+        /* compute the depth of each subtree */
+        int left_Depth = maxDepth(root->left);
+        int right_Depth = maxDepth(root->right);
+     
+        /* use the larger one */
+        if (left_Depth > right_Depth)
+            return(left_Depth + 1);
+        else return(right_Depth + 1);
+    }
+
+}
+ 
 
 int main() {
 
@@ -93,6 +146,18 @@ int main() {
 	else{
 		cout << "Not Found\n";
 	}
+
+	cout << "print level order traversal: " << endl;
+
+	printLevelOrder(root);
+
+
+	int height;
+	height = maxDepth(root);
+
+	cout << "The Height of the Binary Tree is: " << height << endl;
+
+	cout << "COuntry Girl Shake it for me!" << endl;
 }
 
 
