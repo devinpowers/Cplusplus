@@ -1,68 +1,57 @@
-/* 
- * File:   main.cpp
- * Author: Devin Powers
- * This project should involve function overloading, inheritance, and polymorphism!
- */
+
 
 #include <cstdlib>
-#include <vector>
 #include <iostream>
-#include "drink.h"
-#include "barista.h"
-#include <unistd.h>
-using namespace std;
+#include "Employee.h"
+#include "Manager.h"
+#include "Database.h"
+using std::cout;
+using std::endl;
 
 int main() {
-    vector<OrangeJuice*> OJOrders;
+
+    cout << endl;
+    //check default constructors
+    tm hiringYear;
+    hiringYear.tm_year=2012;
+
+    vector<CEmployee*> emps;
+    CManager mang("SubA_First","SubA_Second",20,hiringYear,"CSE",emps); // pass Employee Database Vector
+
+    mang.DisplayEmployee();
+    cout<<"Default Constructor Check\n\n";
     
-    OJOrders.push_back(new OrangeJuice("Tommy", 3, false));
-    OJOrders.push_back(new OrangeJuice("Bob", 2, true));
-    OJOrders.push_back(new OrangeJuice("Devin", 2, true));
-    OJOrders.push_back(new OrangeJuice("Aaron", 1, true));
-    OJOrders.push_back(new OrangeJuice("Austin", 3, true));
-
-    vector<BubbleTea*> BTOrders;
-
-
-    BTOrders.push_back(new BubbleTea("Tommy", 2, true, 3));
-    BTOrders.push_back(new BubbleTea("Tony", 3, true, 1));
-    BTOrders.push_back(new BubbleTea("Nick", 3, true, 3));
-    BTOrders.push_back(new BubbleTea("Billy", 1, true, 2));
-    BTOrders.push_back(new BubbleTea("Clay", 1, true, 2));
-    BTOrders.push_back(new BubbleTea("Lindsay", 2, true, 3));
-    BTOrders.push_back(new BubbleTea("Isiah", 2, true, 1));
-
-    OrangeJuiceOrderList OjOrderList = OrangeJuiceOrderList(OJOrders);
+    //check copy constructors
+    CManager mang1=mang;
+    mang1.DisplayEmployee();
+    cout<<"Copy Constructor Check\n\n";
     
-    BubbleTeaList BtOrderList = BubbleTeaList(BTOrders);
+    //check assignment operator
+    hiringYear.tm_year=2015;
+    CManager mang3("SubB_First","SubB_Second",10,hiringYear,"CSE",emps);
+    mang3.DisplayEmployee();
+    mang1=mang3;
+    mang1.DisplayEmployee();
+    cout<<"Assignment Operator Check\n\n";
     
-    Barista* AwesomeArnold = new CoolBarista();
-
-    Barista* ClumsyCharles = new NewbieBarista();
+    //Add subordinates
+    emps.push_back(&mang);
+    emps.push_back(&mang1);
     
+    //Add records to database
+    vector<CEmployee*> allEmp;
+    CDatabase emp_data(allEmp);
+    hiringYear.tm_year=1998;
+    emp_data.AddRecord(new CManager("FirstA","LastA",30,hiringYear,"CSE",emps));
+    hiringYear.tm_year=1999;
+    emp_data.AddRecord(new CManager("FirstB","LastB",32,hiringYear,"CSE",emps));
+    hiringYear.tm_year=2000;
+    emp_data.AddRecord(new CManager("FirstC","LastC",35,hiringYear,"EGR",emps));
+    hiringYear.tm_year=2001;
+    emp_data.AddRecord(new CManager("FirstD","LastD",40,hiringYear,"CHE",emps));
+    hiringYear.tm_year=2002;
+    emp_data.AddRecord(new CManager("FirstE","LastE",50,hiringYear,"EGR",emps));
     
-    AwesomeArnold->deliverDrinks(&OjOrderList);
-    ClumsyCharles->deliverDrinks(&OjOrderList);
-    
-    AwesomeArnold->deliverDrinks(&BtOrderList);
-    ClumsyCharles->deliverDrinks(&BtOrderList);
-    
-    //cleans up memory 
-
-
-
-    for (unsigned int i=0; i<OJOrders.size(); i++) {
-        delete OJOrders[i];
-    }
-    for (unsigned int i=0; i<BTOrders.size(); i++) {
-        delete BTOrders[i];
-    }
-    
-    delete AwesomeArnold;
-    delete ClumsyCharles;
-
-
-    cout << "HI_OEPJPFFJSFNSLKJFNELJFBEJFBEWFBWEIFBEWLIFBEWIFLEW" << endl;   
+    //display all records
+    emp_data.DisplayRecords();
 }
-
-
