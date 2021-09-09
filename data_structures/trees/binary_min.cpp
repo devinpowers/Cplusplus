@@ -108,6 +108,19 @@ int FindMinRec(Node* root)
    return FindMinRec(root->left);
 }
 
+int FindMaxRec(Node* root)
+{
+	if (root == NULL)
+	{
+		cout << "Error: Tree is Empty\n";
+		return -1;
+	}
+	else if (root->right == NULL){
+		return root->data;
+	}
+	return FindMaxRec(root->right);
+}
+
 
 int main() {
 
@@ -134,12 +147,17 @@ int main() {
 		cout << "Not Found\n";
 	}
 
-    cout << "Lets find the Min of our Binary Tree: ";
+	cout <<  "Lets find the Min of our Binary Tree: ";
+	cout << FindMin(root) << endl;
+
+    cout << "Lets find the Min of our Binary Tree Recursively: ";
 
     cout << FindMinRec(root) << endl;
 
-    cout << "Lets find the Max of our Binary Tree: " << endl;
+    cout << "Lets find the Max of our Binary Tree: ";
 
     cout << FindMax(root) << endl;
+
+	cout << "Find Max of our Binary Tree Recursively: " << FindMaxRec(root) << endl;
 }
 

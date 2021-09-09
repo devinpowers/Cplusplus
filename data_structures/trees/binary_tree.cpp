@@ -106,19 +106,18 @@ void printLevelOrder(Node *root)
 int maxDepth(Node *root)
 {
     if (root == NULL)
-        return 0; 
+        return 0;
     else
     {
         /* compute the depth of each subtree */
-        int left_Depth = maxDepth(root->left);
-        int right_Depth = maxDepth(root->right);
+        int lDepth = maxDepth(root->left);
+        int rDepth = maxDepth(root->right);
      
         /* use the larger one */
-        if (left_Depth > right_Depth)
-            return(left_Depth + 1);
-        else return(right_Depth + 1);
+        if (lDepth > rDepth)
+            return(lDepth + 1);
+        else return(rDepth + 1);
     }
-
 }
  
 
@@ -156,8 +155,6 @@ int main() {
 	height = maxDepth(root);
 
 	cout << "The Height of the Binary Tree is: " << height << endl;
-
-	cout << "COuntry Girl Shake it for me!" << endl;
 }
 
 

@@ -120,7 +120,7 @@ void printLevelOrder(Node *root)
         printCurrentLevel(root, i);
 }
 
-void printCurrentLevel(node* root, int level)
+void printCurrentLevel(Node* root, int level)
 {
     if (root == NULL)
         return;
