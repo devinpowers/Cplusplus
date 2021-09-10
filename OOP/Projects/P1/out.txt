@@ -1,0 +1,25 @@
+
+Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+Defualt Constructor Check!!!
+Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+Copy Constructor Check 
+SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+Assignment Operator Check
+
+Michael Scott	Salary: 30	Hire Year: 1998	CSESubordinates: 2
+	 Subordinate: Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+	 Subordinate: SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+Bruce Lee	Salary: 32	Hire Year: 1999	CSESubordinates: 2
+	 Subordinate: Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+	 Subordinate: SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+Tom Brady	Salary: 35	Hire Year: 2000	EGRSubordinates: 2
+	 Subordinate: Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+	 Subordinate: SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+Dak Prescott	Salary: 40	Hire Year: 2001	CHESubordinates: 2
+	 Subordinate: Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+	 Subordinate: SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0
+Mike Evans	Salary: 50	Hire Year: 2002	EGRSubordinates: 2
+	 Subordinate: Devin Powers	Salary: 20	Hire Year: 2012	CSESubordinates: 0
+	 Subordinate: SubB_First SubB_Second	Salary: 10	Hire Year: 2015	CSESubordinates: 0

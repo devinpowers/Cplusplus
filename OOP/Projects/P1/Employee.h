@@ -10,77 +10,84 @@
 using std::cout;
 using std::endl;
 using std::vector;
-
 using std::string;
 
-class CEmployee {
+class Employee {
 
     protected:
-        string firstName;
-        string lastName;
-        tm hireYear;
+        string first_name;
+        string last_name;
+        tm hire_year;
         int salary;
 
     public:
-        CEmployee(){ //Project says we need to implement default constructor
-            firstName = "Devin";
-            lastName = "Powers";
-            hireYear.tm_year = 2015;
+        Employee(){
+            // Defualt Constructor
+            first_name = "Devin";
+            last_name  = "Powers";
+            hire_year.tm_year = 2016;
             salary = 20;
         }
-        CEmployee(string fn, string ln, int muny, tm hy){
-            firstName =fn;
-            lastName =ln;
-            salary = muny;
-            hireYear.tm_year = hy.tm_year;
-        };
-        CEmployee(CEmployee &other){ 
-            // Copy Constructor (Rule of 3)
-            firstName = other.firstName;
-            lastName = other.lastName;
+        Employee(string first, string last, int sal, tm hyear){
+            first_name = first;
+            last_name = last;
+            salary = sal;
+            hire_year.tm_year = hyear.tm_year;
+        }
+
+        Employee(Employee& other){
+
+            // Copy Constructor
+            first_name = other.first_name;
+            last_name = other.last_name;
             salary = other.salary;
-            hireYear = other.hireYear;
+            hire_year = other.hire_year;
         }
-        
-        CEmployee& operator=(CEmployee &other){
-            // Overloaded Operator(Rule of 3)
-            if(this!=&other){
-                this->firstName = other.firstName;
-                this->lastName = other.lastName;
+
+        Employee& operator=(Employee& other){
+            // Overloaded Operator 
+            if (this != &other){
+                this->first_name = other.first_name;
+                this->last_name = other.last_name;
                 this->salary = other.salary;
-                this->hireYear = other.hireYear;
-            }
-            return *this;
+                this->hire_year = other.hire_year;
+        }
+        return *this;
         }
 
-        string getFirstName()const{
-            return firstName;
-            }
-        void setFirstName(string fn){
-            firstName = fn;
-            }
-        
-        string getLastName()const{
-            return lastName;
-            }
 
-        void setLastName(string ln){
-            lastName = ln;
-            }
+        string GetFirstName()const{
+            return first_name;
+        }
+
+        void SetFirstName(string first){
+            first_name = first;
+        }
         
-        tm getHireYear()const{return hireYear;}
-        
-        void setHireYear(int yr){hireYear.tm_year = yr;}
-        void setHireYear(tm yr){hireYear = yr;}
-        
+        string GetLastName()const{
+            return last_name;
+        }
+
+        void SetLastName(string last){
+            last_name = last;
+        }
+
+
+        tm GetHireYear()const{return hire_year;}
+
+        void set_hire_year(int year){hire_year.tm_year = year;}
+        void set_hire_year(tm year){hire_year = year;}
+
         int getSalary()const{return salary;}
         void setSalary(int s){salary = s;}
-        
-        
+
+
         virtual void DisplayEmployee()const{
-            cout << firstName << " " << lastName << "\tSalary: " << salary 
-                    << "\t Hiring Year: " << hireYear.tm_year << endl;
-        }
+        cout << first_name << " " << last_name << "\tSalary: " << salary
+                << "\t Hiring Year: " << hire_year.tm_year << endl;
+    }
+
+
 };
 #endif
 

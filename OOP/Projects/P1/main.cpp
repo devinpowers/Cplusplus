@@ -5,53 +5,64 @@
 #include "Employee.h"
 #include "Manager.h"
 #include "Database.h"
+
 using std::cout;
 using std::endl;
 
 int main() {
 
     cout << endl;
-    //check default constructors
-    tm hiringYear;
-    hiringYear.tm_year=2012;
 
-    vector<CEmployee*> emps;
-    CManager mang("SubA_First","SubA_Second",20,hiringYear,"CSE",emps); // pass Employee Database Vector
+    tm hiring_year; 
+    hiring_year.tm_year = 2012;
+
+    vector<Employee*> emps;
+
+    Manager mang("Devin", "Powers", 20, hiring_year, "CSE", emps); 
 
     mang.DisplayEmployee();
-    cout<<"Default Constructor Check\n\n";
-    
-    //check copy constructors
-    CManager mang1=mang;
-    mang1.DisplayEmployee();
-    cout<<"Copy Constructor Check\n\n";
-    
-    //check assignment operator
-    hiringYear.tm_year=2015;
-    CManager mang3("SubB_First","SubB_Second",10,hiringYear,"CSE",emps);
+    cout << "Defualt Constructor Check!!!\n";
+
+
+    // Check Copy Constructors
+    Manager manager_one = mang;  // Copy
+    manager_one.DisplayEmployee();
+    cout << "Copy Constructor Check " << endl;
+
+    // Check Assignment Operator
+
+    hiring_year.tm_year = 2015;
+    Manager mang3("SubB_First","SubB_Second",10,hiring_year,"CSE",emps);
     mang3.DisplayEmployee();
-    mang1=mang3;
-    mang1.DisplayEmployee();
+    manager_one = mang3;
+    manager_one.DisplayEmployee();
+    mang3.DisplayEmployee();
     cout<<"Assignment Operator Check\n\n";
     
+
     //Add subordinates
     emps.push_back(&mang);
-    emps.push_back(&mang1);
-    
-    //Add records to database
-    vector<CEmployee*> allEmp;
-    CDatabase emp_data(allEmp);
-    hiringYear.tm_year=1998;
-    emp_data.AddRecord(new CManager("FirstA","LastA",30,hiringYear,"CSE",emps));
-    hiringYear.tm_year=1999;
-    emp_data.AddRecord(new CManager("FirstB","LastB",32,hiringYear,"CSE",emps));
-    hiringYear.tm_year=2000;
-    emp_data.AddRecord(new CManager("FirstC","LastC",35,hiringYear,"EGR",emps));
-    hiringYear.tm_year=2001;
-    emp_data.AddRecord(new CManager("FirstD","LastD",40,hiringYear,"CHE",emps));
-    hiringYear.tm_year=2002;
-    emp_data.AddRecord(new CManager("FirstE","LastE",50,hiringYear,"EGR",emps));
+    emps.push_back(&manager_one);
+
+        //Add records to database
+    vector<Employee*> allEmp;
+    Database emp_data(allEmp);
+
+    hiring_year.tm_year=1998;
+    emp_data.AddRecord(new Manager("Michael","Scott",30,hiring_year,"CSE",emps));
+    hiring_year.tm_year=1999;
+    emp_data.AddRecord(new Manager("Bruce","Lee",32,hiring_year,"CSE",emps));
+    hiring_year.tm_year=2000;
+    emp_data.AddRecord(new Manager("Tom","Brady",35,hiring_year,"EGR",emps));
+    hiring_year.tm_year=2001;
+    emp_data.AddRecord(new Manager("Dak","Prescott",40,hiring_year,"CHE",emps));
+    hiring_year.tm_year=2002;
+    emp_data.AddRecord(new Manager("Mike","Evans",50,hiring_year,"EGR",emps));
+
+
     
     //display all records
-    emp_data.DisplayRecords();
+    emp_data.DisplayRecord();
+
 }
+

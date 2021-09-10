@@ -11,73 +11,86 @@
 using std::vector;
 using namespace std;
 
-class CManager: public CEmployee {
+class Manager: public Employee {
 
     protected:
-        vector<CEmployee*> group;
-        string dept;
-            
+
+        vector<Employee*> group;
+        string department;
+
     public:
-        CManager(){
-            firstName = "DefMan_first";
-            lastName = "DefMan_second";
-            hireYear.tm_year = 2015;
-            salary = 42;
-            group = vector<CEmployee*>();
-            dept = "CSE";
+        Manager(){
+            // Default Constructor
+
+            first_name = "Devin";
+            last_name = "Powers";
+            hire_year.tm_year = 2012;
+            salary = 32;
+            group  = vector<Employee*>();
+            department = "CSE";
         }
-        CManager(string fn, string ln, int s, tm hy, string d, vector<CEmployee*> &g) :CEmployee(fn, ln, s, hy){
-            firstName = fn;
-            lastName = ln;
-            hireYear.tm_year = hy.tm_year;
-            salary = s;
-            dept = d;
-            group = g; //bad practice but it's how the main is supposed to work it seems?
+        Manager(string first, string last, int sal, tm hyear, string dept, vector<Employee*> &g) :Employee(first, last, sal, hyear){
+            // Constructor
+
+            first_name = first;
+            last_name = last;
+            hire_year.tm_year = hyear.tm_year;
+            salary = sal;
+            department = dept;
+            group = g;
+            
         }
-        
-        CManager(CManager &other){
-            firstName = other.firstName;
-            lastName = other.lastName;
+
+        Manager(Manager &other){
+            first_name = other.first_name;
+            last_name = other.last_name;
             salary = other.salary;
-            hireYear = other.hireYear;
-            dept = other.dept;
+            hire_year = other.hire_year;
+            department = other.department;
             group = other.group;
+
         }
-        
-        CManager& operator=(CManager &other){
-            if(this!=&other){
-                this->firstName = other.firstName;
-                this->lastName = other.lastName;
+
+        Manager& operator=(Manager &other){
+
+            if (this != &other){
+                this->first_name = other.first_name;
+                this->last_name = other.last_name;
                 this->salary = other.salary;
-                this->hireYear = other.hireYear;
-                this->dept = other.dept;
+                this->hire_year = other.hire_year;
+                this->department = other.department;
                 this->group = other.group;
             }
-            return *this;
+            return *this; /// pointer to t
         }
-        
-        virtual ~CManager(){
-            for(int i = 0; i<group.size(); i++){
+
+        virtual ~Manager(){
+            for (int i = 0; i < group.size(); i++ ){
                 delete (group[i]);
             }
             group.clear();
         }
-        
-        string getDepartment()const{return dept;}
-        void setDepartment(string d){dept = d;}
-        
-        vector<CEmployee*> getGroup()const{return group;}
-        void setGroup(vector<CEmployee*> &g){group = g;}
-        
+
+        string GetDepartment()const{return department;}
+        void SetDepartment(string d){department = d;}
+
+        vector<Employee*> GetGroup()const{return group;}
+        void SetGroup(vector<Employee*> &g) {group = g;}
+
         virtual void DisplayEmployee()const{
-            cout << firstName << " " << lastName << "\tSalary: " << salary 
-                    << "\tHire Year: " << hireYear.tm_year << "\t" 
-                    << dept << " Subordinates: " << group.size() << endl;
-            for(int i=0; i<group.size(); i++){
-                cout<< "\t Subordinate: ";
+            cout << first_name << " " << last_name << "\tSalary: " << salary 
+                << "\tHire Year: " << hire_year.tm_year << "\t"
+                << department << "Subordinates: " << group.size() << endl;
+            
+            for (int i = 0; i <group.size(); i++ ){
+                cout << "\t Subordinate: ";
                 group[i]->DisplayEmployee();
             }
         }
-};
+        
 
+};
 #endif
+
+
+

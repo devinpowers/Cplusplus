@@ -9,30 +9,32 @@
 
 using std::string;
 
-class CDatabase {
+class Database {
 
     protected:
-        vector<CEmployee*> database; // Contains database of pointers to Employee Class
 
+        vector<Employee*> database;
+    
     public:
-            CDatabase() = default; // Default constructor
-            
-            CDatabase(vector<CEmployee*> g){
-                database = g;
-            }
 
-            void AddRecord(CEmployee *newAdd){
-                // Add to Vector
-                database.push_back(newAdd);
+        Database() = default;
+
+        Database(vector<Employee*> g){
+            database = g;
+        }
+
+        void AddRecord(Employee *newAdd){
+            // add to vector
+            database.push_back(newAdd);
+        }
+
+        void DisplayRecord(){
+            //printing out records
+
+            for (int i = 0; i < database.size(); i++ ){
+                database[i]->DisplayEmployee();
             }
-            
-            void DisplayRecords(){
-                // Printing out Records
-                for(int i = 0; i<database.size();i++){
-                    database[i]->DisplayEmployee();
-                }
-            }
+        }
 };
-
 #endif /* DATABASE_H */
 
