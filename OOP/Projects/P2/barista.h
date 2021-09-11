@@ -2,11 +2,11 @@
 #include "drink.h"
 
 class Barista{
-
+	// Barista Class
 
 	protected:
 		virtual void print(vector<Drink*>&);
-		virtual string getSortBy(Drink&)=0;
+		virtual string getSortBy(Drink&)=0;		   // Pure Virtual Function
 		virtual void printCall(int,string)=0;     // Pure Virtual Function
 
 

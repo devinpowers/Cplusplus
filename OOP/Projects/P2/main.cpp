@@ -61,8 +61,6 @@ int main() {
     delete AwesomeArnold;
     delete ClumsyCharles;
 
-
-    cout << "HI_OEPJPFFJSFNSLKJFNELJFBEJFBEWFBWEIFBEWLIFBEWIFLEW" << endl;   
 }
 
 

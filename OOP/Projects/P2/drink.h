@@ -33,14 +33,15 @@ class Drink{
 		Drink& operator=(const Drink &drink);
 		
 		  // Overloaded Operator  
-		/*{
+		  // = 
+		{
 			if(this != &drink){
 				user = drink.get_user();
 				size = drink.get_size();      
 			}
 			return *this;
 		}
-		*/
+		
     
 };
 

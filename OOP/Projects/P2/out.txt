@@ -41,35 +41,39 @@ Tommy ordered a large drink of orange juice with no pulp
 Austin ordered a large drink of orange juice with pulp
 
 Cool Sort
-I have 1 drinks for Anonymous Guy
-Anonymous Guy ordered a medium drink of bubble tea with small bubbles
-
-I have 1 drinks for Ash
-Ash ordered a small drink of bubble tea with medium bubbles
-
-I have 2 drinks for Billy
-Billy ordered a large drink of bubble tea with large bubbles
+I have 1 drinks for Billy
 Billy ordered a small drink of bubble tea with medium bubbles
 
-I have 2 drinks for Cyborg
-Cyborg ordered a large drink of bubble tea with small bubbles
-Cyborg ordered a medium drink of bubble tea with large bubbles
+I have 1 drinks for Clay
+Clay ordered a small drink of bubble tea with medium bubbles
+
+I have 1 drinks for Isiah
+Isiah ordered a medium drink of bubble tea with small bubbles
+
+I have 1 drinks for Lindsay
+Lindsay ordered a medium drink of bubble tea with large bubbles
+
+I have 1 drinks for Nick
+Nick ordered a large drink of bubble tea with large bubbles
 
 I have 1 drinks for Tommy
 Tommy ordered a medium drink of bubble tea with large bubbles
 
+I have 1 drinks for Tony
+Tony ordered a large drink of bubble tea with small bubbles
+
 Newbie Sort
 I have 2 of size small
 Billy ordered a small drink of bubble tea with medium bubbles
-Ash ordered a small drink of bubble tea with medium bubbles
+Clay ordered a small drink of bubble tea with medium bubbles
 
 I have 3 of size medium
 Tommy ordered a medium drink of bubble tea with large bubbles
-Cyborg ordered a medium drink of bubble tea with large bubbles
-Anonymous Guy ordered a medium drink of bubble tea with small bubbles
+Lindsay ordered a medium drink of bubble tea with large bubbles
+Isiah ordered a medium drink of bubble tea with small bubbles
 
 I have 2 of size large
-Cyborg ordered a large drink of bubble tea with small bubbles
-Billy ordered a large drink of bubble tea with large bubbles
+Tony ordered a large drink of bubble tea with small bubbles
+Nick ordered a large drink of bubble tea with large bubbles
 
 HI_OEPJPFFJSFNSLKJFNELJFBEJFBEWFBWEIFBEWLIFBEWIFLEW
