@@ -3,7 +3,8 @@
 using std::cout;
 using std::endl;
 
-#include "q.h"
+#include <queue>
+using std::queue;
 
 
 struct Node {
@@ -11,19 +12,6 @@ struct Node {
 	struct Node *left;
 	struct Node *right;
 };
-
-//Function to visit nodes in Inorder and print
-void Inorder(Node *root) {
-	if(root == NULL)
-	{
-		return;
-	}  
-	Inorder(root->left);          // Visit left subtree
-	cout << root->data << endl;  // Print data
-	Inorder(root->right);        // Visit right subtree
-}
- 
-// Function to Insert Node in a Binary Search Tree
 
 Node* Insert(Node *root,int data) {
 	// Return pointer which is a memory address
@@ -42,97 +30,41 @@ Node* Insert(Node *root,int data) {
 	{
 		root->right = Insert(root->right,data);
 	}
-	
 	return root;  // Return Root Address
 }
 
 
-bool Search(Node* root, int data)
-{
-	if (root == NULL )
-	{
-		return false;
-	}
-	else if ( root->data == data)
-	{
-		return true;
-	}
-	else if (data <= root->data)
-	{
-		return Search(root->left, data);
-	}
-	else return Search(root->right, data);
-}
 
 
-int FindMin(Node* root)
-{
-    // Iteratively
-    if (root == NULL)
-    {
-        cout << "Error: Tree is Empty\n";
-        return -1;
-    }
-
-
-   while (root->left != NULL){
-       root = root->left;
-   }
-   return root->data;
-}
-
-
-int FindMax(Node* root)
-{
-        // Iteratively
-    if (root == NULL)
-    {
-        cout << "Error: Tree is Empty\n";
-        return -1;
-    }
-
-
-   while (root->right != NULL){
-       root = root->right;
-   }
-   return root->data;
-}
-
-int FindMinRec(Node* root)
-{    if (root == NULL)
-    {   cout << "Error: Tree is Empty\n";
-        return -1;
-    }
-
-    else if (root->left == NULL){
-        return root->data;
-   }
-   return FindMinRec(root->left);
-}
-
-/* Function to print level
-order traversal a tree*/
 void printLevelOrder(Node *root)
 {
-    int h = height(root);
-    int i;
-    for (i = 1; i <= h; i++)
-        printCurrentLevel(root, i);
-}
-
-void printCurrentLevel(Node* root, int level)
-{
+    // Base Case
     if (root == NULL)
-        return;
-    if (level == 1)
-        cout << root->data << " ";
-    else if (level > 1)
+	{
+		return;
+	} 
+    queue<Node*> q;
+ 
+    q.push(root);
+	
+    while (q.empty() == false) 
     {
-        printCurrentLevel(root->left, level-1);
-        printCurrentLevel(root->right, level-1);
+        int NodeCount = q.size();
+
+        while (NodeCount > 0)
+        {
+            Node *Node = q.front();
+            cout << Node->data << " ";
+            q.pop();
+            if (Node->left != NULL)
+                q.push(Node->left);
+            if (Node->right != NULL)
+                q.push(Node->right);
+            NodeCount--;
+        }
+        cout << endl;
     }
 }
-
 
 int main() {
 
@@ -141,36 +73,15 @@ int main() {
 	root = Insert(root,15); 
 	root = Insert(root,10); 	
 	root = Insert(root,20);
+	root = Insert(root,17); 
 	root = Insert(root,25); 
-	root = Insert(root,8); 
-	root = Insert(root,12);
+	root = Insert(root,19); 
+	root = Insert(root,18); 
+	root = Insert(root,7); 
+	root = Insert(root,14);
+	root = Insert(root,5);
+	root = Insert(root,9);
 
-       // create a queue of capacity 5
-    queue q(10);
-
-    /*
-	cout << "Inorder Traversal: " << endl;
-	Inorder(root);
-	
-	int number;
-	cout << "Enter a number to be searched?\n";
-	cin >> number;
-	if (Search(root, number) == true)
-	{
-		cout << "Found!\n";
-	}
-	else{
-		cout << "Not Found\n";
-	}
-
-    cout << "Lets find the Min of our Binary Tree: ";
-
-    cout << FindMinRec(root) << endl;
-
-    cout << "Lets find the Max of our Binary Tree: " << endl;
-
-    cout << FindMax(root) << endl;
-    */
-
+   	printLevelOrder(root);
 }
 

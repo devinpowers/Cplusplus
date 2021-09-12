@@ -69,6 +69,31 @@ bool Search(Node* root, int data)
 	else return Search(root->right, data);
 }
 
+// Returns true if given tree is BST.
+bool isBST(Node* root, Node* l=NULL, Node* r=NULL)
+{
+    // Base condition
+    if (root == NULL)
+        return true;
+ 
+    // if left node exist then check it has
+    // correct data or not i.e. left node's data
+    // should be less than root's data
+    if (l != NULL and root->data <= l->data)
+        return false;
+ 
+    // if right node exist then check it has
+    // correct data or not i.e. right node's data
+    // should be greater than root's data
+    if (r != NULL and root->data >= r->data)
+        return false;
+ 
+    // check recursively for every node.
+    return isBST(root->left, l, root) and
+           isBST(root->right, root, r);
+}
+
+
 void printLevelOrder(Node *root)
 {
     // Base Case
@@ -155,6 +180,17 @@ int main() {
 	height = maxDepth(root);
 
 	cout << "The Height of the Binary Tree is: " << height << endl;
+
+	// Check if BST
+
+	cout << "Is the Binary Tree a BST?  " << endl;
+
+	if (isBST(root,NULL,NULL))
+
+        cout << "Yes Is BST" << endl;
+    else
+        cout << "Not a BST" << endl;
+ 
 }
 
 
