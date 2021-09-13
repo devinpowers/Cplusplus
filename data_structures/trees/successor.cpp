@@ -46,75 +46,55 @@ Node* Insert(Node *root,int data) {
 	
 	return root;  // Return Root Address
 }
-
-
-
-Node* minValueNode(Node* node)
+Node* FindMin(Node* root)
 {
-    Node* current = node;
- 
-    //  loop down to find the leftmost leaf 
-    while (current && current->left != NULL)
-        current = current->left;
- 
-    return current;
+   Node* current = root;
+   
+   while (current && current->left != NULL){
+       current = current->left;
+   }
+   return current;
 }
 
-
-
-
-Node* deleteNode(Node* root, int key)
-{
-    // base case
+Node* Delete(Node *root, int data){
     if (root == NULL)
+    {
         return root;
- 
-    // If the key to be deleted is
-    // smaller than the root's
-    // key, then it lies in left subtree
-    if (key < root->data)
-        root->left = deleteNode(root->left, key);
- 
-    // If the key to be deleted is
-    // greater than the root's
-    // key, then it lies in right subtree
-    else if (key > root->data)
-        root->right = deleteNode(root->right, key);
- 
-    // if key is same as root's key, then This is the node
-    // to be deleted
-    else {
-        // node has no child
-        if (root->left==NULL and root->right==NULL)
-            return NULL;
-       
-        // node with only one child or no child
-        else if (root->left == NULL) {
-             Node* temp = root->right;
-            free(root);
-            return temp;
+    }
+    else if(data < root->data)
+    {
+        root->left = Delete(root->left,data);
+    }
+    else if(data > root->data){
+        root->right = Delete(root->right,data);
+    }
+    else{
+
+        if (root->left == NULL && root->right == NULL) {
+            // Case 1: No Child
+            delete root;
+            root = NULL;
         }
-        else if (root->right == NULL) {
-            Node* temp = root->left;
-            free(root);
-            return temp;
+        // Case 2: One Child
+        else if(root->left == NULL){
+            Node *temp = root;
+            root = root->right;
+            delete temp;
         }
- 
-        // node with two children: Get the inorder successor
-        // (smallest in the right subtree)
-        Node* temp = minValueNode(root->right);
- 
-        // Copy the inorder successor's content to this node
-        root->data = temp->data;
- 
-        // Delete the inorder successor
-        root->right = deleteNode(root->right, temp->data);
+        else if(root->right == NULL){
+            Node *temp =root;
+            root = root->left;
+            delete temp;
+        }
+        else{
+            // Case 3: 2 childern
+            Node *temp = FindMin(root->right);
+            root->data = temp->data;
+            root->right  = Delete(root->right, temp->data);
+        }
     }
     return root;
 }
-
-
-
 
 
 void printLevelOrder(Node *root)
@@ -146,6 +126,40 @@ void printLevelOrder(Node *root)
         cout << endl;
     }
 }
+
+
+//Function to find some data in the tree
+Node* Find(Node*root, int data) {
+	if(root == NULL) return NULL;
+	else if(root->data == data) return root;
+	else if(root->data < data) return Find(root->right,data);
+	else return Find(root->left,data);
+}
+
+
+Node* Getsuccessor(struct Node* root,int data) {
+	// Search the Node - O(h)
+	struct Node* current = Find(root,data);
+	if(current == NULL) return NULL;
+	if(current->right != NULL) {  //Case 1: Node has right subtree
+		return FindMin(current->right); // O(h)
+	}
+	else {   //Case 2: No right subtree  - O(h)
+		struct Node* successor = NULL;
+		struct Node* ancestor = root;
+		while(ancestor != current) {
+			if(current->data < ancestor->data) {
+				successor = ancestor; // so far this is the deepest node for which current node is in left
+				ancestor = ancestor->left;
+			}
+			else
+				ancestor = ancestor->right;
+		}
+		return successor;
+	}
+}
+
+
 int main() {
 
 	Node* root = NULL;
@@ -163,23 +177,32 @@ int main() {
 
     // Now lets delete!!!!
     cout << "Deleting Node with one Child (25): " << endl;
-    root = deleteNode(root, 25);
+    root = Delete(root, 25);
    	printLevelOrder(root);
     cout << endl;
 
     // Delete Leaf Node with One On
     cout << "Delete Node Leaf Node (deleting 69) " << endl;
 
-	root = deleteNode(root, 69);
+	// root = deleteNode(root, 69);
    	printLevelOrder(root);
     cout << endl;
 
     cout << "Delete Node with two Childern (Deleting 10): " << endl;
     //Delete Node with two childern
-    root = deleteNode(root, 10);
+   //  root = deleteNode(root, 10);
    	printLevelOrder(root);
     cout << endl;
 
+    Node* successor = Getsuccessor(root,1);
+	if(successor == NULL)
+    {
+        cout<<"No successor Found\n";
+
+    } 
+	else{
+        cout<<"Successor is "<<successor->data<<"\n";
+    }
+    
+
 }
-
-
