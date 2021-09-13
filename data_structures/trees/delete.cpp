@@ -79,6 +79,8 @@ Node* Delete(Node *root, int data){
     else if(data > root->data){
         root->right = Delete(root->right,data);
     }
+
+    
     else{
 
         if (root->left == NULL && root->right == NULL) {
@@ -88,8 +90,13 @@ Node* Delete(Node *root, int data){
         }
         // Case 2: One Child
         else if(root->left == NULL){
+            cout << "One Child: " <<  root->data << endl;
             Node *temp = root;
             root = root->right;
+
+            cout << "WHAT HAPPENS??: " <<  root->data << endl;
+            //cout << ": " << root->right->data << endl;
+
             delete temp;
         }
         else if(root->right == NULL){
@@ -99,9 +106,12 @@ Node* Delete(Node *root, int data){
         }
         else{
             // Case 3: 2 childern (Finding Min Value in Right-Subtree)
-            // Node *temp = FindMin(root->right);
-            //root->data = temp->data;
-            //root->right  = Delete(root->right, temp->data);
+           // Node *temp = FindMin(root->right);
+            // root->data = temp->data;
+            // root->right  = Delete(root->right, temp->data);
+
+        }
+
 
              // Case 3: 2 childern Alternative Way (Finding Max vale in Left-Subtree !)
             Node *temp = FindMax(root->left);
@@ -153,14 +163,10 @@ int main() {
 	root = Insert(root,3); 
 	root = Insert(root,7); 
 	root = Insert(root,9); 
-	root = Insert(root,11); 
-    root = Insert(root,8); 
 	root = Insert(root,1); 
 	root = Insert(root,13); 
-	root = Insert(root,14); 
 	root = Insert(root,17);
-	root = Insert(root,20); 
-	root = Insert(root,18);  
+	root = Insert(root,19); 
 
 	cout << "Before Deleting Any Nodes: " << endl;
    	printLevelOrder(root);
@@ -168,13 +174,13 @@ int main() {
     // Delete Leaf Node with One On
     cout << "Delete Node Leaf Node (deleting 18) " << endl;
 
-	root = Delete(root, 18);
+	root = Delete(root, 1);
    	printLevelOrder(root);
     cout << endl;
 
       // Now lets delete!!!!
-    cout << "Deleting Node with one Child (3): " << endl;
-    root = Delete(root, 3);
+    cout << "Deleting Node with one Child (7): " << endl;
+    root = Delete(root, 7);
    	printLevelOrder(root);
     cout << endl;
 
@@ -184,5 +190,6 @@ int main() {
     root = Delete(root, 15);
    	printLevelOrder(root);
     cout << endl;
+
 }
 

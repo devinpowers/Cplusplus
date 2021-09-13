@@ -1,0 +1,4 @@
+Enter a number: the Number 3 is Divisible in 21
+the Number 7 is Divisible in 21
+ The K factor for 21 is 2
+( 10 * 2 ) + 1  = 21

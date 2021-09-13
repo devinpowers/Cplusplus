@@ -35,15 +35,19 @@ int main()
         }
     }
 
+    int store_k;
     for ( int k = 0; k <= 1000; k++ )
     {
         // B is representing a K-Factor Placeholder
         if (((sum*k) + 1 ) == input_number )
         {
+            store_k += k;
             cout << " The K factor for " << input_number << " is " << k << endl;
             break;
 
         }
     }
+
+    cout << "( " << sum << " * " << store_k << " )" << " +" << " 1 " << " = " << input_number << endl;
 
 }

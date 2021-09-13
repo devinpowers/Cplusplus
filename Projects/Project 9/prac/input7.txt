@@ -1,3 +1,0 @@
-7
-tables.txt
-A

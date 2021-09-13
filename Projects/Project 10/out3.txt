@@ -1,5 +1,0 @@
-Top1 index: 5
-Top2 is Empty
-Size: 6
-Capacity of BiStack: 6
-1,2,3,4,5,6
