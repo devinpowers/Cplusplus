@@ -13,6 +13,9 @@
 #include <iostream>
 #include <string>
 
+
+// List::~List(){};
+
 List<NBA_Player> * MakeDetroitPistonsLineup()
 {
 	// Using this Example as a Vector List

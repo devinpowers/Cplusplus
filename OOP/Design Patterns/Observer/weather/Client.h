@@ -20,7 +20,6 @@ public:
 
 };
 
-
 void Client::update(float temp, float humidity, float pressure) {
     // print the changed values
     std::cout << "---Client (" << id << ") Data---\tTemperature: " << temp
@@ -31,10 +30,8 @@ void Client::update(float temp, float humidity, float pressure) {
 
 Client::Client(int id) {
     this->id = id;
+
 }
-
-
-
 #endif //OBSERVER_PATTERN_CLIENT_1_H
 
 

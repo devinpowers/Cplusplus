@@ -5,7 +5,7 @@
 
 
 int main() {
-    WeatherData weatherStation; // Create a Weather Station
+    WeatherData weatherStation;
     Client one(1), two(2), three(3), four(4), five(5);
 
     float temp, humidity, pressure;

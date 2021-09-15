@@ -10,12 +10,12 @@
 
 #include "Iterator.h"
 
-template <class Item>
+template <class Item> // Template so our list can be of multiple different data types
 class List {
-public:
-	virtual Iterator<Item> * CreateIterator() const = 0; // Iterator 
-	virtual unsigned int Count() const = 0; // Return number of items in the list
-	virtual void Append(Item item) = 0; // Add item (element to the List)
+	public:
+		virtual Iterator<Item> * CreateIterator() const = 0; // Iterator 
+		virtual unsigned int Count() const = 0; // Return number of items in the list
+		virtual void Append(Item item) = 0; // Add item (element to the List)
 };
 
 #endif

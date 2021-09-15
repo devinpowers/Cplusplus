@@ -22,6 +22,7 @@ private:
 	unsigned int Array_index;
 
 public:
+
     ArrayListIterator(const ArrayList<Item> * list) : Array_List(list), Array_index(0){}
 
 	virtual ~ArrayListIterator(){}
