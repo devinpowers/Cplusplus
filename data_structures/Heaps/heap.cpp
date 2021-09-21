@@ -196,7 +196,7 @@ int main()
                 cout<<"Minimum Element:  "<<h.ExtractMin()<<endl;
             break;
         case 4:
-            cout<<"Displaying elements of Hwap:  ";
+            cout<<"Displaying elements of Heap:  ";
             h.DisplayHeap();
             break;
         case 5:
