@@ -1,6 +1,8 @@
 
 #include <iostream>
 #include <typeinfo>
+using std::cout;
+using std::endl;
 /**
  * The base State class declares methods that all Concrete State should
  * implement and also provides a backreference to the Context object, associated
@@ -116,5 +118,5 @@ void ClientCode() {
 
 int main() {
   ClientCode();
-  return 0;
+  cout << "HELOO  " << endl;
 }
