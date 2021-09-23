@@ -2,16 +2,12 @@
 
 #include "MusicPlayerState.h"
 
+
 #include <iostream>
 
-MusicPlayerState::MusicPlayerState(std::string name)
-: m_name(name)
-{
+MusicPlayerState::MusicPlayerState(std::string name) : m_name(name){}
 
-}
-
-MusicPlayerState::~MusicPlayerState() {
-}
+MusicPlayerState::~MusicPlayerState() {}
 
 void MusicPlayerState::Play(MusicPlayer * player)
 {

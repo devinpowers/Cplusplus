@@ -1,0 +1,9 @@
+cleIllegal state transition from Stopped to Paused
+changing from Stopped to Playing state
+changing from Playing to Stopped state
+changing from Stopped to Playing state
+changing from Playing to Paused state
+---
+changing from Stopped to Playing state
+changing from Playing to Paused state
+changing from Paused to Stopped state

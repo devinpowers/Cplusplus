@@ -6,25 +6,27 @@
 class MusicPlayerState;
 
 class MusicPlayer {
-public:
-	enum State
-	{
-		ST_STOPPED,
-		ST_PLAYING,
-		ST_PAUSED
-	};
 
-	MusicPlayer();
-	virtual ~MusicPlayer();
+	private:
+		MusicPlayerState * m_pState;
 
-	void Play();
-	void Pause();
-	void Stop();
+	public:
+		enum State // Enum is a user defined data type 
+		{
+			ST_STOPPED, ST_PLAYING, ST_PAUSED
+		};
 
-	void SetState(State state);
+		MusicPlayer();
+		virtual ~MusicPlayer(); // Deconstructor
 
-private:
-	MusicPlayerState * m_pState;
+		void Play();
+		void Pause();
+		void Stop();
+
+		void SetState(State state);
+
 };
 
 #endif /* MUSICPLAYER_H_ */
+
+

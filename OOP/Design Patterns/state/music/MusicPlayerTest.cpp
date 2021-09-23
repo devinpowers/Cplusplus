@@ -7,11 +7,13 @@ using std::endl;
 
 int main()
 {
-	MusicPlayer player, player2;
+	MusicPlayer player, player2, player69;
 
 	player2.Pause();
 	player2.Play();
 	player2.Stop();
+	player2.Play();
+
 	player2.Play();
 	player2.Pause();
 
@@ -20,5 +22,18 @@ int main()
 	player.Pause();
 	player.Stop();
 
+	cout << "---" << endl;
+
+	player69.Play();
+	player69.Pause();
+	player69.Stop();
+
+	cout << "_______________ " << endl;
+
 }
+
+
+
+
+
 

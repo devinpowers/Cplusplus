@@ -9,21 +9,19 @@
 class MusicPlayer;
 
 class PausedState : public MusicPlayerState {
-public:
-	PausedState();
-	virtual ~PausedState();
+	public:
+		PausedState();
+		virtual ~PausedState();
 
-	virtual void Play(MusicPlayer * player);
-	virtual void Stop(MusicPlayer * player);
+		virtual void Play(MusicPlayer * player);
+		virtual void Stop(MusicPlayer * player);
 };
 
 
 PausedState::PausedState()
-: MusicPlayerState(std::string("Paused")) {
-}
+: MusicPlayerState(std::string("Paused")) {}
 
-PausedState::~PausedState() {
-}
+PausedState::~PausedState() {}
 
 void PausedState::Play(MusicPlayer * player)
 {
@@ -36,3 +34,5 @@ void PausedState::Stop(MusicPlayer * player)
 }
 
 #endif /* PAUSEDSTATE_H_ */
+
+

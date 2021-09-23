@@ -6,17 +6,14 @@
 
 #include <iostream>
 
-MusicPlayer::MusicPlayer()
-: m_pState(new StoppedState()){
-
-}
+MusicPlayer::MusicPlayer() : m_pState(new StoppedState() ){ }
 
 MusicPlayer::~MusicPlayer() {
-	delete m_pState;
+	delete m_pState;             // Delete State
 }
 
 void MusicPlayer::Play() {
-	m_pState->Play(this);
+	m_pState->Play(this);                    //
 }
 
 void MusicPlayer::Pause() {
@@ -30,7 +27,7 @@ void MusicPlayer::Stop() {
 void MusicPlayer::SetState(State state)
 {
 	std::cout << "changing from " << m_pState->GetName() << " to ";
-	delete m_pState;
+	delete m_pState; // delete current state
 
 	if(state == ST_STOPPED)
 	{
