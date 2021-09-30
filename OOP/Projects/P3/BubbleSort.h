@@ -34,55 +34,55 @@ class BubbleSortInterface{
 // Implementing Sorting algorithms based on the BubbleSort interface Above!!!!!
 //  
 
-class BubbleSortFirstName : public BubbleSortInterface{
+class BubbleSortFN : public BubbleSortInterface{
 
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return !empDatabase->compare_first_name(i, j);
+            return !empDatabase->compareFN(i, j);
         }
         
 };
 
-class BubbleSortFirstNameReverse : public BubbleSortInterface{
+class BubbleSortFNReverse : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return empDatabase->compare_first_name(i, j);
+            return empDatabase->compareFN(i, j);
         }
 };   
 
-class BubbleSortLastName : public BubbleSortInterface{
+class BubbleSortLN : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return !empDatabase->compare_last_name(i, j);
+            return !empDatabase->compareLN(i, j);
         }
 };
 
 
-class BubbleSortLastNameReverse : public BubbleSortInterface{
+class BubbleSortLNReverse : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return empDatabase->compare_last_name(i, j);
+            return empDatabase->compareLN(i, j);
         }
 };
 
 class BubbleSortSalary : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return !empDatabase->compare_salary(i, j);
+            return !empDatabase->compareSalary(i, j);
         }
 };
 
 class BubbleSortSalaryReverse : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return empDatabase->compare_salary(i, j);
+            return empDatabase->compareSalary(i, j);
         }
 };
 
 class BubbleSortYear : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return !empDatabase->compare_hire_year(i, j);
+            return !empDatabase->compareYR(i, j);
         }
 };
 
@@ -90,7 +90,7 @@ class BubbleSortYear : public BubbleSortInterface{
 class BubbleSortYearReverse : public BubbleSortInterface{
     protected:
         virtual bool compare(EmployeeDatabaseAdapter* empDatabase, int i, int j) const {
-            return empDatabase->compare_hire_year(i, j);
+            return empDatabase->compareYR(i, j);
         }
 };
 #endif /* BUBBLESORT_H */

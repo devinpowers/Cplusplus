@@ -39,13 +39,19 @@ void PrintArray(int arr[], int n)
  
 int main()
 {
-    int arr[] = { 12, 11, 13, 5, 6, 1, 9,0};
+    int arr[] = { 12, 11, 13, 5, 6, 1, 9,0, 100, 69, 30, 20,3, 2332, 2002, 102, 342,13 ,10, 323, 69, 100, 0, 32, 55, 888, 93,12, 1122, 15, 200};
     int n = sizeof(arr) / sizeof(arr[0]);
-    
+
+    cout << endl;
+    cout << "Before Insertion Sort n: \n";
     PrintArray(arr, n);
-    cout << "After insertion \n";
+    cout << endl;
+
+    cout << "After insertion: \n";
     insertionSort(arr, n);
+
     PrintArray(arr, n);
+    cout << endl;
 
 }
 

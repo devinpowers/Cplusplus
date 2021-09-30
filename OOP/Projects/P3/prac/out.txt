@@ -1,0 +1,91 @@
+*********************** Before Sorting *******************
+Using Constructor 2 to Construct a Manager
+Using Constructor 2 to Construct a Manager
+
+Display Record 
+Lebron James: 10000; 2011
+Kobe Bryant: 20000; 2009
+Michael Jordan: 30000; 2013
+Tom Anderson: 40000; 2000; Gender Studies
+Jimmy Reder: 15000; 2010
+Austin Adams: 25000; 2011
+Devin Powers: 35000; 2012
+Aaron Schreck: 9000; 2009
+Michael Jackson: 45000; 2000; Human Resources
+
+ _________________________________________________________________ 
+*********************** After Sorting By First Name Alphabetical *********************
+Aaron Schreck: 9000; 2009
+Austin Adams: 25000; 2011
+Devin Powers: 35000; 2012
+Jimmy Reder: 15000; 2010
+Kobe Bryant: 20000; 2009
+Lebron James: 10000; 2011
+Michael Jackson: 45000; 2000; Human Resources
+Michael Jordan: 30000; 2013
+Tom Anderson: 40000; 2000; Gender Studies
+*********************** After Sorting By First Name Reverse Alphabetical *********************** 
+Tom Anderson: 40000; 2000; Gender Studies
+Michael Jackson: 45000; 2000; Human Resources
+Michael Jordan: 30000; 2013
+Lebron James: 10000; 2011
+Kobe Bryant: 20000; 2009
+Jimmy Reder: 15000; 2010
+Devin Powers: 35000; 2012
+Austin Adams: 25000; 2011
+Aaron Schreck: 9000; 2009
+
+*********************** After Sorting By Last Name Alphabetical *********************** 
+Austin Adams: 25000; 2011
+Tom Anderson: 40000; 2000; Gender Studies
+Kobe Bryant: 20000; 2009
+Michael Jackson: 45000; 2000; Human Resources
+Lebron James: 10000; 2011
+Michael Jordan: 30000; 2013
+Devin Powers: 35000; 2012
+Jimmy Reder: 15000; 2010
+Aaron Schreck: 9000; 2009
+
+*********************** After Sorting By Salary Increasing *********************** 
+Aaron Schreck: 9000; 2009
+Lebron James: 10000; 2011
+Jimmy Reder: 15000; 2010
+Kobe Bryant: 20000; 2009
+Austin Adams: 25000; 2011
+Michael Jordan: 30000; 2013
+Devin Powers: 35000; 2012
+Tom Anderson: 40000; 2000; Gender Studies
+Michael Jackson: 45000; 2000; Human Resources
+
+*********************** After Sorting By Salary Decreasing *********************** 
+Michael Jackson: 45000; 2000; Human Resources
+Tom Anderson: 40000; 2000; Gender Studies
+Devin Powers: 35000; 2012
+Michael Jordan: 30000; 2013
+Austin Adams: 25000; 2011
+Kobe Bryant: 20000; 2009
+Jimmy Reder: 15000; 2010
+Lebron James: 10000; 2011
+Aaron Schreck: 9000; 2009
+
+*********************** After Sorting By Hire year Increasing *********************** 
+Michael Jackson: 45000; 2000; Human Resources
+Tom Anderson: 40000; 2000; Gender Studies
+Aaron Schreck: 9000; 2009
+Kobe Bryant: 20000; 2009
+Jimmy Reder: 15000; 2010
+Lebron James: 10000; 2011
+Austin Adams: 25000; 2011
+Devin Powers: 35000; 2012
+Michael Jordan: 30000; 2013
+
+*********************** After Sorting By Hire year Decreasing *********************** 
+Michael Jordan: 30000; 2013
+Devin Powers: 35000; 2012
+Lebron James: 10000; 2011
+Austin Adams: 25000; 2011
+Jimmy Reder: 15000; 2010
+Aaron Schreck: 9000; 2009
+Kobe Bryant: 20000; 2009
+Michael Jackson: 45000; 2000; Human Resources
+Tom Anderson: 40000; 2000; Gender Studies

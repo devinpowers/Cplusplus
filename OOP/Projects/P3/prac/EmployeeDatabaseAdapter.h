@@ -21,25 +21,25 @@ class EmployeeDatabaseAdapter : public EmployeeDatabase, public EmployeeDatabase
             return database.size();
         }
         
-        virtual bool compareFN(int i, int j) const {
+        virtual bool compare_first_name(int i, int j) const {
 
-            return database[i]->getFName() > database[j]->getFName();
-
-        }
-        
-        virtual bool compareLN(int i, int j) const {
-
-            return database[i]->getLName() > database[j]->getLName();
+            return database[i]->get_First_Name() > database[j]->get_First_Name();
 
         }
         
-        virtual bool compareSalary(int i, int j) const {
+        virtual bool compare_last_name(int i, int j) const {
 
-            return database[i]->getSalary() > database[j]->getSalary();
+            return database[i]->get_Last_Name() > database[j]->get_Last_Name();
 
         }
         
-        virtual bool compareYR(int i, int j) const {
+        virtual bool compare_salary(int i, int j) const {
+
+            return database[i]->get_Salary() > database[j]->get_Salary();
+
+        }
+        
+        virtual bool compare_hire_year(int i, int j) const {
 
             return database[i]->getHireYear() > database[j]->getHireYear();
 

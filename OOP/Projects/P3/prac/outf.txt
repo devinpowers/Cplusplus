@@ -1,0 +1,86 @@
+*********************** Before Sorting
+Using Constructor 2 to Construct a Manager
+Using Constructor 2 to Construct a Manager
+
+Display Record 
+John Smith1: 10000; 2011
+John Smith2: 20000; 2012
+John Smith3: 30000; 2013
+Tom Cruise: 40000; 2000; Gender Studies
+Jimmy Reder: 15000; 2010
+Austin ADams: 25000; 2011
+Devin Powers: 35000; 2012
+Michael jackson: 45000; 2000; Human Resources
+
+ _________________________________________________________________ 
+*********************** After Sorting By FirstName Alphabetical
+Austin ADams: 25000; 2011
+Devin Powers: 35000; 2012
+Jimmy Reder: 15000; 2010
+John Smith2: 20000; 2012
+John Smith1: 10000; 2011
+John Smith3: 30000; 2013
+Michael jackson: 45000; 2000; Human Resources
+Tom Cruise: 40000; 2000; Gender Studies
+*********************** After Sorting By FirstName Reverse Alphabetical
+Tom Cruise: 40000; 2000; Gender Studies
+Michael jackson: 45000; 2000; Human Resources
+John Smith2: 20000; 2012
+John Smith1: 10000; 2011
+John Smith3: 30000; 2013
+Jimmy Reder: 15000; 2010
+Devin Powers: 35000; 2012
+Austin ADams: 25000; 2011
+
+*********************** After Sorting By LastName Alphabetical
+Austin ADams: 25000; 2011
+Tom Cruise: 40000; 2000; Gender Studies
+Devin Powers: 35000; 2012
+Jimmy Reder: 15000; 2010
+John Smith1: 10000; 2011
+John Smith2: 20000; 2012
+John Smith3: 30000; 2013
+Michael jackson: 45000; 2000; Human Resources
+
+*********************** After Sorting By Salary Increasing
+John Smith1: 10000; 2011
+Jimmy Reder: 15000; 2010
+John Smith2: 20000; 2012
+Austin ADams: 25000; 2011
+John Smith3: 30000; 2013
+Devin Powers: 35000; 2012
+Tom Cruise: 40000; 2000; Gender Studies
+Michael jackson: 45000; 2000; Human Resources
+
+*********************** After Sorting By Salary Decreasing
+Michael jackson: 45000; 2000; Human Resources
+Tom Cruise: 40000; 2000; Gender Studies
+Devin Powers: 35000; 2012
+John Smith3: 30000; 2013
+Austin ADams: 25000; 2011
+John Smith2: 20000; 2012
+Jimmy Reder: 15000; 2010
+John Smith1: 10000; 2011
+
+*********************** After Sorting By Hireyear Increasing
+Tom Cruise: 40000; 2000; Gender Studies
+Michael jackson: 45000; 2000; Human Resources
+Jimmy Reder: 15000; 2010
+John Smith1: 10000; 2011
+Austin ADams: 25000; 2011
+John Smith2: 20000; 2012
+Devin Powers: 35000; 2012
+John Smith3: 30000; 2013
+
+*********************** After Sorting By Hireyear Decreasing
+John Smith3: 30000; 2013
+John Smith2: 20000; 2012
+Devin Powers: 35000; 2012
+John Smith1: 10000; 2011
+Austin ADams: 25000; 2011
+Jimmy Reder: 15000; 2010
+Tom Cruise: 40000; 2000; Gender Studies
+Michael jackson: 45000; 2000; Human Resources
+GAS PEDDLE STICKS CARRIES MY CAR AWAY!!!
+HELOO ITS ME
+SUP 

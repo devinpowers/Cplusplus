@@ -11,7 +11,7 @@ void merge(int arr[], int p, int q, int r) {
   cout << "p " << p << endl;
   cout << "Using Merge " << endl;
   // Create L ← A[p..q] and M ← A[q+1..r]
-  int n1 = q - p + 1;s
+  int n1 = q - p + 1;
 
   int L[n1], M[n2];
 

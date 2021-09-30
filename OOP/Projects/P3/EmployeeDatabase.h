@@ -20,7 +20,6 @@ class EmployeeDatabase : public SortableVector{
         vector<Employee*> database;     // the actual vector of employees in the Database
 
     public:
-
         EmployeeDatabase(){} // Constructor
 
         EmployeeDatabase(const vector<Employee*>& g)    // Constructor if a database is initiated with a vector of employees
@@ -29,20 +28,15 @@ class EmployeeDatabase : public SortableVector{
         }
 
         virtual ~EmployeeDatabase(){
-            // Virtual Deconstructor to destroy the database, to loop the vector and delete each Element
+            // Virtual Deconstructor to destroy the database
             for(int i = 0; i < database.size(); i++){
                 delete database[i];
             }
         }
 
-        virtual unsigned int getSize() const { 
-            return database.size();               // Returns size of Database(aka size of the vector) (const so can't change db)
-             } 
+        virtual unsigned int getSize() const { return database.size(); } // Returns size of Database(aka size of the vector)
 
-        virtual bool smaller(int i, int j) const{  // compares the size of two databases (const so nothing is changed in the database with this method)
-            return database[i] > database[j]; 
-            } 
-
+        virtual bool smaller(int i, int j) const{ return database[i] > database[j]; } // compares the size of two databases (const so nothing is changed in the database with this method)
 
         virtual void swap(int i, int j){
 
@@ -52,9 +46,7 @@ class EmployeeDatabase : public SortableVector{
             database[j] = temp;
         }
 
-        void AddRecord(Employee *newAdd){  // Add New Employee to the Database
-            database.push_back(newAdd);
-            }
+        void AddRecord(Employee *newAdd){  database.push_back(newAdd); }
         
         Employee* getRecord(int i)
         { 
@@ -62,7 +54,7 @@ class EmployeeDatabase : public SortableVector{
         }
 
         void DisplayRecords(){
-            // Loops over DB and Prints vector 
+            // Prints vector database
             for(int i = 0; i < database.size(); i++){
                 database[i]->DisplayEmployee();
             }
