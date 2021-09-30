@@ -23,7 +23,6 @@ class NBAGuest : public NBAfan {
 		}
 };
 
-// Implementation
 NBAGuest::NBAGuest(std::string name) : NBAfan(name){}
 
 NBAGuest::~NBAGuest() {}

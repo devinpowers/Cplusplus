@@ -23,10 +23,11 @@ class Stadium {
 		virtual void AttendFloor(NBAfan * patron);
 };
 
-Stadium::Stadium() {}
+Stadium::Stadium() {} // constructor
 
-Stadium::~Stadium() {}
+Stadium::~Stadium() {}   // deconstructor
 
+// members normally
 void Stadium::EnterStadiumEarly(NBAfan * patron)
 {
 	std::cout << "Welcome, " << patron->GetName() << ", to our early access stadium hours\n";
