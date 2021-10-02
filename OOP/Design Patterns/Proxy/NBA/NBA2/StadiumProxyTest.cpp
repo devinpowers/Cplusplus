@@ -16,6 +16,7 @@ int main()
 
 
 	Stadium stadium;			
+	// Passing the stadium interface to the Proxy
 	StadiumProxy stadiumProxy(&stadium);
 
 	stadiumProxy.EnterStadiumEarly(&member);
@@ -29,8 +30,5 @@ int main()
 
 	stadiumProxy.AttendFloor(&guest);
 	stadiumProxy.AttendFloor(&guest2);
-
-
 }
-
 
