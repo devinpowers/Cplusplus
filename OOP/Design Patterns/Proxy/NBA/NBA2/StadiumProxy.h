@@ -25,9 +25,12 @@ class StadiumProxy {
 		Stadium * m_pstadium;
 };
 
+// Constructor
 StadiumProxy::StadiumProxy(Stadium * stadium) : m_pstadium(stadium) {}
 
+// Deconstructor
 StadiumProxy::~StadiumProxy() {}
+
 
 void StadiumProxy::EnterStadiumEarly(NBAfan * patron)
 {
@@ -43,9 +46,9 @@ void StadiumProxy::EnterStadiumEarly(NBAfan * patron)
 
 void StadiumProxy::AttendFloor(NBAfan * patron)
 {
-	if(patron->HasFloorSeatAccess())
+	if(patron->HasFloorSeatAccess()) // If TRUE
 	{
-		m_pstadium->AttendFloor(patron);
+		m_pstadium->AttendFloor(patron); 
 	}
 	else
 	{
@@ -54,5 +57,6 @@ void StadiumProxy::AttendFloor(NBAfan * patron)
 }
 
 #endif /* STADIUMPROXY_H_ */
+
 
 

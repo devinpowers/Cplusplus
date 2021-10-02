@@ -5,9 +5,9 @@
 
 class Dog
 {
-public:
-	virtual ~Dog() {}
-	virtual void Bark() = 0;
+	public:
+		virtual ~Dog() {}
+		virtual void Bark() = 0;
 };
 
 
