@@ -1,113 +1,88 @@
 #include<iostream>
-#include<cstdlib>
-#include<string>
-#include<cstdio>
+
 using namespace std;
-const int T_S = 200;
-class HashTableEntry {
-   public:
-      int k;
-      int v;
-      HashTableEntry(int k, int v) {
-         this->k= k;
-         this->v = v;
-      }
+ 
+class Hash
+{
+    int BUCKET;    // No. of buckets
+ 
+    // Pointer to an array containing buckets
+    list<int> *table;
+public:
+    Hash(int V);  // Constructor
+ 
+    // inserts a key into hash table
+    void insertItem(int x);
+ 
+    // deletes a key from hash table
+    void deleteItem(int key);
+ 
+    // hash function to map values to key
+    int hashFunction(int x) {
+        return (x % BUCKET);
+    }
+ 
+    void displayHash();
 };
-class HashMapTable {
-   private:
-      HashTableEntry **t;
-   public:
-      HashMapTable() {
-         t = new HashTableEntry * [T_S];
-         for (int i = 0; i< T_S; i++) {
-            t[i] = NULL;
-         }
-      }
-      int HashFunc(int k) {
-         return k % T_S;
-      }
-      void Insert(int k, int v) {
-         int h = HashFunc(k);
-         while (t[h] != NULL && t[h]->k != k) {
-            h = HashFunc(h + 1);
-         }
-         if (t[h] != NULL)
-            delete t[h];
-         t[h] = new HashTableEntry(k, v);
-      }
-      int SearchKey(int k) {
-         int h = HashFunc(k);
-         while (t[h] != NULL && t[h]->k != k) {
-            h = HashFunc(h + 1);
-         }
-         if (t[h] == NULL)
-            return -1;
-         else
-            return t[h]->v;
-      }
-      void Remove(int k) {
-         int h = HashFunc(k);
-         while (t[h] != NULL) {
-            if (t[h]->k == k)
-               break;
-            h = HashFunc(h + 1);
-         }
-         if (t[h] == NULL) {
-            cout<<"No Element found at key "<<k<<endl;
-            return;
-         } else {
-            delete t[h];
-         }
-         cout<<"Element Deleted"<<endl;
-      }
-      ~HashMapTable() {
-         for (int i = 0; i < T_S; i++) {
-            if (t[i] != NULL)
-               delete t[i];
-               delete[] t;
-         }
-      }
-};
-int main() {
-   HashMapTable hash;
-   int k, v;
-   int c;
-   while (1) {
-      cout<<"1.Insert element into the table"<<endl;
-      cout<<"2.Search element from the key"<<endl;
-      cout<<"3.Delete element at a key"<<endl;
-      cout<<"4.Exit"<<endl;
-      cout<<"Enter your choice: ";
-      cin>>c;
-      switch(c) {
-         case 1:
-            cout<<"Enter element to be inserted: ";
-            cin>>v;
-            cout<<"Enter key at which element to be inserted: ";
-            cin>>k;
-            hash.Insert(k, v);
-         break;
-         case 2:
-            cout<<"Enter key of the element to be searched: ";
-            cin>>k;
-            if (hash.SearchKey(k) == -1) {
-               cout<<"No element found at key "<<k<<endl;
-               continue;
-            } else {
-               cout<<"Element at key "<<k<<" : ";
-               cout<<hash.SearchKey(k)<<endl;
-            }
-         break;
-         case 3:
-            cout<<"Enter key of the element to be deleted: ";
-            cin>>k;
-            hash.Remove(k);
-         break;
-         case 4:
-            exit(1);
-         default:
-            cout<<"\nEnter correct option\n";
-      }
-   }
-   return 0;
+ 
+Hash::Hash(int b)
+{
+    this->BUCKET = b;
+    table = new list<int>[BUCKET];
+}
+ 
+void Hash::insertItem(int key)
+{
+    int index = hashFunction(key);
+    table[index].push_back(key);
+}
+ 
+void Hash::deleteItem(int key)
+{
+  // get the hash index of key
+  int index = hashFunction(key);
+ 
+  // find the key in (index)th list
+  list <int> :: iterator i;
+  for (i = table[index].begin();
+           i != table[index].end(); i++) {
+    if (*i == key)
+      break;
+  }
+ 
+  // if key is found in hash table, remove it
+  if (i != table[index].end())
+    table[index].erase(i);
+}
+ 
+// function to display hash table
+void Hash::displayHash() {
+  for (int i = 0; i < BUCKET; i++) {
+    cout << i;
+    for (auto x : table[i])
+      cout << " --> " << x;
+    cout << endl;
+  }
+}
+ 
+// Driver program
+int main()
+{
+  // array that contains keys to be mapped
+  int a[] = {15, 11, 27, 8, 12};
+  int n = sizeof(a)/sizeof(a[0]);
+ 
+  // insert the keys into the hash table
+  Hash h(7);   // 7 is count of buckets in
+               // hash table
+  for (int i = 0; i < n; i++)
+    h.insertItem(a[i]); 
+ 
+  // delete 12 from hash table
+  h.deleteItem(12);
+ 
+  // display the Hash table
+  h.displayHash();
+ 
+  return 0;
 }
