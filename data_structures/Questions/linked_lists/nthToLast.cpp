@@ -4,25 +4,18 @@
 struct Node {
   int data;
   Node * next;
-  Node(int d) : data{ d }, next{ nullptr } { }
+  Node(int d) : data{ d }, next{ nullptr } { }  // constructor
+
 };
 
 
-/**
- * Insert to the head of the list
- * @param head - Current head of list
- * @param data - new node's data
- */
 void insert( Node * & head, int data ) {
   Node * newNode = new Node(data);
   newNode->next = head;
   head = newNode;
 }
 
-/**
- * [deleteList - delete the entire list]
- * @param head - head of the list
- */
+
 void deleteList( Node * & head ) {
   Node * nextNode;
   while(head) {
@@ -32,10 +25,6 @@ void deleteList( Node * & head ) {
   }
 }
 
-/**
- * printList - Helper routine to print the list
- * @param head - Current head of the list.
- */
 void printList( Node * head ) {
   while(head) {
     std::cout << head->data << "-->";
@@ -44,13 +33,7 @@ void printList( Node * head ) {
   std::cout << "null" << std::endl;
 }
 
-/**
- * [kthToLastHelper - helper routine to find nth node for recursive approach
- * @param  head  - head of the list
- * @param  k     - the k value for finding kth element from last of the list.
- * @param  i     - an index maintained to keep track of current node.
- * @return       - kth node from last.
- */
+
 Node * kthToLastHelper( Node * head, int k , int & i) {
   if ( head == nullptr ) {
     return nullptr;
@@ -65,23 +48,13 @@ Node * kthToLastHelper( Node * head, int k , int & i) {
   return node;
 }
 
-/**
- * kthToLastRecursive - Recursive approach for finding kth to last element of list.
- * @param  head  - head of node
- * @param  k     - the k value for finding kth element from last of the list.
- * @return       - kth node from last.
- */
+
 Node * kthToLastRecursive( Node * head, int k ) {
   int i = 0;
   return kthToLastHelper(head, k, i);
 }
 
-/**
- * kthToLastIterative -  Iterative approach for finding kth to last element of list.
- * @param  head  - head of node
- * @param  k     - the k value for finding kth element from last of the list.
- * @return       - kth node from last.
- */
+
 Node * kthToLastIterative( Node * head, int k ) {
   if ( head == nullptr ) {
     return head;
@@ -137,5 +110,5 @@ int main() {
 
   deleteList(head);
 
-  return 0;
 }
+

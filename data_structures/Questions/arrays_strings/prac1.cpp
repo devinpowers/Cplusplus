@@ -4,34 +4,32 @@ using std::string;
 using std::vector;
 #include <iostream>
 using std::cout;
-using std::endl;›
+using std::endl;
 using std::boolalpha;
 
 bool isUniqueChars(const string &str){
 
 		if (str.length() > 128){
-			// If more than 128 Characters long, there is a duplicate somewhere!
 			return false;
 		}
-		vector<bool> char_set(128); // Vector contains true and false for 
 
+		vector<bool> char_set_(128); // Vector contains true and false for 
 
 		for (int i = 0; i < str.length(); i++){
-			// Loop over string 
 
-			int value = str[i];
-			if (char_set[value]){ // if true
-				// char_set contains char, return false, as there is a duplicate alreadys
+			int value = str[i]; // Each Char has a int representation
+
+			cout << "Value: " << value << endl;
+			if (char_set_[value]){ // if true
 				return false;
 			}
 			else{
-				char_set[value] = true;
+				char_set_[value] = true;
 			}
 		}
-
 		return true;
-}
 
+}
 
 
 int main(){
@@ -42,10 +40,13 @@ int main(){
     
     for (auto word : words)
     {
-        // cout << word << string(": ") << boolalpha << isUniqueChars(word) <<endl;
-		cout << word << string(": ")  << isUniqueChars(word) <<endl;
+        cout << word << string(": ") << boolalpha << isUniqueChars(word) <<endl;
 
     }
-
 }
+
+
+
+
+
 
