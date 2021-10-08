@@ -1,54 +1,59 @@
 #include<iostream>
 using std::cout;
 using std::endl;
-
 #include<string>
 using std::string;
 #include<vector>
 using std::vector;
 
-void reverseWords(string str){
+string reverseWords(string str){
 
     vector<string> temp;
 
     // loop thru str and removed word
-    int ptr1 = 0;
-    int ptr0 = 0;
-    
-    // Hi.my.name.is.devin
+    int ptr0 = 0;  // track of the index
+    int ptr1 = 0;   // track of length of the string
+
     for (int i = 0; i < str.length(); i++ )
     {
         // Start both pointers at the beginging of the loop in the string
-        i
-        // loop thru the str and remove/push words onto .
+
         if (str[i] != '.')
-        { 
-            cout << str[i] << endl;
-            ptr1 += 1; //move pointer
+        {
+            ++ptr1;
+        }   
+        else {
+        
+            temp.push_back(str.substr(ptr0,ptr1));
+            // update ptr indexes: set ptr0 to ptr
+            ptr0 = i + 1;
+            ptr1 = 0; // update length to zero
         }
-        cout << "Pointer 1 value: " << ptr1 << endl;
-        // else
-        temp.push_back(str.substr(ptr0,ptr1));
-        // Reset pointers
-        ptr0 = ptr1 + 1;
-        ptr1 = ptr1 + 1;
+        // add last wor
+    }
+    temp.push_back(str.substr(ptr0,ptr1)); // add last element
+    string reverse;
 
+    // Find Size of the temp vector
+    int temp_size = temp.size()-1;
+
+    for (int i = temp_size; i >= 0; i-- )
+    {
+        // add to reverse string and add "."
+        reverse += temp[i];
+        reverse += ".";
     }
 
-    for (auto element : temp ){
-        cout << element << endl;
-    }
+    return reverse;
 
-    
-    // return a string reversed
 }
 
 
 
 int main(){
 
-    string pass = "Hello.World.My.Name.Is";
+    string pass = "i.like.this.program.very.much";
 
-    reverseWords(pass);
-    
+    cout << reverseWords(pass) << endl;
+
 }

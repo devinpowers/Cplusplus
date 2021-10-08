@@ -1,28 +1,20 @@
-#include<iostream>
-using std::cout;
-using std::endl;
+// string::substr
+#include <iostream>
+#include <string>
 
-#include<string>
-using std::string;
-#include<vector>
-using std::vector;
+int main ()
+{
+  std::string str="We think in generalities, but we live in details.";
+                                           // (quoting Alfred N. Whitehead)
 
-int main(){
+  std::string str2 = str.substr (3,5); // "think"
 
-    vector<string> vec;
-    string name = "HelloWorld";
+  std::size_t pos = str.find("live");   // position of "live" in str
 
-    int index1 = 0;
-    int index2 = 3;
+  std::string str3 = str.substr (pos);    // get from "live" to the end
 
-    // slice name string?
+  std::cout << str2 << std::endl;
+  std::cout << str3 << '\n';
 
-    string str1 = name.substr(index1, index2);
-
-    cout << "String 1: " << str1 << endl;
-
-    cout << "name string: " << name << endl;
-
-
-
+  return 0;
 }
