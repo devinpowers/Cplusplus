@@ -89,7 +89,7 @@ string longestSubstring(string str ){
 int main() {
 
     string phrase ="abcabcbb";
-    string phrase2 = "pwwkeaighsdlmncewqw";
+    string phrase2 = "pwwkeaigdwwfwsbawddshsdwwrgfrwwosjwweessddwdlmrtefddncewqw";
     string phrase3 = "bbbbbbbbbbbbbbbbbb";
     string phrase4 = "";
 
