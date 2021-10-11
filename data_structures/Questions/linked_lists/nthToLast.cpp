@@ -55,18 +55,25 @@ Node * kthToLastRecursive( Node * head, int k ) {
 
 
 Node * kthToLastIterative( Node * head, int k ) {
+  // Return node at the k nth position
+
   if ( head == nullptr ) {
-    return head;
+    return head; // Empty List so return
   }
 
-  Node * ptr1 = head;
+  Node * ptr1 = head;  // Two Pointers to keep track
   Node * ptr2 = head;
 
   int i = 0;
+
   while( i < k && ptr1 ) {
-    ptr1 = ptr1->next;
+
+    ptr1 = ptr1->next; // will go until the end of the linked list
     ++i;
+
   }
+
+  std::cout << "i: " << i << std::endl;
 
   //out of bounds
   if ( i < k ) {
