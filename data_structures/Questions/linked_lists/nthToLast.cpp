@@ -15,8 +15,6 @@ void insert( Node * &head, int data){
 }
 
 
-
-
 void deleteList( Node * & head ) {
   Node * nextNode;
   while(head) {
@@ -87,9 +85,11 @@ Node * kthToLastIterative( Node * head, int k ) {
 
 int main() {
 
-  Node * head = nullptr;
+  Node * head = nullptr; 
   insert(head, 10);
   insert(head, 9);
+
+
   for ( int i = 7; i > 0; i-- ) {
     insert(head, i);
   }
@@ -100,6 +100,7 @@ int main() {
   std::cout << "List: ";
   printList(head);
 
+  /*
   std::cout << "4th node from last (Recursive) : ";
   Node *node4 = kthToLastRecursive(head, 4);
   if ( node4 != nullptr ) {
@@ -107,13 +108,18 @@ int main() {
   } else {
     std::cout << "NULL NODE\n";
   }
+  */
 
   std::cout << "4th node from last (Iterative) : ";
-  node4 = kthToLastIterative(head, 4);
+  Node *node4 = kthToLastIterative(head, 4);
   if ( node4 != nullptr ) {
+
     std::cout << node4->data << std::endl;
+
   } else {
+
     std::cout << "NULL NODE\n";
+
   }
 
   deleteList(head);
