@@ -4,10 +4,10 @@
 struct Node {
   int data;
   Node * next;
-  Node(int d) : data{ d }, next{ nullptr } { }  // constructor sets 
+  Node(int d) : data{ d }, next{ nullptr } { }  // constructor sets new node
 };
 
-void insert( Node * & head, int data ) {
+void insert( Node * &head, int data ) {
   Node * newNode = new Node(data);
   newNode->next = head;
   head = newNode;

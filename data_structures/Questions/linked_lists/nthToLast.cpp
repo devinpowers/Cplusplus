@@ -86,9 +86,15 @@ Node * kthToLastIterative( Node * head, int k ) {
 
 int main() {
   Node * head = nullptr;
+  insert(head, 10);
+  insert(head, 9);
   for ( int i = 7; i > 0; i-- ) {
     insert(head, i);
   }
+  insert(head, 10);
+  insert(head, 69);
+  insert(head, 12);
+
   std::cout << "List: ";
   printList(head);
 

@@ -77,6 +77,8 @@ void print()
 	cout<< endl;
 }
 
+
+
 int main()
 {
     Insert(2,1); // List: 2
