@@ -1,19 +1,20 @@
 
 #include <iostream>
 
-struct Node {
-  int data;
-  Node * next;
-  Node(int d) : data{ d }, next{ nullptr } { }  // constructor
-
+struct Node{
+    int data;
+    Node* next;
 };
 
+void insert( Node * &head, int data){
 
-void insert( Node * & head, int data ) {
-  Node * newNode = new Node(data);
-  newNode->next = head;
-  head = newNode;
+    Node*temp = new Node();
+    temp->data = data;
+    temp->next = head;
+    head = temp;
 }
+
+
 
 
 void deleteList( Node * & head ) {
@@ -85,6 +86,7 @@ Node * kthToLastIterative( Node * head, int k ) {
 
 
 int main() {
+
   Node * head = nullptr;
   insert(head, 10);
   insert(head, 9);
