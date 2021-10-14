@@ -1,0 +1,9 @@
+List 1: a-->b-->c-->c-->b-->a-->nullptr
+List 1 is pallindrome list
+List 1: a-->b-->c-->c-->b-->a-->nullptr
+List 2: r-->a-->d-->a-->r-->nullptr
+List 2 is pallindrome list
+List 2: r-->a-->d-->a-->r-->nullptr
+List 3: d-->b-->c-->b-->a-->nullptr
+List 3 is not a pallindrome list
+List 3: d-->b-->c-->b-->a-->nullptr

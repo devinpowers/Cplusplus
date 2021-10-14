@@ -1,0 +1,454 @@
+List is: 99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->24->23->22->21->20->19->18->17->16->15->14->13->12->11->10->9->8->7->6->5->4->3->2->1->0->49->48->47->46->45->44->43->42->41->40->39->38->37->36->35->34->33->32->31->30->29->28->27->26->25->24->23->22->21->20->19->18->17->16->15->14->13->12->11->10->9->8->7->6->5->4->3->2->1->0->99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->74->73->72->71->70->69->68->67->66->65->64->63->62->61->60->59->58->57->56->55->54->53->52->51->50->99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->74->73->72->71->70->69->68->67->66->65->64->63->62->61->60->59->58->57->56->55->54->53->52->51->50->49->48->47->46->45->44->43->42->41->40->39->38->37->36->35->34->33->32->31->30->29->28->27->26->25->24->23->22->21->20->19->18->17->16->15->14->13->12->11->10->9->8->7->6->5->4->3->2->1->0->
+
+Values  that duplicate: 99
+Removing Duplicate which is: 99
+Values  that duplicate: 99
+Removing Duplicate which is: 99
+Values  that duplicate: 99
+Removing Duplicate which is: 99
+Values  that duplicate: 99
+Removing Duplicate which is: 99
+Values  that duplicate: 99
+Removing Duplicate which is: 99
+Values  that duplicate: 98
+Removing Duplicate which is: 98
+Values  that duplicate: 98
+Removing Duplicate which is: 98
+Values  that duplicate: 98
+Removing Duplicate which is: 98
+Values  that duplicate: 98
+Removing Duplicate which is: 98
+Values  that duplicate: 98
+Removing Duplicate which is: 98
+Values  that duplicate: 97
+Removing Duplicate which is: 97
+Values  that duplicate: 97
+Removing Duplicate which is: 97
+Values  that duplicate: 97
+Removing Duplicate which is: 97
+Values  that duplicate: 97
+Removing Duplicate which is: 97
+Values  that duplicate: 97
+Removing Duplicate which is: 97
+Values  that duplicate: 96
+Removing Duplicate which is: 96
+Values  that duplicate: 96
+Removing Duplicate which is: 96
+Values  that duplicate: 96
+Removing Duplicate which is: 96
+Values  that duplicate: 96
+Removing Duplicate which is: 96
+Values  that duplicate: 96
+Removing Duplicate which is: 96
+Values  that duplicate: 95
+Removing Duplicate which is: 95
+Values  that duplicate: 95
+Removing Duplicate which is: 95
+Values  that duplicate: 95
+Removing Duplicate which is: 95
+Values  that duplicate: 95
+Removing Duplicate which is: 95
+Values  that duplicate: 95
+Removing Duplicate which is: 95
+Values  that duplicate: 94
+Removing Duplicate which is: 94
+Values  that duplicate: 94
+Removing Duplicate which is: 94
+Values  that duplicate: 94
+Removing Duplicate which is: 94
+Values  that duplicate: 94
+Removing Duplicate which is: 94
+Values  that duplicate: 94
+Removing Duplicate which is: 94
+Values  that duplicate: 93
+Removing Duplicate which is: 93
+Values  that duplicate: 93
+Removing Duplicate which is: 93
+Values  that duplicate: 93
+Removing Duplicate which is: 93
+Values  that duplicate: 93
+Removing Duplicate which is: 93
+Values  that duplicate: 93
+Removing Duplicate which is: 93
+Values  that duplicate: 92
+Removing Duplicate which is: 92
+Values  that duplicate: 92
+Removing Duplicate which is: 92
+Values  that duplicate: 92
+Removing Duplicate which is: 92
+Values  that duplicate: 92
+Removing Duplicate which is: 92
+Values  that duplicate: 92
+Removing Duplicate which is: 92
+Values  that duplicate: 91
+Removing Duplicate which is: 91
+Values  that duplicate: 91
+Removing Duplicate which is: 91
+Values  that duplicate: 91
+Removing Duplicate which is: 91
+Values  that duplicate: 91
+Removing Duplicate which is: 91
+Values  that duplicate: 91
+Removing Duplicate which is: 91
+Values  that duplicate: 90
+Removing Duplicate which is: 90
+Values  that duplicate: 90
+Removing Duplicate which is: 90
+Values  that duplicate: 90
+Removing Duplicate which is: 90
+Values  that duplicate: 90
+Removing Duplicate which is: 90
+Values  that duplicate: 90
+Removing Duplicate which is: 90
+Values  that duplicate: 89
+Removing Duplicate which is: 89
+Values  that duplicate: 89
+Removing Duplicate which is: 89
+Values  that duplicate: 89
+Removing Duplicate which is: 89
+Values  that duplicate: 89
+Removing Duplicate which is: 89
+Values  that duplicate: 89
+Removing Duplicate which is: 89
+Values  that duplicate: 88
+Removing Duplicate which is: 88
+Values  that duplicate: 88
+Removing Duplicate which is: 88
+Values  that duplicate: 88
+Removing Duplicate which is: 88
+Values  that duplicate: 88
+Removing Duplicate which is: 88
+Values  that duplicate: 88
+Removing Duplicate which is: 88
+Values  that duplicate: 87
+Removing Duplicate which is: 87
+Values  that duplicate: 87
+Removing Duplicate which is: 87
+Values  that duplicate: 87
+Removing Duplicate which is: 87
+Values  that duplicate: 87
+Removing Duplicate which is: 87
+Values  that duplicate: 87
+Removing Duplicate which is: 87
+Values  that duplicate: 86
+Removing Duplicate which is: 86
+Values  that duplicate: 86
+Removing Duplicate which is: 86
+Values  that duplicate: 86
+Removing Duplicate which is: 86
+Values  that duplicate: 86
+Removing Duplicate which is: 86
+Values  that duplicate: 86
+Removing Duplicate which is: 86
+Values  that duplicate: 85
+Removing Duplicate which is: 85
+Values  that duplicate: 85
+Removing Duplicate which is: 85
+Values  that duplicate: 85
+Removing Duplicate which is: 85
+Values  that duplicate: 85
+Removing Duplicate which is: 85
+Values  that duplicate: 85
+Removing Duplicate which is: 85
+Values  that duplicate: 84
+Removing Duplicate which is: 84
+Values  that duplicate: 84
+Removing Duplicate which is: 84
+Values  that duplicate: 84
+Removing Duplicate which is: 84
+Values  that duplicate: 84
+Removing Duplicate which is: 84
+Values  that duplicate: 84
+Removing Duplicate which is: 84
+Values  that duplicate: 83
+Removing Duplicate which is: 83
+Values  that duplicate: 83
+Removing Duplicate which is: 83
+Values  that duplicate: 83
+Removing Duplicate which is: 83
+Values  that duplicate: 83
+Removing Duplicate which is: 83
+Values  that duplicate: 83
+Removing Duplicate which is: 83
+Values  that duplicate: 82
+Removing Duplicate which is: 82
+Values  that duplicate: 82
+Removing Duplicate which is: 82
+Values  that duplicate: 82
+Removing Duplicate which is: 82
+Values  that duplicate: 82
+Removing Duplicate which is: 82
+Values  that duplicate: 82
+Removing Duplicate which is: 82
+Values  that duplicate: 81
+Removing Duplicate which is: 81
+Values  that duplicate: 81
+Removing Duplicate which is: 81
+Values  that duplicate: 81
+Removing Duplicate which is: 81
+Values  that duplicate: 81
+Removing Duplicate which is: 81
+Values  that duplicate: 81
+Removing Duplicate which is: 81
+Values  that duplicate: 80
+Removing Duplicate which is: 80
+Values  that duplicate: 80
+Removing Duplicate which is: 80
+Values  that duplicate: 80
+Removing Duplicate which is: 80
+Values  that duplicate: 80
+Removing Duplicate which is: 80
+Values  that duplicate: 80
+Removing Duplicate which is: 80
+Values  that duplicate: 79
+Removing Duplicate which is: 79
+Values  that duplicate: 79
+Removing Duplicate which is: 79
+Values  that duplicate: 79
+Removing Duplicate which is: 79
+Values  that duplicate: 79
+Removing Duplicate which is: 79
+Values  that duplicate: 79
+Removing Duplicate which is: 79
+Values  that duplicate: 78
+Removing Duplicate which is: 78
+Values  that duplicate: 78
+Removing Duplicate which is: 78
+Values  that duplicate: 78
+Removing Duplicate which is: 78
+Values  that duplicate: 78
+Removing Duplicate which is: 78
+Values  that duplicate: 78
+Removing Duplicate which is: 78
+Values  that duplicate: 77
+Removing Duplicate which is: 77
+Values  that duplicate: 77
+Removing Duplicate which is: 77
+Values  that duplicate: 77
+Removing Duplicate which is: 77
+Values  that duplicate: 77
+Removing Duplicate which is: 77
+Values  that duplicate: 77
+Removing Duplicate which is: 77
+Values  that duplicate: 76
+Removing Duplicate which is: 76
+Values  that duplicate: 76
+Removing Duplicate which is: 76
+Values  that duplicate: 76
+Removing Duplicate which is: 76
+Values  that duplicate: 76
+Removing Duplicate which is: 76
+Values  that duplicate: 76
+Removing Duplicate which is: 76
+Values  that duplicate: 75
+Removing Duplicate which is: 75
+Values  that duplicate: 75
+Removing Duplicate which is: 75
+Values  that duplicate: 75
+Removing Duplicate which is: 75
+Values  that duplicate: 75
+Removing Duplicate which is: 75
+Values  that duplicate: 75
+Removing Duplicate which is: 75
+Values  that duplicate: 24
+Removing Duplicate which is: 24
+Values  that duplicate: 24
+Removing Duplicate which is: 24
+Values  that duplicate: 23
+Removing Duplicate which is: 23
+Values  that duplicate: 23
+Removing Duplicate which is: 23
+Values  that duplicate: 22
+Removing Duplicate which is: 22
+Values  that duplicate: 22
+Removing Duplicate which is: 22
+Values  that duplicate: 21
+Removing Duplicate which is: 21
+Values  that duplicate: 21
+Removing Duplicate which is: 21
+Values  that duplicate: 20
+Removing Duplicate which is: 20
+Values  that duplicate: 20
+Removing Duplicate which is: 20
+Values  that duplicate: 19
+Removing Duplicate which is: 19
+Values  that duplicate: 19
+Removing Duplicate which is: 19
+Values  that duplicate: 18
+Removing Duplicate which is: 18
+Values  that duplicate: 18
+Removing Duplicate which is: 18
+Values  that duplicate: 17
+Removing Duplicate which is: 17
+Values  that duplicate: 17
+Removing Duplicate which is: 17
+Values  that duplicate: 16
+Removing Duplicate which is: 16
+Values  that duplicate: 16
+Removing Duplicate which is: 16
+Values  that duplicate: 15
+Removing Duplicate which is: 15
+Values  that duplicate: 15
+Removing Duplicate which is: 15
+Values  that duplicate: 14
+Removing Duplicate which is: 14
+Values  that duplicate: 14
+Removing Duplicate which is: 14
+Values  that duplicate: 13
+Removing Duplicate which is: 13
+Values  that duplicate: 13
+Removing Duplicate which is: 13
+Values  that duplicate: 12
+Removing Duplicate which is: 12
+Values  that duplicate: 12
+Removing Duplicate which is: 12
+Values  that duplicate: 11
+Removing Duplicate which is: 11
+Values  that duplicate: 11
+Removing Duplicate which is: 11
+Values  that duplicate: 10
+Removing Duplicate which is: 10
+Values  that duplicate: 10
+Removing Duplicate which is: 10
+Values  that duplicate: 9
+Removing Duplicate which is: 9
+Values  that duplicate: 9
+Removing Duplicate which is: 9
+Values  that duplicate: 8
+Removing Duplicate which is: 8
+Values  that duplicate: 8
+Removing Duplicate which is: 8
+Values  that duplicate: 7
+Removing Duplicate which is: 7
+Values  that duplicate: 7
+Removing Duplicate which is: 7
+Values  that duplicate: 6
+Removing Duplicate which is: 6
+Values  that duplicate: 6
+Removing Duplicate which is: 6
+Values  that duplicate: 5
+Removing Duplicate which is: 5
+Values  that duplicate: 5
+Removing Duplicate which is: 5
+Values  that duplicate: 4
+Removing Duplicate which is: 4
+Values  that duplicate: 4
+Removing Duplicate which is: 4
+Values  that duplicate: 3
+Removing Duplicate which is: 3
+Values  that duplicate: 3
+Removing Duplicate which is: 3
+Values  that duplicate: 2
+Removing Duplicate which is: 2
+Values  that duplicate: 2
+Removing Duplicate which is: 2
+Values  that duplicate: 1
+Removing Duplicate which is: 1
+Values  that duplicate: 1
+Removing Duplicate which is: 1
+Values  that duplicate: 0
+Removing Duplicate which is: 0
+Values  that duplicate: 0
+Removing Duplicate which is: 0
+Values  that duplicate: 49
+Removing Duplicate which is: 49
+Values  that duplicate: 48
+Removing Duplicate which is: 48
+Values  that duplicate: 47
+Removing Duplicate which is: 47
+Values  that duplicate: 46
+Removing Duplicate which is: 46
+Values  that duplicate: 45
+Removing Duplicate which is: 45
+Values  that duplicate: 44
+Removing Duplicate which is: 44
+Values  that duplicate: 43
+Removing Duplicate which is: 43
+Values  that duplicate: 42
+Removing Duplicate which is: 42
+Values  that duplicate: 41
+Removing Duplicate which is: 41
+Values  that duplicate: 40
+Removing Duplicate which is: 40
+Values  that duplicate: 39
+Removing Duplicate which is: 39
+Values  that duplicate: 38
+Removing Duplicate which is: 38
+Values  that duplicate: 37
+Removing Duplicate which is: 37
+Values  that duplicate: 36
+Removing Duplicate which is: 36
+Values  that duplicate: 35
+Removing Duplicate which is: 35
+Values  that duplicate: 34
+Removing Duplicate which is: 34
+Values  that duplicate: 33
+Removing Duplicate which is: 33
+Values  that duplicate: 32
+Removing Duplicate which is: 32
+Values  that duplicate: 31
+Removing Duplicate which is: 31
+Values  that duplicate: 30
+Removing Duplicate which is: 30
+Values  that duplicate: 29
+Removing Duplicate which is: 29
+Values  that duplicate: 28
+Removing Duplicate which is: 28
+Values  that duplicate: 27
+Removing Duplicate which is: 27
+Values  that duplicate: 26
+Removing Duplicate which is: 26
+Values  that duplicate: 25
+Removing Duplicate which is: 25
+Values  that duplicate: 74
+Removing Duplicate which is: 74
+Values  that duplicate: 73
+Removing Duplicate which is: 73
+Values  that duplicate: 72
+Removing Duplicate which is: 72
+Values  that duplicate: 71
+Removing Duplicate which is: 71
+Values  that duplicate: 70
+Removing Duplicate which is: 70
+Values  that duplicate: 69
+Removing Duplicate which is: 69
+Values  that duplicate: 68
+Removing Duplicate which is: 68
+Values  that duplicate: 67
+Removing Duplicate which is: 67
+Values  that duplicate: 66
+Removing Duplicate which is: 66
+Values  that duplicate: 65
+Removing Duplicate which is: 65
+Values  that duplicate: 64
+Removing Duplicate which is: 64
+Values  that duplicate: 63
+Removing Duplicate which is: 63
+Values  that duplicate: 62
+Removing Duplicate which is: 62
+Values  that duplicate: 61
+Removing Duplicate which is: 61
+Values  that duplicate: 60
+Removing Duplicate which is: 60
+Values  that duplicate: 59
+Removing Duplicate which is: 59
+Values  that duplicate: 58
+Removing Duplicate which is: 58
+Values  that duplicate: 57
+Removing Duplicate which is: 57
+Values  that duplicate: 56
+Removing Duplicate which is: 56
+Values  that duplicate: 55
+Removing Duplicate which is: 55
+Values  that duplicate: 54
+Removing Duplicate which is: 54
+Values  that duplicate: 53
+Removing Duplicate which is: 53
+Values  that duplicate: 52
+Removing Duplicate which is: 52
+Values  that duplicate: 51
+Removing Duplicate which is: 51
+Values  that duplicate: 50
+Removing Duplicate which is: 50
+Linked List after Removal of Duplicates: 
+List is: 99->98->97->96->95->94->93->92->91->90->89->88->87->86->85->84->83->82->81->80->79->78->77->76->75->24->23->22->21->20->19->18->17->16->15->14->13->12->11->10->9->8->7->6->5->4->3->2->1->0->49->48->47->46->45->44->43->42->41->40->39->38->37->36->35->34->33->32->31->30->29->28->27->26->25->74->73->72->71->70->69->68->67->66->65->64->63->62->61->60->59->58->57->56->55->54->53->52->51->50->
