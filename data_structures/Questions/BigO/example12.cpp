@@ -11,6 +11,8 @@ void permutation(string str){
     
 }
 
+
+
 void permutation(string str, string prefix){
     if (str.length() == 0){
         std::cout << prefix << std::endl;
