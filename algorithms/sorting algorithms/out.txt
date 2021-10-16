@@ -1,12 +1,4 @@
-Array before being sorted: 14 7 3 12 9 11 6 2 
-
-After Calling Merge: 7 14 3 12 9 11 6 2 
-After Calling Merge: 7 14 3 12 9 11 6 2 
-After Calling Merge: 3 7 12 14 9 11 6 2 
-After Calling Merge: 3 7 12 14 9 11 6 2 
-After Calling Merge: 3 7 12 14 9 11 2 6 
-After Calling Merge: 3 7 12 14 2 6 9 11 
-After Calling Merge: 2 3 6 7 9 11 12 14 
-
-Array AFTER being sorted: 2 3 6 7 9 11 12 14 
-a/b: 3
+cleaQuick Sort before Sorted:
+ 10 7 8 9 1 5 
+Sorted array: 
+1 5 7 8 9 10 

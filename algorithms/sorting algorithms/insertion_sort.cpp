@@ -1,7 +1,7 @@
 #include <iostream>
 using std::cout; using std::endl;
  
- // Well the sorting algorith time complexity is O(n^2)
+ // Well the sorting algorith time complexity is O(n^2) 
  // We can see the nested for loop
 
 void insertionSort(int arr[], int size)   // or int *array

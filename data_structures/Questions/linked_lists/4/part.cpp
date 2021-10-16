@@ -29,6 +29,7 @@ void printList( Node * head ) {
 
  /* We start with a new list. Elements bigger than the pivot element are put at the tail list
  and elements smaller are put at the head list*/
+
 Node * partition( Node * listhead , int x ) {
    Node * head = nullptr;
    Node * headInitial = nullptr;   /*The initial node of list head*/
@@ -59,9 +60,7 @@ Node * partition( Node * listhead , int x ) {
    head->next = tailInitial;  /*Now, we connect the head list to tail list.*/
    tail->next = nullptr;
    return headInitial;
- }
-
-
+}
 
 
 
@@ -72,12 +71,12 @@ int main() {
   insert(head, 10);
   insert(head, 5);
   insert(head, 8);
-  insert(head, 5);
-  insert(head, 3);
+  // insert(head, 5);
+  insert(head, 4);
   
-  std::cout << "List before partition around 5:\n";
+  std::cout << "List before partition around 4:\n";
   printList(head);
-  std::cout << "List after partition around 5:\n";
-  printList(partition(head, 4));
+  std::cout << "List after partition around 4:\n";
+  printList(partition(head, 2));
 
 }

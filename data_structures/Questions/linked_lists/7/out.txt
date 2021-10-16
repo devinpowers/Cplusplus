@@ -1,0 +1,3 @@
+3-->6-->9-->12-->15-->18-->nullptr
+7-->10-->12-->15-->18-->nullptr
+Intersecting Node of lists is :12

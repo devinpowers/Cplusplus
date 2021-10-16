@@ -64,7 +64,7 @@ void printArray(int arr[], int size)
 // Driver program to test above functions
 int main()
 {
-    int arr[] = {10, 7, 8, 9, 1, 5};
+    int arr[] = {10, 7, 8, 9, 1, 5,89, 69, 23, 0, 4, 8, 2, 23, 100, 90, 43, 2, -2, -5, 9, 0, 8, 9, 10, 43};
 
     int n = sizeof(arr)/sizeof(arr[0]);
     printf("Quick Sort before Sorted:\n ");
@@ -74,3 +74,4 @@ int main()
     printArray(arr, n);
     return 0;
 }
+
