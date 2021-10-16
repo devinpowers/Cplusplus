@@ -35,8 +35,11 @@ bool detectAndRemoveCycle( Node * head )
   Node * slowPtr = head;
   while( slowPtr && fastPtr && fastPtr->next)
   {
-    fastPtr = fastPtr->next->next;
+    fastPtr = fastPtr->next->next->next;
+
     slowPtr = slowPtr->next;
+    std::cout << "Faster: " << fastPtr->data << std::endl;
+    std::cout << "Slower: " << slowPtr->data << std::endl;
     if ( fastPtr == slowPtr ) {
       removeLoop( slowPtr, head );
       return true;
@@ -83,8 +86,15 @@ int main()
     printList( head );
     std::cout << "Inserting loop, connecting 5 to 2 \n";
     head->next->next->next->next->next = head->next;
+       
+        printList( head );
+
+
     std::cout << "Detecting and deleting loop\n";
     detectAndRemoveCycle(head);
     std::cout << "Back to the same old list\n";
     printList( head );
 }
+
+
+// If there is a Loop in our linked loop, evenually the slow and fast ptrs will meet up
