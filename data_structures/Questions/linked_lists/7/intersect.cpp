@@ -9,12 +9,11 @@
 
 
 #include <iostream>
-#include <stack>
 
 struct Node {
   int data;
   Node * next;
-  Node( int d ) : data{ d }, next{ nullptr } { } // Constructor
+  Node( int d ) : data{ d }, next{ nullptr } { } // Constructor: Used in new keyword!
 };
 
 
@@ -43,82 +42,63 @@ Node * IntersectionPoint(Node* head1, Node* head2){
     int len1 = listlength(head1);
     int len2 = listlength(head2);
 
-    std::cout << "Length of List 1: " << len1 << std::endl;
-    std::cout << "Length of list 2: " << len2 << std::endl;
-    // Find the bigger and smaller list
+    // Find the bigger and smaller list set bigger list to ptr1 and smaller to ptr2
 
     Node* ptr1 = (len1 > len2) ? head1 : head2;
     Node* ptr2 = (len1 > len2 ) ? head2 : head1;
 
-    std::cout << "Ptr1: " << ptr1->data << std::endl;
-    std::cout << "Ptr2: " << ptr2->data << std::endl;
-
+    // Possibly adjust ptr1 if list 1 is longer than list 2
     int i = 0;
-
     while (i < std::abs(len1 - len2) && ptr1 ){
-
-        // move pointer along linked list
         ptr1 = ptr1->next;
-
-        std::cout << "i: " << i << std::endl;
         ++i;
     }
 
-    // now we have equal nodes to travel on both the nodes so we can traverse and compare the pointers
-
-    std::cout << "ptr spot: " << ptr1->data << std::endl;
-
+    // Traverse over the two lists using ptr1 and ptr2 and compare their address to see if they intersect
     while(ptr1 && ptr2 ){
-        // While True Traverse
-
+        
         if (ptr1 == ptr2){
-            // if eqaul address we found the intersection
-            return ptr1;
+            
+            return ptr1; // if eqaul address we found the intersection
     }
-    // Else Move the Pointers along so we can compare
-     std::cout << "ptr1 current: " << ptr1->data << std::endl;
-    std::cout << "ptr2 current: " << ptr2->data << std::endl;
-    ptr1 = ptr1->next;
-    ptr2 = ptr2->next;
-   // std::cout << "ptr1 current: " << ptr1->data << std::endl;
-    // std::cout << "ptr2 current: " << ptr2->data << std::endl;
-
+      ptr1 = ptr1->next;
+      ptr2 = ptr2->next;
     }
 
-    return nullptr;
-
+    return NULL;
 }
 
 int main(){
 
     // Create Lists
-  Node * list1 = new Node(3);
-  list1->next = new Node(6);
-  list1->next->next = new Node(9);
-  list1->next->next->next = new Node(12);
-  list1->next->next->next->next = new Node(15);
-  list1->next->next->next->next->next = new Node(18);
-
-  Node * list2 = new Node(7);
-  list2->next = new Node(10);
+    // List One
+  Node * list1 = new Node(1);
+  list1->next = new Node(2);
+  list1->next->next = new Node(3);
+  list1->next->next->next = new Node(9);
+  list1->next->next->next->next = new Node(3);
+  list1->next->next->next->next->next = new Node(2);
+  
+  // List Two
+  Node * list2 = new Node(12);
+  list2->next = new Node(8);
   list2->next->next = list1->next->next->next;
 
+  std::cout << "List 1: ";
 
   printList(list1);
+  std::cout << "List 2: ";
   printList(list2);
+  
 
 
   Node * intersectingNode = IntersectionPoint( list1 , list2 );
 
   if (intersectingNode) {
-
-    std::cout << "Intersecting Node of lists is :" << intersectingNode->data << std::endl;
-
+    
+    std::cout << "Intersecting Node of lists is : " << intersectingNode->data << std::endl;
   } else {
 
     std::cout << "Lists do not interset" << std::endl;
-
   }
-
- 
 }
