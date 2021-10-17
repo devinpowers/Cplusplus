@@ -13,8 +13,8 @@ class Stack
 
                 Node(const T &v, Node *n): value(v), next(n){}
 
-                T value;
-                Node *next;  // Next in the stack
+                T value;        // Value stored (char, int, etc)
+                Node *next;  // Next in the stack (Address?)
             };
 
             Node *top;              // Top value in stack (pointer to it)
@@ -35,7 +35,8 @@ class Stack
             void push(U &&value)
             {
                 auto n = new Node(std::forward<U>(value), top); // new keyword to insert a new node into our Stack
-                top = n;
+                top = n; // Top of 
+               // std::cout << "Top: " << top->value << std::endl;
                 ++stackSize;
             }
 
@@ -43,19 +44,24 @@ class Stack
             {
                 if (!top)
                     throw StackIsEmptyException();
-                return top->value;
+                return top->value; // return the top value in the Stack
             }
 
             T pop()
             {
                 if (!top)
+                {   // if empty
                     throw StackIsEmptyException();
-                auto value(std::move(top->value));
-                auto n = top;
-                top = n->next;
-                delete n;
-                --stackSize;
-                return value;
+                }
+                else {
+
+                    auto value(std::move(top->value));
+                    auto n = top;
+                    top = n->next;
+                    delete n;
+                    --stackSize;
+                    return value;
+                }
             }
 
             bool isEmpty() const
