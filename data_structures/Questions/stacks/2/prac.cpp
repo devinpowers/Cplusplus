@@ -22,7 +22,7 @@ class StackMin
             else {
                 // else the stack min is used so?
                 std::cout << "ELSE??????" << std::endl;
-                stack.push(std::forward<U>(value));
+                stack.push(value);
             }
             
         }
@@ -49,6 +49,9 @@ class StackMin
         {
             return stack.isEmpty();
         }
+
+       
+
 };
 
 
@@ -61,6 +64,10 @@ int main()
         stack.push(v);
         std::cout << "Pushed value: " << v << ", min value: " << stack.min() << std::endl;
     }
+    // try and print
+
+
+
     while (!stack.isEmpty())
     {
         auto v = stack.pop();
@@ -70,5 +77,4 @@ int main()
         else
             std::cout << ", min value: " << stack.min() << std::endl;
     }
-   std::cout << "Heloo " << std::endl;
 }

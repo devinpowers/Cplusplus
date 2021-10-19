@@ -1,47 +1,45 @@
+/*
+What is && in C++ ?: https://www.tutorialspoint.com/What-is-double-address-operator-and-and-in-Cplusplus
+
+Stack Implemented with Templated
+*/
 
 
 #include <utility>
 
-// Templated Stack Data Structure
 template <typename T>
 class Stack
     {
         private:
             struct Node
             {
-                Node(T &&v, Node *n): value(std::move(v)), next(n){}
-
-                Node(const T &v, Node *n): value(v), next(n){}
-
-                T value;        // Value stored (char, int, etc)
-                Node *next;  // Next in the stack (Address?)
+                Node(T &v, Node *n): value(v), next(n){}
+                T value;       
+                Node *next;  
             };
 
-            Node *top;              // Top value in stack (pointer to it)
-            size_t stackSize;       // Size of the stack
+            Node *top;              
+            size_t stackSize;       
 
         public:
-            Stack() : top(nullptr), stackSize(0){}   // constructor
-
-            Stack(Stack &&other) : top(std::move(other.top)), stackSize(std::move(other.stackSize)){}
+            Stack() : top(nullptr), stackSize(0){}   // normal constructor
 
             ~Stack()
             {
                 while (!isEmpty())
                     pop();
             }
-
+            
             template <typename U>
-            void push(U &&value)
-            {
-                auto n = new Node(std::forward<U>(value), top); // new keyword to insert a new node into our Stack
-                top = n; // Top of 
-               // std::cout << "Top: " << top->value << std::endl;
+            void push(U&& value) {       // Why the U and the &&
+                auto n = new Node(value, top); // new keyword to insert a new node into our Stack
+                top = n; // pass address to top of the stack
                 ++stackSize;
             }
+          
 
-            T &peek()
-            {
+            T peek()
+            {   // Peek but DONT remove element
                 if (!top)
                     throw StackIsEmptyException();
                 return top->value; // return the top value in the Stack
@@ -55,9 +53,9 @@ class Stack
                 }
                 else {
 
-                    auto value(std::move(top->value));
+                    auto value = top->value;
                     auto n = top;
-                    top = n->next;
+                    top = n->next; 
                     delete n;
                     --stackSize;
                     return value;
@@ -75,7 +73,7 @@ class Stack
             }
 
             class StackIsEmptyException{};
-            
-
     
 };
+
+
