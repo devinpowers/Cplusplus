@@ -76,6 +76,7 @@ Node * add_iterative( Node * list1, Node * list2 ) {
     if ( value > 9 ) {
       carry = 1;
       value = value % 10;
+      
     } else {
       carry = 0;
     }
@@ -91,6 +92,7 @@ Node * add_iterative( Node * list1, Node * list2 ) {
     }
 
     //make new tail
+    
     list3Tail = temp;
 
     if (list1) {
@@ -106,6 +108,7 @@ Node * add_iterative( Node * list1, Node * list2 ) {
     list3Tail->next = new Node(carry);
   }
   return list3;
+
 }
 
  void deleteList( Node * & head ) {

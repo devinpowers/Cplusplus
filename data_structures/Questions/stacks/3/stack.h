@@ -1,81 +1,77 @@
+/*
+What is && in C++ ?: https://www.tutorialspoint.com/What-is-double-address-operator-and-and-in-Cplusplus
 
-#include <utility>
+Stack Implemented with Templated
+*/
+
 
 template <typename T>
-class Stack {
+class Stack
+    {
+        private:
+            struct Node
+            {
+                Node(T &v, Node *n): value(v), next(n){}
+                T value;       
+                Node *next;  
+            };
 
-     private:
-            // Private Shit
-        struct Node {
+            Node *top;              
+            size_t stackSize;       
 
-            Node(T &&v, Node *n): value(std::move(v)), next(n){} // Constructor
+        public:
+            Stack() : top(nullptr), stackSize(0){}   // normal constructor
 
-            Node(const T &v, Node *n): value(v), next(n){} // constructor
- 
-            T value; // T value I think is the Top Value
-            Node *next; // Next Value in the Stack
-        };
+            ~Stack()
+            {
+                while (!isEmpty())
+                    pop();
+            }
+            
+            template <typename U>
+            void push(U&& value) {       // Why the U and the &&
+                auto n = new Node(value, top); // new keyword to insert a new node into our Stack
+                top = n; // pass address to top of the stack
+                ++stackSize;
+            }
+          
 
-        Node *top; // Pointer to the stack
+            T peek()
+            {   // Peek but DONT remove element
+                if (!top)
+                    throw StackIsEmptyException();
+                return top->value; // return the top value in the Stack
+            }
 
-        size_t stackSize;  // Stack Size
+            T pop()
+            {
+                if (!top)
+                {   // if empty
+                    throw StackIsEmptyException();
+                }
+                else {
 
+                    auto value = top->value;
+                    auto n = top;
+                    top = n->next; 
+                    delete n;
+                    --stackSize;
+                    return value;
+                }
+            }
 
-    public:
-        Stack() : top(nullptr), stackSize(0){} // Constructor
+            bool isEmpty() const
+            {
+                return !top;
+            }
 
-        Stack(Stack &&other) : top(std::move(other.top)), stackSize(std::move(other.stackSize)) { }
+            size_t size() const
+            {
+                return stackSize;
+            }
 
-        ~Stack() // Deconstructor
-        {
-            while (!isEmpty())
-                pop();
-        }
-
-        template <typename U>
-        void push(U &&value)    // Push value onto the stack
-        {
-            auto n = new Node(std::forward<U>(value), top);
-            top = n;                                        // top of the stack
-            ++stackSize;                                     // Increase the StackSize by 1
-        }
-
-        T &peek()       // Return the Top of the stack (don't remove tho)
-        {
-            if (!top) // Empty
-                throw StackIsEmptyException();  // Throw Exception
-            return top->value; 
-        }
-
-        T pop() // Remove value from the stack
-        {
-            if (!top)
-                throw StackIsEmptyException();
-            auto value(std::move(top->value));
-            auto n = top;
-            top = n->next;
-            delete n;
-            --stackSize;
-            return value;
-        }
-
-        bool isEmpty() const
-        {
-            // Check if the Stack is Empty
-            return !top;
-        }
-
-        size_t size() const
-        {
-            // Check the Stack Size
-            return stackSize;
-        }
-
-        class StackIsEmptyException{
-
-        }; // Not sure what this is
-
-
+            class StackIsEmptyException{};
+    
 };
 
 

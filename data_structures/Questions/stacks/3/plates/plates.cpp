@@ -9,8 +9,8 @@ class SetOfStacks
         Stack<Stack<T>> stacks;
 
     public:
-        template<typename U> 
-        void push(U &&value)
+        
+        void push(T &value)
         {
             if (stacks.isEmpty() || stacks.peek().size() >= Capacity)
                 {
@@ -19,17 +19,17 @@ class SetOfStacks
             stacks.peek().push(value);
         }
 
-        T &peek()
+        T peek()
         {   return stacks.peek().peek(); }
 
-        T &pop()
+        T pop()
         {
             T value = stacks.peek().pop();
             if (stacks.peek().isEmpty())
             {
                  stacks.pop();
             }
-
+            std::cout << "Value: " << value << std::endl;
             return value;
         }
 
@@ -71,10 +71,10 @@ int main()
 
     while (stack.size() != 0)
     {
-        std::cout <<  "HELLO WORLD" << std::endl;
+      //  std::cout <<  "HELLO WORLD" << std::endl;
 
-        // size_t stackNo = stack.size();
-        std::cout << stack.pop() << " is popped from the stack " <<std::endl;
+        size_t stackNo = stack.size();
+       std::cout << stack.pop() << " from: " << stackNo <<std::endl;
     }
 
 

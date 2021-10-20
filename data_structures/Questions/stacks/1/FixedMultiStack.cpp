@@ -1,4 +1,5 @@
 #include "FixedMultiStack.h"
+#include <iostream>
 
 FixedMultiStack::FixedMultiStack(int stackCapacity)
 {
@@ -63,5 +64,4 @@ int FixedMultiStack::indexOfTop(int stackNum) const
   int capacity = stackCapacityUsed[stackNum];
   return (startIndex + capacity - 1);
 }
-
 

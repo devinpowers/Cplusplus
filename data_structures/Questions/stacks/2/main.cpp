@@ -33,8 +33,7 @@ int main(){
         // pop all elements from the stack
         std::cout << stack1.pop() << std::endl;
     }
- 
-    
+
 
     // check size of the Stack
 
