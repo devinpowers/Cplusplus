@@ -4,7 +4,7 @@
 #include "stack.h"
 
 template <typename T>
-class MyQueue
+class Queue
 {
     private:
 
@@ -52,32 +52,4 @@ class MyQueue
             return newValues.isEmpty() && reversed.isEmpty();
         }
 };
-
-int main()
-{
-    MyQueue<int> queue;
-    for (int i = 0; i < 5; ++i)
-    {
-        queue.enqueue(i);
-        std::cout << "Queued value: " << i << std::endl;
-    }
-
-    std::cout << std::endl;
-    // LEts peek????
-
-    std::cout << "Lets Peek(): " << queue.peek() << std::endl;
-
-    std::cout << std::endl;
-
-    for (int i = 0; i < 5; ++i)
-    {
-        std::cout << "Dequeued value of : " << queue.dequeue() << std::endl;
-    }
-        
-    std::cout <<  std::endl;
-
-    
- 
-}
-
 

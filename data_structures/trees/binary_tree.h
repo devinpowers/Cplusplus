@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 using std::cout;
@@ -28,3 +30,5 @@ class btree
          
         node *root;
 };
+
+#endif // Binary Tree Header File

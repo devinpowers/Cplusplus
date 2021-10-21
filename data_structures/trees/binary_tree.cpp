@@ -1,6 +1,12 @@
 
 
-/* C++ program to find Inorder successor in a BST */
+/* C++ program to find Inorder successor in a BST
+
+ Implement a Binary Tree in C++
+ 
+
+ */
+
 
 
 #include<iostream>

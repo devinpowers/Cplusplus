@@ -1,0 +1,50 @@
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Pop: 
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+Using peek() from stack.h******
+--------
+Using peek() from stack.h******
+Using peek() from stack.h******
+7 from: 3
+Using peek() from stack.h******
+Using peek() from stack.h******
+6 from: 3
+Using peek() from stack.h******
+Using peek() from stack.h******
+5 from: 2
+Using peek() from stack.h******
+Using peek() from stack.h******
+4 from: 2
+Using peek() from stack.h******
+Using peek() from stack.h******
+3 from: 2
+Using peek() from stack.h******
+Using peek() from stack.h******
+2 from: 1
+Using peek() from stack.h******
+Using peek() from stack.h******
+1 from: 1
+Using peek() from stack.h******
+Using peek() from stack.h******
+0 from: 1
+END LINE HERE

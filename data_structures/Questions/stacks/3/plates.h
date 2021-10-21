@@ -3,6 +3,8 @@
 
     Stack of Stacks!!!!!
 
+    Build off of the stack.h structure
+
 */
 
 #include <iostream>
@@ -17,30 +19,33 @@ class SetOfStacks
     public:
         
         void push(T &value)
-        {
-            std::cout << "Using Push() from plates.h " << std::endl;
-
-            if (stacks.isEmpty() || stacks.peek().size() >= Capacity)
+        {   
+            // Check if a new stack is needed, add value to stack
+            if (stacks.isEmpty() || stacks.peek().size() >= Capacity)  
                 {
-                  stacks.push(Stack<T>()); // start new stack
-
+                  stacks.push(Stack<T>()); // start new stack AKA add our stack of stacks
                 }
-            stacks.peek().push(value); // else stack isn't empty, push value  onto the stack!!!
+            stacks.peek().push(value); // else stack isn't empty, push value  onto the current stack!!!
         }
 
-       T peek()
+    
+       T& peek()
         {   
-            std::cout << "  Using peek() from plates.h!!!!!! " << std::endl;
             return stacks.peek().peek();
         }
+        
+        
 
         T pop()
         {
-            std::cout << "Using pop() from plates.h" << std::endl;
-            T value = stacks.peek().pop();
+            T value = stacks.peek().pop(); 
+
+            std::cout << "Value 'popped': " << value << std::endl;
+
             if (stacks.peek().isEmpty())
             {
-                 stacks.pop();
+                std::cout << "STACK SIZE: " << stacks.size() << std::endl;
+                 stacks.pop(); // pop off "plate" from set of stacks
             }
             return value;
         }
@@ -48,11 +53,9 @@ class SetOfStacks
         // Number of limited stacks
         size_t size() const
         {
-            std::cout << "Using size() from plates.h" << std::endl;
+            // Number of plates in our SetOfPlates
             return stacks.size();
         }
-
-
 };
 
 // If Capacity is 1 we do not need stack of stacks.
@@ -68,5 +71,11 @@ class SetOfStacks<T, 0> {
 };
 
 
+/*
+& means you return a reference. Otherwise it will return a copy
 
+We also have function chaining!
+
+For this problem we have multiple plates (multiple objects)
+*/
 

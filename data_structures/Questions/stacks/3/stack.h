@@ -1,6 +1,7 @@
 /*
-Stack Implemented with Templated
+Stack Implemented with Templated for any "Type"
 */
+
 #include <iostream>
 
 template <typename T>
@@ -27,7 +28,7 @@ class Stack
 
             void push(T value) {      
 
-                std::cout << "Using push() from stack.h****** " << std::endl;
+               // std::cout << "Using push() from stack.h****** " << std::endl;
                 
                 auto n = new Node(value, top);
                 top = n; 
@@ -36,7 +37,8 @@ class Stack
           
             T& peek() // why the &? Because the return value is reference to the data type t!!!
             {  
-                std::cout << "Using peek() from stack.h******" << std::endl;
+                // I think if we dont include the & (reference ) to the object, it will "overwrite"
+                // std::cout << "Using peek() from stack.h******" << std::endl;
 
                 if (!top)
                 {
@@ -47,7 +49,7 @@ class Stack
 
             T pop()
             {
-                std::cout << "Using pop() from stack.h****** " << std::endl;
+                //std::cout << "Using pop() from stack.h****** " << std::endl;
 
                 if (!top)
                 {   // if empty
@@ -66,15 +68,11 @@ class Stack
 
             bool isEmpty() const
             {
-                std::cout << "Using isEmpty() from stack.h****** " << std::endl;
-
                 return !top;
             }
 
             size_t size() const
             {
-                std::cout << "Using size() from stack.h****** " << std::endl;
-
                 return stackSize;
             }
 

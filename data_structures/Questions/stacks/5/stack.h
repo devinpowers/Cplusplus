@@ -59,7 +59,7 @@ class Stack
                     return value;
                 }
             }
-
+            
             bool isEmpty() const
             {
                 return !top;
@@ -67,7 +67,6 @@ class Stack
 
             size_t size() const
             {
-                 
                 return stackSize;
             }
 

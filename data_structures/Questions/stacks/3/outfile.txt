@@ -1,3 +1,0 @@
-Using Push() from plates.h 
-Using isEmpty() from stack.h****** 
-SIZE of Stack Using peek() from stack.h******

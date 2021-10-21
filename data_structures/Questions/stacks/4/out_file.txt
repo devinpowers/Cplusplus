@@ -1,0 +1,17 @@
+Queued value 0
+Queued value 1
+Queued value 2
+Queued value 3
+Queued value 4
+Queued value 5
+Queued value 6
+Queued value 7
+Queued value 8
+Queued value 9
+Lets Peek(): 0
+Removed value of : 0
+Removed value of : 1
+Removed value of : 2
+Removed value of : 3
+Removed value of : 4
+

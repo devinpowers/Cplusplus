@@ -4,31 +4,36 @@
 
 int main()
 {
-    SetOfStacks<int, 2> stack;
+    SetOfStacks<int, 3> stack;
 
-    for (int i = 0; i < 6; ++i)
+    std::cout << "Stack size: " << stack.size() << std::endl;
+    std::cout << std::endl;
+    for (int i = 0; i < 10; ++i)
     {
         stack.push(i);
         std::cout << i << " is pushed into the stack " << stack.size() << std::endl;
     }
- 
-    std::cout << "HELLO WORLD  " << std::endl;
-    // prac
 
-    // std::cout << "Stack: " << stack.pop() << std::endl;
+    // try to use the peek() function
 
-    /*
+    std::cout << "STACK.peek(): " << stack.peek() << std::endl;
+
+    std::cout << "***********************" << std::endl;
+    
+        
     while (stack.size() != 0)
-    {
-        size_t stackNo = stack.size();
-       std::cout << stack.pop() << " from: " << stackNo <<std::endl;
+    {    
+        // Refering to the stackNo as the Size of number plates so we're looping thru plates in our stackofplates
+         size_t stackNo = stack.size();
+         std::cout << stack.pop() << " from: " << stackNo <<std::endl; 
+
     }
-    */
+    
 
     
     
 
-
+    std::cout << "END LINE HERE"  << std::endl;
 
     /*
     SetOfStacks<int, 1> stack1;
@@ -52,3 +57,6 @@ int main()
 
 
 }
+
+
+
