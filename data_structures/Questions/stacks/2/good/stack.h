@@ -1,5 +1,4 @@
 /*
-What is && in C++ ?: https://www.tutorialspoint.com/What-is-double-address-operator-and-and-in-Cplusplus
 
 Stack Implemented with Templated
 */
@@ -30,25 +29,24 @@ class Stack
                     pop();
             }
             
-            template <typename U>
-            void push(U&& value) {       // Why the U and the &&
-                auto n = new Node(value, top); // new keyword to insert a new node into our Stack
-                top = n; // pass address to top of the stack
+            void push(T value) {       
+                auto n = new Node(value, top);
+                top = n; 
                 ++stackSize;
             }
           
 
-            T peek()
-            {   // Peek but DONT remove element
+            T& peek()
+            {   
                 if (!top)
                     throw StackIsEmptyException();
-                return top->value; // return the top value in the Stack
+                return top->value; 
             }
 
             T pop()
             {
                 if (!top)
-                {   // if empty
+                {  
                     throw StackIsEmptyException();
                 }
                 else {

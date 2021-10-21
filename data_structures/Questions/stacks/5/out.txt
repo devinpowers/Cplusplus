@@ -1,0 +1,13 @@
+Pushed value: 6
+Pushed value: 1
+Pushed value: 5
+Pushed value: 4
+
+Sorted Stack after sorting! 
+
+value < helper 1
+value < helper 1
+Popped value: 1
+Popped value: 4
+Popped value: 5
+Popped value: 6

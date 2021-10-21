@@ -1,80 +1,46 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <algorithm>
-#include <stack>
+#include<iostream>
+using namespace std;
 
-template<typename T, int max_stack_size>
-class stack_of_stacks {
-    public:
-        void push(const T& value) {
-            std::stack<T>& top_stack = top == 0 || peek_stack()->size() == max_stack_size ? push_stack() : *peek_stack();
-            top_stack.push(value);
-        }
-        void pop() {
-            peek_nonempty_stack()->pop();
-        }
-        void popAt(int i) {
-            peek_nonempty_stack(i)->pop();
-        }
-        T peek() {
-            return peek_nonempty_stack()->top();
-        }
-        bool is_empty() {
-            return peek_nonempty_stack() == nullptr;
-        }
-    private:
-        std::stack<T>& push_stack() {
-            return stacks[top++] = std::stack<T>();
-        }
-        std::stack<T>* pop_stack() {
-            if (top == 0) {
-                return nullptr;
-            }
-            top--;
-            return peek_stack();
-        }
-        std::stack<T>* peek_stack() {
-            return top == 0 ? nullptr : stacks + (top - 1);
-        }
-        std::stack<T>* peek_nonempty_stack(int i = -1) {
-            std::stack<T>* top_stack = i == -1 ? peek_stack() : stacks + i;
-            while (top_stack && top_stack->empty()) {
-                top_stack = i == -1 ? pop_stack() : stacks + (--i);
-            }
-            return top_stack;
-        }
-        int top = 0;
-        std::stack<T> stacks[100];
-};
+int g_test = 0;
 
-
-int main() {
-	stack_of_stacks<int, 3> sos;
-
-	for (int i = 0; i < 9; i++) {
-		sos.push(i);
-	}
-
-	sos.popAt(1);
-	sos.popAt(1);
-	sos.popAt(1);
-	sos.popAt(1);
-
-	while (!sos.is_empty()) {
-		printf("%i\n", sos.peek());
-		sos.pop();
-	}
-
-    stack_of_stacks<int, 4> stack2;
-
-    for (int i = 0; i < 24; i++){
-        stack2.push(i);
-    }
-
-    while (!stack2.is_empty()) {
-		printf("%i\n", stack2.peek());
-		stack2.pop();
-	}
-
+int& getNumberReference()
+{
+     return g_test;
 }
+
+int getNumberValue()
+{
+     return g_test;
+}
+
+int main()
+{
+    int& n = getNumberReference();
+
+    cout << "n: " << n << endl;
+    int m = getNumberValue();
+     cout << "m: " << m << endl;
+     /*
+     the getNumberReference() returns a reference, under the hood it's like a pointer
+     that points to an integer variable. Any change applyed to the reference applies to
+     the returned variable.
+     */
+
+    n = 10;
+
+    cout << g_test << endl; // prints 10
+    g_test = 0;
+    m = 10;
+    cout << g_test << endl; // prints 0
+    return 0;
+}
+
+/*
+
+https://stackoverflow.com/questions/2379859/in-c-what-does-mean-after-a-functions-return-type
+
+Output:
+
+        10
+        0
+*/

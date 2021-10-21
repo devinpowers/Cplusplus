@@ -28,13 +28,15 @@ class Stack
             }
 
             void push(T value) {       // Why the U and the &&
+                
                 auto n = new Node(value, top); // new keyword to insert a new node into our Stack
                 top = n; // pass address to top of the stack
                 ++stackSize;
             }
           
-            T peek()
+            T &peek()
             {   // Peek but DONT remove element
+                
                 if (!top)
                 {
                     throw StackIsEmptyException();
@@ -44,6 +46,7 @@ class Stack
 
             T pop()
             {
+                 
                 if (!top)
                 {   // if empty
                     throw StackIsEmptyException();
@@ -66,6 +69,7 @@ class Stack
 
             size_t size() const
             {
+                 
                 return stackSize;
             }
 

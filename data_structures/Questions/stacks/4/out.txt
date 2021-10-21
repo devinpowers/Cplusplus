@@ -1,0 +1,33 @@
+Queued value 0
+Queued value 1
+Queued value 2
+Queued value 3
+Queued value 4
+Queued value 5
+Queued value 6
+Queued value 7
+Queued value 8
+Queued value 9
+Lets Peek(): 0
+Lets Peek() Again: 1
+Removed value 1
+Removed value 2
+Removed value 3
+Removed value 4
+Removed value 5
+
+Queued value 10
+Queued value 11
+Queued value 12
+Queued value 13
+Queued value 14
+Removed value 6
+Removed value 7
+Removed value 8
+Removed value 9
+Removed value 10
+Removed value 11
+Removed value 12
+Removed value 13
+Removed value 14
+HELOO WORLD 
