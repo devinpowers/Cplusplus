@@ -3,18 +3,20 @@ Before Deleting Any Nodes:
 10 20 
 8 12 25 
 69 
+420 
 Deleting Node with one Child (25): 
 15 
 10 20 
 8 12 69 
+420 
 
 Delete Node Leaf Node (deleting 69) 
 15 
 10 20 
-8 12 
+8 12 420 
 
 Delete Node with two Childern (Deleting 10): 
 15 
 12 20 
-8 
+8 420 
 

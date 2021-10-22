@@ -83,6 +83,8 @@ int main()
     std::cout << "Inserting loop, connecting 5 to 2 \n";
     head->next->next->next->next->next = head->next;
 
+    std::cout << "--------------" << std::endl;
+    //printList( head );
 
      std::cout << "Detecting and deleting loop\n";
      dectectAndRemoveCycle(head);

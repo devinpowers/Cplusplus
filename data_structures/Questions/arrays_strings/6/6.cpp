@@ -20,14 +20,13 @@ string compress_string(string &str ){
 
         }
         else {
-			cout << "Count: " << count << endl;
             compressed_string +=str[i-1]; // add char to compressed_string
             compressed_string += std::to_string(count); // add count number to string
             count = 1; // reset count
         }
 
     }
-	cout << "Count: " << count << endl;
+
     // we go all the way to the end of the string length()
     compressed_string += str[str.length() - 1]; // add last char to compressed_string
     compressed_string += std::to_string(count); // add count value to compressed_string
@@ -38,6 +37,6 @@ string compress_string(string &str ){
 
 int main()
 {
-	string prac = "aaaaaabbbiiiiiiii";
+	string prac = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbiiiiiiiippppppppppwwwwwwaaaaabbzzzzQQQQ";
 	cout << compress_string(prac) << endl;
 }

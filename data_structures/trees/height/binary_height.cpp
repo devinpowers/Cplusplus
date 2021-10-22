@@ -63,6 +63,7 @@ int FindHeight(Node* root)
 
 int FindHeight(Node* root)
 {
+	// Recursive way
     if (root == NULL)
     {
         return -1;
@@ -86,8 +87,8 @@ int main() {
 	root = Insert(root,5);
     root = Insert(root,2); 
 
-	cout << "Inorder Traversal: " << endl;
-	Inorder(root);
+	//cout << "Inorder Traversal: " << endl;
+	// Inorder(root);
 	
     int height;
 

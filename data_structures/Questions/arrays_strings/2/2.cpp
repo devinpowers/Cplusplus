@@ -56,5 +56,15 @@ int main()
     cout << "Example Three: ";
     cout << boolalpha << check_strings(five, six) << endl;
 
+    cout << "___________________________________" << endl;
+    string seven, eight;
+
+    seven = "devin";
+    eight = "edniw";
+
+    cout << "Example Four: ";
+    cout << boolalpha << check_strings(seven, eight) << endl;
+
+
 
 }

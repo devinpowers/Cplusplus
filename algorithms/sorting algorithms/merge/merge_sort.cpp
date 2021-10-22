@@ -6,10 +6,7 @@ using namespace std;
 // Merge two subarrays L and M into arr
 void merge(int arr[], int p, int q, int r) {
 
-  cout << "r " << r << endl;
-  cout << "q " << q << endl;
-  cout << "p " << p << endl;
-  cout << "Using Merge " << endl;
+
   // Create L ← A[p..q] and M ← A[q+1..r]
   int n1 = q - p + 1;
 

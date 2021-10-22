@@ -33,3 +33,8 @@ Week Eleven:
 Week Twelve:
 
 ...
+
+
++ Alot of OOP in C++
+
++ Data Structures and Algorithms in C/C++

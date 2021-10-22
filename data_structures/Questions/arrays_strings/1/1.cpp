@@ -42,7 +42,7 @@ int main(){
 
     // Vector of words passed to our function to check if their are duplicate characters
 
-    vector<string> words = {"abcde", "Devin", "Lebron", "instagram", "oowowowowow", "cvbnmpoiwersajkl"} ;
+    vector<string> words = {"abcde", "Devin","Powers", "abcdefghijklmnopqrstuva", "Lebron", "instagram", "oowowowowow", "cvbnmpoiwersajkl"} ;
     
     for (auto word : words)
     {

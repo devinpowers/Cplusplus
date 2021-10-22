@@ -131,7 +131,11 @@ int main() {
 	root = Insert(root,20);
 	root = Insert(root,25); 
 	root = Insert(root,8); 
-	root = Insert(root,12); 
+	root = Insert(root,69); 
+	root = Insert(root,420);
+	root = Insert(root,5); 
+	root = Insert(root,9); 
+	root = Insert(root,4); 
 
 	cout << "Inorder Traversal: " << endl;
 	Inorder(root);

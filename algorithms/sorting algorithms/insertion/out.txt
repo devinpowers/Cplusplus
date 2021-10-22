@@ -1,0 +1,27 @@
+
+Before Insertion Sort n: 
+12 3 5 10 8 1 
+
+After insertion: 
+arr[j]: 12
+key: 3
+arr[j]: 12
+key: 5
+arr[j]: 12
+key: 10
+arr[j]: 12
+key: 8
+arr[j]: 10
+key: 8
+arr[j]: 12
+key: 1
+arr[j]: 10
+key: 1
+arr[j]: 8
+key: 1
+arr[j]: 5
+key: 1
+arr[j]: 3
+key: 1
+1 3 5 8 10 12 
+

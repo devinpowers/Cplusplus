@@ -1,0 +1,3 @@
+Array before Sorting: 12 3 5 10 8 1 
+
+Array after Sorting: 1 3 5 8 10 12 
