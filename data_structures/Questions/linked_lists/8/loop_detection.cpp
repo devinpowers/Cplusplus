@@ -84,7 +84,7 @@ int main()
     head->next->next->next->next->next = head->next;
 
     std::cout << "--------------" << std::endl;
-    //printList( head );
+    // printList( head );
 
      std::cout << "Detecting and deleting loop\n";
      dectectAndRemoveCycle(head);

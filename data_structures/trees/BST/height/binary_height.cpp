@@ -87,6 +87,10 @@ int main() {
 	root = Insert(root,5);
     root = Insert(root,2); 
 
+    root = Insert(root,-1); 
+    root = Insert(root,-10); 
+    root = Insert(root,-100); 
+
 	//cout << "Inorder Traversal: " << endl;
 	// Inorder(root);
 	
