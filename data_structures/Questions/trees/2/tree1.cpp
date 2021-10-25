@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-
+#include <queue>
+using std::queue;
 
 using namespace std;
 
@@ -32,12 +33,47 @@ Node* createMinimalBST(vector<int> arr, int low, int high)
     return node;
 }
 
+/*
 Node *createMinimalBST(vector<int> arr)
 {
     if (arr.size() == 0)
         return NULL;
     return createMinimalBST( arr, 0, ((int)arr.size()) - 1 );
 }
+*/
+
+
+void printLevelOrder(Node *root)
+{
+    // Base Case
+    if (root == NULL)
+	{
+		return;
+	} 
+    queue<Node*> q;
+ 
+    q.push(root);
+	
+    while (q.empty() == false) 
+    {
+        int NodeCount = q.size();
+
+        while (NodeCount > 0)
+        {
+            Node *Node = q.front();
+            cout << Node->data << " ";
+            q.pop();
+            if (Node->left != NULL)
+                q.push(Node->left);
+            if (Node->right != NULL)
+                q.push(Node->right);
+            NodeCount--;
+        }
+        cout << endl;
+    }
+}
+
+
 
 int main()
 {
@@ -52,13 +88,16 @@ int main()
                   /   \     /   \
                  1     3   5     7
     */
-    Node *root = createMinimalBST(arr);
+    Node *root = createMinimalBST(arr,  0,  11);
+
+    cout << "Print Level Order Traversal of constructed BST: "<< endl;
+    printLevelOrder(root);
     cout<<"\nPreOrder Traversal of constructed BST : ";
     preOrder(root);
 
     cout << endl;
 
-    cout << endl;
-
-   
+    cout << endl;  
 }
+
+

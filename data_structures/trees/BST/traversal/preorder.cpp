@@ -48,6 +48,7 @@ void preorder(Node* root)
 
 void inorder(Node* root)
 {
+    // Literally print from lowest value to highest
     if (root == NULL )
     {
         return;
@@ -62,6 +63,7 @@ void inorder(Node* root)
 
 void postorder(Node* root)
 {
+    // th o
     if (root == NULL )
     {
         return;
@@ -91,6 +93,7 @@ int main() {
    	preorder(root);
     cout << endl;
 
+    /*
     cout << "Inorder: ";
     inorder(root);
     cout << endl;
@@ -98,4 +101,6 @@ int main() {
     cout << "Postorder: ";
     postorder(root);
     cout << endl;
+    */
+
 }

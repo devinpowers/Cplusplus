@@ -64,6 +64,7 @@ void printDepths(const ListOfDepths<T> &depths)
 int main()
 {
     auto tree = TestUtils::getSampleTree<int>(15);
+    
     TestUtils::printTree(tree);
     auto depths = getListOfDepths(tree);
     printDepths<int>(depths);

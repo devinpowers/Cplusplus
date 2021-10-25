@@ -1,20 +1,19 @@
-
 #include<iostream>
 
 int Factorial(int n)
 {
-    std::cout << "I am Calculating F( " << n << ")\n";
     if (n == 0)
     {
-        std::cout << "Exiting" << std::endl;
-       return 1;
+        std::cout << "Exit condtion " << std::endl;
+        return 1;
     }
     int F = n*Factorial(n-1);
-
-    std::cout << "Done ! F(" << n << ") = " << F << "\n";
     return F;
 
-} 
+}
+
+
+
 int main()
 {
     int n;
@@ -24,10 +23,3 @@ int main()
     int result = Factorial(n);
     std::cout << result << std::endl;
 }
-
-/*
-
-
-
-
-*/

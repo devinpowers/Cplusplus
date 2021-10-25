@@ -6,12 +6,30 @@ using std::endl;
 #include <queue>
 using std::queue;
 
+// Linked List implementation
+struct NodeLink{
+	int data;
+	Node* next;
+};
+
+Node* head = NULL; // Global Variable, can be accessed anywhere
+
+void Insert_Link(int x)
+{
+    Node* temp = new Node(); 
+    temp->data = x;  
+    temp->next = head; // Setting Next pointer to Current Head 
+
+    head = temp;
+}
+
 
 struct Node {
 	int data;
 	struct Node *left;
 	struct Node *right;
 };
+
 
 Node* Insert(Node *root,int data) {
 	// Return pointer which is a memory address
@@ -34,9 +52,10 @@ Node* Insert(Node *root,int data) {
 }
 
 
+int main(){
 
 
-void printLevelOrder(Node *root)
+	void printLevelOrder(Node *root)
 {
     // Base Case
     if (root == NULL)
@@ -44,59 +63,25 @@ void printLevelOrder(Node *root)
 		return;
 	} 
     queue<Node*> q;
-
-
- 	int count = -1;
+ 
     q.push(root);
 	
     while (q.empty() == false) 
     {
         int NodeCount = q.size();
 
-		
-
-		// cout << "NodeCount = " << NodeCount << endl;
-	
         while (NodeCount > 0)
         { // Go level by level 
             Node *Node = q.front(); 
             cout << Node->data << " ";
             q.pop();
             if (Node->left != NULL)
-			{
-				q.push(Node->left);
-			}
-                
+                q.push(Node->left);
             if (Node->right != NULL)
-			{
-				q.push(Node->right);
-			}
-                
-           	NodeCount--;
+                q.push(Node->right);
+            NodeCount--;
         }
-		count++;
         cout << endl;
     }
-
-	cout << "Count number of depths: " << count << endl;
 }
-
-int main() {
-
-	Node* root = NULL;
-
-	root = Insert(root,15); 
-	root = Insert(root,10); 	
-	root = Insert(root,20);
-	root = Insert(root,17); 
-	root = Insert(root,25); 
-	root = Insert(root,19); 
-	root = Insert(root,18); 
-	root = Insert(root,7); 
-	root = Insert(root,14);
-	root = Insert(root,5);
-	root = Insert(root,9);
-
-   	printLevelOrder(root);
 }
-
