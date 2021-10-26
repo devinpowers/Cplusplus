@@ -11,13 +11,21 @@ using std::endl;
 
 int binarySearch(int array[], int x, int low, int high) {
 
-
+  // Current Values for high and low
+  
   if (high >= low) {
     int mid = low + (high - low) / 2;
+
+    cout << "**************" << endl;
+    cout << "High: " << high << endl;
+    cout << "Low: " << low << endl;
+    cout << "Current Mid is: " << mid << endl;
+    cout << "**************" << endl;
 
     // Case 1: if x == A[mid]
     if (x == array[mid])
     {
+      cout << "Found!!" << endl;
       return mid;
     }
     // Case 2: x < A[mid]
@@ -29,12 +37,13 @@ int binarySearch(int array[], int x, int low, int high) {
     return binarySearch(array, x, mid + 1, high);
   }
 
-  return -1;
+  
+  return 0;
 }
 
 int main(void) {
-  int array[] = {2, 6, 13, 36, 47, 63, 81, 97};
-  int x = 6;
+  int array[] = {2, 6, 13, 21, 36, 47, 63, 81, 97};
+  int x = 13;
   int n = sizeof(array) / sizeof(array[0]);
   int result = binarySearch(array, x, 0, n - 1);
   if (result == -1)

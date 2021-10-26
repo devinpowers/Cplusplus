@@ -38,47 +38,43 @@ Node* Insert(Node *root,int data) {
 
 void printLevelOrder(Node *root)
 {
-    // Base Case
     if (root == NULL)
-	{
-		return;
-	} 
+	{	return;  } 
+
     queue<Node*> q;
 
-
- 	int count = -1;
+ 	int count_depth = -1;
     q.push(root);
-	
+		
     while (q.empty() == false) 
     {
-        int NodeCount = q.size();
+        int NodeCount = q.size(); // Updates size after you put in childern nodes which is Equvilant to the "current level"/
 
-		
+		cout << "NodeCount (Size of the Queue) " << NodeCount << endl;
 
-		// cout << "NodeCount = " << NodeCount << endl;
-	
         while (NodeCount > 0)
         { // Go level by level 
+
             Node *Node = q.front(); 
-            cout << Node->data << " ";
+			
+            cout << Node->data << " "; // print out the front node in the Queue
             q.pop();
             if (Node->left != NULL)
 			{
 				q.push(Node->left);
 			}
-                
             if (Node->right != NULL)
 			{
 				q.push(Node->right);
 			}
                 
            	NodeCount--;
+
         }
-		count++;
+		count_depth++;
         cout << endl;
     }
-
-	cout << "Count number of depths: " << count << endl;
+	cout << "Count number of depths: " << count_depth << endl;
 }
 
 int main() {

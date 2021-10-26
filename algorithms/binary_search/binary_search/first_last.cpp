@@ -1,59 +1,49 @@
+/*  
+    Find the first occurence of a number
+
+*/
+
+
+
 #include <iostream>
 using std::cout;
 using std::endl;
 
- 
-// Function for finding first and last occurrence of an elemtn
 
-void FindFirstAndLast(int A[], int n, int x)
+
+int FirstOcc(int arr[], int n, int k)
 {
-    int low = 0; // index 0
-    int high = n-1; // last index in Array A
-    int result = -1; // means we havent found x in the array so far
-
-    while (low <= high){
-
-        int mid = (low + high)/2;
-
-       cout << "Mid:" << mid << endl;
-
-        if (x == A[mid])
-        {
-            result = mid;
-            
-            low = mid + 1;
-
-         //   cout << "result: " << result << endl; 
-       //     cout << "Current Low: " << low << endl;
-        }
-        else if (x < A[mid])
-        {
-            high = mid - 1;
-
-    //        cout << "high: " << high << endl;
-        }
-        else {
-            low = mid + 1;
-        }
-    }
-    if (low != -1)
-        cout << "First Occurrence = " << low
-             << "\nLast Occurrence = " << high;
-    else
-        cout << "Not Found";
- 
+	int low = 0;
+	int high = n-1;
+	int firstOcc = -1;
+	while(low <= high)
+	{
+		int mid = low + (high-low)/2;
+		if(arr[mid] == k)
+		{
+			firstOcc = mid;
+			high = mid-1;
+		}
+		else if(arr[mid] > k)
+			high = mid-1;
+		else
+			low = mid+1;
+	}
+	return firstOcc;
 }
+
+
  
 // Driver code
 int main()
 {
     int A[] = { 2, 4, 10, 10, 10, 18, 20, 25, 40};
     int n = sizeof(A) / sizeof(int);
-    cout << "n: " << n << endl;
     int x = 10;
+    cout << endl;
 
-    cout << "Finding the middle value of : " << x << endl;
-    FindFirstAndLast(A, n, x);
+    cout << "The index position of the first occurance of " << x << " is: ";
+    cout << FirstOcc(A, n, x) << endl;
     cout << endl;
 
 }
