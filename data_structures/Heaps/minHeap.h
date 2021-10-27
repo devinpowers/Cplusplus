@@ -7,23 +7,26 @@ using namespace std;
 class minHeap{
 
     private:
-        int size;
 
-        int capacity;
-        vector<int> heap;
+        int size; // Size of the minHeap
+
+        int capacity; // Capacity of the minHeap
+
+        vector<int> heap; // Vector the minHeap
+
         int parent(int i){
             return (i = 1)/2; 
         }
         int left(int i) {
-            return 2*i +1;
+            return 2*i;
         }
         int right(int i){
-            return 2*i +2;
+            return 2*i +1;
         }
     
     public:
-        // Constructor
-        minHeap(int capacity);
+
+        minHeap(int capacity); // Constructor
         void insert(int k);
         int extractMin();
         void Heapify(int i);
@@ -31,11 +34,11 @@ class minHeap{
 
 };
 
-// Constructo that sets the heap size and capacity
+// Constructor that sets the heap size and capacity
 
 minHeap::minHeap(int capacity){
     size = 0;
-    this->capacity = capacity;
+    this->capacity = capacity; // set capacity 
     heap.resize(capacity);
 }
 
@@ -44,8 +47,9 @@ minHeap::minHeap(int capacity){
 void minHeap::insert(int k){
     if (size == capacity){
         cout << "MIN HEAP IS FULL!!! " << endl;
+        return;
     }
-    return;
+    
 
     // increase the amoutnof elemnets in the heap
 
@@ -55,20 +59,42 @@ void minHeap::insert(int k){
 
     int i = size -1;
     heap[i] = k;
+    cout << "i: " << i << endl;
+    cout << "k: " << k << endl;
 
     // fix the min heap property 
     // moves element up intill i >= parent or root
 
-    while(i != 0 && heap[parent(i)] > heap[i]){
-        swap(heap[i], heap[parent(i)]);
-        i = parent(i);
+    cout << "heap[parent(i)] = " << heap[parent(i)] << endl;
+
+    while(i != 0 && (heap[parent(i)] > heap[i])){
+        cout << "GOTTA SWAP SHIT " << endl;
+        cout << "i: " << heap[i]  << endl;
+        swap(heap[i], heap[parent(i)]); // Swap if l
+        i = parent(i); 
+        cout << "i after: " << i << endl;
+
+        // have to recheck this shit
+
     }
+
+    // call heapify
+    Heapify(k);
+
+    
 }
 
 // Recursive 
 
-void minHeap::heapify(int i){
+
+void minHeap::Heapify(int i){
+
+    // Process of converting a binary Tree into a Heap Data Stucture!!! that satisfuies the heap-order property
+
     // set initial conditions
+    std::cout << "Calling Heapify " << std::endl;
+    // Take it easy
+
     int l = left(i);
     int r = right(i);
     int smallest = i;
@@ -76,18 +102,19 @@ void minHeap::heapify(int i){
     // find smallest elment of the three (l, r , smallest)
     if ((l < size) && (heap[l] < heap[smallest])){
         smallest = l;
-    } if ((r < size ) && (heap[r] < heap[samllest])){
+    } if ((r < size ) && (heap[r] < heap[smallest])){
         smallest = r;
     }
-
-
 
     // if the smallest of l or r , continue heapify
     if (smallest != i){
         swap(heap[i], heap[smallest]);
-        heapify(smallest);
+        Heapify(smallest);
     } 
 }
+
+
+
 
 
 // Removes the smallest element and fixes the order
@@ -97,7 +124,41 @@ int minHeap::extractMin(){
     // check if hepa is empty
 
     if (size == 0){
-        cout << "EMPTY"
+        cout << "EMPTY" << endl;
+        return -1;
     }
+    // Check if there is only 1 element
+    else if (size == 1){
+        size--;
+        return heap[0];
+    }
+    //normal extraction
+    else{
+        // store the root
+        int root = heap[0];
+
+        // maintain heap shape and then order
+        heap[0] = heap[size - 1];
+        size--;
+        Heapify(0);
+
+        //return the root;
+        return root;
+    }
+
+
+
 }
 
+void minHeap::printHeap(){
+
+
+    for (int i = 0; i < heap.size(); i++ ){
+        // print 
+
+        cout << heap[i] << " ";
+    }
+    cout << endl;
+
+    
+}

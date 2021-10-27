@@ -1,0 +1,22 @@
+i: 0
+k: 30
+heap[parent(i)] = 30
+Calling Heapify 
+i: 1
+k: 32
+heap[parent(i)] = 30
+Calling Heapify 
+i: 2
+k: 10
+heap[parent(i)] = 30
+GOTTA SWAP SHIT 
+i: 10
+i after: 0
+Calling Heapify 
+i: 3
+k: 28
+heap[parent(i)] = 10
+Calling Heapify 
+
+Print the Binary Min Heap before: 10 32 30 28 0 0 0 
+
