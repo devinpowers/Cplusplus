@@ -24,7 +24,7 @@ int main(){
     std::cout << std::endl;
     */
    // Number of elements for our minHeap
-    int N = 15;
+    int N = 10;
 
     // Declare a heap with space for 10 elements
     minHeap heap(N);
@@ -72,5 +72,5 @@ int main(){
     heap.printHeap();
     cout << endl;
 
-
+    cout << "OK " << endl;
 }

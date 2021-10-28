@@ -1,3 +1,6 @@
+// This program implements a min heap in C++
+// By: Nick from CoffeeBeforeArch
+
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -18,9 +21,9 @@ private:
     // Returns the parent index
     int parent(int i){return (i - 1) / 2;}
     // Returns the left child
-    int left(int i){return 2 * i;}
+    int left(int i){return 2 * i + 1;}
     // Returns the right child
-    int right(int i){return 2 * i + 1;}
+    int right(int i){return 2 * i + 2;}
 
 public:
     // Constructor
@@ -33,6 +36,7 @@ public:
     void heapify(int i);
     // Print the heap
     void printHeap();
+    void printHeap2();
 };
 
 // Consturctor that sets the heap size and capacity
@@ -68,6 +72,7 @@ void minHeap::insert(int k){
 // Recursive function to maintain structure
 void minHeap::heapify(int i){
     // Set initial conditions
+    cout << "Calling Heapify " << endl;
     int l = left(i);
     int r = right(i);
     int smallest = i;
@@ -111,9 +116,23 @@ int minHeap::extractMin(){
     }
 }
 
-
-
+// Print the heap in a pretty format
 void minHeap::printHeap(){
+    int power = 0;
+    int value = 1;
+    for(int i = 0; i < size; i++){
+        if(i == value){
+            cout << endl;
+            power += 1;
+            value += (1 << power);
+        }
+        cout << heap[i] << "  ";
+    }
+    cout << endl;
+}
+
+
+void minHeap::printHeap2(){
 
 
     for (int i = 0; i < heap.size(); i++ ){
@@ -126,3 +145,63 @@ void minHeap::printHeap(){
     
 }
 
+int main(){
+ 
+    // Number of elements for our minHeap
+    int N = 10;
+
+    // Declare a heap with space for 10 elements
+    minHeap heap(N);
+
+    cout << "inserting 20 into minHeap " << endl;
+    heap.insert(20);
+    heap.printHeap();
+    cout << endl;
+        cout << "inserting 30 into minHeap " << endl;
+
+    heap.insert(30);
+    heap.printHeap();   
+    cout << endl;
+
+    cout << "inserting 10 into minHeap " << endl;
+    heap.insert(10);
+    heap.printHeap();   
+    cout << endl;
+
+    cout << "inserting 35 into minHeap " << endl;
+
+    heap.insert(35);
+    heap.printHeap();
+    cout << endl;
+
+    cout << "inserting 40 into minHeap " << endl;
+
+    heap.insert(40);
+    heap.printHeap();
+    cout << endl;
+
+    cout << "inserting 32 into minHeap " << endl;
+
+    heap.insert(32);
+    heap.printHeap(); 
+    cout << endl;
+
+    cout << "inserting 8 into minHeap " << endl;
+
+    heap.insert(8);
+    heap.printHeap();
+    cout << endl;
+
+    cout << "Inserting 8 into the Heap " << endl;
+    heap.printHeap2();
+    cout << endl;
+
+    cout << "Extract min: " << heap.extractMin() << endl;
+    heap.printHeap();
+    cout << endl;
+
+    cout << "OK " << endl;
+    cout << endl;
+    heap.printHeap2();
+    cout << endl;
+}

@@ -1,6 +1,3 @@
-// This program implements a min heap in C++
-// By: Nick from CoffeeBeforeArch
-
 #include <vector>
 #include <algorithm>
 #include <iostream>
@@ -9,8 +6,8 @@
 
 using namespace std;
 
-// Class for a minimum heap implementation
-class minHeap{
+// Class for a maximum heap implementation
+class maxHeap{
 private:
     // Current size of the heap
     int size;
@@ -27,11 +24,11 @@ private:
 
 public:
     // Constructor
-    minHeap(int capacity);
+    maxHeap(int capacity);
     // Insert a key into the min heap
     void insert(int k);
     // Extracts the minumum element
-    int extractMin();
+    int extractMax();
     // Recursively heapify a sub-tree
     void heapify(int i);
     // Print the heap
@@ -39,17 +36,17 @@ public:
 };
 
 // Consturctor that sets the heap size and capacity
-minHeap::minHeap(int capacity){
+maxHeap::maxHeap(int capacity){
     size = 0;
     this->capacity = capacity;
     heap.resize(capacity);
 }
 
-// Insert key into the minHeap
-void minHeap::insert(int k){
+// Insert key into the maxHeap
+void maxHeap::insert(int k){
     // Make sure there is still space in the heap
     if(size == capacity){
-        cout << "MIN HEAP FULL!" << endl;
+        cout << "MAX HEAP FULL!" << endl;
         return;
     }
 
@@ -60,37 +57,37 @@ void minHeap::insert(int k){
     int i = size - 1;
     heap[i] = k;
 
-    // Fix the min heap property
+    // Fix the max heap property
     // Moves the element up until i >= parent or root
-    while(i != 0 && heap[parent(i)] > heap[i]){
+    while(i != 0 && heap[parent(i)] < heap[i]){
         swap(heap[i], heap[parent(i)]);
         i = parent(i);
     }
 }
 
 // Recursive function to maintain structure
-void minHeap::heapify(int i){
+void maxHeap::heapify(int i){
     // Set initial conditions
     int l = left(i);
     int r = right(i);
-    int smallest = i;
+    int largest = i;
 
-    // Find the smallest element of the three
-    if((l < size) && (heap[l] < heap[smallest])){
-        smallest = l;
-    }if((r < size) && (heap[r] < heap[smallest])){
-        smallest = r;
+    // Find the largest element of the three
+    if((l < size) && (heap[l] > heap[largest])){
+        largest = l;
+    }if((r < size) && (heap[r] > heap[largest])){
+        largest = r;
     }
 
-    // If the smallest of l or r, continue heapify
-    if(smallest != i){
-        swap(heap[i], heap[smallest]);
-        heapify(smallest);
+    // If the largest of l or r, continue heapify
+    if(largest != i){
+        swap(heap[i], heap[largest]);
+        heapify(largest);
     }
 }
 
-// Removes the smallest element and fixes the order
-int minHeap::extractMin(){
+// Removes the largest element and fixes the order
+int maxHeap::extractMax(){
     // Check if the heap is empty
     if(size == 0){
         cout << "EMPTY HEAP" << endl;
@@ -114,9 +111,9 @@ int minHeap::extractMin(){
     }
 }
 
-// Print the heap in a pretty format
 /*
-void minHeap::printHeap(){
+// Print the heap in a pretty format
+void maxHeap::printHeap(){
     int power = 0;
     int value = 1;
     for(int i = 0; i < size; i++){
@@ -131,8 +128,7 @@ void minHeap::printHeap(){
 }
 */
 
-
-void minHeap::printHeap(){
+void maxHeap::printHeap(){
 
 
     for (int i = 0; i < heap.size(); i++ ){
@@ -143,45 +139,4 @@ void minHeap::printHeap(){
     cout << endl;
 
     
-}
-
-int main(){
-    // Number of elements for our minHeap
-    int N = 15;
-
-    // Declare a heap with space for 10 elements
-    minHeap heap(N);
-
-
-    heap.insert(20);
-    heap.printHeap();
-    cout << endl;
-    heap.insert(30);
-    heap.printHeap();   
-        cout << endl;
-
-    heap.insert(10);
-    heap.printHeap();   
-        cout << endl;
-
-    heap.insert(35);
-    heap.printHeap();
-
-        cout << endl;
-
-    heap.insert(40);
-    heap.printHeap();
-         cout << endl;
-
-    heap.insert(32);
-    heap.printHeap(); 
-        cout << endl;
-
-    heap.insert(8);
-    heap.printHeap();
-        cout << endl;
-
-    cout << "Extract min: " << heap.extractMin() << endl;
-  heap.printHeap();
-        cout << endl;
 }
