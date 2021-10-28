@@ -23,6 +23,10 @@ class minHeap{
         int right(int i){
             return 2*i +1;
         }
+
+        void heapify_down(int i);
+        void heapify_up(int i);
+
     
     public:
 
@@ -121,7 +125,7 @@ void minHeap::Heapify(int i){
 
 int minHeap::extractMin(){
 
-    // check if hepa is empty
+    // check if heap is empty
 
     if (size == 0){
         cout << "EMPTY" << endl;
@@ -150,6 +154,8 @@ int minHeap::extractMin(){
 
 }
 
+
+
 void minHeap::printHeap(){
 
 
@@ -162,3 +168,4 @@ void minHeap::printHeap(){
 
     
 }
+
