@@ -49,13 +49,13 @@ void HashTable::print(){
 
 int main(){
     // Create a hash table with 8 buckets
-    HashTable ht(100);
+    HashTable ht(1000);
 
     // Set the random number seed
-    srand(10);
+    srand(2);
 
     // Insert 1000 random integers
-    for(int i = 0; i < 1000; i++){
+    for(int i = 0; i < 100000; i++){
         ht.insert(rand() % 100);
     }
 

@@ -1,29 +1,13 @@
-#include <iostream>
 
-#include "minHeap.h"
+#include <iostream>
 using std::endl;
 using std::cout;
 
+#include "minHeap.h"
+
 int main(){
-
-    /*
-    //minHeap
-    minHeap mHeap(7);
-
-    mHeap.insert(30);
-    mHeap.insert(32);
-    mHeap.insert(10); // 10 is the "min"
-    mHeap.insert(28);
-    //mHeap.insert(20);
-    //mHeap.insert(35);
-    
-    std::cout << std::endl;
-    std::cout << "Print the Binary Min Heap before: ";
-    mHeap.printHeap();
-   //  mHeap.insert(8);
-    std::cout << std::endl;
-    */
-   // Number of elements for our minHeap
+ 
+    // Number of elements for our minHeap
     int N = 10;
 
     // Declare a heap with space for 10 elements
@@ -71,6 +55,9 @@ int main(){
     cout << "Extract min: " << heap.extractMin() << endl;
     heap.printHeap();
     cout << endl;
+   
 
-    cout << "OK " << endl;
 }
+
+
+

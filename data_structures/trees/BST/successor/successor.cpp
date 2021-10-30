@@ -172,6 +172,9 @@ int main() {
 	root = Insert(root,12); 
 	root = Insert(root,69); 
 
+	root = Insert(root,75); 
+	root = Insert(root,70); 
+    /*
 	cout << "Before Deleting Any Nodes: " << endl;
    	printLevelOrder(root);
 
@@ -191,10 +194,12 @@ int main() {
     cout << "Delete Node with two Childern (Deleting 10): " << endl;
     //Delete Node with two childern
    //  root = deleteNode(root, 10);
+   */
+
    	printLevelOrder(root);
     cout << endl;
 
-    Node* successor = Getsuccessor(root,1);
+    Node* successor = Getsuccessor(root,15);
 	if(successor == NULL)
     {
         cout<<"No successor Found\n";

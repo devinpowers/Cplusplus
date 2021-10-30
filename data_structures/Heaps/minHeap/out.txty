@@ -10,7 +10,7 @@ inserting 10 into minHeap
 inserting 35 into minHeap 
 10 30 20 35 0 0 0 0 0 0 
 
-inserting 40 into minHeap   
+inserting 40 into minHeap 
 10 30 20 35 40 0 0 0 0 0 
 
 inserting 32 into minHeap 

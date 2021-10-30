@@ -1,5 +1,3 @@
-
-
 #include "maxHeap.h"
 
 #include <iostream>
@@ -13,13 +11,15 @@ int main(){
     // Declare a heap with space for 10 elements
     maxHeap heap(N);
 
+
+
     heap.insert(50);
     heap.insert(30);
-    heap.insert(20);
+     heap.insert(20);
     heap.insert(15);
     heap.insert(10);
     heap.insert(8);
-    cout << "Current Heap: " << endl;
+
     heap.printHeap();
     cout << endl;
 
@@ -27,12 +27,17 @@ int main(){
     heap.insert(25);
     heap.printHeap();
 
-     cout << endl;
-  
 
+    
+
+   cout << endl;
+   heap.printHeap2();
+    cout << endl;
     cout << "Extracting the Max from the Heap " << endl;
     heap.extractMax();
     cout << endl;
     heap.printHeap();
-}
 
+
+
+}

@@ -4,6 +4,8 @@
 struct Node{
     int data;
     Node* next;
+    Node ( char c ) : data{ c }, next{ nullptr } { }
+
 };
 
 void insert( Node * &head, int data){
