@@ -1,6 +1,7 @@
 #include<iostream>
 #include <list>
- 
+#include <fstream>
+
 using namespace std;
  
 // This class represents a directed graph using
@@ -14,7 +15,7 @@ class Graph
         // Pointer to an array containing adjacency
         // lists
         list<int> *adj;  
-        
+
     public:
         Graph(int V);  // Constructor
     
@@ -77,19 +78,41 @@ void Graph::BFS(int s)
  
 // Driver program to test methods of graph class
 int main()
-{
+{   
+
     // Create a graph given in the above diagram
-    Graph g(4);
+    Graph g(7);
+    ifstream inFile;
+    int x,y;
+
+    inFile.open("out.txt");
+    if (!inFile){
+        cout << "unable to open the file. ";
+        exit(1); // Terminate with error
+    }
+
+    while(inFile >> x >> y){
+        // add edge to graph
+
+        g.addEdge(x,y);
+    }
+
+    /*
+
     g.addEdge(0, 1);
     g.addEdge(0, 2);
     g.addEdge(1, 2);
     g.addEdge(2, 0);
     g.addEdge(2, 3);
     g.addEdge(3, 3);
+    */
+   cout << "Hello World" << endl;
+
  
     cout << "Following is Breadth First Traversal "
          << "(starting from vertex 2) \n";
-    g.BFS(2);
+    g.BFS(0);
  
+    cout << endl;
     return 0;
 }

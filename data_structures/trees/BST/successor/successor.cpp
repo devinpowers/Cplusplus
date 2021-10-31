@@ -46,8 +46,10 @@ Node* Insert(Node *root,int data) {
 	
 	return root;  // Return Root Address
 }
+
 Node* FindMin(Node* root)
 {
+    cout << "using FindMin function " << endl;
    Node* current = root;
    
    while (current && current->left != NULL){
@@ -124,36 +126,79 @@ void printLevelOrder(Node *root)
             NodeCount--;
         }
         cout << endl;
-    }
+    }  
 }
 
 
 //Function to find some data in the tree
+
+
 Node* Find(Node*root, int data) {
-	if(root == NULL) return NULL;
-	else if(root->data == data) return root;
-	else if(root->data < data) return Find(root->right,data);
-	else return Find(root->left,data);
+
+	if(root == NULL){
+        return NULL;
+    } 
+	else if(root->data == data){
+        return root;
+    } 
+	else if(root->data < data) {
+        return Find(root->right,data);
+    }
+	else{
+        return Find(root->left,data);
+    } 
 }
 
 
-Node* Getsuccessor(struct Node* root,int data) {
+Node* Getsuccessor( Node* root,int data) {
 	// Search the Node - O(h)
-	struct Node* current = Find(root,data);
-	if(current == NULL) return NULL;
-	if(current->right != NULL) {  //Case 1: Node has right subtree
+	 Node* current = Find(root,data);
+
+	if(current == NULL){
+        // if Node isn't in BST
+        cout << "ebd" << endl;
+        return NULL;
+    } 
+
+    cout << "continue as node does exist in BST " << endl;
+
+    // Case 1: Node has Right Subtree
+	if(current->right != NULL) {  
+
+        cout << "Case 1: " << endl;
 		return FindMin(current->right); // O(h)
 	}
-	else {   //Case 2: No right subtree  - O(h)
-		struct Node* successor = NULL;
-		struct Node* ancestor = root;
+    // Case 2: No Right subtree - O(h)
+	else {   
+
+        cout << "Case 2!" << endl;
+		Node* successor = NULL;
+		Node* ancestor = root;
+
+        
+
 		while(ancestor != current) {
+
+            // print out the current acncestor
+            cout << "ancestor: " << ancestor->data << endl;
+            cout << "current: " << current->data << endl;
+         //   cout << "successor: " << successor->data << endl;
+
 			if(current->data < ancestor->data) {
+
+                cout << "okokokokokokoko" << endl;
+
 				successor = ancestor; // so far this is the deepest node for which current node is in left
+
 				ancestor = ancestor->left;
 			}
+
 			else
-				ancestor = ancestor->right;
+            {
+                cout << "move to the right " << endl;
+                ancestor = ancestor->right;
+            }
+				
 		}
 		return successor;
 	}
@@ -164,42 +209,47 @@ int main() {
 
 	Node* root = NULL;
 
+    /*
+
 	root = Insert(root,15); 
 	root = Insert(root,10); 	
 	root = Insert(root,20);
 	root = Insert(root,25); 
 	root = Insert(root,8); 
 	root = Insert(root,12); 
+    root = Insert(root,18); 
+
 	root = Insert(root,69); 
 
-	root = Insert(root,75); 
-	root = Insert(root,70); 
+    */
+
+	root = Insert(root, 15); 
+    root = Insert(root, 10);
+	root = Insert(root, 20);
+    root = Insert(root, 25);
+    root = Insert(root, 12); 	
+    root = Insert(root ,8); 	
+    root = Insert(root, 18);
+    root = Insert(root, 69);
+    root = Insert(root, 11);
+    root = Insert(root, 13);
+
+
+    printLevelOrder(root);
+
+
     /*
-	cout << "Before Deleting Any Nodes: " << endl;
-   	printLevelOrder(root);
+    Node* find = Find(root, 10);
+    if (find == NULL){
+        cout << "Not in Tree\n ";
+    }
+    else {
+        cout << "Yes we found the value " << find->data << "\n";
+    }
+    */
 
-    // Now lets delete!!!!
-    cout << "Deleting Node with one Child (25): " << endl;
-    root = Delete(root, 25);
-   	printLevelOrder(root);
-    cout << endl;
 
-    // Delete Leaf Node with One On
-    cout << "Delete Node Leaf Node (deleting 69) " << endl;
-
-	// root = deleteNode(root, 69);
-   	printLevelOrder(root);
-    cout << endl;
-
-    cout << "Delete Node with two Childern (Deleting 10): " << endl;
-    //Delete Node with two childern
-   //  root = deleteNode(root, 10);
-   */
-
-   	printLevelOrder(root);
-    cout << endl;
-
-    Node* successor = Getsuccessor(root,15);
+    Node* successor = Getsuccessor(root,11);
 	if(successor == NULL)
     {
         cout<<"No successor Found\n";
