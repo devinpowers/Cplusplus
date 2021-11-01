@@ -76,24 +76,30 @@ int main() {
 
 	Node* root = NULL;
 
+	/*
 	root = Insert(root,15); 
 	root = Insert(root,10); 	
 	root = Insert(root,20);
 	root = Insert(root,25); 
 	root = Insert(root,17);
-
 	root = Insert(root,12); 
     root = Insert(root,8); 
 	root = Insert(root,5);
     root = Insert(root,2); 
-
     root = Insert(root,-1); 
     root = Insert(root,-10); 
     root = Insert(root,-100); 
 
 	//cout << "Inorder Traversal: " << endl;
 	// Inorder(root);
-	
+	*/
+
+	root = Insert(root,31);
+	root = Insert(root, 9);
+	 root = Insert(root, 20);
+	 root = Insert(root, 15);
+	 root = Insert(root, 7);
+	 Inorder(root);
     int height;
 
     height = FindHeight(root);

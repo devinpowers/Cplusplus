@@ -41,11 +41,11 @@ class Graph{
 int main(){
 
     Graph g;
-    g.addEdge("A", "B", true, 20);
+    g.addEdge("AA", "B", true, 20);
     g.addEdge("B", "D", true, 40);
-    g.addEdge("A", "C", true, 10);
+    g.addEdge("AA", "C", true, 10);
     g.addEdge("C", "D", false, 40);
-    g.addEdge("A", "D", true, 50);
+    g.addEdge("AA", "D", true, 50);
 
     g.printAdjList();
 }

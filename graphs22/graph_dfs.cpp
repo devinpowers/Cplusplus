@@ -68,7 +68,6 @@ int main(){
 	g.addEdge(2,3);
 	g.addEdge(3,4);
 	g.addEdge(3,5);	
-	cout << "HEllo OWlrd" << endl;
 	cout << endl;
 	g.dfs(0);
 

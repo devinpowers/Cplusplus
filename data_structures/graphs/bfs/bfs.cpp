@@ -44,6 +44,10 @@ class Graph{
                 cout<<endl;
             }
         }
+
+
+
+
         
         void bfs(T src){
             
@@ -95,6 +99,10 @@ int main(){
 	g.addEdge('C','D');
 	g.addEdge('D','F');
 	g.addEdge('D','E');
-	g.bfs('D');
+    g.print();
+    cout << endl;
+    g.bfs('D');
 
 }
+
+
