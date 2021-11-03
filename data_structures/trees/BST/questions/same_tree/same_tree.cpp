@@ -1,3 +1,11 @@
+/*
+	Same Tree Function
+
+	Pass in two trees (root1 and root2) and check if they're the same tree
+	Return True or False
+*/
+
+
 
 #include<iostream>
 using std::cout;
@@ -51,11 +59,10 @@ void inorder(Node* root)
 
 bool sameTree(Node* root1, Node* root2){
 
-	
 	if (root1 == NULL && root2 == NULL ){
-		// both are empty
-		return true;
+		return true; // 
 	}
+
 	else if ((root1 == NULL && root2 != NULL) || (root1 != NULL && root2 == NULL)){
 		return false;
 	}
@@ -63,8 +70,6 @@ bool sameTree(Node* root1, Node* root2){
 
 		return root1->data == root2->data && sameTree(root1->left, root2->left) && sameTree(root1->right, root2->right);
 	}
-
-	// return true if smae tree 
 
 }
 

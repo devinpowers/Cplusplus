@@ -1,9 +1,11 @@
+/*
+    Invert/Flip/Mirror Binary Tree
+    Common BST Coding Question
+*/
 
 #include<iostream>
 using std::cout;
 using std::endl;
-using std::boolalpha;
-
 
 #include <queue>
 using std::queue;
@@ -14,9 +16,7 @@ struct Node {
 	struct Node *right;
 };
 
-// Function to Insert Node in a Binary Search Tree
 Node* Insert(Node *root,int data) {
-	// Return pointer which is a memory address
 
 	if(root == NULL) {
 		root = new Node();
@@ -32,21 +32,7 @@ Node* Insert(Node *root,int data) {
 	{
 		root->right = Insert(root->right,data);
 	}
-	return root;  // Return Root Address
-}
-
-
-void inorder(Node* root)
-{
-    if (root == NULL )
-    {
-        return;
-    }
-    inorder(root->left);
-
-    cout << root->data << " ";
-
-    inorder(root->right);
+	return root;  
 }
 
 void printLevelOrder(Node *root)
@@ -61,15 +47,13 @@ void printLevelOrder(Node *root)
 		
     while (q.empty() == false) 
     {
-        int NodeCount = q.size(); // Updates size after you put in childern nodes which is Equvilant to the "current level"/
+        int NodeCount = q.size(); 
 
-
-        while (NodeCount > 0)
-        { // Go level by level 
+        while (NodeCount > 0){
 
             Node *Node = q.front(); 
 			
-            cout << Node->data << " "; // print out the front node in the Queue
+            cout << Node->data << " "; 
             q.pop();
             if (Node->left != NULL)
 			{
@@ -78,10 +62,8 @@ void printLevelOrder(Node *root)
             if (Node->right != NULL)
 			{
 				q.push(Node->right);
-			}
-                
+			}    
            	NodeCount--;
-
         }
 		count_depth++;
         cout << endl;
@@ -90,17 +72,17 @@ void printLevelOrder(Node *root)
 
 void invert(Node* node){
 
+    // Invert/Mirror Binary Tree.. Recursive Approach
     if (node == NULL){
         return;
     }
     else{
 
-        Node* temp;
-        // Recusieve calls
         invert(node->left);
         invert(node->right);
+    
+        Node* temp; 
 
-        // Swap pointers in this node
         temp = node->left;
         node->left = node->right;
         node->right = temp;
@@ -112,20 +94,23 @@ int main() {
 
 	Node* root = NULL;
 
-	root = Insert(root,2); 
-	root = Insert(root,1); 	
-	root = Insert(root,4);
-    root = Insert(root,3);
-	root = Insert(root,5);
+	root = Insert(root,20); 
+	root = Insert(root,12); 	
+	root = Insert(root,40);
+    root = Insert(root,35);
+	root = Insert(root,52);
+    root = Insert(root,48);
+	root = Insert(root,60);
 
-
-	cout << "Print Level Order for Tree 1 before flipping: ";
+	cout << "Print Level Order for Tree 1 BEFORE Flipping/Inverting: ";
     cout << endl;
 	printLevelOrder(root);
 
-	cout << "Print Level Order for Tree 1 AFTER flipping: ";
+	cout << "Print Level Order for Tree 1 AFTER Flipping/Inverting: ";
 
-    invert(root);
+    cout << endl;
+    invert(root); // invert
+
     cout << endl;
 
     printLevelOrder(root);

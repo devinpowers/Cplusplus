@@ -1,0 +1,19 @@
+Print Level Order for Tree 1 BEFORE Flipping/Inverting: 
+20 
+12 40 
+
+48 60 
+Print Level Order for Tree 1 AFTER Flipping/Inverting: 
+Current Node: 12
+Current Node: 35
+Current Node: 48
+Current Node: 60
+Current Node: 52 - first time we actually swap real elements
+Current Node: 40 - swap 35 and 52
+Current Node: 20 - swap 12 and 40
+
+20 
+40 12 
+52 35 
+60 48 
+
