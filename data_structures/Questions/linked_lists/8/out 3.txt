@@ -1,0 +1,6 @@
+Current List:
+1-->2-->3-->4-->5-->NULL
+Inserting loop, connecting 5 to 2..... 
+Detecting and deleting loop
+Back to the same old list
+1-->2-->3-->4-->5-->NULL

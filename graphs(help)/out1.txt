@@ -9,37 +9,28 @@
 7->6,8,
 8->7,5,
 9->5,
-BFS from 8: 
+BFS from 0: 
 8 
 Neighhour: 7
-pushed: 7 onto our queue! 
 Neighhour: 5
-pushed: 5 onto our queue! 
 7 
 Neighhour: 6
-pushed: 6 onto our queue! 
 Neighhour: 8
 5 
 Neighhour: 3
-pushed: 3 onto our queue! 
 Neighhour: 8
 Neighhour: 9
-pushed: 9 onto our queue! 
 6 
 Neighhour: 0
-pushed: 0 onto our queue! 
 Neighhour: 7
 3 
 Neighhour: 2
-pushed: 2 onto our queue! 
 Neighhour: 4
-pushed: 4 onto our queue! 
 Neighhour: 5
 9 
 Neighhour: 5
 0 
 Neighhour: 1
-pushed: 1 onto our queue! 
 Neighhour: 6
 Neighhour: 4
 2 

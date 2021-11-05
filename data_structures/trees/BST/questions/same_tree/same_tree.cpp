@@ -57,20 +57,31 @@ void inorder(Node* root)
 }
 
 
+/*
+	To Find out if both trees are the same we will loop through this shit and 
+
+
+
+*/
+
 bool sameTree(Node* root1, Node* root2){
 
+	// Pass in two address of trees
+	// 
 	if (root1 == NULL && root2 == NULL ){
+		cout << "EXITING " << endl;
 		return true; // 
 	}
 
 	else if ((root1 == NULL && root2 != NULL) || (root1 != NULL && root2 == NULL)){
+		cout << "SUPE" << endl;
 		return false;
 	}
 	else{
+		
 
 		return root1->data == root2->data && sameTree(root1->left, root2->left) && sameTree(root1->right, root2->right);
 	}
-
 }
 
 
@@ -81,6 +92,9 @@ int main() {
 	root = Insert(root,1); 
 	root = Insert(root,2); 	
 	root = Insert(root,3);
+	root = Insert(root,5);
+	root = Insert(root,8);
+
 
 	cout << "Print inorder for Tree 1: ";
 	inorder(root);
@@ -92,19 +106,17 @@ int main() {
 
 	root2 = Insert(root2,1); 
 	root2 = Insert(root2,2); 	
-	root2 = Insert(root2,9);
+	root2 = Insert(root2,3);
+	root2 = Insert(root2,5);
+	root2 = Insert(root2,8);
+
 
 	cout << "Print inorder for Tree 2: ";
 	inorder(root2);
 
-	cout << endl;
-
-	
-
+	cout << endl;	
 	
 	cout << "Same Tree?: " << boolalpha << sameTree(root, root2) << endl;
-
-
 
 
 }

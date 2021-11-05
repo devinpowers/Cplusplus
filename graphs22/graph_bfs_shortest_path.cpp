@@ -53,7 +53,7 @@ public:
 		while(!q.empty()){
 
 			T node = q.front();
-			cout<<node<<" ";
+			// cout<<node<<" ";
 			q.pop();
 
 			// For the neigbours of the current node, find out the nodes which are not visited
@@ -89,7 +89,7 @@ int main(){
 	g.bfs(0);
 	*/
 
-
+	cout << endl;
 	Graph<char> g;
 	g.addEdge('A','B');
 	g.addEdge('B','C');
@@ -99,4 +99,6 @@ int main(){
 	g.addEdge('D','F');
 	g.addEdge('D','E');
 	g.bfs('A');
+
+	cout << endl;
 }

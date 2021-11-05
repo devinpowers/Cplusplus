@@ -2,7 +2,7 @@
 using std::cout;
 using std::endl;
 using std::boolalpha;
-
+#include<math.h>
 
 #include <queue>
 using std::queue;
@@ -36,52 +36,52 @@ Node* Insert(Node *root,int data) {
 }
 
 
+int findMaxUtil(Node* root, int &res){
 
+	// Base Case 
+	if (root == NULL){
+		return 0;
+	}
 
+	int l = findMaxUtil(root->left, res);
+	int r = findMaxUtil(root->right, res);
 
-int maxPathSum(Node* root){
-    int answer = INT_MIN;
-    answer = max_path_sum_helper(root, answer);
-    return answer;
+	// Max path 
+	int max_single = fmax(fmax(0,r) + root->data, root->data );
+
+	int max_top = fmax(max_single, 0 + r + root->data);
+
+	res = fmax(res, max_top);
+	
+	return max_single;
 }
 
-void helper(Node* root, int sum_so_far, int &result){
-    if(root == NULL)
-        return;
-    result = max(result, sum_so_far + root.val);
-    helper(root.left , sum_so_far + root.val, result);
-    helper(root.right, sum_so_far + root.val, result);
+int findMaxSum(Node* root){
+	int res = INT_MIN;
+
+	findMaxUtil(root, res);
+	return res;
 }
 
-void max_path_sum_helper(Node* root, int &answer){
-    if(root is NULL)
-        return;
-    left_result = INT_MIN;
-    right_result = INT_MAX;
-    // Find maximum path sum starting from root.left
-    helper(root.left , 0, left_result );
-    // Find maximum path sum starting from root.right
-    helper(root.right, 0, right_result);
-    left_result  = max(left_result , 0);
-    right_result = max(right_result, 0);
-    answer = max(left_result + right_result + root.val, answer);
-    max_path_sum_helper(root.left, answer);
-    max_path_sum_helper(root.right, answer);
-}
 
 
 int main() {
 
 	Node* root = NULL;
 
-	root = Insert(root,2); 
-	root = Insert(root,1); 	
-	root = Insert(root,4);
-    root = Insert(root,3);
-	root = Insert(root,5);
+	root = Insert(root,20); 
+	root = Insert(root,12); 	
+	root = Insert(root,40);
+    root = Insert(root,30);
+	root = Insert(root,50);
+	root = Insert(root,45);
+	root = Insert(root,60);
+	int num = 90;
+	root = root->right->right->right = num;
+	
 
 
-
+	cout << findMaxSum(root) << endl;
 
 }
 

@@ -32,6 +32,9 @@ void printList( Node * head )
   std::cout << "NULL" << std::endl;
 }
 
+
+// Remove Loop
+
 void removeLoop(Node* loopNode, Node* head){
     Node *ptr1 = head;
     Node *ptr2 = loopNode;
@@ -44,7 +47,7 @@ void removeLoop(Node* loopNode, Node* head){
 }
 
 bool dectectAndRemoveCycle(Node* head){
-
+// Detect and remove Cycle
     if (head == NULL){
         return false;
     }
@@ -58,7 +61,7 @@ bool dectectAndRemoveCycle(Node* head){
         slowPtr = slowPtr->next;
         if (fastPtr == slowPtr)
         {
-             removeLoop(slowPtr, head);
+            removeLoop(slowPtr, head);
             return true;
 
         }
@@ -79,15 +82,29 @@ int main()
     insert( head , 4 );
     insert( head , 5 );
     std::cout << "Current List:\n";
+
+    
     printList( head );
-    std::cout << "Inserting loop, connecting 5 to 2 \n";
+
+
+
+
+    
+    std::cout << "Inserting loop, connecting 5 to 2..... \n";
+
+
     head->next->next->next->next->next = head->next;
 
-    std::cout << "--------------" << std::endl;
-    // printList( head );
+
 
      std::cout << "Detecting and deleting loop\n";
-     dectectAndRemoveCycle(head);
+
+    
+    dectectAndRemoveCycle(head);
+
     std::cout << "Back to the same old list\n";
+
     printList( head );
+   
+
 }
