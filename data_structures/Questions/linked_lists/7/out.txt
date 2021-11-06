@@ -1,3 +1,0 @@
-List 1: 1-->2-->3-->9-->3-->2-->nullptr
-List 2: 12-->8-->9-->3-->2-->nullptr
-Intersecting Node of lists is : 9

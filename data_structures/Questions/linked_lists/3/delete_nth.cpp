@@ -39,7 +39,6 @@ void delete_at(Node* &head, int n)
     for (int i = 0; i < n-2; i++ )
     {
         temp1 = temp1->next;
-        std::cout << "TEMP1 Node is: " << temp1->data << std::cout;
     }
    
 
@@ -71,10 +70,12 @@ int main() {
   std::cout << "List: ";
   printList(head);
 
-  std::cout << "Delete at the 1st position" << std::endl;
+  std::cout << "Delete at the 3rd position" << std::endl;
 
   delete_at(head,3);
 
   std::cout << "List: " << std::endl;
   printList(head);
 }
+
+

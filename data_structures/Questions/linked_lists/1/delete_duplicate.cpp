@@ -30,12 +30,12 @@ void removeDuplicates( Node * head ) {
 		return;
 	}
     
-	Node * curr = head;
+	Node* curr = head;
 
 	while(curr) { 
     // While Current node exisit/not equal to NULL
 
-		Node * runner = curr;
+		Node* runner = curr;
 
 		while (runner->next != nullptr) {
 
@@ -54,9 +54,9 @@ void removeDuplicates( Node * head ) {
 }
 
 
-void print(Node * &head)
+void print(Node* &head)
 {
-    Node* temp = head; // ADddre of the head node
+    Node* temp = head; // Address of the head node
 
     cout << "List is: ";
     while(temp != NULL){
@@ -70,25 +70,26 @@ void print(Node * &head)
 int main(){
 
     Node* head = NULL;
-
+    cout << endl;
     for (int i = 0; i < 10; i++){
         Insert(head, i);
     }
+    
     Insert(head, 3);
     Insert(head, 6);
     Insert(head, 8);
     Insert(head, 1);
 
-    
     print(head);
    
     cout << endl;
 
-    // Lets remove any "Duplicates" using the function removed duplicates
     removeDuplicates(head);
 
     cout << "Linked List after Removal of Duplicates: " << endl;
     print(head);
 
-
+    cout << endl;
 }
+
+

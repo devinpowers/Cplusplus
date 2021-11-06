@@ -75,7 +75,7 @@ Node * kthToLastIterative( Node * head, int k ) {
 
 int main() {
 
-  Node * head = nullptr; // Starting Address
+  Node * head = nullptr;
 
   for ( int i = 9; i > 0; i-- ) {
     insert(head, i);
@@ -83,7 +83,7 @@ int main() {
   std::cout << "List: ";
   printList(head);
 
-  std::cout << "4th node from last (Iterative) : " << std::endl;
+  std::cout << "4th node from last (Iterative) : ";
   Node *node4 = kthToLastIterative(head, 4);
 
   if ( node4 != nullptr ) {
@@ -91,8 +91,6 @@ int main() {
   } else {
     std::cout << "NULL NODE\n";
   }
-  // deleteList(head);
-  std::cout << "List: ";
-  printList(head);
+
 }
 

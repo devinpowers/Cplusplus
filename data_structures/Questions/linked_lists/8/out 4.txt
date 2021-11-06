@@ -1,0 +1,16 @@
+Current List:
+1-->2-->3-->4-->5-->NULL
+Inserting loop, connecting 5 to 2..... 
+Detecting and deleting loop
+Current fastPtr is: 0x7ff1d2c059b0
+Current slowPtr is: 0x7ff1d2c059a0
+Current fastPtr is: 0x7ff1d2c05990
+Current slowPtr is: 0x7ff1d2c059b0
+Current fastPtr is: 0x7ff1d2c059b0
+Current slowPtr is: 0x7ff1d2c059c0
+Current fastPtr is: 0x7ff1d2c05990
+Current slowPtr is: 0x7ff1d2c05990
+Back to the same old list
+1-->2-->3-->4-->5-->NULL
+
+

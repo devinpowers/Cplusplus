@@ -39,19 +39,12 @@ void printList( Node * head ) {
 }
 
 
-Node * kthToLastHelper( Node * head, int k , int & i) {
+Node* kthToLastHelper( Node * head, int k , int & i) {
   if ( head == nullptr ) {
-    std::cout << "finish I believe? " << std::endl;
     return nullptr;
   }
-  std::cout << "recursive call again!" << std::endl;
 
-
-  Node * node = kthToLastHelper(head->next, k, i);
-  std::cout << "point " << std::endl;
-
-  std::cout << "i: " << i << std::endl;
-  std::cout << "k: " << i << std::endl;
+  Node* node = kthToLastHelper(head->next, k, i);
 
   i = i + 1;
 
@@ -63,7 +56,7 @@ Node * kthToLastHelper( Node * head, int k , int & i) {
   return node; // returns node to kthToLastRecursive
 }
 
-Node * kthToLastRecursive( Node * head, int k ) {
+Node* kthToLastRecursive( Node * head, int k ) {
   int i = 0;
   return kthToLastHelper(head, k, i);  // Recursive call
 }
@@ -88,8 +81,6 @@ int main() {
     std::cout << "NULL NODE\n";
   }
 
-  // deleteList(head);
-  std::cout << "List: ";
-  printList(head);
+
 
 }

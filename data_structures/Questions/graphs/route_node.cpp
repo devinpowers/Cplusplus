@@ -1,9 +1,16 @@
+/*
+	Search this Graph!
+
+*/
+
+
 #include <vector>
 #include <iostream>
 #include <queue>
 using namespace std;
 
 // Graph Class implementing a directed graph in adjacency list representation
+// easy
 class Graph
 {
 	public:
@@ -12,6 +19,9 @@ class Graph
 
 		Graph(int V);
 		void addEdge(int x, int y);
+
+
+
 		bool isRoute(int x, int y);
 };
 
@@ -75,8 +85,8 @@ int main(){
     5---->2---->3 
 
 */
-    cout<<g.isRoute(5,4)<<endl; // false
-    cout<<g.isRoute(5,1)<<endl; // true
+    cout<<g.isRoute(5,4)<<endl; // return false 
+    cout<<g.isRoute(5,1)<<endl; // return true
 
     return 0;
 }

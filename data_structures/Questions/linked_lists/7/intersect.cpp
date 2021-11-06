@@ -1,7 +1,7 @@
 /**
  * 
  * 
- * Find if two singly linked lists intersect
+ * Given two (singly) linked lists, find if two linked lists intersect and return the intersecting node.
  * They intersect if a value has the same node address 
  * Its all about the ADDRESS
  * Return Node address if they intersect
@@ -13,7 +13,7 @@
 struct Node {
   int data;
   Node * next;
-  Node( int d ) : data{ d }, next{ nullptr } { } // Constructor: Used in new keyword!
+  Node( int d ) : data{ d }, next{ nullptr } { }
 };
 
 
@@ -70,8 +70,6 @@ Node * IntersectionPoint(Node* head1, Node* head2){
 
 int main(){
 
-    // Create Lists
-    // List One
   Node * list1 = new Node(1);
   list1->next = new Node(2);
   list1->next->next = new Node(3);
@@ -82,7 +80,10 @@ int main(){
   // List Two
   Node * list2 = new Node(12);
   list2->next = new Node(8);
+  list2->next = new Node(19);
+
   list2->next->next = list1->next->next->next;
+
 
   std::cout << "List 1: ";
 
@@ -90,11 +91,10 @@ int main(){
   std::cout << "List 2: ";
   printList(list2);
   
-
-
-  Node * intersectingNode = IntersectionPoint( list1 , list2 );
+  Node * intersectingNode = IntersectionPoint( list1 , list2 );  // Here we have a return type Node
 
   if (intersectingNode) {
+  
     
     std::cout << "Intersecting Node of lists is : " << intersectingNode->data << std::endl;
   } else {
@@ -102,3 +102,7 @@ int main(){
     std::cout << "Lists do not interset" << std::endl;
   }
 }
+
+
+
+

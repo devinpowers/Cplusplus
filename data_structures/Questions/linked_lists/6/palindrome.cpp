@@ -63,11 +63,7 @@ void reverse( Node * &head ) {
 }
 
 
-/**
- * [isPallindromeIter1 - Iteratively determine if list is palindrome using reversing the list]
- * @param  head [Head node of the list]
- * @return      [True if list is palindrome, false if not]
- */
+
 bool isPalindromeIter1( Node * head ) {
 
   // if list is empty or just contains one node.
@@ -89,10 +85,11 @@ bool isPalindromeIter1( Node * head ) {
   if ( ptr1 && ptr1->next == nullptr ) {
     ptr2 = ptr2->next;
   }
-
-
   //reverse the second half of the list
   reverse(ptr2);
+
+  std::cout << "print second half of the list in reverse: " << std::endl;
+  printList(ptr2);
 
   middleNode = ptr2;
   // now compare the two halves
@@ -113,6 +110,8 @@ bool isPalindromeIter1( Node * head ) {
   }
 }
 
+
+
 int main()
 {
   Node * head1 = nullptr;
@@ -129,8 +128,8 @@ int main()
   } else {
     std::cout << "List 1 is not a pallindrome list\n";
   }
-  std::cout << "List 1: ";
-  printList(head1);
+
+  std::cout << std::endl;
 
   Node * head2 = nullptr;
   insert( head2, 'r');
@@ -138,6 +137,15 @@ int main()
   insert( head2, 'd');
   insert( head2, 'a');
   insert( head2, 'r');
+  insert( head2, 'e');
+ 
+
+  if ( isPalindromeIter1(head2) ) {
+    std::cout << "List 2 is pallindrome list\n";
+  } else {
+    std::cout << "List 2 is NOT a pallindrome list\n";
+  }
+
   std::cout << "List 2: ";
   printList(head2);
 
