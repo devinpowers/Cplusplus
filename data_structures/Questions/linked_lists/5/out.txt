@@ -1,13 +1,28 @@
 List1:  7-->1-->6-->nullptr
 List2:  5-->9-->2-->nullptr
+Value: 12
+Value now:  2
+Just inserted new value into our linked list number 3 
+TAIL IS EQAUL: 2-->nullptr
+
+Current Linked List 3 is: 
+2-->nullptr
+
+Value: 11
+Value now:  1
+Just inserted new value into our linked list number 3 
+TAIL IS EQAUL: 1-->nullptr
+
+Current Linked List 3 is: 
+2-->1-->nullptrclear
+
+
+Value: 9
+Just inserted new value into our linked list number 3 
+TAIL IS EQAUL: 9-->nullptr
+
+Current Linked List 3 is: 
+2-->1-->9-->nullptr
+
 Iterative Solution: 
 List3:  2-->1-->9-->nullptr
-Recursive Solution: 
-List4:  2-->1-->9-->nullptr
-
-
-Now follow up case, lists are stored such that 1's digit is at the tail of list
-List1:  9-->2-->3-->4-->nullptr
-List2:  8-->9-->9-->nullptr
-Adding two above lists
-List3:  1-->0-->1-->3-->3-->nullptr

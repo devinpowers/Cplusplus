@@ -11,27 +11,7 @@ struct Node{
 Node* head; // Global 
 Node* end; // Global
 
-void Insert(int x)
-{
-    Node* temp = new Node();
 
-    temp->data = x;
-    temp->next = NULL;
-
-    if (head == NULL)
-        head = temp;
-        end = temp;
-        return;
-    }
-    end->next=temp;
-    end = temp;
-
-
-}
-
-
-
-/*
 void Insert(int x) // Insert an integer at the end of list
 {
     Node* temp = new Node(); // Create New Node to Insert
@@ -40,9 +20,8 @@ void Insert(int x) // Insert an integer at the end of list
     temp->next = head;
     head = temp;
 
-
 }
-*/
+
 
 
 void Delete(int n) // Delete node at position n

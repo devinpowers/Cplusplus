@@ -58,13 +58,19 @@ Node * kthToLastIterative( Node * head, int k ) {
     ptr1 = ptr1->next; 
     ++i;
   }
+
+  std::cout << "PTR1 Data: " << ptr1->data << std::endl;
   // Out of Bounds
+
+  std::cout << "i: " << i << std::endl;
   if ( i < k ) {
     return nullptr;
   }
+
   while( ptr1 != nullptr ) {
     // move until ptr1 is at end
     // ptr2 will be in the correct position!
+    // So the logic is first move Pointer 1 up knth spots from Pointer 2. Then move both pointers up untill Pointer 1 equals NULL and is at the end, Then pointer 2 will be at our nth from last position
     ptr1 = ptr1->next;
     ptr2 = ptr2->next;
   }

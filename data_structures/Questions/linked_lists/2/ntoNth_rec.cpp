@@ -41,23 +41,30 @@ void printList( Node * head ) {
 
 Node* kthToLastHelper( Node * head, int k , int & i) {
   if ( head == nullptr ) {
+    std::cout << "HeAD" << std::endl;
     return nullptr;
   }
 
   Node* node = kthToLastHelper(head->next, k, i);
 
+  std::cout << "ADdding i " << std::endl;
+
   i = i + 1;
 
   //if we have solved problem k times from last.
   if ( i == k ) { // Exit condition!
+
+    std::cout << "LEAVING SHIT" << std::endl;
     return head;
   }
 
   return node; // returns node to kthToLastRecursive
+
 }
 
 Node* kthToLastRecursive( Node * head, int k ) {
   int i = 0;
+  std::cout << "i is: " << i << std::endl;
   return kthToLastHelper(head, k, i);  // Recursive call
 }
 
