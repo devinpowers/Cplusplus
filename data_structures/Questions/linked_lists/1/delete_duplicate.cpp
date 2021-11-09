@@ -7,6 +7,7 @@
 
 
 #include<iostream>
+
 using std::cout;
 using std::endl;
 
@@ -23,29 +24,25 @@ void Insert( Node * &head, int x){
     head = temp;
 }
 
-void removeDuplicates( Node * head ) {
+void removeDuplicates( Node* head ) {
 
 	if ( head == nullptr || ( head && (head->next == nullptr))) {
-    // || Refers to the "or" operator
 		return;
 	}
-    
+
 	Node* curr = head;
 
 	while(curr) { 
-    // While Current node exisit/not equal to NULL
 
 		Node* runner = curr;
 
 		while (runner->next != nullptr) {
 
 			if (runner->next->data == curr->data) {
-                cout << "Values  that duplicate: " << runner->next->data << endl;
-				runner->next = runner->next->next;  // set link and fix
-                cout << "Removing Duplicate which is: " << curr->data << endl;
+
+				runner->next = runner->next->next;  
 
 			} else {
-                // Else if
 				runner = runner->next;
 			}
 		}
@@ -71,19 +68,18 @@ int main(){
 
     Node* head = NULL;
     cout << endl;
-    for (int i = 0; i < 10; i++){
-        Insert(head, i);
-    }
+  
     
-    Insert(head, 3);
+    Insert(head, 9);
     Insert(head, 6);
-    Insert(head, 8);
-    Insert(head, 1);
+    Insert(head, 2);
+    Insert(head, 4);
+    Insert(head, 2);
 
     print(head);
    
     cout << endl;
-
+    
     removeDuplicates(head);
 
     cout << "Linked List after Removal of Duplicates: " << endl;

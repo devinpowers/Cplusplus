@@ -22,7 +22,8 @@ int main() {
             std::cout << ", min value: " << stack.min() << std::endl;
     }
 
-    std::cout << "HELLO WORLD  " << std::endl;
 }
+
+
 
 

@@ -36,19 +36,16 @@ void print(Node* &head){
 }
 
 int Sum(Node *head){
-    // Recursive
     if (head != NULL){
         return head->data + Sum(head->next);
     }
     else{
         return 0;
-    }
-   
+    } 
 }
 
 int SumIter(Node *head){
- //sum up values in linked list
- // iterative solution
+
     int sum = 0;
     while (head != NULL){
         sum+= head->data;
@@ -62,14 +59,14 @@ int main(){
 
     Node* head = NULL;
 
-    for (int i = 0; i < 10; i++){
-        Insert(head, i);
-    }
-    Insert(head, 3);
-    Insert(head, 6);
+    Insert(head, 10);
     Insert(head, 8);
-    Insert(head, 1);
-
+    Insert(head, 23);
+    Insert(head, 16);
+    Insert(head, 10);
+    Insert(head, 69);
+    Insert(head, 3);
+    Insert(head, 7);
 
     print(head);
     // Call Sum and print
@@ -79,3 +76,5 @@ int main(){
     cout << "Sum Recusive: ";
     cout << SumIter(head) << endl;
 }
+
+

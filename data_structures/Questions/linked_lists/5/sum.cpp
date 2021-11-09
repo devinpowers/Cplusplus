@@ -1,3 +1,5 @@
+
+
 #include <iostream>
 
 struct Node {
@@ -6,21 +8,14 @@ struct Node {
   Node ( int d ) : data{ d }, next{ nullptr } { }
 };
 
-/**
- * [insert - insert a new node at head of the list]
- * @param head [head of the list]
- * @param data [new node's data]
- */
+
 void insert( Node * & head, int data ) {
-  Node * newNode = new Node(data);
+  Node* newNode = new Node(data);
   newNode->next = head;
   head = newNode;
 }
 
-/**
- * [printList - print the list]
- * @param head [head of the list]
- */
+
 void printList( Node * head ) {
   while ( head ) {
     std::cout << head->data << "-->";
@@ -47,7 +42,9 @@ Node * add_iterative( Node * list1, Node * list2 ) {
   // for adding new nodes to tail of list3
   Node * list3Tail = nullptr;
 
-  int value = 0, carry = 0;  // 
+  int value = 0, carry = 0; 
+
+  int iter = 0;
 
   while( list1 || list2 ) {
     // add the values, if one of the list has already been traversed, add 0
@@ -68,6 +65,7 @@ Node * add_iterative( Node * list1, Node * list2 ) {
     if ( list3 == nullptr ) {
       // If first node in linked list 3 (sum of out 2 linked list)
       list3 = temp;
+      std::cout << "First Node in List 3 " << std::endl;
 
     } 
     else {
@@ -77,6 +75,18 @@ Node * add_iterative( Node * list1, Node * list2 ) {
   
     //make new tail
     list3Tail = temp;
+
+    iter++; // Up iteration
+
+    std::cout << "iteration: " << iter << std::endl;
+
+    std::cout << "List 3: ";
+    printList(list3);
+
+    std::cout << "List3Tail: ";
+    printList(list3Tail);
+
+    std::cout << std::endl;
   
 
     // go to next value(s) in our 2 linked list..return to top to evaluate again
@@ -127,6 +137,8 @@ int main()
   insert(list2, 5);
   std::cout << "List2:  ";
   printList(list2);
+
+  std::cout << std::endl;
 
   Node * list3 = add_iterative(list1, list2);
   std::cout << "Iterative Solution: \n";

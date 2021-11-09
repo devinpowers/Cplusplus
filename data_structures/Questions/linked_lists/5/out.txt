@@ -1,28 +1,28 @@
 List1:  7-->1-->6-->nullptr
 List2:  5-->9-->2-->nullptr
-Value: 12
-Value now:  2
-Just inserted new value into our linked list number 3 
-TAIL IS EQAUL: 2-->nullptr
 
-Current Linked List 3 is: 
-2-->nullptr
+First Node in List 3 
+iteration: 1
+List 3: 2-->nullptr
+List3Tail: 2-->nullptr
 
-Value: 11
-Value now:  1
-Just inserted new value into our linked list number 3 
-TAIL IS EQAUL: 1-->nullptr
+iteration: 2
+List 3: 2-->1-->nullptr
+List3Tail: 1-->nullptr
 
-Current Linked List 3 is: 
-2-->1-->nullptrclear
+iteration: 3
+List 3: 2-->1-->9-->nullptr
+List3Tail: 9-->nullptr
 
 
-Value: 9
-Just inserted new value into our linked list number 3 
-TAIL IS EQAUL: 9-->nullptr
 
-Current Linked List 3 is: 
-2-->1-->9-->nullptr
+
+
+
 
 Iterative Solution: 
 List3:  2-->1-->9-->nullptr
+
+nullptr
+nullptr
+2-->1-->9-->nullptr
