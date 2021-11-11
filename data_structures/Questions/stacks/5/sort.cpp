@@ -1,11 +1,14 @@
+
+/*
+    Main Sort Program that sorts shit
+*/
+
+
 #include <iostream>
 #include "SortStack.h"
 
-
-
 int main()
 {
-
     SortedStack<int> stack;
     for (auto v : {6,1,5,4,10,9,-1,69,420,0,-10,92,43})
     {
@@ -21,5 +24,6 @@ int main()
         auto v = stack.pop();
         std::cout << "Popped value: " << v << std::endl;
     }
- 
 }
+
+

@@ -2,6 +2,8 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::cin;
+using std::rand;
 
 void swap(int* a, int* b)
 {
@@ -65,14 +67,31 @@ void printArray(int arr[], int size)
 // Driver program to test above functions
 int main()
 {
-    int arr[] = {10, 7, 8, 9, 1, 5,89, 69, 23, 0, 4, 8, 2, 23, 100, 90, 43, 2, -2, -5, 9, 0, 8, 9, 10, 43};
+    // int arr[] = {10, 7, 8, 9, 1, 5,89, 69, 23, 0, 4, 8, 2, 23, 100, 90, 43, 2, -2, -5, 9, 0, 8, 9, 10, 43};
 
-    int n = sizeof(arr)/sizeof(arr[0]);
-    printf("Quick Sort before Sorted:\n ");
-    printArray(arr,n);
-    quickSort(arr, 0, n-1);
-    printf("Sorted array: \n");
-    printArray(arr, n);
-    return 0;
+   // int n = sizeof(arr)/sizeof(arr[0]);
+
+    int sz;
+   cout<<"Enter the size of array::";
+   cin>>sz;
+   int arr[sz];
+   for(int i=0;i<sz;i++)
+   {
+       arr[i]=rand()%100;  //Generate number between 0 to 99
+
+   }
+      
+
+    cout << "Unsorted array: ";
+
+    printArray(arr,sz);
+        cout << endl;
+
+    cout << "Performing Quick Sort on our Random Array! " << endl;
+
+    quickSort(arr, 0, sz-1);
+    cout << "Sorted array: ";
+
+    printArray(arr, sz);
 }
 

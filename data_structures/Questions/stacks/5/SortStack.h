@@ -77,7 +77,7 @@ class SortedStack
             return stack.isEmpty(); // Return True or False
         }
 
-
 };
+
 
 

@@ -17,6 +17,7 @@ class StackMin{
     
         void push(T value){
             if (minStack.isEmpty() || value <= minStack.peek()){
+                std::cout << "Pushing on Min " << std::endl;
                 minStack.push(value);
             }
             stack.push(value);

@@ -1,10 +1,8 @@
 /*
 
-Stack Implemented with Templated
+Templated stack Implemented
+
 */
-
-
-#include <utility>
 
 template <typename T>
 class Stack
@@ -39,7 +37,9 @@ class Stack
             T& peek()
             {   
                 if (!top)
+                {
                     throw StackIsEmptyException();
+                }
                 return top->value; 
             }
 
@@ -54,7 +54,7 @@ class Stack
                     auto value = top->value;
                     auto n = top;
                     top = n->next; 
-                    delete n;
+                    delete n; // Delete Node
                     --stackSize;
                     return value;
                 }
@@ -70,7 +70,7 @@ class Stack
                 return stackSize;
             }
 
-            class StackIsEmptyException{};
+            class StackIsEmptyException{}; // throw Error
     
 };
 
