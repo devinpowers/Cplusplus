@@ -62,8 +62,8 @@ int main()
 
    // translate ( oneEditAway("pales", "pale"), "pales", "pale" );
 
-    // translate ( oneEditAway("pale", "pales"), "pale", "pales" );
-    // translate ( oneEditAway("pale", "bale"), "pale", "bale" );
-    // translate ( oneEditAway("pale", "bake"), "pale", "bake" );
+    translate ( oneEditAway("pale", "pales"), "pale", "pales" );
+    translate ( oneEditAway("pale", "bale"), "pale", "bale" );
+    translate ( oneEditAway("pale", "bake"), "pale", "bake" );
 
 }

@@ -5,8 +5,6 @@ Stack Implemented with Templated
 */
 
 
-#include <utility>
-
 template <typename T>
 class Stack
     {
@@ -30,9 +28,9 @@ class Stack
                     pop();
             }
             
-            void push(T value) {       // Why the U and the &&
-                auto n = new Node(value, top); // new keyword to insert a new node into our Stack
-                top = n; // pass address to top of the stack
+            void push(T value) {       
+                auto n = new Node(value, top); 
+                top = n; 
                 ++stackSize;
             }
           

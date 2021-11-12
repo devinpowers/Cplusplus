@@ -7,7 +7,7 @@
 int main() {
 
     StackMin<int> stack;
-    for (auto v : {5, 10, 4, 9, 3, 3, 8, 2, 2, 7, 6,1,-9,100,23,69,69,69,-100,2,3,51,4234,1})
+    for (auto v : {2,1,-10,8,3})
     {
         stack.push(v);
         std::cout << "Pushed value: " << v << ", min value: " << stack.min() << std::endl;

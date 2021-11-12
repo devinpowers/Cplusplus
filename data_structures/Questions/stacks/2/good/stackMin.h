@@ -1,6 +1,9 @@
 /*
 Stack Min
 
+How would you design a stack which, in addition to push and pop, has function min which the minimum element?
+Push, pop and min should all operate in O(1) time.
+
 */
 
 #include <iostream>
@@ -17,7 +20,7 @@ class StackMin{
     
         void push(T value){
             if (minStack.isEmpty() || value <= minStack.peek()){
-                std::cout << "Pushing on Min " << std::endl;
+                std::cout << "Pushing " << value << " on Min ! " << std::endl;
                 minStack.push(value);
             }
             stack.push(value);
@@ -31,6 +34,8 @@ class StackMin{
             return minStack.peek();
         }
         T pop(){
+            // Pop from minstack as well if needed!
+    
             auto value = stack.pop();
             if (value == min() ){
                 minStack.pop();

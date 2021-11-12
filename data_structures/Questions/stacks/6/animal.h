@@ -121,6 +121,7 @@ class Shelter
         size_t nextOrderNo;
 };
 
+/*
 int main()
 {
     Shelter shelter;
@@ -146,3 +147,4 @@ int main()
     std::cout << "any --> " << shelter.dequeueAny()->getName() << std::endl;
     return 0;
 }
+*/

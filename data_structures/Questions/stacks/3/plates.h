@@ -5,6 +5,7 @@
 
     Build off of the stack.h structure
 
+    templated size_t Capacity
 */
 
 #include <iostream>
@@ -14,7 +15,7 @@ template <typename T, size_t Capacity>
 class SetOfStacks
 {
     private:
-        Stack<Stack<T>> stacks; 
+        Stack<Stack<T>> stacks;  // Stack of Stacks
 
     public:
         
