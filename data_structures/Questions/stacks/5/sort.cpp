@@ -10,7 +10,7 @@
 int main()
 {
     SortedStack<int> stack;
-    for (auto v : {6,1,5,4,10,9,-1,69,420,0,-10,92,43})
+    for (auto v : {4,-3,0,19,24,10})
     {
         stack.push(v);
         std::cout << "Pushed value: " << v << std::endl;

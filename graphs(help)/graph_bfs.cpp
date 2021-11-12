@@ -1,3 +1,10 @@
+/*	
+	File: Breadth-First Search of a Graph using an Adjency List
+	Author: Devin Powers
+	Date: 11-11-2021
+*/
+
+
 #include<iostream>
 #include<map>
 #include<list>

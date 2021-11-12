@@ -19,9 +19,7 @@ class Animal
         }
 
     public:
-        virtual ~Animal()
-        {
-        }
+        virtual ~Animal() {}
 
         void setOrder(size_t order)
         {

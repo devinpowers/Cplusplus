@@ -32,9 +32,11 @@ class SortedStack
 
                 while (!helper.isEmpty() && value < helper.peek())
                 {
+                    std::cout << "Value: " << value << std::endl;
                     stack.push(helper.pop());
                 }
                 // Place 'value' above smaller element into 'helper'
+                
                 helper.push(value);
             }
 
@@ -74,6 +76,7 @@ class SortedStack
 
         bool isEmpty() const
         {
+            // stack.push(3);
             return stack.isEmpty(); // Return True or False
         }
 

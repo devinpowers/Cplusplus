@@ -35,36 +35,6 @@ Node* Insert(Node *root,int data) {
 	return root;  // Return Root Address
 }
 
-
-int findMaxUtil(Node* root, int &res){
-
-	// Base Case 
-	if (root == NULL){
-		return 0;
-	}
-
-	// Recusive
-	int l = findMaxUtil(root->left, res);
-	int r = findMaxUtil(root->right, res);
-
-	// Max path 
-	int max_single = fmax(fmax(0,r) + root->data, root->data );
-
-	int max_top = fmax(max_single, 0 + r + root->data);
-
-	res = fmax(res, max_top);
-	
-	return max_single;
-}
-
-int findMaxSum(Node* root){
-	int res = INT_MIN;
-
-	findMaxUtil(root, res);
-	return res;
-}
-
-
 void printLevelOrder(Node *root)
 {
     if (root == NULL)
@@ -106,6 +76,9 @@ void printLevelOrder(Node *root)
 	cout << "Count number of depths: " << count_depth << endl;
 }
 
+
+
+
 int main() {
 
 	Node* root = NULL;
@@ -125,7 +98,4 @@ int main() {
 	
 
 
-	cout << findMaxSum(root) << endl;
-
 }
-

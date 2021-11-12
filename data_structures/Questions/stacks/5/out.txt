@@ -1,13 +1,26 @@
-cPushed value: 6
-Pushed value: 1
-Pushed value: 5
 Pushed value: 4
+Pushed value: -3
+Pushed value: 0
+Pushed value: 19
+Pushed value: 24
+Pushed value: 9
 
 Sorted Stack after sorting! 
 
-value < helper 1
-value < helper 1
-Popped value: 1
+Value: 19
+Value: 0
+Value: 0
+Value: 0
+Value: -3
+Value: -3
+Value: -3
+Value: -3
+Value: 4
+Value: 4
+Value: 4
+Popped value: -3
+Popped value: 0
 Popped value: 4
-Popped value: 5
-Popped value: 6
+Popped value: 9
+Popped value: 19
+Popped value: 24
