@@ -15,56 +15,57 @@ using namespace std;
 template<typename T>
 class Graph{
 
-	map<T,list<T> > adjList;
+	protected:
+		map<T,list<T> > adjList;
 
-public:
-	Graph(){}
+	public:
+		Graph(){}
 
-	void addEdge(T u, T v,bool bidir=true){
+		void addEdge(T u, T v,bool bidir=true){
 
-		adjList[u].push_back(v);
-		if(bidir){
-			adjList[v].push_back(u);
-		}
-	}
-
-	void print(){
-
-		for(auto i : adjList){
-			cout << i.first<<"->";
-
-			for(T entry : i.second){
-				cout<< entry <<",";
+			adjList[u].push_back(v);
+			if(bidir){
+				adjList[v].push_back(u);
 			}
-			cout<<endl;
 		}
-	}
-	
-	void bfs(T src){
+
+		void print(){
+
+			for(auto i : adjList){
+				cout << i.first<<"->";
+
+				for(T entry : i.second){
+					cout<< entry <<",";
+				}
+				cout<<endl;
+			}
+		}
 		
-		queue<T> q; 
+		void bfs(T src){
+			
+			queue<T> q; 
 
-		map<T,bool> visited; 
+			map<T,bool> visited; 
 
-		q.push(src);		 
-		visited[src] = true;
+			q.push(src);		 
+			visited[src] = true;
 
-		while(!q.empty()){
+			while(!q.empty()){
 
-			T node = q.front(); 
-			cout << node << " " << endl;
-			q.pop(); 
+				T node = q.front(); 
+				cout << node << " " << endl;
+				q.pop(); 
 
-			for(int neigbour : adjList[node]){
+				for(int neigbour : adjList[node]){
 
-				if(!visited[neigbour]){
+					if(!visited[neigbour]){
 
-					q.push(neigbour);
-					visited[neigbour] = true;
+						q.push(neigbour);
+						visited[neigbour] = true;
+					}
 				}
 			}
 		}
-	}
 };
 
 
@@ -94,6 +95,8 @@ int main(){
 	g.bfs(8);
 
 	cout << endl;
+
+	cout << "END Line" << endl;
 
 
 }
