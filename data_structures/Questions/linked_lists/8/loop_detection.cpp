@@ -5,6 +5,7 @@
 
 
 #include <iostream>
+#include <string>
 
 struct Node {
   int data;
@@ -71,8 +72,6 @@ bool dectectAndRemoveCycle(Node* head){
 
     while (slowPtr && fastPtr && fastPtr->next){
 
-
-
         fastPtr = fastPtr->next->next;
         slowPtr = slowPtr->next;
 
@@ -105,9 +104,16 @@ int main()
 
     printList( head );
 
+    
+
     std::cout << "Inserting loop, connecting 5 to 2..... \n";
+    
 
     head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
+
+    // printList( head );
+
+    
     
     std::cout << "Detecting and deleting loop\n";
 
@@ -116,6 +122,9 @@ int main()
     std::cout << "Back to the same old list\n";
 
     printList( head );
+
+  
+
 }
 
 

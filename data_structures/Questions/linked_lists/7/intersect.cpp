@@ -37,6 +37,7 @@ int listlength(Node* head){
     return count;
 }
 
+/*
 Node * IntersectionPoint(Node* head1, Node* head2){
     // find length of both linked lists
     int len1 = listlength(head1);
@@ -68,6 +69,9 @@ Node * IntersectionPoint(Node* head1, Node* head2){
     return NULL;
 }
 
+*/
+
+
 int main(){
 
   Node * list1 = new Node(1);
@@ -91,6 +95,7 @@ int main(){
   std::cout << "List 2: ";
   printList(list2);
   
+  /*
   Node * intersectingNode = IntersectionPoint( list1 , list2 );  // Here we have a return type Node
 
   if (intersectingNode) {
@@ -101,6 +106,8 @@ int main(){
 
     std::cout << "Lists do not interset" << std::endl;
   }
+  */
+ 
 }
 
 
