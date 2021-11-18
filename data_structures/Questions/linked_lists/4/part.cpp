@@ -66,17 +66,19 @@ Node * partition( Node * listhead , int x ) {
 
 int main() {
   Node * head = nullptr;
-  insert(head, 1);
-  insert(head, 2);
   insert(head, 10);
-  insert(head, 5);
-  insert(head, 8);
-  // insert(head, 5);
   insert(head, 4);
+  insert(head, 20);
+  insert(head, 3);
+  insert(head, 10);
+
+
   
-  std::cout << "List before partition around 4:\n";
+  std::cout << "List before partition around 3\n";
   printList(head);
-  std::cout << "List after partition around 4:\n";
-  printList(partition(head, 2));
+  std::cout << "List after partition around 3:\n";
+  printList(partition(head, 3));
+
+  // ok 
 
 }

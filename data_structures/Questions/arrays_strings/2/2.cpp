@@ -4,7 +4,6 @@
 
 */
 
-
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -56,7 +55,7 @@ int main()
     cout << "Example Three: ";
     cout << boolalpha << check_strings(five, six) << endl;
 
-    cout << "___________________________________" << endl;
+   // cout << "___________________________________" << endl;
     string seven, eight;
 
     seven = "devin";
@@ -64,7 +63,5 @@ int main()
 
     cout << "Example Four: ";
     cout << boolalpha << check_strings(seven, eight) << endl;
-
-
-
 }
+

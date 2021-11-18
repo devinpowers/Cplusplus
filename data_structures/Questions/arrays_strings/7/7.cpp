@@ -1,16 +1,16 @@
+
+
 #include <string>
 #include <vector>
 #include <iostream>
-#include <bitset>
-using namespace std;
 
-bool isUniqueChars(const string &str){
+bool isUniqueChars(const std::string &str){
 
 		if (str.length() > 128){
 			return false;
 		}
 
-		vector<bool> char_set(128);
+		std::vector<bool> char_set(128);
         
 		for (int i = 0; i < str.length(); i++){
 			int val = str[i];
@@ -25,11 +25,10 @@ bool isUniqueChars(const string &str){
 
 
 int main(){
-		vector<string> words = {"abcde", "hello", "apple", "kite", "padle"};
+		std::vector<std::string> words = {"abcde", "hello", "apple", "kite", "padle"};
 		for (auto word : words)
 		{
-			cout << word << string(": ") << boolalpha << isUniqueChars(word) <<endl;
+			std::cout << word << std::string(": ") << std::boolalpha << isUniqueChars(word) << std::endl;
 		}
-	
 }
 
