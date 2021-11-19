@@ -50,7 +50,7 @@ void removeLoop(Node* loopNode, Node* head){
 
 
     std::cout << "loopNode:   " << loopNode->next << std::endl;
-      std::cout << "loopNode Value:   " << loopNode->data << std::endl;
+    std::cout << "loopNode Value:   " << loopNode->data << std::endl;
 
 
     while(ptr1->next != ptr2->next){
@@ -94,7 +94,7 @@ bool dectectAndRemoveCycle(Node* head){
 
 int main()
 {
-    Node * head = nullptr;
+    Node* head = nullptr;
     insert( head , 1 );
     insert( head , 2 );
     insert( head , 3 );
@@ -105,13 +105,13 @@ int main()
     printList( head );
 
     
-
+  
     std::cout << "Inserting loop, connecting 5 to 2..... \n";
     
 
     head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
-    // printList( head );
+   // printList( head );
 
     
     
@@ -119,9 +119,12 @@ int main()
 
     dectectAndRemoveCycle(head);
 
+
     std::cout << "Back to the same old list\n";
 
     printList( head );
+    
+
 
   
 
