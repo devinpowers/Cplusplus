@@ -97,7 +97,5 @@ int main(){
 
 	cout << endl;
 
-	cout << "END Line" << endl;
 
-	cout << "EXecuting SHit " << endl;
 }

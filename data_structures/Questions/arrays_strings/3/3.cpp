@@ -43,11 +43,16 @@ string change_string(string str, int length_str)
 
 
 int main(){
+        cout << endl;
         string phrase = "Mr John Smith";
         int true_len1 = 13;
+        cout << "Before URLifying String: " << phrase << endl;
+
         cout << change_string(phrase, true_len1) << endl;
         int true_len2 = 19;
 
         string phrase2 = "Mr. Devin J. Powers";
+        cout << "Before URLifying String: " << phrase2 << endl;
         cout << change_string(phrase2,true_len2) << endl;
+        cout << endl;
  }

@@ -1,6 +1,9 @@
 /*
     Detect a Loop in a Linked list, Remove the "loop"
     Question Number 8 of linked lists in Crack the interview
+
+    Given a Circular Linked List, implement an algorithm that returns the node at the beginning of the loop.
+
 */
 
 
@@ -30,6 +33,7 @@ void insert( Node * & head, int data )
 }
 
 void printList( Node* head )
+
 {
   while( head ) {
     std::cout << head->data << "-->";
@@ -44,13 +48,13 @@ void removeLoop(Node* loopNode, Node* head){
     Node *ptr1 = head;
     Node *ptr2 = loopNode;
 
-    //std::cout << "ptr1->next: " << ptr1->next << std::endl;
-      //std::cout << "ptr1->next Value: " << ptr1->data << std::endl;
+    std::cout << "ptr1->next: " << ptr1->next << std::endl;
+     std::cout << "ptr1->next Value: " << ptr1->data << std::endl;
 
 
 
-    //std::cout << "loopNode:   " << loopNode->next << std::endl;
-    //std::cout << "loopNode Value:   " << loopNode->data << std::endl;
+    std::cout << "loopNode:   " << loopNode->next << std::endl;
+    std::cout << "loopNode Value:   " << loopNode->data << std::endl;
 
 
     while(ptr1->next != ptr2->next){
@@ -92,8 +96,7 @@ bool dectectAndRemoveCycle(Node* head){
 
 
 
-int main()
-{
+int main() {
     Node* head = nullptr;
     insert( head , 1 );
     insert( head , 2 );
@@ -101,26 +104,24 @@ int main()
     insert( head , 4 );
     insert( head , 5 );
     std::cout << "Current List:\n";
-
-    printList( head );
-
-    
+   printList( head );
   
    std::cout << "Inserting loop, connecting 5 to 2..... \n";
     
-
    head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
-   // printList( head );
+//  printList( head );
+
+
+   /*
     std::cout << "Detecting and deleting loop\n";
 
     dectectAndRemoveCycle(head);
 
-
     std::cout << "Back to the same old list\n";
 
     printList( head );
-  
+    */
 
 }
 
