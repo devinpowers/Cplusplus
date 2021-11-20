@@ -44,13 +44,13 @@ void removeLoop(Node* loopNode, Node* head){
     Node *ptr1 = head;
     Node *ptr2 = loopNode;
 
-    std::cout << "ptr1->next: " << ptr1->next << std::endl;
-      std::cout << "ptr1->next Value: " << ptr1->data << std::endl;
+    //std::cout << "ptr1->next: " << ptr1->next << std::endl;
+      //std::cout << "ptr1->next Value: " << ptr1->data << std::endl;
 
 
 
-    std::cout << "loopNode:   " << loopNode->next << std::endl;
-    std::cout << "loopNode Value:   " << loopNode->data << std::endl;
+    //std::cout << "loopNode:   " << loopNode->next << std::endl;
+    //std::cout << "loopNode Value:   " << loopNode->data << std::endl;
 
 
     while(ptr1->next != ptr2->next){
@@ -75,8 +75,8 @@ bool dectectAndRemoveCycle(Node* head){
         fastPtr = fastPtr->next->next;
         slowPtr = slowPtr->next;
 
-        std::cout << "Current fastPtr is: " << fastPtr->next << std::endl;
-        std::cout << "Current slowPtr is: " << slowPtr->next << std::endl;
+     //  std::cout << "Current fastPtr is: " << fastPtr->next << std::endl;
+       //  std::cout << "Current slowPtr is: " << slowPtr->next << std::endl;
 
         if (fastPtr == slowPtr)
         {
@@ -106,15 +106,12 @@ int main()
 
     
   
-    std::cout << "Inserting loop, connecting 5 to 2..... \n";
+   std::cout << "Inserting loop, connecting 5 to 2..... \n";
     
 
-    head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
+   head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
    // printList( head );
-
-    
-    
     std::cout << "Detecting and deleting loop\n";
 
     dectectAndRemoveCycle(head);
@@ -123,9 +120,6 @@ int main()
     std::cout << "Back to the same old list\n";
 
     printList( head );
-    
-
-
   
 
 }
