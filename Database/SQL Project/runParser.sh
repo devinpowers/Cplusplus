@@ -1,17 +1,9 @@
-JSON_DIR="./ebay_data"
-SCRIPT_PATH="./parser.py"
-CATEGORY_TB="./Categories.dat"
-ITEMS_TB="./Items.dat"
-BIDS_TB="./Bids.dat"
-USERS_TB="./EbayUsers.dat"
-rm -f $CATEGORY_TB
-rm -f $ITEMS_TB
-rm -f $BIDS_TB
-rm -f $USERS_TB
-for i in $(ls $JSON_DIR); do
-  python $SCRIPT_PATH $JSON_DIR/$i
-done
-sort -u $CATEGORY_TB -o $CATEGORY_TB
-sort -u $ITEMS_TB -o $ITEMS_TB
-sort -u $BIDS_TB -o $BIDS_TB
-sort -u $USERS_TB -o $USERS_TB
+rm *.dat
+python parser.py ebay_data/items-*.json
+sort -t '|' -u -k 1,1 items.dat | uniq > itemsOut.dat
+sort -t '|' -k 1,1 users.dat | uniq | awk -F "|" '{if ($1 != prev){print $0}; prev=$1}' > usersOut.dat
+sort bids.dat | uniq > bidsOut.dat
+sort categories.dat | uniq > categoriesOut.dat
+
+
+

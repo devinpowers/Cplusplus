@@ -2,9 +2,6 @@
 """
 FILE: skeleton_parser.py
 ------------------
-Author: Firas Abuzaid (fabuzaid@stanford.edu)
-Author: Perth Charernwattanagul (puch@stanford.edu)
-Modified: 04/21/2014
 
 Skeleton parser for CS564 programming project 1. Has useful imports and
 functions for parsing, including:
