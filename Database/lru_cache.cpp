@@ -1,11 +1,12 @@
 #include <iostream>
 #include <map>
 using namespace std;
+
 class Node {
-  public:
-  int key, value;
-  Node *prev, *next;
-  Node(int k, int v): key(k), value(v), prev(NULL), next(NULL) {}
+    public:
+        int key, value;
+        Node *prev, *next;
+        Node(int k, int v): key(k), value(v), prev(NULL), next(NULL) {}
 };
 
 class DoublyLinkedList {
