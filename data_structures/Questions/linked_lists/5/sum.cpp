@@ -28,8 +28,6 @@ void printList( Node * head ) {
   std::cout << "nullptr" << std::endl;
 }
 
-
-
 Node * add_iterative( Node * list1, Node * list2 ) {
   // iterative solution to adding two linked list together
 
@@ -102,8 +100,6 @@ Node * add_iterative( Node * list1, Node * list2 ) {
       list2 = list2->next;
     }
   }
-
-
 
   if ( carry > 0 ) {
     list3Tail->next = new Node(carry);
