@@ -68,7 +68,7 @@ void LRUCache::display()
          it++)
         cout << (*it) << " ";
  
-    cout << endl;
+    cout << endl;  
 }
  
 // Driver Code

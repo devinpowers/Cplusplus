@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <map>
 using namespace std;
@@ -17,20 +18,20 @@ class DoublyLinkedList {
   }
 
   public:
-  DoublyLinkedList(): front(NULL), rear(NULL) {}
-  
-  Node* add_page_to_head(int key, int value) {
-      Node *page = new Node(key, value);
-      if(!front && !rear) {
-          front = rear = page;
-      }
-      else {
-          page->next = front;
-          front->prev = page;
-          front = page;
-      }
-      return page;
-  }
+    DoublyLinkedList(): front(NULL), rear(NULL) {}
+    
+    Node* add_page_to_head(int key, int value) {
+        Node *page = new Node(key, value);
+        if(!front && !rear) {
+            front = rear = page;
+        }
+        else {
+            page->next = front;
+            front->prev = page;
+            front = page;
+        }
+        return page;
+    }
 
   void move_page_to_head(Node *page) {
       if(page==front) {
@@ -73,6 +74,7 @@ class DoublyLinkedList {
 };
 
 class LRUCache{
+    
   int capacity, size;
   DoublyLinkedList *pageList;
   map<int, Node*> pageMap;
