@@ -12,12 +12,12 @@ https://www.geeksforgeeks.org/lru-cache-implementation/
 using namespace std;
  
 class LRUCache {
-    // store keys of cache
-    list<int> dq;
+    
+  protected:
 
-    // store references of key in cache
-    unordered_map<int, list<int>::iterator> ma;
-    int csize; // maximum capacity of cache
+    list<int> dq;
+    unordered_map<int, list<int>::iterator> map_;
+    int csize; 
  
   public:
       LRUCache(int);
@@ -25,66 +25,76 @@ class LRUCache {
       void display();
 };
  
-// Declare the size
+
 LRUCache::LRUCache(int n)
 {
     csize = n;
 }
  
-// Refers key x with in the LRU cache
 void LRUCache::refer(int x)
 {
-    // not present in cache
-    if (ma.find(x) == ma.end()) {
-        // cache is full
+    if (map_.find(x) == map_.end()) {
+        // Not in Map yet (AKA not in our Deque)
+        cout << "YES" << endl;
         if (dq.size() == csize) {
-            // delete least recently used element
+            // if full, delete least recently used element
             int last = dq.back();
- 
-            // Pops the last element
+            cout << "Last: " << last << endl;
+            
             dq.pop_back();
- 
-            // Erase the last
-            ma.erase(last);
+            map_.erase(last);
         }
     }
- 
-    // present in cache
-    else
-        dq.erase(ma[x]);
- 
-    // update reference
-    dq.push_front(x);
-    ma[x] = dq.begin();
+    else{
+        dq.erase(map_[x]);
+    }
+        
+    dq.push_front(x); // add to the front
+    map_[x] = dq.begin(); 
 }
- 
-// Function to display contents of cache
+
 void LRUCache::display()
-{
- 
-    // Iterate in the deque and print
-    // all the elements in it
-    for (auto it = dq.begin(); it != dq.end();
-         it++)
+{   
+    for (auto it = dq.begin(); it != dq.end(); it++)
+    {
         cout << (*it) << " ";
+    }
  
     cout << endl;  
 }
  
-// Driver Code
+
 int main()
 {
-    LRUCache ca(4);
+    LRUCache cac(4);
  
-    ca.refer(1);
-    ca.refer(2);
-    ca.refer(3);
-    ca.refer(1);
-    ca.refer(4);
-    ca.refer(5);
-    ca.display();
- 
-    return 0;
+    cac.refer(1);
+    cac.refer(2);
+    cac.refer(3);
+    cout << "Cache: ";
+    cac.display();
+    cac.refer(1); // 1 is already in our LRU
+    cout << "Cache: ";
+    cac.display();
+    cout << "The Cache Will be full now"<< endl;
+    cac.refer(4);
+    cout << "Cache: ";
+    cac.display();
+    cac.refer(5);
+    cout << "Cache: ";
+    cac.display();
+    cac.refer(9);
+    cout << "Cache: ";
+    cac.display();
+    cac.refer(7);
+    cout << "Cache: ";
+    cac.display();
+    cac.refer(4);
+    cout << "Cache: ";
+    cac.display();
 }
+
+
+
 
 
