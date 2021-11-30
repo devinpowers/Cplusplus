@@ -14,7 +14,6 @@ using namespace std;
 class LRUCache {
     
   protected:
-
     list<int> dq;
     unordered_map<int, list<int>::iterator> map_;
     int csize; 
