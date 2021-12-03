@@ -2,8 +2,9 @@
 #include<map>
 #include<list>
 #include<queue>
-using namespace std;
 
+#include <string>
+using namespace std;
 
 template<typename T>
 class Graph{
@@ -89,7 +90,31 @@ int main(){
 	g.bfs(0);
 	*/
 
+	
+
+	/*
+	Graph<char> g;
+	g.addEdge('A','B');
+	g.addEdge('B','C');
+	g.addEdge('A','E');
+	g.addEdge('C','E');
+	g.addEdge('C','D');
+	g.addEdge('D','F');
 	cout << endl;
+	*/
+
+	/*
+	Graph<string> g;
+	g.addEdge("DE", "DB");
+	g.addEdge("DB", "AC");
+	g.addEdge("AC", "FN");
+	g.addEdge("FN", "HI");
+	
+	*/
+
+
+	
+	
 	Graph<char> g;
 	g.addEdge('A','B');
 	g.addEdge('B','C');
@@ -98,7 +123,21 @@ int main(){
 	g.addEdge('C','D');
 	g.addEdge('D','F');
 	g.addEdge('D','E');
+
+	g.addEdge('F','G');
+	g.addEdge('G','H');
+	g.addEdge('H','I');
+	g.addEdge('I','K');
+
+	g.addEdge('K','J');
+	g.addEdge('K','O');
+	g.addEdge('K','L');
+	g.addEdge('L','M');
+	g.addEdge('O','M');
+
 	g.bfs('A');
+	
+
 
 	cout << endl;
 }

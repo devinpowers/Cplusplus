@@ -7,6 +7,7 @@ int MAX = 3;
  
 // BP node
 class Node {
+
     bool IS_LEAF;
     int *key, size;
     Node** ptr;
@@ -19,9 +20,7 @@ public:
 // BP tree
 class BPTree {
     Node* root;
-    void insertInternal(int,
-                        Node*,
-                        Node*);
+    void insertInternal(int, Node*, Node*);
     Node* findParent(Node*, Node*);
  
 public:
@@ -447,6 +446,22 @@ Node* BPTree::findParent(Node* cursor,  Node* child)
     // Return parent node
     return parent;
 }
+
+
+// Display the Tree
+void BPTree::display(Node *cursor) {
+  if (cursor != NULL) {
+    for (int i = 0; i < cursor->size; i++) {
+      cout << cursor->key[i] << " ";
+    }
+    cout << "\n";
+    if (cursor->IS_LEAF != true) {
+      for (int i = 0; i < cursor->size + 1; i++) {
+        display(cursor->ptr[i]);
+      }
+    }
+  }
+}
  
 // Function to get the root Node
 Node* BPTree::getRoot()
@@ -460,19 +475,39 @@ int main()
     BPTree node;
  
     // Create B+ Tree
-    node.insert(6);
-    node.insert(16);
-    node.insert(26);
-    node.insert(36);
-    node.insert(46);
- 
-    // Function Call to search node
-    // with value 16
-    node.search(16);
+    node.insert(5);
+    node.display(node.getRoot());
+        cout << endl;
 
-	// Search for a fake value
-	node.search(69);
+    node.insert(15);
+    node.display(node.getRoot());
+    cout << endl;
+
+    node.insert(25);
+    node.display(node.getRoot());
+        cout << endl;
+
+
+    node.insert(35);
+    node.display(node.getRoot());
+        cout << endl;
+
+
+    node.insert(45);
+    node.display(node.getRoot());
+        cout << endl;
+
+
+
+   //  node.insert(55);
+
+   // node.insert(40);
+    // node.insert(30);
+   // node.insert(20);
+
  
-    return 0;
+  //  node.display(node.getRoot());
+      cout << endl;
+
 }
 
