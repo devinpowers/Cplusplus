@@ -12,8 +12,9 @@ class Graph{
 	map<T,list<T> > adjList;
 
 public:
-	Graph(){}
+	Graph(){
 
+	}
 	void addEdge(T u, T v,bool bidir=true){
 
 		adjList[u].push_back(v);
@@ -102,7 +103,7 @@ int main(){
 	cout << endl;
 	*/
 
-	
+	/*
 	Graph<string> g;
 	g.addEdge("DE", "DB");
 	g.addEdge("DB", "AC");
@@ -110,11 +111,8 @@ int main(){
 	g.addEdge("FN", "HI");
 	g.bfs("DB");
 
-	g.print();
+	*/
 
-	
-
-	/*
 
 	Graph<char> g;
 	g.addEdge('A','B');
@@ -137,9 +135,6 @@ int main(){
 	g.addEdge('O','M');
 
 	g.bfs('A');
-
-	*/
-
 
 
 	cout << endl;
