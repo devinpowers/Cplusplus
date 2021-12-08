@@ -1,8 +1,2 @@
-
-Dist of A from A is 0
-Dist of B from A is 1
-Dist of C from A is 2
-Dist of D from A is 2
-Dist of E from A is 1
-Dist of F from A is 3
-
+Amritsar Jaipur Delhi Bhopal Mumbai Bangalore Agra 
+Andaman Nicobar The current graph had 2 components
