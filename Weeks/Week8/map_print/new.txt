@@ -1,0 +1,2 @@
+
+The value of the sd.end() is the highest possible length in my data structure sd. What's important is that sd.find(server_name) will send the exact position that sd.end() when it doesn't find the server is which is why ( found != sd.end() )

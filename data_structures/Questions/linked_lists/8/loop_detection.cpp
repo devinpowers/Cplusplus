@@ -12,28 +12,28 @@
 
 struct Node {
   int data;
-  Node * next;
+  Node *next;
   Node( int d ) : data{ d }, next{ nullptr } { }
 };
 
 
-void insert( Node * & head, int data )
+void insert( Node * &head, int data )
 {
     // Insert into a circular linked list
   Node * newNode = new Node( data );
   if ( head == nullptr ) {
     head = newNode;
   } else {
-    Node * temp = head;
-    while( temp->next != nullptr ) {
-      temp = temp->next;
+
+      Node * temp = head;
+      while( temp->next != nullptr ) {
+        temp = temp->next;
     }
     temp->next = newNode;
   }
 }
 
 void printList( Node* head )
-
 {
   while( head ) {
     std::cout << head->data << "-->";
@@ -47,14 +47,6 @@ void removeLoop(Node* loopNode, Node* head){
 
     Node *ptr1 = head;
     Node *ptr2 = loopNode;
-
-    std::cout << "ptr1->next: " << ptr1->next << std::endl;
-     std::cout << "ptr1->next Value: " << ptr1->data << std::endl;
-
-
-    std::cout << "loopNode:   " << loopNode->next << std::endl;
-    std::cout << "loopNode Value:   " << loopNode->data << std::endl;
-
 
     while(ptr1->next != ptr2->next){
 
@@ -102,16 +94,17 @@ int main() {
     insert( head , 3 );
     insert( head , 4 );
     insert( head , 5 );
+
     std::cout << "Current List:\n";
 
      printList( head );
   
 
 
-  std::cout << "Inserting loop, connecting 5 to 2..... \n";
+   std::cout << "Inserting loop, connecting 5 to 2..... \n";
 
 
-    
+  
   head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
   // printList( head );
@@ -125,6 +118,8 @@ int main() {
     std::cout << "Back to the same old list\n";
 
     printList( head );
+  
+ 
 
 
 }

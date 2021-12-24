@@ -1,0 +1,50 @@
+devin join server1
+kobe join server2
+lebron join server1
+kobe join server2
+Nene join server5
+paul leaving server3
+ryan leaving server3
+tommas join server1
+Nene join server7
+Nene join server9
+Carrie join server1
+Bill join server2
+Ben join server2
+Luke join server2
+Nene join server2
+Tim join server3
+Nick join server1
+Louis join server2
+chris join server1
+Nene join server1
+Evie join server4
+devin leaving server1
+Tony join server1
+Louis leaving server2
+Carl join server2
+Nene join server1
+chrisopher join server1
+Leon join server2
+Bill leaving server2
+Ethan join server1
+Luke leaving server2
+Will join server1
+Austin join server2
+Nene join server3
+Vince join server1
+Abe join server1
+Jimmy join server3
+James join server2
+Harry join server3
+Dex join server2
+Wilson join server4
+Charlie join server1
+Nick join server4
+Nick join server3
+Nene join server7
+
+
+
+
+
