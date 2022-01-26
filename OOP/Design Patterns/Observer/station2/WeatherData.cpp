@@ -8,7 +8,7 @@ void WeatherData::registerObserver(Observer *observer) {
 }
 
 void WeatherData::removeObserver(Observer *observer) {
-    // find the observer and remove it 
+    // find the observer and remove it , iterate thru container
     auto iterator = std::find(observers.begin(), observers.end(), observer);
 
     if (iterator != observers.end()) { // observer found
