@@ -36,3 +36,4 @@ L_.str:                                 ## @.str
 	.asciz	"sum = %d\n"
 
 .subsections_via_symbols
+
