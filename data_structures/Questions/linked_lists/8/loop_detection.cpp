@@ -4,6 +4,7 @@
 
     Given a Circular Linked List, implement an algorithm that returns the node at the beginning of the loop.
 
+  // Gieven a Cureular list
 */
 
 
@@ -20,6 +21,7 @@ struct Node {
 void insert( Node * &head, int data )
 {
     // Insert into a circular linked list
+
   Node * newNode = new Node( data );
   if ( head == nullptr ) {
     head = newNode;
@@ -97,7 +99,7 @@ int main() {
 
     std::cout << "Current List:\n";
 
-     printList( head );
+    printList( head );
   
 
 
@@ -105,9 +107,9 @@ int main() {
 
 
   
-  head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
+   head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
-  // printList( head );
+   // printList( head );
 
 
    
@@ -118,6 +120,8 @@ int main() {
     std::cout << "Back to the same old list\n";
 
     printList( head );
+
+
   
  
 
