@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 
+
 struct Node {
   int data;
   Node *next;
@@ -34,6 +35,7 @@ void insert( Node * &head, int data )
     temp->next = newNode;
   }
 }
+
 
 void printList( Node* head )
 {
@@ -77,6 +79,7 @@ bool dectectAndRemoveCycle(Node* head){
 
         if (fastPtr == slowPtr)
         {
+          
             removeLoop(slowPtr, head);
             return true;
 
@@ -91,23 +94,26 @@ bool dectectAndRemoveCycle(Node* head){
 
 int main() {
     Node* head = nullptr;
-    insert( head , 1 );
-    insert( head , 2 );
-    insert( head , 3 );
-    insert( head , 4 );
-    insert( head , 5 );
+    insert( head , 6 );
+    insert( head , 8 );
+    insert( head , 12 );
+    insert( head , 10 );
+   // insert( head , 5 );
+
 
     std::cout << "Current List:\n";
 
-    printList( head );
+  head->next->next->next->next = head->next;
+
+   // printList( head );
   
 
-
-   std::cout << "Inserting loop, connecting 5 to 2..... \n";
+  
+  // std::cout << "Inserting loop, connecting 5 to 2..... \n";
 
 
   
-   head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
+  // head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
    // printList( head );
 
@@ -122,7 +128,6 @@ int main() {
     printList( head );
 
 
-  
  
 
 
