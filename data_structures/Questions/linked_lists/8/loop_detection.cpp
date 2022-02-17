@@ -94,31 +94,25 @@ bool dectectAndRemoveCycle(Node* head){
 
 int main() {
     Node* head = nullptr;
-    insert( head , 6 );
-    insert( head , 8 );
-    insert( head , 12 );
-    insert( head , 10 );
-   // insert( head , 5 );
+    insert( head , 1 );
+    insert( head , 2 );
+    insert( head , 3 );
+    insert( head , 4 );
+    insert( head , 5 );
 
 
     std::cout << "Current List:\n";
+    printList( head );
 
-  head->next->next->next->next = head->next;
 
-   // printList( head );
-  
-
-  
-  // std::cout << "Inserting loop, connecting 5 to 2..... \n";
-
+    head->next->next->next->next->next = head->next;
 
   
-  // head->next->next->next->next->next = head->next; // connects 5 to 2 (address memory)
 
-   // printList( head );
+  
+   std::cout << "Inserting loop, connecting 5 to 2..... \n";
 
 
-   
     std::cout << "Detecting and deleting loop\n";
 
     dectectAndRemoveCycle(head);
@@ -126,10 +120,6 @@ int main() {
     std::cout << "Back to the same old list\n";
 
     printList( head );
-
-
- 
-
 
 }
 
