@@ -81,7 +81,7 @@ int main()
 
    }
       
-
+    cout << endl;
     cout << "Unsorted array: ";
 
     printArray(arr,sz);
@@ -93,5 +93,6 @@ int main()
     cout << "Sorted array: ";
 
     printArray(arr, sz);
+    cout << endl;
 }
 

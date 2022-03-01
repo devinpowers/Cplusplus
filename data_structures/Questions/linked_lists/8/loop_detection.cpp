@@ -18,11 +18,9 @@ struct Node {
   Node( int d ) : data{ d }, next{ nullptr } { }
 };
 
-
 void insert( Node * &head, int data )
 {
     // Insert into a circular linked list
-
   Node * newNode = new Node( data );
   if ( head == nullptr ) {
     head = newNode;
@@ -92,6 +90,7 @@ bool dectectAndRemoveCycle(Node* head){
 
 
 
+
 int main() {
     Node* head = nullptr;
     insert( head , 1 );
@@ -99,17 +98,20 @@ int main() {
     insert( head , 3 );
     insert( head , 4 );
     insert( head , 5 );
+    //insert( head , 6 );
 
 
     std::cout << "Current List:\n";
-    printList( head );
 
+      printList( head );
 
+  
     head->next->next->next->next->next = head->next;
 
-  
+    //printList( head );
 
-  
+
+    
    std::cout << "Inserting loop, connecting 5 to 2..... \n";
 
 
@@ -120,6 +122,13 @@ int main() {
     std::cout << "Back to the same old list\n";
 
     printList( head );
+
+    
+
+    
+
+
+    
 
 }
 
