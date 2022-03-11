@@ -26,7 +26,7 @@ int binarySearch( int array[], int x, int low, int high){
 int main(){
 
   int arr[] = { 2,6, 14, 54, 98, 100, 120, 500};
-  int x = 98;
+  int x = 500;
   
   int n = sizeof(arr)/sizeof(arr[0]);
   int result = binarySearch(arr, x, 0, n-1);

@@ -11,7 +11,6 @@
 #include <iostream>
 #include <string>
 
-
 struct Node {
   int data;
   Node *next;
@@ -98,19 +97,19 @@ int main() {
     insert( head , 3 );
     insert( head , 4 );
     insert( head , 5 );
-    //insert( head , 6 );
+    
 
+  //  std::cout << "Current List:\n";
 
-    std::cout << "Current List:\n";
+    // printList( head );
 
-      printList( head );
 
   
     head->next->next->next->next->next = head->next;
 
-    //printList( head );
+   // printList( head );
 
-
+    
     
    std::cout << "Inserting loop, connecting 5 to 2..... \n";
 
@@ -123,12 +122,7 @@ int main() {
 
     printList( head );
 
-    
-
-    
-
-
-    
+        
 
 }
 

@@ -42,7 +42,8 @@ void printarray(int arr[],int size){
 
 int main(){
 
-  int arr[] = { 34,25,63,23,5,32,6,0,342,24,9,10,23,69,45,120,1,7};
+  //int arr[] = { 34,25,63,23,5,32,6,0,342,24,9,10,23,69,45,120,1,7};
+  int arr[] = { 2,8,5,3,9,4,1};
   int n = sizeof(arr)/sizeof(arr[0]);
   bubblesort(arr, n);
   cout << "sorted array: \n";
