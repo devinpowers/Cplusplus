@@ -1,10 +1,10 @@
 #include <iostream>
 
-#include "addition.h"
-#include "division.h"
+#include "my_math/addition.h"
+#include "my_math/division.h"
 #include "print_result.h"
 
-int main(){
+main(){
 
 float first_no, second_no, result_add, result_div;
 
