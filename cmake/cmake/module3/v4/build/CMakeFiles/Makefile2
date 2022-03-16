@@ -64,57 +64,57 @@ CMAKE_BINARY_DIR = /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build
 
 # The main recursive "all" target.
 all: CMakeFiles/calculator.dir/all
-all: my_math_dir/all
-all: my_print_dir/all
+all: my_math/all
+all: my_print/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: my_math_dir/preinstall
-preinstall: my_print_dir/preinstall
+preinstall: my_math/preinstall
+preinstall: my_print/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/calculator.dir/clean
-clean: my_math_dir/clean
-clean: my_print_dir/clean
+clean: my_math/clean
+clean: my_print/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory my_math_dir
+# Directory level rules for directory my_math
 
 # Recursive "all" directory target.
-my_math_dir/all: my_math_dir/CMakeFiles/my_math.dir/all
-.PHONY : my_math_dir/all
+my_math/all: my_math/CMakeFiles/my_math.dir/all
+.PHONY : my_math/all
 
 # Recursive "preinstall" directory target.
-my_math_dir/preinstall:
-.PHONY : my_math_dir/preinstall
+my_math/preinstall:
+.PHONY : my_math/preinstall
 
 # Recursive "clean" directory target.
-my_math_dir/clean: my_math_dir/CMakeFiles/my_math.dir/clean
-.PHONY : my_math_dir/clean
+my_math/clean: my_math/CMakeFiles/my_math.dir/clean
+.PHONY : my_math/clean
 
 #=============================================================================
-# Directory level rules for directory my_print_dir
+# Directory level rules for directory my_print
 
 # Recursive "all" directory target.
-my_print_dir/all: my_print_dir/CMakeFiles/my_print.dir/all
-.PHONY : my_print_dir/all
+my_print/all: my_print/CMakeFiles/my_print.dir/all
+.PHONY : my_print/all
 
 # Recursive "preinstall" directory target.
-my_print_dir/preinstall:
-.PHONY : my_print_dir/preinstall
+my_print/preinstall:
+.PHONY : my_print/preinstall
 
 # Recursive "clean" directory target.
-my_print_dir/clean: my_print_dir/CMakeFiles/my_print.dir/clean
-.PHONY : my_print_dir/clean
+my_print/clean: my_print/CMakeFiles/my_print.dir/clean
+.PHONY : my_print/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/calculator.dir
 
 # All Build rule for target.
-CMakeFiles/calculator.dir/all: my_math_dir/CMakeFiles/my_math.dir/all
-CMakeFiles/calculator.dir/all: my_print_dir/CMakeFiles/my_print.dir/all
+CMakeFiles/calculator.dir/all: my_math/CMakeFiles/my_math.dir/all
+CMakeFiles/calculator.dir/all: my_print/CMakeFiles/my_print.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/calculator.dir/build.make CMakeFiles/calculator.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles --progress-num=1,2 "Built target calculator"
@@ -137,56 +137,56 @@ CMakeFiles/calculator.dir/clean:
 .PHONY : CMakeFiles/calculator.dir/clean
 
 #=============================================================================
-# Target rules for target my_math_dir/CMakeFiles/my_math.dir
+# Target rules for target my_math/CMakeFiles/my_math.dir
 
 # All Build rule for target.
-my_math_dir/CMakeFiles/my_math.dir/all:
-	$(MAKE) $(MAKESILENT) -f my_math_dir/CMakeFiles/my_math.dir/build.make my_math_dir/CMakeFiles/my_math.dir/depend
-	$(MAKE) $(MAKESILENT) -f my_math_dir/CMakeFiles/my_math.dir/build.make my_math_dir/CMakeFiles/my_math.dir/build
+my_math/CMakeFiles/my_math.dir/all:
+	$(MAKE) $(MAKESILENT) -f my_math/CMakeFiles/my_math.dir/build.make my_math/CMakeFiles/my_math.dir/depend
+	$(MAKE) $(MAKESILENT) -f my_math/CMakeFiles/my_math.dir/build.make my_math/CMakeFiles/my_math.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles --progress-num=3,4,5 "Built target my_math"
-.PHONY : my_math_dir/CMakeFiles/my_math.dir/all
+.PHONY : my_math/CMakeFiles/my_math.dir/all
 
 # Build rule for subdir invocation for target.
-my_math_dir/CMakeFiles/my_math.dir/rule: cmake_check_build_system
+my_math/CMakeFiles/my_math.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_math_dir/CMakeFiles/my_math.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_math/CMakeFiles/my_math.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles 0
-.PHONY : my_math_dir/CMakeFiles/my_math.dir/rule
+.PHONY : my_math/CMakeFiles/my_math.dir/rule
 
 # Convenience name for target.
-my_math: my_math_dir/CMakeFiles/my_math.dir/rule
+my_math: my_math/CMakeFiles/my_math.dir/rule
 .PHONY : my_math
 
 # clean rule for target.
-my_math_dir/CMakeFiles/my_math.dir/clean:
-	$(MAKE) $(MAKESILENT) -f my_math_dir/CMakeFiles/my_math.dir/build.make my_math_dir/CMakeFiles/my_math.dir/clean
-.PHONY : my_math_dir/CMakeFiles/my_math.dir/clean
+my_math/CMakeFiles/my_math.dir/clean:
+	$(MAKE) $(MAKESILENT) -f my_math/CMakeFiles/my_math.dir/build.make my_math/CMakeFiles/my_math.dir/clean
+.PHONY : my_math/CMakeFiles/my_math.dir/clean
 
 #=============================================================================
-# Target rules for target my_print_dir/CMakeFiles/my_print.dir
+# Target rules for target my_print/CMakeFiles/my_print.dir
 
 # All Build rule for target.
-my_print_dir/CMakeFiles/my_print.dir/all:
-	$(MAKE) $(MAKESILENT) -f my_print_dir/CMakeFiles/my_print.dir/build.make my_print_dir/CMakeFiles/my_print.dir/depend
-	$(MAKE) $(MAKESILENT) -f my_print_dir/CMakeFiles/my_print.dir/build.make my_print_dir/CMakeFiles/my_print.dir/build
+my_print/CMakeFiles/my_print.dir/all:
+	$(MAKE) $(MAKESILENT) -f my_print/CMakeFiles/my_print.dir/build.make my_print/CMakeFiles/my_print.dir/depend
+	$(MAKE) $(MAKESILENT) -f my_print/CMakeFiles/my_print.dir/build.make my_print/CMakeFiles/my_print.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles --progress-num=6,7 "Built target my_print"
-.PHONY : my_print_dir/CMakeFiles/my_print.dir/all
+.PHONY : my_print/CMakeFiles/my_print.dir/all
 
 # Build rule for subdir invocation for target.
-my_print_dir/CMakeFiles/my_print.dir/rule: cmake_check_build_system
+my_print/CMakeFiles/my_print.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_print_dir/CMakeFiles/my_print.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 my_print/CMakeFiles/my_print.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles 0
-.PHONY : my_print_dir/CMakeFiles/my_print.dir/rule
+.PHONY : my_print/CMakeFiles/my_print.dir/rule
 
 # Convenience name for target.
-my_print: my_print_dir/CMakeFiles/my_print.dir/rule
+my_print: my_print/CMakeFiles/my_print.dir/rule
 .PHONY : my_print
 
 # clean rule for target.
-my_print_dir/CMakeFiles/my_print.dir/clean:
-	$(MAKE) $(MAKESILENT) -f my_print_dir/CMakeFiles/my_print.dir/build.make my_print_dir/CMakeFiles/my_print.dir/clean
-.PHONY : my_print_dir/CMakeFiles/my_print.dir/clean
+my_print/CMakeFiles/my_print.dir/clean:
+	$(MAKE) $(MAKESILENT) -f my_print/CMakeFiles/my_print.dir/build.make my_print/CMakeFiles/my_print.dir/clean
+.PHONY : my_print/CMakeFiles/my_print.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_math/include -I/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_print/include
+CXX_INCLUDES = -I/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_print/include
 
 CXX_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk
 

@@ -92,8 +92,8 @@ calculator_EXTERNAL_OBJECTS =
 
 calculator: CMakeFiles/calculator.dir/main.cpp.o
 calculator: CMakeFiles/calculator.dir/build.make
-calculator: my_math_dir/libmy_math.a
-calculator: my_print_dir/libmy_print.a
+calculator: my_math/libmy_math.a
+calculator: my_print/libmy_print.a
 calculator: CMakeFiles/calculator.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable calculator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/calculator.dir/link.txt --verbose=$(VERBOSE)

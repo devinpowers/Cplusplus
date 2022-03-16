@@ -1,5 +1,5 @@
-CMakeFiles/calculator.dir/main.cpp.o: \
-  /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/main.cpp \
+my_print/CMakeFiles/my_print.dir/src/print_result.cpp.o: \
+  /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_print/src/print_result.cpp \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/pthread.h \
@@ -225,6 +225,4 @@ CMakeFiles/calculator.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/usr/bin/../include/c++/v1/__bit_reference \
-  /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_math/include/my_math/addition.h \
-  /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_math/include/my_math/division.h \
   /Users/devinpowers/Desktop/C++/cmake/cmake/module3/v4/my_print/include/my_print/print_result.h
