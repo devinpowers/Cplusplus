@@ -83,3 +83,4 @@ void CheckEquals(T expected, T actual) {
     exit(EXIT_FAILURE);
   }
 }
+
