@@ -70,7 +70,7 @@ int main() {
   delete list;
 
   cout << "All tests passed! be sure to run under valgrind!" << endl;
-
+  cout << "FINSHING UP " << endl;
   return EXIT_SUCCESS;
 }
 
