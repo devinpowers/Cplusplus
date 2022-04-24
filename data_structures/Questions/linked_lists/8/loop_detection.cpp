@@ -4,7 +4,7 @@
 
     Given a Circular Linked List, implement an algorithm that returns the node at the beginning of the loop.
 
-  // Gieven a Cureular list
+  // Gieven a  list
 */
 
 
@@ -90,6 +90,7 @@ bool dectectAndRemoveCycle(Node* head){
 
 
 
+
 int main() {
     Node* head = nullptr;
     insert( head , 1 );
@@ -99,21 +100,17 @@ int main() {
     insert( head , 5 );
     
 
-  //  std::cout << "Current List:\n";
+   std::cout << "Current List:\n";
 
-    // printList( head );
+    printList( head );
 
 
-  
-    head->next->next->next->next->next = head->next;
+    std::cout << "Inserting loop, connecting 5 to 2..... \n";
+    head->next->next->next->next->next = head->next; // Connect here!!
 
-   // printList( head );
+    //printList( head );
 
     
-    
-   std::cout << "Inserting loop, connecting 5 to 2..... \n";
-
-
     std::cout << "Detecting and deleting loop\n";
 
     dectectAndRemoveCycle(head);
@@ -121,6 +118,7 @@ int main() {
     std::cout << "Back to the same old list\n";
 
     printList( head );
+  
 
         
 
